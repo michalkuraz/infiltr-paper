@@ -417,18 +417,19 @@ t_{init}^{r_f} &=  10^{-8} ; \mbox{hrs} \quad  \forall r_f > 0.
 \end{lineq}
 If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will be solved by Schwarz-Picard method -- an adaptive domain decomposition~\citep{mojeamc2}. To validate the inverse model solution for $r_f-1$ discretization level perform the following:
   \begin{enumerate}
-    \item \label{ll1} Compare the scatter 
+    \item \label{val} Compare the scatter 
    plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
-    \item \label{cond} \bf{If} the scatter plots differ significantly  
+    \item \label{cond} {\bf If} the scatter plots differ significantly  
    \begin{enumerate}
     \item Proceed the calibration  again, with the new parameter range defined as $\vec{p}_{max} = 1.1\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.9\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
-    \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{lll}, and check the condition~\ref{cond}.
+    \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{val}, and check the condition~\ref{cond}.
     \end{enumerate}
-    \item \bf{else}
+    \item {\bf else}
     \begin{enumerate}
     \item Exit the calibration process.
     \end{enumerate}
   \end{enumerate}
+  \item At this step  vectors of validated inverse model solutions $\vec{p}^{i_e}$ are available for discussion.
 \end{enumerate}
 
 
