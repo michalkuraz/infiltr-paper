@@ -410,7 +410,7 @@ Let us assume that this discretization is given by a mesh density function ${\De
 \begin{lineq}
 \label{coeffs}
 \begin{split}
-\Delta(\vec{x})^{r_f}  &= \frac\Delta(\vec{x})^{r_f-1}}{2} \\
+\Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2} \\
 \bar{\varepsilon}^{r_f} &= 10^{-3} ; \mbox{cm} \quad  \forall r_f > 0, \\
 t_{init}^{r_f} &=  10^{-8} ; \mbox{hrs} \quad  \forall r_f > 0.
 \end{split}
@@ -418,10 +418,16 @@ t_{init}^{r_f} &=  10^{-8} ; \mbox{hrs} \quad  \forall r_f > 0.
 If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will be solved by Schwarz-Picard method -- an adaptive domain decomposition~\citep{mojeamc2}. To validate the inverse model solution for $r_f-1$ discretization level perform the following:
   \begin{enumerate}
     \item \label{ll1} Compare the scatter 
-   plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. If they differ significantly from the the proceed the calibration  again, with the new parameter range defined as $\vec{p}_{max} = 1.1\vec{p}_{r_f}$ and  $\vec{p}_{min} = 0.9\vec{p}_{r_f}$. Let us assume that this calibration will generate a vector of SHPs values $\vec{p}_{t}$.
-    \item \label{ll2} Perform the validation again with Picard iteration criterion $\varepsilon^{rf+1}=0.1\varepsilon^{rf}$, and with the refined spatial mesh (use one half of the previous spatial step size).
-    \item Create scatter plots again and validate them again with further refinements as discussed in~\ref{ll0} with the refined parameters of the numerical approximation as given in~\ref{ll2}, and if needed return to the step~\ref{ll1} with the increased refinement level $rf=rf+1$.
-    \item If there is no further refinement needed exit the calibration process.
+   plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
+    \item \label{cond} \bf{If} the scatter plots differ significantly  
+   \begin{enumerate}
+    \item Proceed the calibration  again, with the new parameter range defined as $\vec{p}_{max} = 1.1\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.9\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
+    \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{lll}, and check the condition~\ref{cond}.
+    \end{enumerate}
+    \item \bf{else}
+    \begin{enumerate}
+    \item Exit the calibration process.
+    \end{enumerate}
   \end{enumerate}
 \end{enumerate}
 
