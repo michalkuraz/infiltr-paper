@@ -1,0 +1,44 @@
+4
+0.157 1.968 0.720 5.574 × 10 −6 1.053 × 10 −3
+
+
+5 data 3
+5 0.150 1.586 0.720 3:036  10􀀀6 7:641  10􀀀3
+a - trochu posun, jinak ok,
+n - dtto
+Ks - dtto
+ths - posun do nefyzikalnich hodnot
+Ss- by mel byt nula
+
+zaver: recalculate, jemny cas a prostor
+vysledek jemny cas a hruby prostor:  0.0016337, 1.3481, 0.74992, 1.0918, 8.6953e-05
+
+6 data 4
+6 0.258 2.152 0.401 3:043  10􀀀6 0
+alpha - ok
+n - plateou, could be lower 1.8
+Ks - ok
+ths - ok
+Ss - ok
+zaver: ponechat
+
+
+7 data 5
+7 0.380 1.279 0.594 3:233  10􀀀6 0
+alpha - posun pri zjemneni prostoru, na cas ok
+n - dtto
+Ks - dtto
+ths - dtto
+Ss  - ok
+zaver: prepocet hruby cas, jemny prostor
+
+
+
+8 data 6
+8 0.255 1.384 0.254 3:108  10􀀀6 1:922  10􀀀2 0
+alpha - hodne jinak
+n - taky jinak
+Ks - taky hodne jinak
+ths - dtto
+Ss - ma byt nula
+zaver : cele prepocitat
