@@ -11,7 +11,11 @@ ths - posun do nefyzikalnich hodnot
 Ss- by mel byt nula
 
 zaver: recalculate, jemny cas a prostor
-vysledek jemny cas a hruby prostor:  0.0016337, 1.3481, 0.74992, 1.0918, 8.6953e-05
+vysledek jemny cas a hruby prostor:  0.0016337, 1.3481, 0.74992, 1.0918, 8.6953e-05 (neuvazovat)
+
+prepocet jemny prostor a cas
+ 0.0015607   1.3805    0.828   1.0582 8.6393e-05 
+ -validovano
 
 6 data 4
 6 0.258 2.152 0.401 3:043  10􀀀6 0
@@ -32,6 +36,11 @@ ths - dtto
 Ss  - ok
 zaver: prepocet hruby cas, jemny prostor
 
+po prepoctu nalezeno 5 extremu ale pouze dva jsou zajimave
+X =   0.0032285   1.4421  0.51332   1.0995 9.9016e-09 
+X =   0.0032325   1.4492  0.50594   1.1019 3.4779e-09
+
+
 
 
 8 data 6
@@ -42,3 +51,17 @@ Ks - taky hodne jinak
 ths - dtto
 Ss - ma byt nula
 zaver : cele prepocitat
+
+prepocet jemny cas a prostor
+0.002276   1.5189  0.23579   1.0356 0.00020178
+
+valildovano
+
+
+prehled
+
+5 0.0015607   1.3805    0.828   1.0582 8.6393e-05 
+6 0.00258     1.8       0.401   1.095   0.0
+7  0.0032285   1.4421  0.51332   1.0995 0.0
+8 0.002276   1.5189  0.23579   1.0356 0.00020178
+
