@@ -133,7 +133,7 @@ And so the following questions arise.
 
 
 
-The aim of this paper is to answer these proposed issues. The inverse modeling problem applied here for evaluating these issues will not be a synthetic case but will be a real world problem of identification of the SHP parameters for top soil podzolic horizons of experimental catchment Modrava, Sumava National Park, Czech Republic.  The SHPs for the lower horizons were already identified by various laboratory experiments and by data processing (e.g. pedotransfer functions, see Rosetta code~\citep{Schaap}), only the top soil SHPs are difficult to  obtain directly. Moreover, for this type of top soil layer it is even a very difficult to guess some limited ranges of its SHPs. However, the knowledge of the lower horizons should limit the non-uniqueness of this inverse problem. Apart answering the given questions, which are nearly classical but not satisfactory resolved issues in this field of research, we will also try to address issues with initial and boundary condition setup for the approximation of SR infiltration process. Finally, the numerical issues originating from the convection term in the Richards equation representing the axisymmetric SR infiltration flux will be also discussed in this work.
+The aim of this paper is to answer these proposed issues. The inverse modeling problem applied here for evaluating these issues will not be a synthetic case but will be a real world problem of identification of the SHP parameters for top soil podzolic horizons of experimental catchment Modrava, Sumava National Park, Czech Republic.  The SHPs for the lower horizons were already identified by various field and laboratory experiments and by data processing (e.g. pedotransfer functions, see Rosetta code~\citep{Schaap}), only the top soil SHPs are difficult to  obtain directly. Moreover, for this type of top soil layer it is even a very difficult to guess some limited ranges of its SHPs. However, the knowledge of the lower horizons should limit the non-uniqueness of this inverse problem. Apart answering the given questions, which are nearly classical but not satisfactory resolved issues in this field of research, we will also try to address issues with initial and boundary condition setup for the approximation of SR infiltration process. Finally, the numerical issues originating from the convection term in the Richards equation representing the axisymmetric SR infiltration flux will be also discussed in this work.
 
 
 
@@ -146,7 +146,7 @@ The aim of this paper is to answer these proposed issues. The inverse modeling p
 \section{Methodology}% [lukas a michal]
 \label{metodo}
 
-% zkrátil bych
+
 This section is divided into two distinct parts. The first part, section~\ref{assamb}, is focused on assembling the experimental data, which were later used for the inverse modeling. In this section the site description, the reconstruction of the parameters of the SHPs for the lower profiles, and the processing of the experimental data is given.   This section also provides a complete definition of the SHPs parameters -- the solution of our inverse problem -- particularly in the paragraph~\ref{shp}.
 
 The second part of the methodology, section~\ref{invproc}, covers the main topic of this paper --  issues in the Richards equation based inverse model. The governing equation is given together with  notes about the numerical stability of the convection dominant problems, since it is not always mentioned that diffusion type equation in cylindrical coordinates  contains a first order derivative term, which is a language of mathematics  a convection term, and so the numerical stability issues appear. A typical example of this vulnerable problem is the Richards equation or the groundwater flow equation for rotational symmetric problems, where the cylindrical coordinates enable reduction of the three-dimensional computational domain into a two-dimensional domain, which is a widely used approach.
@@ -189,49 +189,20 @@ The soil hydraulic parameters (SHP) represent the hydrodynamic properties of por
 In this work, the SHPs are considered to be the following:
 
 \begin{itemize}
-\item Parameters representing the van Genuchten retention curve model~\citep{vangenuchten}, particularly $\alpha$~[$L^{-1}$] (which can be understood as the inverse of air entry suction) and $n$~[-]. The van Genuchten parameter $m$ was considered as $m=1-\frac{1}{n}$. Both $n$ and $m$ parameters can be understood as the measure of the pore-size distribution.
+\item Parameters representing the van Genuchten retention curve model~\citep{vangenuchten}, particularly $\alpha$~[$L^{-1}$]  and $n$~[-]. The van Genuchten parameter $m$ was considered as $m=1-\frac{1}{n}$. 
 \item Saturated water content $\theta_s$~[-]. Note that the residual water content $\theta_r$~[-] is neglected here, because together with the unknown saturated water content, the unknown residual water content can hardly lead to a unique solution of inverse modeling. Unless we were able to conduct an accurate measurement of the water content during the experiment, which is often a problem. Especially, if we take into account, that it is way easier to measure the saturated water content after the experiment, than measure the unsaturated water content and pressure head during the experiment. However, as specified above, no exact saturated water content data of the top soil horizon were available.
 \item Saturated hydraulic conductivity $K_s$ [$L.T^{-1}$]. 
 \item Specific storage $S_s$~[$L^{-1}$] -- represents the linear elasticity of the porous medium. The specific storage in the unsaturated zone is often neglected. However, the effect of the elasticity of the top-soil during the infiltration experiment, which is typical with an abrupt development of hydraulic pressure, should also be included.
 \end{itemize}
 
-An evaluation of these parameters for the soil profile for each horizon given in section~\ref{site} will be discussed here. The focus will be given on the top soil layer, where this set of parameters will be identified here by  inverse analysis. The SHPs parameters of the lower layers will be obtained here in more standard ways.....\todo{ \fs tahle veta je divna, nevedel jsem jak na ni, prosim navrhni upravu} 
+An evaluation of these parameters for the soil profile for each horizon given in section~\ref{site} will be discussed here. The focus will be given on the top soil layer, where this set of parameters will be identified here by  inverse analysis. The SHPs parameters of the lower layers will be obtained here using standard field experiments  and Rosetta pedotransfer functions.
 
 
-\subsubsection{Field infiltration experiment}%[lukas]
- \begin{figure}
-\centering
-\rotatebox{90}{
-\includegraphics[height=7.5cm]{valec-exp.pdf}}
- \caption{Scheme of the single ring infiltration experiment and the soil layers. }
- \label{experiment}
-\end{figure}
-
-The single ring infiltration method (SR) for identifying the soil hydraulic parameters (SHP) of the Ah and E horizons was used here. 
-For the Ah horizon, the smoothed experimental data for unsteady SR infiltration were used as the input for inverse modeling of the Richards equation, where the entire parameter set, as given in section~\ref{shp}, was identified. For the E horizon, the experimental data of the steady state part of the SR infiltration were evaluated in a standard way in order to obtain the saturated hydraulic conductivity of this lower layer.  
-Details of these experiments have already been published in~\citep{Jacka1}. In brief, the experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The interior surface of the ring was flooded to a mean depth of 4~cm. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil. After the water level dropped below the reference spike, a known volume was refilled into the infiltration ring, and the time was logged. The experiment continued until a
-quasi-steady infiltration rate ($i_c$) was reached. This took between 40~minutes to 2~hours. An average experiment duration was 60~minutes.
+\subsubsection{Obtaining SHP parameters for lower horizons}
+\label{dolni}
 
 Guelph permeameter measurement (GP) was used for estimating the saturated hydraulic conductivity of the lower horizons. When evaluating horizon E, the measurements were performed in wells ranging in depth between 19~cm  and 26~cm. For the spodic horizon the depth of the measurement wells ranged between 30~cm  and 56~cm. The constant head GP method applied here is described in~\citep{Jacka1}.
 
-\subsubsection{Processing the experimental data from single ring infiltration}
-\label{krivka}
-
-A total of 22 SR experiments were conducted on the site. Statistical description of these infiltration data is given by~\citep{jacka-site}, see datasets collected on site 3. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Schwarzendruber analytical model of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient value estimated as 0.9974. Thus we made use of  exponential data smoothing here. The Schwarzendruber equation for cumulative infiltration  states that
-\begin{lineq}
-I(t)=\frac{\bar{S}\left(1-\exp\left(-A_0\sqrt{t}\right)\right)}{A_0}+\bar{K}_{s}t,
-\label{vyhlaz}
-\end{lineq}
-where $I$ is the cumulative infiltration [$L$], and where the parameter set $A_0$, $\bar{S}$, $\bar{K}_{s}$ is usually expressed in terms of SHPs. This physically based interpretation of the Schwarzendruber parameters is disregarded here, because our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as some exponential smoothing function only without any physically  based interpretation.
-
-
-According to the normality tests,  all three datasets of  parameters $A_0$, $\bar{S}$, $\bar{K}_{s}$ can be well approximated  using a log-normal distribution. The geometric mean is therefore suitable for estimating representative values of these parameters. Representative values are as follows: $\bar{K}_s = 5.16\times 10^{-6}$~m.s$^{-1}$, $\bar{S} = 8.55\times 10^{-4}$~m.s$^{-0.5}$, and $A_0 = 0.1132$~[-]. The evaluated representative  parameter set, together with  model~\eqref{vyhlaz}, will be used as an input curve for identifying the top soil hydraulic parameters (SHP). SHPs of the lower horizons were estimated from direct measurements, as will be described in the next section.
-
-
-
-
-\subsubsection{Obtaining the soil hydraulic parameters of the lower horizons}%[lukas]
-\label{dolni}
 
 
 The average saturated hydraulic conductivity for the E horizon was obtained both from the single ring infiltration experiment (SR) and from the Guelph permeameter measurement (GP). The average hydraulic conductivity for the spodic horizon (Bhs, Bs) and for the weathered bedrock C were evaluated from the Guelph permeameter measurement (GP) only.
@@ -266,7 +237,7 @@ The estimated soil hydraulic parameters (SHP) for the lower horizons below the t
 Ranges of depths, horizon(s)&\multicolumn{4}{c}{SHPs}\\ \cline{2-6}
 [cm]&$\theta_s$ [-] & $\alpha$ [m$^{-1}$]& $n$ [-]& $K_s$ [ms$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
 % 0 - 7.5, top-soil (O nad Ah)&*from 0.6 to 0.9&*from 2 to 5&*from 1.05 to 1.9&*from 5$\times 10^{-7}$ to 1$\times 10^{-4}$\\
-7.5 - 20, eluvial E&0.46&4.65&1.7408&4.0$\times 10^{-6}$ & 0\\
+7.5 - 20, eluvial E&0.46&4.65&1.7408&4.4$\times 10^{-6}$ & 0\\
 20 - 60 spodic Bhs and Bs&0.47&2.21&1.4494&1.5$\times 10^{-6}$ & 0\\
 $>$ 60 weathered bedrock C & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
 \toprule
@@ -275,6 +246,41 @@ $>$ 60 weathered bedrock C & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
 \label{tab_SHP}
 \end{center}
 \end{table}
+
+
+\subsubsection{Obtaining unsteady infilitration data for the top soil inverse modeling}
+The purpose of this section is to explain the methodology used 
+
+
+ \begin{figure}
+\centering
+\rotatebox{90}{
+\includegraphics[height=7.5cm]{valec-exp.pdf}}
+ \caption{Scheme of the single ring infiltration experiment and the soil layers. }
+ \label{experiment}
+\end{figure}
+
+The single ring infiltration method (SR) for identifying the soil hydraulic parameters (SHP) of the O+Ah horizons was used here. 
+For the O+Ah horizon, the smoothed experimental data for unsteady SR infiltration were used as the input for inverse modeling of the Richards equation, where the entire parameter set, as given in section~\ref{shp}, was identified. 
+In brief, the experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil.  An average experiment duration was 60~minutes.
+
+
+
+
+
+A total of 22 SR experiments were conducted on the site. Statistical description of these infiltration data is given by~\citep{jacka-site}, see datasets collected on site 3. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Schwarzendruber analytical model of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient value estimated as 0.9974. Thus we made use of  exponential data smoothing here. The Schwarzendruber equation for cumulative infiltration  states that
+\begin{lineq}
+I(t)=\frac{\bar{S}\left(1-\exp\left(-A_0\sqrt{t}\right)\right)}{A_0}+\bar{K}_{s}t,
+\label{vyhlaz}
+\end{lineq}
+where $I$ is the cumulative infiltration [$L$], and where the parameter set $A_0$, $\bar{S}$, $\bar{K}_{s}$ is usually expressed in terms of SHPs. This physically based interpretation of the Schwarzendruber parameters is disregarded here, because our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as some exponential smoothing function only without any physically  based interpretation.
+
+
+According to the normality tests,  all three datasets of  parameters $A_0$, $\bar{S}$, $\bar{K}_{s}$ can be well approximated  using a log-normal distribution. The geometric mean is therefore suitable for estimating representative values of these parameters. Representative values are as follows: $\bar{K}_s = 5.16\times 10^{-6}$~m.s$^{-1}$, $\bar{S} = 8.55\times 10^{-4}$~m.s$^{-0.5}$, and $A_0 = 0.1132$~[-]. The evaluated representative  parameter set, together with  model~\eqref{vyhlaz}, will be used as an input curve for identifying the top soil hydraulic parameters (SHP). SHPs of the lower horizons were estimated from direct measurements, as will be described in the next section.
+
+
+
+
 
 
 \subsection{Inverse modeling procedures}
