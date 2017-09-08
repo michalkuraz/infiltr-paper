@@ -149,8 +149,8 @@ The aim of this paper is to answer these proposed issues. The inverse modeling p
 
 This section is divided into two distinct parts. The first part, section~\ref{assamb}, is focused on assembling the experimental data, which were later used for the inverse modeling. In this section the site description, the reconstruction of the parameters of the SHPs for the lower profiles, and the processing of the experimental data is given.   This section also provides a complete definition of the SHPs parameters -- the solution of our inverse problem -- particularly in the paragraph~\ref{shp}.
 
-The second part of the methodology, section~\ref{invproc}, covers the main topic of this paper --  issues in the Richards equation based inverse model. The governing equation is given together with  notes about the numerical stability of the convection dominant problems, since it is not always mentioned that diffusion type equation in cylindrical coordinates  contains a first order derivative term, which is a language of mathematics  a convection term, and so the numerical stability issues appear. A typical example of this vulnerable problem is the Richards equation or the groundwater flow equation for rotational symmetric problems, where the cylindrical coordinates enable reduction of the three-dimensional computational domain into a two-dimensional domain, which is a widely used approach.
-Further the issues in selecting an appropriate boundary conditions are discussed, since it is not easy to find an agreement between the mathematical model setup and the physical conditions. Finally, the most important part, the construction of the objective function, and the methodology of the automatic calibration is given in this section. 
+The second part of the methodology, section~\ref{invproc}, covers the main topic of this paper --  issues in the Richards equation based inverse model. The governing equation is given together with  notes about the numerical stability of the convection dominant problems, since it is not always mentioned that diffusion type equation in cylindrical coordinates  contains a first order derivative term,  and so the numerical stability issues appear. A typical example of this vulnerable problem is the Richards equation or the groundwater flow equation for rotational symmetric problems, where the cylindrical coordinates enable reduction of the three-dimensional computational domain into a two-dimensional domain, which is a widely used approach.
+Further the issues in selecting an appropriate boundary conditions are discussed, since it is not always easy to find an agreement between the mathematical model setup and  physical interpretation. Finally, the most important part, the construction of the objective function, and the methodology of the automatic calibration is given in this section. 
 
 
 
@@ -160,7 +160,7 @@ Further the issues in selecting an appropriate boundary conditions are discussed
 
 \subsubsection{Site description and assembling the experimental data}%[lukas]
 \label{site}
-The study site is located in the \v{S}umava National Park, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented in \citep{Jacka2}.
+The study site is located in the \v{S}umava National Park, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented by \cite{Jacka2}.
 A haplic podzol with distinct soil horizons is dominant on this site. The mean depths of the podzolic horizons are as follows:
 \begin{itemize}
 \item organic horizon O and humus horizon Ah altogether (the top-soil) 7.5 cm, 
@@ -179,7 +179,7 @@ E 1.4~g.cm$^{-3}$; Bhs and Bs 1.3 g.cm$^{-3}$. The porosities of the lower horiz
 
 
 
-In order to obtain data for identifying the hydraulic parameters of the top-soil, a total of 22 SR infiltration experiments were performed. The experimental sites in our catchment were  selected randomly. The minimum distance between infiltration sites was 1.5~m. All in situ experiments and sample collections were performed in August.
+In order to obtain data for identifying the hydraulic parameters of the top-soil, a total of 22 SR infiltration experiments were performed. The experimental sites in our catchment were  selected randomly. The minimal distance between infiltration sites was 1.5~m. All in situ experiments and sample collections were performed in August.
 
 \subsubsection{Soil hydraulic parameters}
 \label{shp}
@@ -190,7 +190,7 @@ In this work, the SHPs are considered to be the following:
 
 \begin{itemize}
 \item Parameters representing the van Genuchten retention curve model~\citep{vangenuchten}, particularly $\alpha$~[$L^{-1}$]  and $n$~[-]. The van Genuchten parameter $m$ was considered as $m=1-\frac{1}{n}$. 
-\item Saturated water content $\theta_s$~[-]. Note that the residual water content $\theta_r$~[-] is neglected here, because together with the unknown saturated water content, the unknown residual water content can hardly lead to a unique solution of inverse modeling. Unless we were able to conduct an accurate measurement of the water content during the experiment, which is often a problem. Especially, if we take into account, that it is way easier to measure the saturated water content after the experiment, than measure the unsaturated water content and pressure head during the experiment. However, as specified above, no exact saturated water content data of the top soil horizon were available.
+\item Saturated water content $\theta_s$~[-]. Note that the residual water content $\theta_r$~[-] is neglected here, because together with the unknown saturated water content, the unknown residual water content can hardly lead to a unique solution of the inverse modeling. Unless we were able to conduct an accurate measurement of the water content during the experiment, which is often complicated. Especially, if we take into consideration, that it is much easier to measure the saturated water content after the experiment, than to measure the unsaturated water content and the pressure head during the experiment. However, as specified above, no exact saturated water content data of the top soil horizon were available.
 \item Saturated hydraulic conductivity $K_s$ [$L.T^{-1}$]. 
 \item Specific storage $S_s$~[$L^{-1}$] -- represents the linear elasticity of the porous medium. The specific storage in the unsaturated zone is often neglected. However, the effect of the elasticity of the top-soil during the infiltration experiment, which is typical with an abrupt development of hydraulic pressure, should also be included.
 \end{itemize}
@@ -203,21 +203,14 @@ An evaluation of these parameters for the soil profile for each horizon given in
 
 Guelph permeameter measurement (GP) was used for estimating the saturated hydraulic conductivity of the lower horizons. When evaluating horizon E, the measurements were performed in wells ranging in depth between 19~cm  and 26~cm. For the spodic horizon the depth of the measurement wells ranged between 30~cm  and 56~cm. The constant head GP method applied here is described in~\citep{Jacka1}.
 
-
-
-The average saturated hydraulic conductivity for the E horizon was obtained both from the single ring infiltration experiment (SR) and from the Guelph permeameter measurement (GP). The average hydraulic conductivity for the spodic horizon (Bhs, Bs) and for the weathered bedrock C were evaluated from the Guelph permeameter measurement (GP) only.
-As is depicted in figure~\ref{experiment}, the depth of the infiltration ring is below the boundary between Ah (top horizon) and the E horizon. If we assume that the saturated hydraulic conductivity of the top soil horizon is higher than the saturated hydraulic conductivity of the E horizon, then the steady state infiltration rate could be used for estimating this parameter.
-
-
-
-A total of 22 SR experiments (as mentioned in section~\ref{krivka}) and 28 GP experiments were conducted to estimate the saturated hydraulic conductivity of the E horizon. The estimated saturated hydraulic conductivity obtained from the SR measurements for this horizon and for the study site does not differ significantly from the saturated hydraulic conductivity originating from the GP experiments (see the results published in \citep{Jacka1}).
+A total of 28 GP experiments were conducted to estimate the saturated hydraulic conductivity of the E horizon. 
  The representative saturated hydraulic conductivity for the E horizon was evaluated as 4.0$\times 10^{-6}$~m.s$^{-1}$.
 
 
-In total 19 GP experiments were conducted to estimate the saturated hydraulic conductivity of the spodic horizon. The estimated geometric mean value is: $K_s =  1.5\times 10^{-6}$~m.s$^{-1}$.
+A total 19 GP experiments were conducted to estimate the saturated hydraulic conductivity of the spodic horizon. The estimated geometric mean value is: $K_s =  1.5\times 10^{-6}$~m.s$^{-1}$.
 
 The saturated hydraulic conductivity of the weathered
-    bedrock C was obtained as the geometric mean  from 8 experiments performed using the GP method  in wells from 68 to 130 cm in depth. The estimated mean geometric value is: $K_s =  8.5\times 10^{-6}$~m.s$^{-1}$.
+bedrock C was obtained as the geometric mean  from 8 experiments performed using the GP method  in wells from 68 to 130 cm in depth. The estimated mean geometric value is: $K_s =  8.5\times 10^{-6}$~m.s$^{-1}$.
 
 %%%%%%%dat za lukasovi rovnice.
 Representative parameters of the retention curves (for the eluvial horizon below the top-soil, spodic horizons and weathered bedrock) were estimated using the soil texture and the bulk density information and a neural network prediction (a type of pedo-transfer function) of Rosetta code, see \citep{Schaap}. 
@@ -248,8 +241,9 @@ $>$ 60 weathered bedrock C & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
 \end{table}
 
 
-\subsubsection{Obtaining unsteady infilitration data for the top soil inverse modeling}
-The purpose of this section is to explain the methodology used 
+\subsubsection{Obtaining unsteady infiltration data for the top soil inverse modeling}
+
+The purpose of this section is to explain the methodology used for obtaining the data for the proposed inverse analyses. 
 
 
  \begin{figure}
@@ -260,8 +254,8 @@ The purpose of this section is to explain the methodology used
  \label{experiment}
 \end{figure}
 
-The single ring infiltration method (SR) for identifying the soil hydraulic parameters (SHP) of the O+Ah horizons was used here. 
-For the O+Ah horizon, the smoothed experimental data for unsteady SR infiltration were used as the input for inverse modeling of the Richards equation, where the entire parameter set, as given in section~\ref{shp}, was identified. 
+
+For the O+Ah horizon, the smoothed experimental data for unsteady single ring (SR) infiltration were used as the input for inverse modeling of the Richards equation, where the entire parameter set, as given in section~\ref{shp}, was identified. 
 In brief, the experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil.  An average experiment duration was 60~minutes.
 
 
