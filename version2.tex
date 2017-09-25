@@ -1,5 +1,5 @@
 % \documentclass[a4paper,10pt]{article}
- \documentclass[review]{myarticle}
+ \documentclass[review]{elsarticle}
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphicx}
@@ -13,7 +13,8 @@
 \usepackage{amsmath}
 
 \usepackage{enumitem}
-\usepackage{a4wide} %full page
+% \usepackage{a4wide} %full page
+\usepackage{fullpage}
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{amsmath,amssymb}
@@ -70,7 +71,7 @@
 
 \author[autor2]{Matej Leps}
 
-\author[autor1]{Vojta Havlicek}
+\author[autor1]{Johanna Ruth Bloecher}
 
 \address[autor1]{Czech University of Life Sciences Prague, Faculty of Environmental Sciences, Department of Water Resources and Environmental Modeling}
 
@@ -419,7 +420,8 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 Since the infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and since it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}, we are aware of a possible impact of spatial and temporal discretization on the identified SHP values. But we are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHPs values within the ranges given in table~\ref{rozsahy} during the automatic calibration, as discussed in~\cite{beven2003-uncertain}.
 And thus the following methodology for the automatic calibration was proposed here.
 
-\begin{enumerate}[label=({\bf \roman*})]
+
+\todo{Check if this is understandable} \begin{enumerate}[label=({\bf \roman*})]
 \item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs, and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}^{r_f}_{max}$, and the minimal values are defined as a vector $\vec{p}^{r_f}_{min}$. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
 Let us assume that this discretization is given by a mesh density function ${\Delta}(\vec{x})^{r_f}$. The function $\Delta(\vec{x})^{r_f}$ is understood as a spatial distribution of mesh size density, which was used as an input for the mesh generator T3D~\citep{t3d}. The superscript $r_f$ defines the refinement level, where $r_f=0$ at this particular stage, and the vector $\vec{x}$ refers to spatial coordinates inside the domain $\Omega$.
 \item Let us pressume that this inverse model will have more than just a single solution, this is an assumption of multimodality, which is based on~\citep{beven2003-uncertain}. \begin{itemize} \item Then this calibration will generate vectors of SHPs values $\vec{p}^{i_e}_{r_f}$, where the superscript $i_e=\{1,...,n_e\}$, where $n_e$     denotes the number of  local extremes. \end{itemize} 
