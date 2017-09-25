@@ -26,6 +26,8 @@
 \usepackage{multirow}
 \usepackage{url}
 
+% \usepackage{jabbrv}
+
 \usepackage{blindtext}
 \usepackage{todonotes}
 
@@ -114,14 +116,14 @@ Over the last three decades the Richards equation became challenging topic for m
  However, it should be mentioned here that a few studies have reported a close correspondence between the retention curve parameters obtained from laboratory experiments and from the Richards equation based inverse model (see e.g.\citep{Ramos} or~\citep{Schwartz}).
 An identification of SHP parameters from transient infiltration experiment was a subject of numerous publications in past decades already, (see e.g. \citep{simunek-infiltr2shp, infiltr2shp, simunek2-infiltr2shp, XU201234, BAGARELLO201770,  hess-Younes-2017}.  \cite{simunek-infiltr2shp} already reported a close correspondence between the SHP parameters obtained from the inverse modeling of dynamic transient infiltration experiment with those obtained from steady-state laboratory experiment, where the uniqueness of the inverse model was preserved by coupling the dynamically changing pressure head, water content and even tracer concentration.
 
-The non-uniqueness of the Richards equation inverse model is already a very well-known issue, and has been described by a number of publications over the last decades see e.g.~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain}. However, we have not succeeded in our search for more recent contributions in this field. \cite{mous1993} defined criteria for model identifiability based on the sensitivity matrix rank, however numerical computation of sensitivity matrix often involves difficulties in maintaining truncation and round-off errors.
+The non-uniqueness of the Richards equation inverse model is already a very well-known issue, and has been described by a number of publications over the last decades see e.g.~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain}. \todo{must be checked!!}\textbf{However, we have not succeeded in our search for more recent contributions in this field.} \cite{mous1993} defined criteria for model identifiability based on the sensitivity matrix rank, however numerical computation of sensitivity matrix often involves difficulties in maintaining truncation and round-off errors.
 \cite{beven2003-uncertain} demonstrated on real world case study of Sherwood Sandstone Aquifer that many different SHP parameters of macroscopic media representing the layered  unsaturated zone provided acceptable simulations of the observed aquifer recharges. However, in this work 
 the non-unique definition with the unknown residual and saturated water content was considered.
 The definition of unique inverse function for identification of macroscopic media was treated in~\citep{zou200126}, where the recommended approach was to assemble the objective function from transient data of the capillary pressure and from the steady state water content data. Another issue is the equifinality in the mathematical model setup in terms of the initial and boundary condition data, this problem was studied by~\citep{klaus-hydrol}.
 
 And yet another challenging issue is the treatment of the nonlinear operator of the Richards equation. \cite{beven2003-uncertain} reported that during his Monte Carlo simulations on wide ranges of SHPs values 56\% of simulations were rejected, because of convergence problems. 
 Despite it wasn't mentioned in the paper explicitly, we can suggest that these convergence issues originated from the nonlinear operator treatment -- the outer iterations.
-It could be easily concluded, that if we use simple Picard method for the nonlinear operator, and we increase the iteration criterion, we will obtain less accurate solution but we will also require less iterations for the Picard method. If we further increase the criterion we will end up with semi-implicit solution, where the constitutive functions in the Richards equation are evaluated from the previous time level solution -- thus we will always need just a single outer iteration.
+It could be easily concluded, that if we use simple Picard method for the nonlinear operator, and we increase the iteration criterion, we will obtain less accurate solution but we will also need less iterations for the Picard method. If we further increase the criterion we will end up with semi-implicit solution, where the constitutive functions in the Richards equation are evaluated from the previous time level solution -- thus we will always need just a single outer iteration.
 
 
 
@@ -244,6 +246,7 @@ $>$ 60 weathered bedrock C & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
 
 
 \subsubsection{Obtaining unsteady infiltration data for the top soil inverse modeling}
+\label{krivka}
 
 The purpose of this section is to explain the methodology used for obtaining the data for the proposed inverse analyses. 
 
@@ -345,20 +348,20 @@ It is apparent that the wetting front originating from our infiltration experime
 \begin{lineq}
 \frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{free drainage}} \times [0,T).
 \end{lineq}
-is in a conflict with the initial condition (since $\vec{n} = \left(\begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces further computational costs. The reason for the extra computational costs is that the nonlinear equation solver iterates on the bottom boundary, which is in an ideal case out of the reach of the infiltration experiment, and naturaly there is no physical process taking place in the initial time levels. The computational process, that is produced on the bottom boundary in the initial time levels with such boundary setup, originates from the initial and boundary condition mismatch. 
+is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces further computational costs. The reason for the extra computational costs is that the nonlinear equation solver (in this case Picard method) together with the iterative linear equation solver (in this case preconditioned conjugate gradient method)  treats iteration increments for the bottom boundary, which is in an ideal case out of the reach of the infiltration experiment, and naturaly there is no physical process taking place in the initial time levels. The computational process, that is produced on the bottom boundary in the initial time levels with such boundary setup, originates from the initial and boundary condition mismatch. 
 
 It turns out that the only physically correct boundary condition for the bottom boundary is the Dirichlet boundary, which represents the groundwater table. The average depth of the groundwater table was known, it is approximately -280~cm below the surface. However, with this particular setup the domain became extremely narrow and deep. However, since the solution at greater depths
 is not crucial for estimating the cumulative infiltration we can use coarser  discretization there. Further, if we apply the   adaptive domain decomposition algorithm ($dd$-adaptivity), see~\citep{mojecomp, mojejcam2, mojeamc2},  the non-active parts of the computational domain are sequentially activated and deactivated, and then our current domain extension does not have a significant effect on the computational speed, but our domain  description is consistent with the real physical porous medium system.
 
 %^konec pred obedem
 
-The left hand side domain boundary should be located at a sufficient distance from the axis of anisotropy, because of the term $\frac{1}{r}$ in \eqref{convect}. The Peclet number representing the numerical stability of convection-diffusion problems (see e.g. \citep{Knobloch2008}) is in our case given as follows
+Another issue is the left hand side domain boundary, which should be located at a sufficient distance from the axis of anisotropy, because of the term $\frac{1}{r}$ in \eqref{convect}. The Peclet number representing the numerical stability of convection-diffusion problems (see e.g. \citep{Knobloch2008}) is in our case given as follows
 \begin{lineq}
 Pe = \frac{\frac{\partial h}{\partial r} \Delta x}{2r},
 \end{lineq}
 where $\Delta x$ is the discretization length [$L$]. Since our mesh is triangular,  $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of anisotropy is such that the Peclet number is sufficiently low. If we want to make our computation free of spurious oscillations, a sufficiently low Peclet number means $Pe\le 1$. Therefore, the distance from the axis of anisotropy is given by the domain discretization step at the left hand side boundary.  The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore detached by 2~cm from the axis of anisotropy (assuming that $\frac{\partial h}{\partial r} (r,z) < 1, \; \forall (r,z) \in \Omega_{outer}$).
 
-In order to avoid the non-Lipschitz boundary (or any boundary with a shape that is close to the non-Lipschitz boundary) the infiltration ring thickness was oversized  for 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring  thickness yields possible numerical issues, since then the domain has the appearance of a textbook case of  a non-Lipschitz bounded domain, see e.g.~\citep{fem}.  However, it is also expected, that oversizing the ring thickness does not significantly affect the solution at the top Dirichlet boundary. 
+In order to avoid the non-Lipschitz boundary (or any boundary with a shape that is close to the non-Lipschitz boundary) the infiltration ring thickness was oversized  for 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring  thickness yields possible numerical issues, since then the domain has the appearance of a textbook case of  a non-Lipschitz bounded domain, \todo{I will add some reference here} {see e.g.~\citep{fem}}.  However, it is also expected, that oversizing the ring thickness does not significantly affect the solution at the top Dirichlet boundary. 
 
 The right hand side boundary was located at a distance $r=73$~cm, it means 50~cm from the infiltration ring. 
 
@@ -381,7 +384,7 @@ h(x,t) &= 0  \; \mbox{cm}  \; \Rightarrow \; H(x,t) = -280.0  \; \mbox{cm}; \qua
 \end{lineq}
 where $T$ is the simulation end time [$T$], and $\vec{n}$ is the boundary normal vector.
 
-The initial condition was assumed as a steady state solution  of \eqref{richaxi}  before the infiltration experiment, if the boundary $\Gamma_1 \cup \Gamma_2$ was a no-flow boundary -- thus the entire domain $\Omega$ was considered in a hydrostatic state.  Then the initial condition states that 
+The initial condition was assumed as a steady state  solution  of \eqref{richaxi} with the boundary $\Gamma_1 \cup \Gamma_2$ assumed as a no-flow boundary -- thus the entire domain $\Omega$ was considered in a hydrostatic state.  Then the initial condition states that 
 \begin{lineq}
 H(x) = -280.0 \; \mbox{cm}; \quad \forall x \in \Omega,
 \end{lineq}
@@ -403,15 +406,15 @@ Equation~\eqref{richaxi} was implemented into DRUtES library~\citep{drutes}. Thi
 \label{matice}
 \mathbf{A}(\vec{x}_l^k) \vec{x}_l^{k+1} = \vec{b}(\vec{x}_l^k),
 \end{lineq}
-where $k$ denotes the iteration level, and $l$ denotes the time level, until \begin{lineq} \label{picard} ||\vec{x}_l^{k+1} - \vec{x}_l^k||_2 < \varepsilon , \end{lineq} where $\varepsilon$ is the desired iteration criterion.
+where $k$ denotes the iteration level, and $l$ denotes the time level, until \begin{lineq} \label{picard} ||\vec{x}_l^{k+1} - \vec{x}_l^k||_2 < \varepsilon , \end{lineq} where $\varepsilon$ is the desired iteration criterion. The iterations required for~\eqref{matice} to converge are denoted as the outer iterations. It is apparent that the number of the required outer iterations depends on the required value of  $\varepsilon$ criterion. 
 
-If we accept any arbitrary value of $\varepsilon$, the nonlinear problem is then treated as 
+
+The method~\eqref{matice} degenerates into a kind of semiexplicit approximation if the error criterion $\varepsilon$ was taken from the extended real numbers, $\varepsilon \in {\overline {\mathbb {R} }}$, and assigned as $\varepsilon = + \infty$. This semiexplicit approximation is denoted as
 \begin{lineq}
 \label{matice2}
-\mathbf{A}(\vec{x}_{l-1}) \vec{x}_l = \vec{b}(\vec{x}_{l-1}),
+\mathbf{A}(\vec{x}_{l-1}) \vec{x}_l = \vec{b}(\vec{x}_{l-1}).
 \end{lineq}
- which is a kind of semiexplicit approximation  
-of~\eqref{richaxi}. The method~\eqref{matice} degenerates into~\eqref{matice2} if the error criterion $\varepsilon$ was taken from the extended real numbers, $\varepsilon \in {\overline {\mathbb {R} }}$, and assigned as $\varepsilon = + \infty$. It is apparent that for short time stepping the method converges to the exact solution. But for the inappropriate time stepping, the method is less accurate, but is also free of possible issues related to the convergence of the nonlinear operator.
+ This semiexplicit method always requires just a single outer iteration. It is apparent that for short time stepping the method converges to the exact solution. But for the inappropriate time stepping, the method diverge from the exact solution faster than the method~\eqref{matice}. However, the method~\eqref{matice2} is still free of possible issues related to the convergence of the nonlinear operator.
 
 Since the infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and since it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}, we are aware of a possible impact of spatial and temporal discretization on the identified SHP values. But we are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHPs values within the ranges given in table~\ref{rozsahy} during the automatic calibration, as discussed in~\cite{beven2003-uncertain}.
 And thus the following methodology for the automatic calibration was proposed here.
@@ -420,16 +423,18 @@ And thus the following methodology for the automatic calibration was proposed he
 \item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs, and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}^{r_f}_{max}$, and the minimal values are defined as a vector $\vec{p}^{r_f}_{min}$. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
 Let us assume that this discretization is given by a mesh density function ${\Delta}(\vec{x})^{r_f}$. The function $\Delta(\vec{x})^{r_f}$ is understood as a spatial distribution of mesh size density, which was used as an input for the mesh generator T3D~\citep{t3d}. The superscript $r_f$ defines the refinement level, where $r_f=0$ at this particular stage, and the vector $\vec{x}$ refers to spatial coordinates inside the domain $\Omega$.
 \item Let us pressume that this inverse model will have more than just a single solution, this is an assumption of multimodality, which is based on~\citep{beven2003-uncertain}. \begin{itemize} \item Then this calibration will generate vectors of SHPs values $\vec{p}^{i_e}_{r_f}$, where the superscript $i_e=\{1,...,n_e\}$, where $n_e$     denotes the number of  local extremes. \end{itemize} 
-\item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in its neighborhood  with improved temporal integration and spatial discretization. Increase the discretization level \begin{lineq} r_f=r_f+1.\end{lineq} Then the following updates will apply
+\item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in the local extreme  neighborhood  with improved temporal integration and spatial discretization. The improvement of the numerical treatment will be processed as follows:
+
+Increase the discretization level \begin{lineq} r_f=r_f+1,\end{lineq} and update the following parameters of the numerical treatment
 \begin{lineq}
 \label{coeffs}
 \begin{split}
 \Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2}, \\
-\varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \forall r_f > 0, \\
-t_{init}^{r_f} &=  10^{-8} \; \mbox{hrs} \quad  \forall r_f > 0.
+\varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 0, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
+t_{init}^{r_f} &=  \frac{t_{init}^{r_f-1}}{10} \; \mbox{hrs} .
 \end{split}
 \end{lineq}
-If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will be solved by Schwarz-Picard method -- an adaptive domain decomposition~\citep{mojeamc2}. To validate the inverse model solution for $r_f-1$ discretization level perform the following:
+If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will be solved by the Schwarz-Picard method -- an adaptive domain decomposition~\citep{mojeamc2}. To validate the inverse model solution for $r_f-1$ discretization level perform the following:
   \begin{enumerate}
     \item \label{val} Compare the scatter 
    plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
@@ -539,101 +544,103 @@ The main setting of the optimization procedure was as follows: the population of
 
 
 \section{Results and discussion} %[michal, lukas]
-The first step in parameter identification should always be the sensitivity analyses in order to evaluate the sensitivity of the given objective functions~\eqref{objektiva1} -- \eqref{objektiva3} for the searched parameter set. The sensitivity analyses was conducted for the given SHPs ranges (see table \ref{rozsahy}). In total 10.000 samples of the objective function \eqref{objektiva1} ($L_2$ norm of the model error) were evaluated, in order to obtain the  Total Sobol Index for each parameter, see e.g.~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters.
 
-\begin{table}[ht]
-\begin{center}
-\caption{Total Sobol indices for the searched SHPs parameters.}
-\begin{small}
-\doublespacing
-\begin{tabular}{l||c c c c c}
-\toprule
-% Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
-parameter & $\alpha$ & $n$ & $K_s$ & $\theta_s$ & $S_s$ \\ \hline
-\toprule
-Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
-\toprule
-\end{tabular}
-\end{small}
-\label{citlivost}
-\end{center}
-\end{table}
 
-As stated in the section~\ref{trapoty} SHPs parameters were initially searched in the wide intervals defined in table~\ref{rozsahy} with the less accurate numerical technique~\eqref{matice2}. Since the proposed parameter search algorithm handles an ability for identification of  local extremes we could perform a test of multimodality. 
-There were in total 33 points on Pareto front identified. The identified Pareto front was non-convex. 
-There were in total 8 local extremes  with different fitting qualities identified on the non-convex Pareto front -- see table~\ref{shp-vysledky} for particular SHPs values and the following fitting quality descriptors -- namely the coefficient of determination, the intercept, and the slope, see table~\ref{shp-vysledky}. It is well known, see e.g. \citep{r2andslope}, that only the accoplishable values of the coefficient of determination does not guarantee good fitting qualities.
-
-\begin{table}[ht]
-\begin{center}
-\caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
-\begin{small}
-\doublespacing
-\begin{tabular}{l || c c c c c || c c c }
-\toprule
-no. & $\alpha$ [m$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [m.s$^{-1}$] & $S_s$  [m$^{-1}$] & $R^2$ & intercept & slope\\ \hline \hline
-{\bf 1} & \num{2.447e-2} &  2.45 & 0.25 & \num{.00000006944444444444} & 0.419  & 0.9914  & 1.9395 & 0.6891  \\ \hline
-{\bf 2} & 0.101 & 1.6517 &  0.271 & \num{.00000303333333333333} &  \num{2.879e-2} & 0.9989 & -0.6895 & 0.9861 \\ \hline
-{\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{.00000361666666666666} & \num{1.845e-2} & 0.9955 & 1.9215 & 0.9278 \\ \hline
-{\bf 4} & 0.157 & 1.968 & 0.720 & \num{.00000557407407407407} & \num{1.053e-3} & 0.9966 & 0.9539 & 0.9607 \\ \hline
-{\bf 5} & 0.150 & 1.586 & 0.720 &  \num{.00000303611111111111} &  \num{7.641e-3} & 0.9985 & 0.0025 & 0.9973 \\ \hline
-{\bf 6} & 0.258 & 2.152  & 0.401 &  \num{.00000304250000000000} & 0 & 0.9980 & -0.0320 & 0.9958 \\ \hline
-{\bf 7} & 0.380 & 1.279 & 0.594 &  \num{.00000323333333333333} & 0 & 0.9996 & 0.2000 & 0.9884 \\ \hline
-{\bf 8} & 0.255 & 1.384 & 0.254 &  \num{.00000310833333333333} &  \num{1.922e-2} & 0.9995 & 0.1520 & 0.9919 \\
-\toprule
-\end{tabular}
-\end{small}
-\label{shp-vysledky}
-\end{center}
-\end{table}
-
-The local extremes 5-8 have acceptable fitting qualities -- see figure~\ref{obrazky}, however the identified retention curve parameters are highly distuingshed -- see figure~\ref{ret-krivky}.
-
-Apart the local extreme no. 1 all solutions have more or less good fitting qualities, and the local extremes 5,6,7,8 have even excellent fitting qualities.  As given in table~\ref{shp-vysledky} we are able to assign to our infiltration experiment different porous media with distinguished properties -- especially the saturated water content $\theta_s$ -- exactly as expected in~\cite{beven2003-uncertain}. This non-uniqueness in our inverse analyses can be resolved by selecting the local extremes with physically appropriate SHPs values. The highlighted local extreme  no. 7 has physically expectable values of SHPs, and, surprisingly, also the best value of the coefficient of determination. However, the best value of the determination coefficient together with the physically acceptable values of SHPs parameters is rather a coincidence here. The plot of this fit is depicted in  figure~\ref{fits} -- left.
-
-\begin{figure}
-  \hfill
-  \begin{minipage}[t]{.45\textwidth}
-    \begin{center}  
-\rotatebox{-90}{
-  \includegraphics[height=7.cm]{good-fit.eps}}
-\end{center}
-\end{minipage} 
-\begin{minipage}[t]{.45\textwidth}
- \begin{center} 
-\rotatebox{-90}{
-\includegraphics[height=7.cm]{bad-fit.eps}}
-\end{center}
-\end{minipage}
-\caption{Left: The best model fit obtained for the less precise numerical treatment -- \eqref{matice2}, $R^2= 0.9994$, local extrem no. 7, Right: Model validation for the improved numerical treatment -- \eqref{matice}, $R^2= 0.9869$. }
-\label{fits}       % Give a unique label
-\end{figure}
-
-In the next stage the previously identified SHPs set for the local extreme no. 7  was validated with the improved treatment of the nonlinear operator -- see equation~\eqref{matice}. The nonlinear system was linearized by simple Picard method, the stopping criterion $\varepsilon$ (see~\eqref{picard}) was equal to 10$^{-4}$~cm. As expected the improved numerical treatment affected the previously identified solution and the reevaluated coefficient of determination was $R^2=0.9869$. The plot of this solution is depicted in figure~\ref{fits} -- right.
-
-Despite the fact the validated model fit still preserved reasonable fitting qualities, the inverse analyses was re-evaluated for SHPs ranges given in step 3. The updated SHP parameter set states as follows
-\begin{itemize}
-\item  $\alpha= 0.329$~m$^{-1}$, $n=$            1.31385 [-],  $\theta_s=$  0.593 [-], $S_s$ = 0.0~m$^{-1}$, $K_s$ = \num{.00000304622222222222}~m.s$^{-1}$.
-\end{itemize}
-The updated coefficient of determination was $R^2=0.9985$. In order to eliminate the effect of spatial discretization, the model with a proper non-linear operator treatment was validated with refined spatial discretization -- exactly as defined in stage no. 4 in the calibration methodology. The finally updated coefficient of determination did not significantly differed from the previous one, and thus the original spatial discretization was probably accurate enough for our inverse analyses.
-
-The updated SHPs parameter set with the proper non-linear operator strategy  -- \eqref{matice} (calibration methodology no. 3)  did not significantly differ from the SHPs obtained with the less precise nonlinear operator treatment -- \eqref{matice2}. And thus this simple but  stable treatment  of the Richards equation operator provided a good estimate for the searched SHPs parameter set.
+% The first step in parameter identification should always be the sensitivity analyses in order to evaluate the sensitivity of the given objective functions~\eqref{objektiva1} -- \eqref{objektiva3} for the searched parameter set. The sensitivity analyses was conducted for the given SHPs ranges (see table \ref{rozsahy}). In total 10.000 samples of the objective function \eqref{objektiva1} ($L_2$ norm of the model error) were evaluated, in order to obtain the  Total Sobol Index for each parameter, see e.g.~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters.
+% 
+% \begin{table}[ht]
+% \begin{center}
+% \caption{Total Sobol indices for the searched SHPs parameters.}
+% \begin{small}
+% \doublespacing
+% \begin{tabular}{l||c c c c c}
+% \toprule
+% % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
+% parameter & $\alpha$ & $n$ & $K_s$ & $\theta_s$ & $S_s$ \\ \hline
+% \toprule
+% Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
+% \toprule
+% \end{tabular}
+% \end{small}
+% \label{citlivost}
+% \end{center}
+% \end{table}
+% 
+% As stated in the section~\ref{trapoty} SHPs parameters were initially searched in the wide intervals defined in table~\ref{rozsahy} with the less accurate numerical technique~\eqref{matice2}. Since the proposed parameter search algorithm handles an ability for identification of  local extremes we could perform a test of multimodality. 
+% There were in total 33 points on Pareto front identified. The identified Pareto front was non-convex. 
+% There were in total 8 local extremes  with different fitting qualities identified on the non-convex Pareto front -- see table~\ref{shp-vysledky} for particular SHPs values and the following fitting quality descriptors -- namely the coefficient of determination, the intercept, and the slope, see table~\ref{shp-vysledky}. It is well known, see e.g. \citep{r2andslope}, that only the accoplishable values of the coefficient of determination does not guarantee good fitting qualities.
+% 
+% \begin{table}[ht]
+% \begin{center}
+% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+% \begin{small}
+% \doublespacing
+% \begin{tabular}{l || c c c c c || c c c }
+% \toprule
+% no. & $\alpha$ [m$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [m.s$^{-1}$] & $S_s$  [m$^{-1}$] & $R^2$ & intercept & slope\\ \hline \hline
+% {\bf 1} & \num{2.447e-2} &  2.45 & 0.25 & \num{.00000006944444444444} & 0.419  & 0.9914  & 1.9395 & 0.6891  \\ \hline
+% {\bf 2} & 0.101 & 1.6517 &  0.271 & \num{.00000303333333333333} &  \num{2.879e-2} & 0.9989 & -0.6895 & 0.9861 \\ \hline
+% {\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{.00000361666666666666} & \num{1.845e-2} & 0.9955 & 1.9215 & 0.9278 \\ \hline
+% {\bf 4} & 0.157 & 1.968 & 0.720 & \num{.00000557407407407407} & \num{1.053e-3} & 0.9966 & 0.9539 & 0.9607 \\ \hline
+% {\bf 5} & 0.150 & 1.586 & 0.720 &  \num{.00000303611111111111} &  \num{7.641e-3} & 0.9985 & 0.0025 & 0.9973 \\ \hline
+% {\bf 6} & 0.258 & 2.152  & 0.401 &  \num{.00000304250000000000} & 0 & 0.9980 & -0.0320 & 0.9958 \\ \hline
+% {\bf 7} & 0.380 & 1.279 & 0.594 &  \num{.00000323333333333333} & 0 & 0.9996 & 0.2000 & 0.9884 \\ \hline
+% {\bf 8} & 0.255 & 1.384 & 0.254 &  \num{.00000310833333333333} &  \num{1.922e-2} & 0.9995 & 0.1520 & 0.9919 \\
+% \toprule
+% \end{tabular}
+% \end{small}
+% \label{shp-vysledky}
+% \end{center}
+% \end{table}
+% 
+% The local extremes 5-8 have acceptable fitting qualities -- see figure~\ref{obrazky}, however the identified retention curve parameters are highly distuingshed -- see figure~\ref{ret-krivky}.
+% 
+% Apart the local extreme no. 1 all solutions have more or less good fitting qualities, and the local extremes 5,6,7,8 have even excellent fitting qualities.  As given in table~\ref{shp-vysledky} we are able to assign to our infiltration experiment different porous media with distinguished properties -- especially the saturated water content $\theta_s$ -- exactly as expected in~\cite{beven2003-uncertain}. This non-uniqueness in our inverse analyses can be resolved by selecting the local extremes with physically appropriate SHPs values. The highlighted local extreme  no. 7 has physically expectable values of SHPs, and, surprisingly, also the best value of the coefficient of determination. However, the best value of the determination coefficient together with the physically acceptable values of SHPs parameters is rather a coincidence here. The plot of this fit is depicted in  figure~\ref{fits} -- left.
+% 
+% \begin{figure}
+%   \hfill
+%   \begin{minipage}[t]{.45\textwidth}
+%     \begin{center}  
+% \rotatebox{-90}{
+%   \includegraphics[height=7.cm]{good-fit.eps}}
+% \end{center}
+% \end{minipage} 
+% \begin{minipage}[t]{.45\textwidth}
+%  \begin{center} 
+% \rotatebox{-90}{
+% \includegraphics[height=7.cm]{bad-fit.eps}}
+% \end{center}
+% \end{minipage}
+% \caption{Left: The best model fit obtained for the less precise numerical treatment -- \eqref{matice2}, $R^2= 0.9994$, local extrem no. 7, Right: Model validation for the improved numerical treatment -- \eqref{matice}, $R^2= 0.9869$. }
+% \label{fits}       % Give a unique label
+% \end{figure}
+% 
+% In the next stage the previously identified SHPs set for the local extreme no. 7  was validated with the improved treatment of the nonlinear operator -- see equation~\eqref{matice}. The nonlinear system was linearized by simple Picard method, the stopping criterion $\varepsilon$ (see~\eqref{picard}) was equal to 10$^{-4}$~cm. As expected the improved numerical treatment affected the previously identified solution and the reevaluated coefficient of determination was $R^2=0.9869$. The plot of this solution is depicted in figure~\ref{fits} -- right.
+% 
+% Despite the fact the validated model fit still preserved reasonable fitting qualities, the inverse analyses was re-evaluated for SHPs ranges given in step 3. The updated SHP parameter set states as follows
+% \begin{itemize}
+% \item  $\alpha= 0.329$~m$^{-1}$, $n=$            1.31385 [-],  $\theta_s=$  0.593 [-], $S_s$ = 0.0~m$^{-1}$, $K_s$ = \num{.00000304622222222222}~m.s$^{-1}$.
+% \end{itemize}
+% The updated coefficient of determination was $R^2=0.9985$. In order to eliminate the effect of spatial discretization, the model with a proper non-linear operator treatment was validated with refined spatial discretization -- exactly as defined in stage no. 4 in the calibration methodology. The finally updated coefficient of determination did not significantly differed from the previous one, and thus the original spatial discretization was probably accurate enough for our inverse analyses.
+% 
+% The updated SHPs parameter set with the proper non-linear operator strategy  -- \eqref{matice} (calibration methodology no. 3)  did not significantly differ from the SHPs obtained with the less precise nonlinear operator treatment -- \eqref{matice2}. And thus this simple but  stable treatment  of the Richards equation operator provided a good estimate for the searched SHPs parameter set.
 
 \section{Conclusions} %[michal, lukas]
 
-This paper has presented an evaluation of the soil hydraulic parameters (SHP) of a mountainous podzolic soil profile. The SHP values for the lower horizons were identified on the basis of standard methods -- a single ring (SR) infiltration experiment and a Guelph permeameter (GP). The SHPs values for the top soil layer were identified on the basis of an inverse analysis of the development of the SR experiment in time. The main objective of this paper was to present an inverse analysis of the topsoil layer.  Since the SR experiment is an inherently three-dimensional process, where the streamlines within the infiltration ring are parallel, but outside the infiltration ring the streamlines are rather axisymmetric. The governing equation for the mathematical concept has been presented here. Since the convective term in the governing equation for axisymmetric flow incorporates the inverse of the distance from the center of the axisymmetric coordinates, which is the center of the infiltration ring, it was necessary to pay attention to an issue related to convective dominance.
-
-The issue of the initial and boundary condition setup has also been discussed here. It was found  that the only physically correct  initial and boundary conditions setup for our  case requires the groundwater table as the bottom boundary condition, despite the fact that it is apparent that the infiltration process cannot interfere with the soil profile so deep below the surface.  We made use here of the adaptive domain decomposition method ($dd$-adaptivity), which enables the computational domain to be split into active and non-active parts. Thus the selected domain extension did not significantly affect the computational speed -- this method has been developed and implemented into DRUtES opensource project~\citep{drutes}.
-
-The equifinality -- non-uniqueness --  of this Richards equation based inverse model was tested. We have found several solutions with distinguished parameter setup, but with excellent fitting qualities. This observation is not so surprising,  since we can take into consideration, that the experimental data can be well interpreted with three-parametric Schwarzendruber equation, and the Richards equation is four or five parametric equation (depending whether we use non-zero specific storage or not). In order to resolve this non-uniqueness, only the parameter set with the physically appropriate values was selected. Coincidentally, it was also the parameter set with the best value of the coefficient of determination -- the global extreme -- however the local extremes with highly distinguished SHPs values exhibited very similar fitting qualities as the global extreme, so we cannot simply conclude, that global extreme has always the best physical interpretation of the inverse model. It turns out that it is useful to inspect local extremes as well, which is, unfortunately,  often non-trivial.
-
-
-
-% Since the numerical solution of the governing equation is strongly affected by discretization in time and space, the parameters were identified on  nine models with different spatial and temporal discretization.
-% The minimum of the objective function was searched using a  stochastic method -- differential evolution -- implemented by~\citep{Mullen11} in R~project~\citep{Rstudio}.
+% This paper has presented an evaluation of the soil hydraulic parameters (SHP) of a mountainous podzolic soil profile. The SHP values for the lower horizons were identified on the basis of standard methods -- a single ring (SR) infiltration experiment and a Guelph permeameter (GP). The SHPs values for the top soil layer were identified on the basis of an inverse analysis of the development of the SR experiment in time. The main objective of this paper was to present an inverse analysis of the topsoil layer.  Since the SR experiment is an inherently three-dimensional process, where the streamlines within the infiltration ring are parallel, but outside the infiltration ring the streamlines are rather axisymmetric. The governing equation for the mathematical concept has been presented here. Since the convective term in the governing equation for axisymmetric flow incorporates the inverse of the distance from the center of the axisymmetric coordinates, which is the center of the infiltration ring, it was necessary to pay attention to an issue related to convective dominance.
 % 
-% It was observed that the identified  saturated hydraulic conductivity, together with the specific storage, were not so sensitive to different spatial and temporal discretization. However, the parameters of the retention curve $\alpha$ and $n$ were highly sensitive to spatial discretization. The saturated water content exhibited very low correlation with the objective function. The values identified with our stochastic method were more likely just random numbers.  This inverse analysis was therefore completely inappropriate for a search for this parameter. Surprisingly, the saturated hydraulic conductivity of the top-soil layer also exhibited very low sensitivity. However, unlike the saturated water content values, the identified saturated hydraulic conductivity values for all nine experiments were very similar,  and provided a physically reasonable value. 
-
-Finally, it could be concluded, that our model was in a good agreement with the experimental data, and the identified representative soil profile can be used e.g. as an input for a deterministic catchment runoff model.
+% The issue of the initial and boundary condition setup has also been discussed here. It was found  that the only physically correct  initial and boundary conditions setup for our  case requires the groundwater table as the bottom boundary condition, despite the fact that it is apparent that the infiltration process cannot interfere with the soil profile so deep below the surface.  We made use here of the adaptive domain decomposition method ($dd$-adaptivity), which enables the computational domain to be split into active and non-active parts. Thus the selected domain extension did not significantly affect the computational speed -- this method has been developed and implemented into DRUtES opensource project~\citep{drutes}.
+% 
+% The equifinality -- non-uniqueness --  of this Richards equation based inverse model was tested. We have found several solutions with distinguished parameter setup, but with excellent fitting qualities. This observation is not so surprising,  since we can take into consideration, that the experimental data can be well interpreted with three-parametric Schwarzendruber equation, and the Richards equation is four or five parametric equation (depending whether we use non-zero specific storage or not). In order to resolve this non-uniqueness, only the parameter set with the physically appropriate values was selected. Coincidentally, it was also the parameter set with the best value of the coefficient of determination -- the global extreme -- however the local extremes with highly distinguished SHPs values exhibited very similar fitting qualities as the global extreme, so we cannot simply conclude, that global extreme has always the best physical interpretation of the inverse model. It turns out that it is useful to inspect local extremes as well, which is, unfortunately,  often non-trivial.
+% 
+% 
+% 
+% % Since the numerical solution of the governing equation is strongly affected by discretization in time and space, the parameters were identified on  nine models with different spatial and temporal discretization.
+% % The minimum of the objective function was searched using a  stochastic method -- differential evolution -- implemented by~\citep{Mullen11} in R~project~\citep{Rstudio}.
+% % 
+% % It was observed that the identified  saturated hydraulic conductivity, together with the specific storage, were not so sensitive to different spatial and temporal discretization. However, the parameters of the retention curve $\alpha$ and $n$ were highly sensitive to spatial discretization. The saturated water content exhibited very low correlation with the objective function. The values identified with our stochastic method were more likely just random numbers.  This inverse analysis was therefore completely inappropriate for a search for this parameter. Surprisingly, the saturated hydraulic conductivity of the top-soil layer also exhibited very low sensitivity. However, unlike the saturated water content values, the identified saturated hydraulic conductivity values for all nine experiments were very similar,  and provided a physically reasonable value. 
+% 
+% Finally, it could be concluded, that our model was in a good agreement with the experimental data, and the identified representative soil profile can be used e.g. as an input for a deterministic catchment runoff model.
 
 \section{Acknowledgement}
 
