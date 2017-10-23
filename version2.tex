@@ -63,7 +63,7 @@
 
 \begin{frontmatter}
 
-\title{Issues in the inverse modeling of a soil infiltration process}
+\title{Issues in the inverse modeling of a single ring infiltration experiment}
 
 \author[autor1]{Michal Kuraz}
 
@@ -78,9 +78,16 @@
 \address[autor2]{Czech Technical University in Prague, Faculty of Civil Engineering, Department of Mechanics}
 
 \begin{abstract}
-This contribution addresses issues in evaluation of the soil hydraulic parameters (SHP) from the Richards equation based inverse model. The inverse model was representing single ring infiltration experiment on mountainous podzolic soil profile, and was searching for the SHP parameters of the top soil layer. Since the thickness of the top soil layer is often much lower than the depth required to embed the single ring or Guelph permeameter device, the SHPs for the top soil layer are very difficult to measure directly. The SHPs for the top soil layer were therefore identified here by inverse modeling of the single ring infiltration process, where, especially, the initial unsteady part of the experiment is expected to provide very useful data for evaluating the retention curve parameters (excluding the residual water content) and the saturated hydraulic conductivity. 
+This contribution addresses issues in identification of the soil hydraulic properties (SHP) obtained from inverse modeling of a single ring (SR) infiltration experiment. 
+The SR experimental  data  were obtained from series of in situ experiments conducted on a mountainous podzolic soil profile. 
+The main purpose of this inverse model was to evaluate the SHP of the top soil layer described here by the van Genuchten's (VG) parameters, and to answer the question whether the well-known SR experiment is robust enough to provide an estimate of these properties.
 
-The main issue, which is addressed in this contribution, is the uniqueness of the Richards equation inverse model. We tried to answer the question whether is it possible to characterize the unsteady infiltration experiment with a unique set of SHPs values, and whether are all SHP parameters vulnerable with the non-uniqueness. Which is an important issue, since we could further conclude whether the popular gradient methods are appropriate here. Further the issues in assigning the initial and boundary condition setup, the influence of spatial and temporal discretization on the values of the identified SHPs, and the convergence issues with the Richards equation nonlinear operator during automatic calibration procedure are also mentioned here.
+The top soil layer  SHP are very difficult to measure directly, since the thickness of the top soil layer is often much lower than the depth required to embed the SR or Guelph permeameter device or to obtain  undisturbed samples for further laboratory experiments.
+
+
+The main issue, which is addressed in this contribution, is the uniqueness of the Richards equation based inverse model with van Genuchten's constitutive function for the retention curve and Mualem's function for the unsaturated hydraulic conductivity. We tried to answer the question whether is it possible to characterize the unsteady part of the SR infiltration experiment with a unique set of parameters representing  SHP, and whether are all of these parameters vulnerable with the non-uniqueness. The sophisticated differential evolution based algorithm SADE~\cite{sade}, which stores all identified local optima into memory was used for this analyses.
+
+Further the issues in assigning the initial and boundary condition setup, the influence of spatial and temporal discretization on the values of the identified SHPs, and the convergence issues with the Richards equation nonlinear operator during automatic calibration procedure are also mentioned here.
 \end{abstract}
 
 \begin{keyword}
