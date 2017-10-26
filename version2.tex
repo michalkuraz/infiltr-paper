@@ -165,10 +165,11 @@ The aim of this paper is to answer these proposed issues. The inverse modeling p
 \label{metodo}
 
 
-This section is divided into two distinct parts. The first part, section~\ref{assamb}, is focused on assembling the experimental data, which were later used for the inverse modeling. In this section the site description, the reconstruction of the parameters of the SHPs for the lower profiles, and the processing of the experimental data is given.   This section also provides a complete definition of the SHPs parameters -- the solution of our inverse problem -- particularly in the paragraph~\ref{shp}.
+This section is divided into two distinct parts. The first part, section~\ref{assamb}, is focused on assembling the experimental data, which were later used for the inverse modeling. In this section the site description, the reconstruction of the parameters of the SHP for the lower profiles, and the processing of the experimental data is given.   
 
-The second part of the methodology, section~\ref{invproc}, covers the main topic of this paper --  issues in the Richards equation based inverse model. The governing equation is given together with  notes about the numerical stability of the convection dominant problems, since it is not always mentioned that diffusion type equation in cylindrical coordinates  contains a first order derivative term,  and so the numerical stability issues appear. A typical example of this vulnerable problem is the Richards equation or the groundwater flow equation for rotational symmetric problems, where the cylindrical coordinates enable reduction of the three-dimensional computational domain into a two-dimensional domain, which is a widely used approach.
-Further the issues in selecting an appropriate boundary conditions are discussed, since it is not always easy to find an agreement between the mathematical model setup and  physical interpretation. Finally, the most important part, the construction of the objective function, and the methodology of the automatic calibration is given in this section. 
+The second part of the methodology, section~\ref{invproc}, covers the main topic of this paper --  issues in the REVG inverse model. The governing equation is given together with  notes about the numerical stability of 
+REVG model for rotational symmetric problems.
+Issues in selecting an appropriate boundary conditions are discussed, since it is not always easy to find an agreement between the mathematical model setup and  physical interpretation. And finally, the most important part, the construction of the objective function, and the methodology of the automatic calibration is given in this section. 
 
 
 
@@ -184,73 +185,63 @@ A haplic podzol with distinct soil horizons is dominant on this site. The mean d
 \item organic horizon O and humus horizon Ah altogether (the top-soil) 7.5 cm, 
 \item eluvial bleached horizon E 12.5 cm, 
 \item spodic horizons Bhs and Bs 40 cm,
-\item highly conductive weathered bedrock C.
+\item weathered bedrock C.
 \end{itemize}
 The average groundwater table level can be roughly estimated at -280~cm below the surface. 
-Based on the soil texture analysis obtained from the hydrometer method; horizon E contains 1\% clay ($<2\mu$m), 20\% silt ($ 2\mu$m~--~0.05~mm), 79\% sand (0.05~--~2~mm), and 32\% gravel  ($>2$~mm); and the spodic horizons contain 7\% clay, 32\% silt, 61\% sand, and 30\% gravel. The bulk densities of the lower soil horizons are as follows:
-E 1.4~g.cm$^{-3}$; Bhs and Bs 1.3 g.cm$^{-3}$. The porosities of the lower horizons, estimated using the bulk density of the undisturbed soil samples and the mean density of the soil solid particles, are as follows: horizon E~46\%, spodic horizons Bhs and Bs 47\%. The porosities of the upper horizons (0 and Ah) were estimated only very roughly, due to  possible disturbance of the samples (particularly dense roots and vegetation cover, which caused difficulties in sampling), and due to shrinkage of the samples during the drying process. The bulk density was estimated as  0.4~g.cm$^{-3}$, and the porosity was estimated as 85\%. However the porosity of the upper horizon will be the subject of our parameter identification conducted here. 
+
+The soil texture for the horizons below the top-soil are given in the table~\ref{tab:soiltxt}.\todo{I don't get the percentage, I would probably remove even this table.} 
+
+ \begin{table}[ht]
+\begin{center}
+\caption{Soil texture for the lower horizons.}
+\begin{small}
+\doublespacing
+\begin{tabular}{c | c  c  c  c  c}
+\toprule
+horizon & clay ($<2\;\mu$m) & silt ($2\;\mu$m -- 0.05~mm) & sand (0.05 -- 2 mm) & gravel ($>$ 2 mm) & bulk density (g.cm$^{-3}$) \\ \hline
+E       & 1\%               & 20\%                        & 79\%                & 32\% & 1.4 \\ 
+Bhs + Bs &      ??          & ??                          & ??                  & ?? & 1.3 \\
+C        &      ??          & ??                          & ??                  & ?? & 1.3 \\
+\toprule
+\end{tabular}
+\end{small}
+\label{tab:soiltxt}
+\end{center}
+\end{table}
 
 
 
 
 
-
-
-
-In order to obtain data for identifying the hydraulic parameters of the top-soil, a total of 22 SR infiltration experiments were performed. The experimental sites in our catchment were  selected randomly. The minimal distance between infiltration sites was 1.5~m. All in situ experiments and sample collections were performed in August.
-
-\subsubsection{Soil hydraulic parameters}
-\label{shp}
-
-The soil hydraulic parameters (SHP) represent the hydrodynamic properties of porous media under variably saturated conditions.
-
-In this work, the SHPs are considered to be the following:
-
-\begin{itemize}
-\item Parameters representing the van Genuchten retention curve model~\citep{vangenuchten}, particularly $\alpha$~[$L^{-1}$]  and $n$~[-]. The van Genuchten parameter $m$ was considered as $m=1-\frac{1}{n}$. 
-\item Saturated water content $\theta_s$~[-]. Note that the residual water content $\theta_r$~[-] is neglected here, because together with the unknown saturated water content, the unknown residual water content can hardly lead to a unique solution of the inverse modeling. Unless we were able to conduct an accurate measurement of the water content during the experiment, which is often complicated. Especially, if we take into consideration, that it is much easier to measure the saturated water content after the experiment, than to measure the unsaturated water content and the pressure head during the experiment. However, as specified above, no exact saturated water content data of the top soil horizon were available.
-\item Saturated hydraulic conductivity $K_s$ [$L.T^{-1}$]. 
-\item Specific storage $S_s$~[$L^{-1}$] -- represents the linear elasticity of the porous medium. The specific storage in the unsaturated zone is often neglected. However, the effect of the elasticity of the top-soil during the infiltration experiment, which is typical with an abrupt development of hydraulic pressure, should also be included.
-\end{itemize}
-
-An evaluation of these parameters is the scope of this work. The focus will be given on the top soil layer, where this set of parameters will be identified  by  inverse analysis. The SHPs parameters of the lower layers will be obtained here using Guelph permeameter (GP) measurements and Rosetta pedotransfer functions~\citep{Schaap}.
 
 
 \subsubsection{Obtaining SHP parameters for lower horizons}
 \label{dolni}
 
-Guelph permeameter measurements (GP) were used for estimating the saturated hydraulic conductivity of the lower horizons. When evaluating horizon E, the measurements were performed in wells with depth ranging between 19~cm  and 26~cm. For the spodic horizon the depth of the measurement wells ranged between 30~cm  and 56~cm. The constant head GP method applied here is described in~\citep{Jacka1}.
-
-A total of 28 GP experiments were conducted to estimate the saturated hydraulic conductivity of the E horizon. 
- The representative saturated hydraulic conductivity for the E horizon was evaluated as 4.0$\times 10^{-6}$~m.s$^{-1}$.
+Guelph permeameter measurements (GP) were used for estimating the saturated hydraulic conductivity of the lower horizons.  The constant head GP method applied here is described in~\citep{Jacka1}.
+It is well known that pedotransfer functions work well for spodic and eluvial horizons characterized by high percentage of sand, without a distinct structure, and with a bulk density and porosity corresponding to a standard mineral soil. And thus parameters representing the retention curves for spodic horizons and eluvial horizon below the top-soil were estimated using the soil texture and the bulk density information with pedotransfer function implemented in Rosetta code~\citep{Schaap}.
 
 
-A total 19 GP experiments were conducted to estimate the saturated hydraulic conductivity of the spodic horizon. The estimated geometric mean value is: $K_s =  1.5\times 10^{-6}$~m.s$^{-1}$.
-
-The saturated hydraulic conductivity of the weathered
-bedrock C was obtained as the geometric mean  from 8 experiments performed using the GP method  in wells from 68 to 130 cm in depth. The estimated mean geometric value is: $K_s =  8.5\times 10^{-6}$~m.s$^{-1}$.
 
 %%%%%%%dat za lukasovi rovnice.
-Representative parameters of the retention curves (for the eluvial horizon below the top-soil, spodic horizons and weathered bedrock) were estimated using the soil texture and the bulk density information and a neural network prediction (a type of pedo-transfer function) of Rosetta code, see \citep{Schaap}. 
+ 
 
-It is well known that pedotransfer functions work well for spodic and eluvial horizons characterized by high percentage of sand, without a distinct structure, and with a bulk density and porosity corresponding to a standard mineral soil. And thus parameters representing the retention curves for spodic horizons and eluvial horizon below the top-soil were estimated using the soil texture and the bulk density information with pedotransfer function implemented in Rosetta code~\citep{Schaap}.
+
 %%%%%%%%%
 
-The estimated soil hydraulic parameters (SHP) for the lower horizons below the top soil are depicted in table~\ref{tab_SHP}.
+The estimated SHP for the lower horizons below the top soil are depicted in table~\ref{tab_SHP}.
 
 \begin{table}[ht]
 \begin{center}
 \caption{Soil hydraulic parameters for the lower horizons.}
 \begin{small}
 \doublespacing
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c | p{2cm}| c c c c c}
 \toprule
-Ranges of depths, horizon(s)&\multicolumn{4}{c}{SHPs}\\ \cline{2-6}
-[cm]&$\theta_s$ [-] & $\alpha$ [m$^{-1}$]& $n$ [-]& $K_s$ [ms$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
-% 0 - 7.5, top-soil (O nad Ah)&*from 0.6 to 0.9&*from 2 to 5&*from 1.05 to 1.9&*from 5$\times 10^{-7}$ to 1$\times 10^{-4}$\\
-7.5 - 20, eluvial E&0.46&4.65&1.7408&4.4$\times 10^{-6}$ & 0\\
-20 - 60 spodic Bhs and Bs&0.47&2.21&1.4494&1.5$\times 10^{-6}$ & 0\\
-$>$ 60 weathered bedrock C & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
+horizon &  GP experiment sites  & $\theta_s$ [-] & $\alpha$ [m$^{-1}$]& $n$ [-]& $K_s$ [ms$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
+E & 28 &  0.46&4.65&1.7408&4.4$\times 10^{-6}$ & 0\\
+Bhs + Bs & 19  &0.47&2.21&1.4494&1.5$\times 10^{-6}$ & 0\\
+C & 8 & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
 \toprule
 \end{tabular}
 \end{small}
@@ -274,8 +265,8 @@ The purpose of this section is to explain the methodology used for obtaining the
 \end{figure}
 
 
-For the O+Ah horizon, the smoothed experimental data for unsteady single ring (SR) infiltration were used as the input for inverse modeling of the Richards equation, where the entire parameter set, as given in section~\ref{shp}, was identified. 
-In brief, the experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil.  An average experiment duration was 60~minutes.
+For the O+Ah horizon, the smoothed experimental data for unsteady single ring (SR) infiltration were used as the input for inverse modeling of REVG.
+The experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil.  An average experiment duration was 60~minutes.
 
 
 
@@ -286,12 +277,12 @@ A total of 22 SR experiments were conducted on the site. Statistical description
 I(t)=\frac{c_0\left(1-\exp\left(-c_1\sqrt{t}\right)\right)}{c_1}+c_2t,
 \label{vyhlaz}
 \end{lineq}
-where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHPs. This physically based interpretation of the Schwarzendruber parameters is disregarded here, because our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as some exponential smoothing function only without any physically  based interpretation.
+where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Schwarzendruber parameters is disregarded here, because our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as some exponential smoothing function only without any physically  based interpretation.
 
 
-According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution. The geometric mean is therefore suitable for estimating representative values of these parameters. Representative values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 0.1132$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with  model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil hydraulic parameters (SHP). SHPs of the lower horizons were estimated from direct measurements, as will be described in the next section.
+According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution. The geometric mean is therefore suitable for estimating representative values of these parameters. Representative values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 0.1132$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with  model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil SHP. SHPs of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{dolni}.
 
-It is already apparent at this moment, that if the infiltration experiment can be so well approximated by the three parametric model~\eqref{vyhlaz}, then the five parametric SHPs representation potentially leads to overparametrization and makes the model non-identifiable, which is already a well known issue, see e.g.~\citep{bellman1970}.  
+It is already apparent at this moment, that if the infiltration experiment can be so well approximated by the three parametric model~\eqref{vyhlaz}, then the five parametric SHP representation potentially leads to overparametrization and makes the model non-identifiable \citep{bellman1970}.  
 
 
 
