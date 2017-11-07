@@ -284,15 +284,16 @@ The experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~
 
 
 
-A total of 22 SR experiments were conducted on the site. Statistical description of these infiltration data is given by~\citep{jacka-site}, see datasets collected on site 3. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Schwarzendruber analytical model of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient value estimated as 0.9974. Thus we made use of  exponential data smoothing here. The Schwarzendruber equation for cumulative infiltration  states that
+A total of 22 SR experiments were conducted on the site. Statistical description of these infiltration data is given by~\citep{jacka-site}, see datasets collected on site 3. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Schwarzendruber analytical model of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient  0.9974. Thus we made use of  exponential data smoothing. The Schwarzendruber equation for cumulative infiltration  states that
 \begin{lineq}
 I(t)=\frac{c_0\left(1-\exp\left(-c_1\sqrt{t}\right)\right)}{c_1}+c_2t,
 \label{vyhlaz}
 \end{lineq}
-where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Schwarzendruber parameters is disregarded here, because our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as some exponential smoothing function only without any physically  based interpretation.
+where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Schwarzendruber parameters is disregarded here, since our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as an exponential smoothing and extrapolating function only without any physically  based interpretation.
 
 
-According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution. The geometric mean is therefore suitable for estimating representative values of these parameters. Representative values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 0.1132$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with  model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil SHP. SHPs of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{dolni}.
+According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution.
+ The geometric mean is therefore suitable for estimating representative values of these parameters.\todo{does the log-normal distribution implies application of the goemetric mean?} Representative values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 0.113$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil SHP. SHPs of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{dolni}.
 
 It is already apparent at this moment, that if the infiltration experiment can be so well approximated by the three parametric model~\eqref{vyhlaz}, then the five parametric SHP representation potentially leads to overparametrization and makes the model non-identifiable \citep{bellman1970}.  
 
@@ -301,8 +302,7 @@ It is already apparent at this moment, that if the infiltration experiment can b
 
 
 
-\subsection{Inverse modeling procedures}
-\label{invproc}
+
 
 \subsection{Mathematical model of the field infiltration experiment -- governing equation}%[michal]
 \label{goveq}
@@ -338,10 +338,7 @@ c(\vec{x}) = \begin{cases}
 	     \frac{1}{r}K(h) , \quad &\forall \vec{x} \in \Omega_{outer}.
 	    \end{cases}
 \end{lineq}
-Note that  the flow boundary should not be identical with the axis of rotation symmetry ($r>0$). Moreover, using the standard finite element method approximation, $r$ should even be sufficiently greater than zero (depending on your mesh discretization) to prevent convective dominance (details explained in section~\ref{bccond}). The constitutive relation $\theta(h)$ was substituted by the van Genuchten law~\citep{vangenuchten}, and the constitutive relation $K(h)$ was supplied by the Mualem law~\citep{mualem}.
-
-
-
+Note that  we should avoid using the coordinates, where $r=0$.
 
 
 \subsubsection{Domain scheme, initial conditions and boundary conditions}%[michal]
@@ -355,28 +352,35 @@ Note that  the flow boundary should not be identical with the axis of rotation s
 \end{figure}
 
 The goal of the model was to achieve cumulative infiltration -- the cumulative flux over the top Dirichlet boundary.
-The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- it is the ground surface (inside the ring, it is the Dirichlet condition defining the ponding depth; outside the infiltration ring it is the Neumann condition -- the no-flow boundary). But locating the bottom boundary was more problematic. The following options are available
+The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- it is the ground surface. Inside the ring, it is the Dirichlet condition defining the ponding depth; outside the infiltration ring it is the Neumann condition -- the no-flow boundary. But locating the bottom boundary was more problematic. The following options are available
 \begin{itemize}
 \item the no-flow boundary (Neumann)
 \item the free drainage boundary (Neumann)
 \item the groundwater level - zero pressure head (Dirichlet)
 \end{itemize}
-It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would therefore probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the no-flow boundary is physically incorrect, so this option was rejected. The second option -- the free drainage boundary -- would be completely incorrect here. The free drainage boundary defines fluxes that probably do not appear in our system at all. Above all, if we consider here the initial condition  as a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
+It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would therefore probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth. The free drainage boundary defines fluxes that probably do not appear in our system at all. Above all, if we consider here the initial condition  as a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
 \begin{lineq}
-\frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{free drainage}} \times [0,T).
+\frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{\footnotesize free drainage}} \times [0,T).
 \end{lineq}
-is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces further computational costs. The reason for the extra computational costs is that the nonlinear equation solver (in this case Picard method) together with the iterative linear equation solver (in this case preconditioned conjugate gradient method)  treats iteration increments for the bottom boundary, which is in an ideal case out of the reach of the infiltration experiment, and naturaly there is no physical process taking place in the initial time levels. The computational process, that is produced on the bottom boundary in the initial time levels with such boundary setup, originates from the initial and boundary condition mismatch. 
+is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces further computational costs. The reason for the extra computational costs is that the nonlinear equation solver (in this case Picard method) together with the iterative linear equation solver (in this case preconditioned conjugate gradient method)  treats iteration increments for the bottom boundary, which is in an ideal case out of the reach of the infiltration experiment. The computational process, that is produced on the bottom boundary in the beginning of the simulation with such boundary setup, originates from the initial and boundary condition mismatch, and has no physical background.
 
-It turns out that the only physically correct boundary condition for the bottom boundary is the Dirichlet boundary, which represents the groundwater table. The average depth of the groundwater table was known, it is approximately -280~cm below the surface. However, with this particular setup the domain became extremely narrow and deep. However, since the solution at greater depths
-is not crucial for estimating the cumulative infiltration we can use coarser  discretization there. Further, if we apply the   adaptive domain decomposition algorithm ($dd$-adaptivity), see~\citep{mojecomp, mojejcam2, mojeamc2},  the non-active parts of the computational domain are sequentially activated and deactivated, and then our current domain extension does not have a significant effect on the computational speed, but our domain  description is consistent with the real physical porous medium system.
-
+It turns out that the only physically correct boundary condition for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. The average depth of the groundwater table was known, it is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
 %^konec pred obedem
 
-Another issue is the left hand side domain boundary, which should be located at a sufficient distance from the axis of anisotropy, because of the term $\frac{1}{r}$ in \eqref{convect}. The Peclet number representing the numerical stability of convection-diffusion problems (see e.g. \citep{Knobloch2008}) is in our case given as follows
+\subsection{Stability restrictions of convection dominant problems}
+
+
+The term \eqref{convect} is the first order derivative term, and so the well known stability restrictions for the numerical solutions of the convection-diffusion problems appear here~\cite{zienkiewicz1976}.
+The Peclet number representing the numerical stability of convection-diffusion problems is in general given by~\cite{knobloch2008}
 \begin{lineq}
-Pe = \frac{\frac{\partial h}{\partial r} \Delta x}{2r},
+\label{peclet-std}
+Pe = \frac{||\vec{q}|| \Delta x}{2 D},
 \end{lineq}
-where $\Delta x$ is the discretization length [$L$]. Since our mesh is triangular,  $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of anisotropy is such that the Peclet number is sufficiently low. If we want to make our computation free of spurious oscillations, a sufficiently low Peclet number means $Pe\le 1$. Therefore, the distance from the axis of anisotropy is given by the domain discretization step at the left hand side boundary.  The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore detached by 2~cm from the axis of anisotropy (assuming that $\frac{\partial h}{\partial r} (r,z) < 1, \; \forall (r,z) \in \Omega_{outer}$).
+where $||\vec{q}||$ is the convection vector length, $\Delta x$ is the discretization step, and $D$ is the diffusion (for isotropic setup). Based on the definitions given above the equation~\eqref{peclet-std} can be formulated as
+\begin{lineq}
+Pe =  \frac{\frac{1}{r}K(h) \Delta x}{2K(h)} = \frac{\Delta x}{2r}.
+\end{lineq}
+Since our mesh is triangular,  $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of anisotropy is such that the Peclet number is sufficiently low. If we want to make our computation free of the well known spurious oscillations~\cite{zienkiewicz1976, roos-layers}, a sufficiently low Peclet number means $Pe\le 1$. Therefore, the distance from the axis of anisotropy is given by the domain discretization step at the left hand side boundary.  The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore detached by 2~cm from the axis of anisotropy, and thus the Peclet number was 0.5 only.
 
 In order to avoid the non-Lipschitz boundary (or any boundary with a shape that is close to the non-Lipschitz boundary) the infiltration ring thickness was oversized  for 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring  thickness yields possible numerical issues, since then the domain has the appearance of a textbook case of  a non-Lipschitz bounded domain, \todo{I will add some reference here} {see e.g.~\citep{fem}}.  However, it is also expected, that oversizing the ring thickness does not significantly affect the solution at the top Dirichlet boundary. 
 
