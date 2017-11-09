@@ -284,16 +284,20 @@ The experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~
 
 
 
-A total of 22 SR experiments were conducted on the site. Statistical description of these infiltration data is given by~\citep{jacka-site}, see datasets collected on site 3. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Schwarzendruber analytical model of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient  0.9974. Thus we made use of  exponential data smoothing. The Schwarzendruber equation for cumulative infiltration  states that
+A total of 22 SR experiments were conducted on the site. The experiments were evaluated as follows. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed. It was observed that the Swartzendruber analytical model 
+%add citation to bibtex please: Swartzendruber, D., 1987. A quasi-solution of Richards equation for the downward inﬁltration of water into soil. Water Resour. Res. 23, 809–817. http://dx.doi.org/10.1029/WR023i005p00809.
+of one-dimensional infiltration exhibited an excellent fitting quality, with the mean  Nash-Sutcliffe model efficiency coefficient  0.9974. Thus we made use of  exponential data smoothing. The Swartzendruber equation for cumulative infiltration  states that
 \begin{lineq}
 I(t)=\frac{c_0\left(1-\exp\left(-c_1\sqrt{t}\right)\right)}{c_1}+c_2t,
 \label{vyhlaz}
 \end{lineq}
-where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Schwarzendruber parameters is disregarded here, since our infiltration model does not meet the prerequisites for the Schwarzendruber model. The Schwarzendruber model was  considered here as an exponential smoothing and extrapolating function only without any physically  based interpretation.
+where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Swartzendruber parameters is disregarded here, since our infiltration model does not meet the prerequisites for the Swartzendruber model. The Swartzendruber model was  considered here as an exponential smoothing and extrapolating function only without any physically based interpretation.
 
 
-According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution.
- The geometric mean is therefore suitable for estimating representative values of these parameters.\todo{does the log-normal distribution implies application of the goemetric mean?} Representative values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 0.113$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil SHP. SHPs of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{dolni}.
+%According to the normality tests,  all three datasets of $c_{0,1,2}$ parameters can be well approximated  using a log-normal distribution.
+ %The geometric mean is therefore suitable for estimating representative values of these parameters.\todo{does the log-normal distribution implies application of the goemetric mean? %yes} 
+ 
+Statistical description of the Swartzendruber parameters and evaluation of the fitting quality of Swartzendruber model is given by~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used here as an input curve for identifying the top soil SHP. SHPs of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{dolni}.
 
 It is already apparent at this moment, that if the infiltration experiment can be so well approximated by the three parametric model~\eqref{vyhlaz}, then the five parametric SHP representation potentially leads to overparametrization and makes the model non-identifiable \citep{bellman1970}.  
 
