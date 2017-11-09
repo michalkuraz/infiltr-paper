@@ -345,7 +345,7 @@ c(\vec{x}) = \begin{cases}
 Note that  we should avoid using the coordinates, where $r=0$.
 
 
-\subsubsection{Domain scheme, initial conditions and boundary conditions}%[michal]
+\subsection{Domain scheme, initial conditions and boundary conditions}%[michal]
 \label{bccond}
  \begin{figure}
 \centering
@@ -371,24 +371,36 @@ is in a conflict with the initial condition (since the outer normal vector $\vec
 It turns out that the only physically correct boundary condition for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. The average depth of the groundwater table was known, it is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
 %^konec pred obedem
 
-\subsection{Stability restrictions of convection dominant problems}
-
+\subsubsection{Stability restrictions of convection dominant problems}
+\label{restrconvect}
 
 The term \eqref{convect} is the first order derivative term, and so the well known stability restrictions for the numerical solutions of the convection-diffusion problems appear here~\cite{zienkiewicz1976}.
 The Peclet number representing the numerical stability of convection-diffusion problems is in general given by~\cite{knobloch2008}
 \begin{lineq}
 \label{peclet-std}
-Pe = \frac{||\vec{q}|| \Delta x}{2 D},
+Pe = \frac{c \Delta x}{2 D},
 \end{lineq}
-where $||\vec{q}||$ is the convection vector length, $\Delta x$ is the discretization step, and $D$ is the diffusion (for isotropic setup). Based on the definitions given above the equation~\eqref{peclet-std} can be formulated as
+where $c$ is the convection coefficient defined in~\eqref{convect}, $\Delta x$ is the discretization step, and $D$ is the diffusion (for isotropic setup). Based on the definitions given above the equation~\eqref{peclet-std} can be formulated as
 \begin{lineq}
 Pe =  \frac{\frac{1}{r}K(h) \Delta x}{2K(h)} = \frac{\Delta x}{2r}.
 \end{lineq}
 Since our mesh is triangular,  $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of anisotropy is such that the Peclet number is sufficiently low. If we want to make our computation free of the well known spurious oscillations~\cite{zienkiewicz1976, roos-layers}, a sufficiently low Peclet number means $Pe\le 1$. Therefore, the distance from the axis of anisotropy is given by the domain discretization step at the left hand side boundary.  The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore detached by 2~cm from the axis of anisotropy, and thus the Peclet number was 0.5 only.
 
-In order to avoid the non-Lipschitz boundary (or any boundary with a shape that is close to the non-Lipschitz boundary) the infiltration ring thickness was oversized  for 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring  thickness yields possible numerical issues, since then the domain has the appearance of a textbook case of  a non-Lipschitz bounded domain, \todo{I will add some reference here} {see e.g.~\citep{fem}}.  However, it is also expected, that oversizing the ring thickness does not significantly affect the solution at the top Dirichlet boundary. 
 
-The right hand side boundary was located at a distance $r=73$~cm, it means 50~cm from the infiltration ring. 
+\subsubsection{Domain shape restrictions}
+
+Since \cite{Dusek} mentioned several difficulties with incorrect triangular mesh setup while modeling the SR experiment, we tried to avoid possible numerical issues connected with domains with sharp spikes.
+
+The governing equation~\eqref{richaxi} will be solved here by linear finite element method, which is a subset of variational methods. Using standard setup the solution $H$ of~\eqref{richaxi} will be taken from Sobolev functional space defined for functions on Lipschitz bounded domains~\citep{braess, pum}.
+
+%reseni rovnice bylo ve std pojeti, reseni ze sobolevova prostoru funkci definovanych na oblasti z lips hranici
+
+
+In order to avoid the non-Lipschitz boundary (or any boundary with a shape that is close to the non-Lipschitz boundary) the infiltration ring thickness was oversized  for 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring  thickness yields possible numerical issues, since then the domain has an appearance of a typical case of  a non-Lipschitz bounded domain~\cite{braess}.  It is  expected, that oversizing the ring thickness does not significantly affect the solution at the top Dirichlet boundary. 
+
+\subsubsection{Initial and boundary condition setup}
+
+As discussed in \ref{restconvect} the left hand side boundary was located at $r=2$~cm. The right hand side boundary was located at a distance $r=73$~cm, it means 50~cm from the infiltration ring. 
 
  \begin{figure}
 \centering
@@ -419,7 +431,7 @@ and thus $\frac{\partial h}{\partial z} = -1$.
 \subsubsection{Numerical solution, temporal and spatial discretization, automatic calibration methodology}%[michal]
 \label{trapoty}
 
-Equation~\eqref{richaxi} was implemented into DRUtES library~\citep{drutes}. This is an object-oriented library written in Fortran 2003/2008 standard for solving nonlinear coupled convection-diffusion-reaction type problems. The problem was approximated by the linear finite element method for spatial derivatives and Rothe's method for temporal derivatives. The nonlinear operator was treated with the Schwarz-Picard method -- an adaptive domain decomposition  ($dd$-adaptivity) -- with the ability to activate and deactivate subregions of the computational domain sequentially, see works~\citep{mojecomp, mojejcam2, mojeamc2}).
+Equation~\eqref{richaxi} was implemented into the DRUtES library~\citep{drutes}. It is an object-oriented library written in Fortran 2003/2008 standard for solving nonlinear coupled convection-diffusion-reaction type problems. The problem was approximated by the linear finite element method for spatial derivatives and Rothe's method for temporal derivatives. The nonlinear operator was treated with the Schwarz-Picard method -- an adaptive domain decomposition  ($dd$-adaptivity) -- with the ability to activate and deactivate subregions of the computational domain sequentially, see works~\citep{mojecomp, mojejcam2, mojeamc2}).
 
 
 
@@ -441,22 +453,31 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 \end{lineq}
  This semiexplicit method always requires just a single outer iteration. It is apparent that for short time stepping the method converges to the exact solution. But for the inappropriate time stepping, the method diverge from the exact solution faster than the method~\eqref{matice}. However, the method~\eqref{matice2} is still free of possible issues related to the convergence of the nonlinear operator.
 
-Since the infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and since it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}, we are aware of a possible impact of spatial and temporal discretization on the identified SHP values. But we are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHPs values within the ranges given in table~\ref{rozsahy} during the automatic calibration, as discussed in~\cite{beven2003-uncertain}.
+The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of a possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed in~\cite{beven2003-uncertain}.
 And thus the following methodology for the automatic calibration was proposed here.
 
 
-\todo{Check if this is understandable} \begin{enumerate}[label=({\bf \roman*})]
-\item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs, and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}^{r_f}_{max}$, and the minimal values are defined as a vector $\vec{p}^{r_f}_{min}$. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
-Let us assume that this discretization is given by a mesh density function ${\Delta}(\vec{x})^{r_f}$. The function $\Delta(\vec{x})^{r_f}$ is understood as a spatial distribution of mesh size density, which was used as an input for the mesh generator T3D~\citep{t3d}. The superscript $r_f$ defines the refinement level, where $r_f=0$ at this particular stage, and the vector $\vec{x}$ refers to spatial coordinates inside the domain $\Omega$.
-\item Let us pressume that this inverse model will have more than just a single solution, this is an assumption of multimodality, which is based on~\citep{beven2003-uncertain}. \begin{itemize} \item Then this calibration will generate vectors of SHPs values $\vec{p}^{i_e}_{r_f}$, where the superscript $i_e=\{1,...,n_e\}$, where $n_e$     denotes the number of  local extremes. \end{itemize} 
-\item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in the local extreme  neighborhood  with improved temporal integration and spatial discretization. The improvement of the numerical treatment will be processed as follows:
+ \begin{enumerate}[label=({\bf \roman*})]
+\item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs, and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}_{r_f,max}$, and the minimal values are defined as a vector $\vec{p}_{r_f,min}$. So initially the ranges are extremely broad and exceeding even the physically acceptable values. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
+Let us assume that this discretization is given by a mesh density function ${\Delta}(\vec{x})^{r_f}$. The function $\Delta(\vec{x})^{r_f}$ is understood as a spatial distribution of mesh size density, which was used as an input for the mesh generator T3D~\citep{t3d}. The superscript $r_f$ defines the refinement level, where $r_f=0$ at this initial stage, and the vector $\vec{x}$ refers to spatial coordinates inside the domain $\Omega$.
+\item Let us pressume that this inverse model will have more than just a single solution. \begin{itemize} \item Then this calibration will generate vectors of SHP values $\vec{p}^{i_e}_{r_f}$, where the superscript $i_e=\{1,...,n_e\}$, where $n_e$     denotes the number of  local extremes. \end{itemize} 
+\item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in the local extreme  neighborhood  with improved temporal integration and spatial discretization. For each $\vec{p}^{i_e}_{r_f}$ from the acceptable solutions the neighborhood is defined as
+\begin{lineq}
+\begin{split}
+\vec{p}^{i_e}_{r_f,max} &= 1.25\vec{p}^{i_e}, \\
+\vec{p}^{i_e}_{r_f,min} &= 0.75\vec{p}^{i_e}. 
+\end{split}
+\end{lineq}
+
+
+ The improvement of the numerical treatment will be processed as follows:
 
 Increase the discretization level \begin{lineq} r_f=r_f+1,\end{lineq} and update the following parameters of the numerical treatment
 \begin{lineq}
 \label{coeffs}
 \begin{split}
 \Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2}, \\
-\varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 0, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
+\varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 1, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
 t_{init}^{r_f} &=  \frac{t_{init}^{r_f-1}}{10} \; \mbox{hrs} .
 \end{split}
 \end{lineq}
@@ -464,7 +485,7 @@ If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will 
   \begin{enumerate}
     \item \label{val} Compare the scatter 
    plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
-    \item \label{cond} {\bf If} the scatter plots differ significantly  
+    \item \label{cond} {\bf If} the optima refer to siginificantly different SHP parameters.  
    \begin{itemize}%[label=(\subscript{b}{\arabic*})]
     \item Proceed the calibration  again with the new parameter range defined as $\vec{p}_{max} = 1.1\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.9\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
     \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{val}, and check the condition~\ref{cond}.
@@ -474,7 +495,6 @@ If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will 
     \item Exit the calibration process.
     \end{itemize}
   \end{enumerate}
-  \item At this step  the vectors  of the validated inverse model solutions $\vec{p}^{i_e}$ (SHP parameter sets) are available for discussion. 
 \end{enumerate}
 
 In the second stage the unknown SHPs parameters will be reduced and the automatic calibration using the initial mesh together with the simple quasi-explicit approximation~\eqref{matice2} will proceed.
@@ -498,7 +518,9 @@ Since the parameters will be identified using a stochastic method, we have to in
 
 \begin{table}[ht]
 \begin{center}
-\caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=0$.}
+\caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=0$. Note that the initial ranges are extremly broad especially for the saturated water content $\theta_s$. This broad range was selected in order to explore the uniqnuess
+of the REVG inverse model of SR experiment
+ even beyond the physically acceptable solutions. }
 \begin{small}
 \doublespacing
 \begin{tabular}{c c c c c}
@@ -529,19 +551,18 @@ The objective functions were defined as follows:
 \label{objektiva1}
 \Psi_1 (\vec{p}) = \sqrt{\int\limits_0^{T_{end}} \left( \bar{I}(\vec{p},t) - I(t) \right)^2 \dd t},
 \end{lineq}
-where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error for continous functions. This could be understood as a global criterion.
+where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error for continous functions. The meaning of the integrals in nominator and denominator is that the average cummulative infiltration accross the Dirichlet boundary is taken.
 \item Second criterion was the $L_{\infty}$ norm of the difference between the experimental and model data and thus
 \begin{lineq}
 \label{objektiva2}
 \Psi_2 (\vec{p}) = \mathrm{sup} \left( \sqrt{\left( \bar{I}(\vec{p},t) - I(t) \right)^2} \right), \quad  t \in (0, T_{end}).
 \end{lineq}
-This could be understood as a local criterion.
-\item Third criterion was considered as the difference between the final derivatives between the model data and the experimental data
+\item Third criterion was considered as the difference between the infiltration rates (final derivatives) between the model data and the experimental data
 \begin{lineq}
 \label{objektiva3}
 \Psi_3 (\vec{p}) =  \sqrt{\left( \frac{\dd \bar{I}(\vec{p},T_{end})}{\dd t} - \frac{\dd I(T_{end})}{\dd t} \right)^2}.
 \end{lineq}
-This could also be again understood as a local criterion.
+
 
 \end{enumerate}
 And so we have applied here a multi-objective optimization. However, it is apparent that minimizing the objective function~\eqref{objektiva1} also minimizes the objective functions~\eqref{objektiva2} and  \eqref{objektiva3}. The aim of this multi-objective definition was improving the conditioning of this inverse problem. If we considered the objective function~\eqref{objektiva1} only, then we were probably able to obtain the same solution as with this multi-objective definition with slower convergence of optimization procedure only (the selection of the optimization algorithm will be explained in the following section~\ref{optima}). This multi-objective function definition is based on experience from our previous attempts in inverse analyses of this infiltration problem.
