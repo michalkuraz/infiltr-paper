@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: version2.aux
 The style file: model2-names.bst
 Database file #1: mybibfile.bib
@@ -7,37 +7,37 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty pages in Leps:2007
 You've used 54 entries,
             2990 wiz_defined-function locations,
-            1145 strings with 19368 characters,
-and the built_in function-call counts, 37521 in all, are:
-= -- 2882
-> -- 1524
+            1146 strings with 19236 characters,
+and the built_in function-call counts, 36894 in all, are:
+= -- 2864
+> -- 1436
 < -- 21
-+ -- 595
-- -- 531
-* -- 4231
-:= -- 5486
++ -- 562
+- -- 498
+* -- 4122
+:= -- 5390
 add.period$ -- 196
 call.type$ -- 54
-change.case$ -- 441
+change.case$ -- 430
 chr.to.int$ -- 52
 cite$ -- 55
-duplicate$ -- 2698
-empty$ -- 2726
-format.name$ -- 679
-if$ -- 7006
+duplicate$ -- 2676
+empty$ -- 2715
+format.name$ -- 646
+if$ -- 6911
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 541
+missing$ -- 530
 newline$ -- 319
 num.names$ -- 216
-pop$ -- 901
+pop$ -- 888
 preamble$ -- 1
-purify$ -- 393
+purify$ -- 382
 quote$ -- 0
 skip$ -- 758
 stack$ -- 0
 substring$ -- 1670
-swap$ -- 2005
+swap$ -- 1961
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
@@ -45,5 +45,5 @@ type$ -- 468
 warning$ -- 1
 while$ -- 216
 width$ -- 0
-write$ -- 851
+write$ -- 852
 (There was 1 warning)

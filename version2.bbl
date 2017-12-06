@@ -358,19 +358,6 @@
   \bibinfo{pages}{{684--696}}.
 \newblock \DOIprefix\doi{10.2136/vzj2005.0076}.
 %Type = Book
-\bibitem[{Rektorys et~al.(2000)Rektorys, Cipra, Drabek, Fiedler, Fuka, Kejla,
-  Kepr, Nevas, Nozicka, Prager, Segeth, Vilhelm, Vitasek and Zelenka}]{pum}
-\bibinfo{author}{Rektorys, K.}, \bibinfo{author}{Cipra, T.},
-  \bibinfo{author}{Drabek, K.}, \bibinfo{author}{Fiedler, M.},
-  \bibinfo{author}{Fuka, J.}, \bibinfo{author}{Kejla, F.},
-  \bibinfo{author}{Kepr, B.}, \bibinfo{author}{Nevas, J.},
-  \bibinfo{author}{Nozicka, F.}, \bibinfo{author}{Prager, M.},
-  \bibinfo{author}{Segeth, K.}, \bibinfo{author}{Vilhelm, V.},
-  \bibinfo{author}{Vitasek, E.}, \bibinfo{author}{Zelenka, M.},
-  \bibinfo{year}{2000}.
-\newblock \bibinfo{title}{Overview of Applied Mathematics I, II}.
-\newblock \bibinfo{publisher}{Prometheus, Prague}.
-%Type = Book
 \bibitem[{Reynolds(2008a)}]{ReynoldsWD}
 \bibinfo{author}{Reynolds, W.D.}, \bibinfo{year}{2008}a.
 \newblock \bibinfo{title}{Saturated hydraulic properties: Ring infiltrometer,
@@ -423,6 +410,13 @@
 \newblock \bibinfo{organization}{Department of Mechanics, CTU in Prague, Czech
   Republic}. \bibinfo{address}{Prague, Czech Republic}.
 \newblock \URLprefix \url{http://mech.fsv.cvut.cz/~dr/t3d.html}.
+%Type = Book
+\bibitem[{Saltelli et~al.(2000)Saltelli, Chan and Scott}]{kniha-citlivost}
+\bibinfo{author}{Saltelli, A.}, \bibinfo{author}{Chan, K.},
+  \bibinfo{author}{Scott, E.}, \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Sensitivity Analysis}.
+\newblock Wiley series in probabillity analysis, \bibinfo{publisher}{John Wiley
+  \& Sons}.
 %Type = Article
 \bibitem[{Schaap et~al.(2001)Schaap, Leij and van Genuchten}]{Schaap}
 \bibinfo{author}{Schaap, M.G.}, \bibinfo{author}{Leij, F.J.},
