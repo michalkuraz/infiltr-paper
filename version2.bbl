@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{54}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -134,15 +134,6 @@
 \newblock \URLprefix
   \url{http://www.scopus.com/inward/record.url?eid=2-s2.0-0019057216&partnerID=40&md5=1a9a45e1c2b571c00ebb9a9f9ebaaf92}.
 %Type = Article
-\bibitem[{Hrstka and Kucerova(2004)}]{ceraf}
-\bibinfo{author}{Hrstka, O.}, \bibinfo{author}{Kucerova, A.},
-  \bibinfo{year}{2004}.
-\newblock \bibinfo{title}{Improvements of real coded genetic algorithms based
-  on differential operators preventing premature convergence}.
-\newblock \bibinfo{journal}{Advances in Engineering Software}
-  \bibinfo{volume}{35}, \bibinfo{pages}{237 -- 246}.
-\newblock \DOIprefix\doi{http://dx.doi.org/10.1016/S0965-9978(03)00113-3}.
-%Type = Article
 \bibitem[{Hrstka and Kučerová(2004)}]{Hrstka}
 \bibinfo{author}{Hrstka, O.}, \bibinfo{author}{Kučerová, A.},
   \bibinfo{year}{2004}.
@@ -256,6 +247,17 @@
   parameters based on softcomputing methods}.
 \newblock Ph.D. thesis. Ecole Normale Sup\'erieure de Cachan, Laboratoire de
   M\'ecanique et Technologie.
+%Type = Article
+\bibitem[{Kur\'a\v{z} et~al.(2010)Kur\'a\v{z}, Mayer, Lep\v{s} and
+  Trpko\v{s}ov\'a}]{Kuraz:2010:JCAM}
+\bibinfo{author}{Kur\'a\v{z}, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Lep\v{s}, M.}, \bibinfo{author}{Trpko\v{s}ov\'a, D.},
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{An adaptive time discretization of the classical and
+  the dual porosity model of {R}ichards' equation}.
+\newblock \bibinfo{journal}{Journal of Computational and Applied Mathematics}
+  \bibinfo{volume}{233}, \bibinfo{pages}{3167--3177}.
+\newblock \bibinfo{note}{ISSN: 0377-0427}.
 %Type = Misc
 \bibitem[{Kuraz and Mayer(2008)}]{drutes}
 \bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.}, \bibinfo{year}{2008}.
@@ -325,6 +327,14 @@
 \newblock \bibinfo{journal}{Soil Science Society of America Journal}
   \bibinfo{volume}{70}, \bibinfo{pages}{521 -- 532}.
 \newblock \DOIprefix\doi{http://dx.doi.org/10.2136/sssaj2005.0026}.
+%Type = Inproceedings
+\bibitem[{Leps(2007)}]{Leps:2007}
+\bibinfo{author}{Leps, M.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{Parallel multi-objective identification of material
+  parameters for concrete}, in: \bibinfo{booktitle}{Proceedings of the Ninth
+  International Conference on the Application of Artificial Intelligence to
+  Civil, Structural and Environmental Engineering, Stirling: Civil-Comp Press
+  Ltd}.
 %Type = Article
 \bibitem[{Mous(1993)}]{mous1993}
 \bibinfo{author}{Mous, S.}, \bibinfo{year}{1993}.
@@ -492,6 +502,12 @@
   water retention in a simple water harvesting technique}}.
 \newblock \bibinfo{journal}{{HYDROLOGY AND EARTH SYSTEM SCIENCES}}
   \bibinfo{volume}{{13}}, \bibinfo{pages}{{1979--1992}}.
+%Type = Phdthesis
+\bibitem[{Vitingerova(2010)}]{vitingerova:2010}
+\bibinfo{author}{Vitingerova, Z.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Evolutionary Algorithms for Multi-Objective Parameter
+  Estimation}.
+\newblock Ph.D. thesis. CTU in Prague, Fac. of Civil Eng.
 %Type = Article
 \bibitem[{Xu et~al.(2012)Xu, Lewis, Liu, Albertson and Kiely}]{XU201234}
 \bibinfo{author}{Xu, X.}, \bibinfo{author}{Lewis, C.}, \bibinfo{author}{Liu,
