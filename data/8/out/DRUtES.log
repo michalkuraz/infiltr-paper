@@ -1,0 +1,440 @@
+   _____  _____  _    _ _   ______  _____ 
+  |  __ \|  __ \| |  | | | |  ____|/ ____|
+  | |  | | |__) | |  | | |_| |__  | (___  
+  | |  | |  _  /| |  | | __|  __|  \___ \ 
+  | |__| | | \ \| |__| | |_| |____ ____) | 
+  |_____/|_|  \_\\____/ \__|______|_____/ 
+  
+  
+  
+ DRUtES is initialising, reading input files
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.241s  -  2017/04/20    total number of parallel images is:                    1
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.249s  -  2017/04/20    reading input files and allocating...
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.285s  -  2017/04/20    number of nodes:                 2097 number of elements:                 3861
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.292s  -  2017/04/20    calculating elements geometrical properties...
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.294s  -  2017/04/20    analyzing mesh structure...
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.295s  -  2017/04/20    creating graph of the discretization mesh, and searching for boundary nodes...
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.350s  -  2017/04/20    DRUtES solves Richards' equation, in                    2 D, in cylindric coordinates and axysimmetric flow, in total hydraulic head form.
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.351s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 23min : 53.629s  -  2017/04/20    go 4 solving
+ ---------------------------------------------------------------
+ 18hrs : 25min : 05.975s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.7734890615629887E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 06.778s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 25min : 16.573s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   7.5219752937935591E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 17.450s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 25min : 23.303s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.0734815032058871E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 24.216s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 25min : 30.174s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.1664738245465104E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 31.147s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 25min : 44.391s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.4637565659999545E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 44.914s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 25min : 54.942s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.1604709358629421E-004
+ ---------------------------------------------------------------
+ 18hrs : 25min : 55.382s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 04.860s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.0191482751249803E-005
+ ---------------------------------------------------------------
+ 18hrs : 26min : 05.278s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 20.864s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.9013893708963326E-004
+ ---------------------------------------------------------------
+ 18hrs : 26min : 21.270s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 26.839s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.2348452419175018E-004
+ ---------------------------------------------------------------
+ 18hrs : 26min : 27.300s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 31.891s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.8606366120382800E-004
+ ---------------------------------------------------------------
+ 18hrs : 26min : 32.386s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 41.189s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.4487536874620575E-004
+ ---------------------------------------------------------------
+ 18hrs : 26min : 41.595s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 49.532s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.7684640638213067E-004
+ ---------------------------------------------------------------
+ 18hrs : 26min : 49.934s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 26min : 59.253s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.0811017378284955E-006
+ ---------------------------------------------------------------
+ 18hrs : 26min : 59.653s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 27min : 35.905s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.8414246130946397E-004
+ ---------------------------------------------------------------
+ 18hrs : 27min : 36.305s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 27min : 42.991s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.8949057912218985E-004
+ ---------------------------------------------------------------
+ 18hrs : 27min : 43.395s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 27min : 47.829s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.6101476033551820E-004
+ ---------------------------------------------------------------
+ 18hrs : 27min : 48.227s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 27min : 51.915s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.6508707835312144E-004
+ ---------------------------------------------------------------
+ 18hrs : 27min : 52.316s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 27min : 56.476s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.1679217549645560E-004
+ ---------------------------------------------------------------
+ 18hrs : 27min : 56.883s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 00.639s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.0290400691658208E-003
+ ---------------------------------------------------------------
+ 18hrs : 28min : 01.085s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 03.555s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.3511588331774904E-003
+ ---------------------------------------------------------------
+ 18hrs : 28min : 03.963s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 06.000s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.2345517569885556E-003
+ ---------------------------------------------------------------
+ 18hrs : 28min : 06.420s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 08.976s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.2316124181840915E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 09.446s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 20.184s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.3739384356132329E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 20.585s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 26.256s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   7.4704282329998706E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 26.686s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 30.127s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.5321197176271846E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 30.568s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 33.572s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.1914904495291812E-003
+ ---------------------------------------------------------------
+ 18hrs : 28min : 34.019s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 36.606s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.8046622724821622E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 37.005s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 42.310s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.9645318608702045E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 42.750s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 46.530s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.9329145227339750E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 46.932s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 54.598s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.8295547945805271E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 54.979s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 28min : 58.711s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.9914090897791299E-004
+ ---------------------------------------------------------------
+ 18hrs : 28min : 59.081s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 03.921s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.6251008605986401E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 04.299s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 09.517s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.4433978568086379E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 09.910s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 16.701s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.9286335847384928E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 17.080s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 24.714s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.9827505947895876E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 25.094s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 28.925s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.1253630040085625E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 29.397s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 36.565s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.3731671217738253E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 36.948s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 40.754s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   9.5505721299693480E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 41.138s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 43.876s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.3846341960057655E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 44.259s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 48.803s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.4161378491357492E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 49.185s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 52.957s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   9.0271546636483402E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 53.342s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 56.009s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.2546971984592821E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 56.392s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 29min : 59.416s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.5541133598301338E-004
+ ---------------------------------------------------------------
+ 18hrs : 29min : 59.864s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 08.668s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.5173228726154138E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 09.039s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 14.260s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.6005804827847774E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 14.643s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 19.151s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.9890841932307390E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 19.532s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 27.066s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.8194911991096259E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 27.442s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 32.288s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.6993590563368954E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 32.670s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 36.104s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.7149254837208776E-004
+ ---------------------------------------------------------------
+ 18hrs : 30min : 36.474s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 30min : 40.996s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.7443639660885690E-005
+ ---------------------------------------------------------------
+ 18hrs : 30min : 41.385s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 04.082s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.1167351303441606E-004
+ ---------------------------------------------------------------
+ 18hrs : 31min : 04.457s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 11.505s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.6558160229708276E-004
+ ---------------------------------------------------------------
+ 18hrs : 31min : 11.882s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 15.710s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.1076848249247417E-004
+ ---------------------------------------------------------------
+ 18hrs : 31min : 16.090s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 19.860s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.0356520795779023E-005
+ ---------------------------------------------------------------
+ 18hrs : 31min : 20.280s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 34.661s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.7064452503893230E-004
+ ---------------------------------------------------------------
+ 18hrs : 31min : 35.041s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 40.247s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.1528521840679158E-005
+ ---------------------------------------------------------------
+ 18hrs : 31min : 40.678s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 31min : 53.580s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.7142734919273206E-004
+ ---------------------------------------------------------------
+ 18hrs : 31min : 54.045s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 02.698s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.3280718486884400E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 03.085s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 10.239s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.3775311816145477E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 10.637s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 14.608s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   9.4974144273907157E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 15.011s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 17.753s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.7776735408533444E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 18.144s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 22.361s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.2480741827001269E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 22.756s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 25.879s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.6130414165432816E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 26.265s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 35.120s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   8.0688014646168593E-005
+ ---------------------------------------------------------------
+ 18hrs : 32min : 35.548s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 48.625s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.4698027103453590E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 49.013s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 32min : 55.887s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.1389796515703932E-004
+ ---------------------------------------------------------------
+ 18hrs : 32min : 56.352s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 33min : 07.346s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.5794730814275866E-004
+ ---------------------------------------------------------------
+ 18hrs : 33min : 07.724s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 33min : 13.052s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.3566404801987915E-004
+ ---------------------------------------------------------------
+ 18hrs : 33min : 13.435s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 33min : 19.202s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.2761180076158460E-005
+ ---------------------------------------------------------------
+ 18hrs : 33min : 19.610s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 33min : 41.716s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.0703522744055540E-005
+ ---------------------------------------------------------------
+ 18hrs : 33min : 42.119s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 33min : 57.975s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.9573894080215926E-004
+ ---------------------------------------------------------------
+ 18hrs : 33min : 58.436s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 06.025s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.9537071087224493E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 06.405s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 10.561s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.7885968736559601E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 10.932s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 14.745s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.4903089807568630E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 15.125s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 19.641s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.7390858246710845E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 20.020s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 25.270s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.6198224754848667E-005
+ ---------------------------------------------------------------
+ 18hrs : 34min : 25.657s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 48.544s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.0878689444413521E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 48.917s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 54.723s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.2147557106073670E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 55.101s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 34min : 58.503s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   9.7990509917011970E-004
+ ---------------------------------------------------------------
+ 18hrs : 34min : 58.877s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 01.615s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.5474221968724287E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 02.003s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 08.005s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.6773424272738016E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 08.366s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 12.002s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.8454761845105896E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 12.379s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 16.119s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.7974739602353313E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 16.504s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 21.678s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   7.0930742001951153E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 22.080s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 25.663s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.8433657341261380E-005
+ ---------------------------------------------------------------
+ 18hrs : 35min : 26.104s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 41.228s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.2170172733760865E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 41.665s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 51.699s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.2227385330506628E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 52.069s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 56.469s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   7.9854115878985610E-004
+ ---------------------------------------------------------------
+ 18hrs : 35min : 56.846s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 35min : 59.841s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.9500728906971538E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 00.207s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 04.986s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   4.3642801764542938E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 05.353s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 09.745s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.7391548278318272E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 10.108s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 13.769s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   5.0925522273503887E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 14.136s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 18.142s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.8487031200340471E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 18.505s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 23.172s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   6.1769876674977464E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 23.528s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 26.797s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.0195287363264915E-003
+ ---------------------------------------------------------------
+ 18hrs : 36min : 27.157s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 29.350s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   1.4079920670486690E-003
+ ---------------------------------------------------------------
+ 18hrs : 36min : 29.714s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 31.540s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   9.7101080491146519E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 31.921s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 34.553s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.2050517441906123E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 34.920s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 40.835s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   3.6043963811460689E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 41.221s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 46.629s  -  2017/04/20    Observation time adjusted due to print times, current time step is:   2.8577992034184430E-004
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.006s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.355s  -  2017/04/20    making output files for observation time
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.703s  -  2017/04/20    # real elapsed CPU time =   12.901374308268229 min
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.703s  -  2017/04/20    minimal adjusted time step was   9.9999999999999995E-007
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.703s  -  2017/04/20    F I N I S H E D !!!!!
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.703s  -  2017/04/20    Peak RAM  consumption on image                    1 was:                21900 kB
+ ---------------------------------------------------------------
+ 18hrs : 36min : 47.703s  -  2017/04/20    Peak SWAP consumption on image                    1 was:                    0 kB

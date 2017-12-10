@@ -12,6 +12,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
+\usepackage{colortbl}
+
 \usepackage{enumitem}
 % \usepackage{a4wide} %full page
 \usepackage{fullpage}
@@ -609,86 +611,208 @@ Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
 \end{table}
 
 
-\item the first run for $r_l$=0 generated
+\item the first run for $r_l$=0 generated after 40.000 objective function calls (each call took approx. 3min., executed on 32-core Intel XEON...) the following list of extremes
 
+\begin{center}
+\begin{table}[ht]
+% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+ \begin{footnotesize}
+\begin{tabular}{l || c c c c c  }
+% \toprule
+no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] \\ \hline \hline
+\rowcolor{red}{\bf 1} & \num{2.447e-4} &  2.45 & 0.25 & \num{0.025} & \num{0.419e-2}   \\ 
+\rowcolor{red}{\bf 2} & \num{0.101e-2} & 0.6517 &  0.271 & \num{1.092} &  \num{2.879e-2}  \\ 
+\rowcolor{red}{\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{1.092} & \num{1.845e-4} \\
+\rowcolor{red}{\bf 4} & \num{0.157e-2} & 1.968 & 0.720 & \num{2.07} & \num{1.053e-5}  \\ \hline \hline
+\rowcolor{cyan}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  \\
+\rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 2.152  & 0.401 &  \num{1.095} & 0  \\ 
+\rowcolor{cyan}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0  \\ 
+\rowcolor{cyan} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4}  \\ \hline
+% \toprule
+\end{tabular}
+ \end{footnotesize}
+\label{shp-vysledky}
+\end{table}
+\end{center}
+
+\item red produced bad fit, cyan produced good fit
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/husny/4.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/hezky/1.eps}}}
+
+\item the cyan data were further evaluated by increasing the refinement level $r_f$ (red datasets were rejected)
+
+\begin{description}
+\item[dataset 5]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-3.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-3.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-3.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-3.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-3.eps}}}
+
+
+\item[dataset 6]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-4.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
+
+\item[dataset 7]
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
+
+\item[dataset 8]
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-6.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-6.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-6.eps}}}
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-6.eps}}}
+
+
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
+
+\end{description}
+
+\item What can we learn?
+\begin{itemize}
+\item $S_s$ should be neglected from all datasets, the nonzero solutions for $S_s$ are just numerical zeroes
+\item dataset 6 seems uneffected by numerical solution. only $n$ seems inaccurate, should be lower (around 1.8)
+\item datasets 5,7, and 8 will be reevaluated
 \end{itemize}
 
-% 
-% As stated in the section~\ref{trapoty} SHPs parameters were initially searched in the wide intervals defined in table~\ref{rozsahy} with the less accurate numerical technique~\eqref{matice2}. Since the proposed parameter search algorithm handles an ability for identification of  local extremes we could perform a test of multimodality. 
-% There were in total 33 points on Pareto front identified. The identified Pareto front was non-convex. 
-% There were in total 8 local extremes  with different fitting qualities identified on the non-convex Pareto front -- see table~\ref{shp-vysledky} for particular SHPs values and the following fitting quality descriptors -- namely the coefficient of determination, the intercept, and the slope, see table~\ref{shp-vysledky}. It is well known, see e.g. \citep{r2andslope}, that only the accoplishable values of the coefficient of determination does not guarantee good fitting qualities.
-% 
-% \begin{table}[ht]
-% \begin{center}
+\begin{table}[ht]
 % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
-% \begin{small}
-% \doublespacing
-% \begin{tabular}{l || c c c c c || c c c }
+ \begin{footnotesize}
+\begin{tabular}{l || c c c c c || l }
 % \toprule
-% no. & $\alpha$ [m$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [m.s$^{-1}$] & $S_s$  [m$^{-1}$] & $R^2$ & intercept & slope\\ \hline \hline
-% {\bf 1} & \num{2.447e-2} &  2.45 & 0.25 & \num{.00000006944444444444} & 0.419  & 0.9914  & 1.9395 & 0.6891  \\ \hline
-% {\bf 2} & 0.101 & 1.6517 &  0.271 & \num{.00000303333333333333} &  \num{2.879e-2} & 0.9989 & -0.6895 & 0.9861 \\ \hline
-% {\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{.00000361666666666666} & \num{1.845e-2} & 0.9955 & 1.9215 & 0.9278 \\ \hline
-% {\bf 4} & 0.157 & 1.968 & 0.720 & \num{.00000557407407407407} & \num{1.053e-3} & 0.9966 & 0.9539 & 0.9607 \\ \hline
-% {\bf 5} & 0.150 & 1.586 & 0.720 &  \num{.00000303611111111111} &  \num{7.641e-3} & 0.9985 & 0.0025 & 0.9973 \\ \hline
-% {\bf 6} & 0.258 & 2.152  & 0.401 &  \num{.00000304250000000000} & 0 & 0.9980 & -0.0320 & 0.9958 \\ \hline
-% {\bf 7} & 0.380 & 1.279 & 0.594 &  \num{.00000323333333333333} & 0 & 0.9996 & 0.2000 & 0.9884 \\ \hline
-% {\bf 8} & 0.255 & 1.384 & 0.254 &  \num{.00000310833333333333} &  \num{1.922e-2} & 0.9995 & 0.1520 & 0.9919 \\
+no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] & status\\ \hline \hline
+\rowcolor{red}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  & {\bf recompute}\\
+\rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.800  & 0.401 &  \num{1.095} & 0 & {\bf confirmed} \\ 
+\rowcolor{red}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0 & {\bf recompute} \\ 
+\rowcolor{red} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4} & {\bf recompute} \\ \hline
 % \toprule
-% \end{tabular}
-% \end{small}
-% \label{shp-vysledky}
-% \end{center}
-% \end{table}
-% 
-% The local extremes 5-8 have acceptable fitting qualities -- see figure~\ref{obrazky}, however the identified retention curve parameters are highly distuingshed -- see figure~\ref{ret-krivky}.
-% 
-% Apart the local extreme no. 1 all solutions have more or less good fitting qualities, and the local extremes 5,6,7,8 have even excellent fitting qualities.  As given in table~\ref{shp-vysledky} we are able to assign to our infiltration experiment different porous media with distinguished properties -- especially the saturated water content $\theta_s$ -- exactly as expected in~\cite{beven2003-uncertain}. This non-uniqueness in our inverse analyses can be resolved by selecting the local extremes with physically appropriate SHPs values. The highlighted local extreme  no. 7 has physically expectable values of SHPs, and, surprisingly, also the best value of the coefficient of determination. However, the best value of the determination coefficient together with the physically acceptable values of SHPs parameters is rather a coincidence here. The plot of this fit is depicted in  figure~\ref{fits} -- left.
-% 
-% \begin{figure}
-%   \hfill
-%   \begin{minipage}[t]{.45\textwidth}
-%     \begin{center}  
-% \rotatebox{-90}{
-%   \includegraphics[height=7.cm]{good-fit.eps}}
-% \end{center}
-% \end{minipage} 
-% \begin{minipage}[t]{.45\textwidth}
-%  \begin{center} 
-% \rotatebox{-90}{
-% \includegraphics[height=7.cm]{bad-fit.eps}}
-% \end{center}
-% \end{minipage}
-% \caption{Left: The best model fit obtained for the less precise numerical treatment -- \eqref{matice2}, $R^2= 0.9994$, local extrem no. 7, Right: Model validation for the improved numerical treatment -- \eqref{matice}, $R^2= 0.9869$. }
-% \label{fits}       % Give a unique label
-% \end{figure}
-% 
-% In the next stage the previously identified SHPs set for the local extreme no. 7  was validated with the improved treatment of the nonlinear operator -- see equation~\eqref{matice}. The nonlinear system was linearized by simple Picard method, the stopping criterion $\varepsilon$ (see~\eqref{picard}) was equal to 10$^{-4}$~cm. As expected the improved numerical treatment affected the previously identified solution and the reevaluated coefficient of determination was $R^2=0.9869$. The plot of this solution is depicted in figure~\ref{fits} -- right.
-% 
-% Despite the fact the validated model fit still preserved reasonable fitting qualities, the inverse analyses was re-evaluated for SHPs ranges given in step 3. The updated SHP parameter set states as follows
-% \begin{itemize}
-% \item  $\alpha= 0.329$~m$^{-1}$, $n=$            1.31385 [-],  $\theta_s=$  0.593 [-], $S_s$ = 0.0~m$^{-1}$, $K_s$ = \num{.00000304622222222222}~m.s$^{-1}$.
-% \end{itemize}
-% The updated coefficient of determination was $R^2=0.9985$. In order to eliminate the effect of spatial discretization, the model with a proper non-linear operator treatment was validated with refined spatial discretization -- exactly as defined in stage no. 4 in the calibration methodology. The finally updated coefficient of determination did not significantly differed from the previous one, and thus the original spatial discretization was probably accurate enough for our inverse analyses.
-% 
-% The updated SHPs parameter set with the proper non-linear operator strategy  -- \eqref{matice} (calibration methodology no. 3)  did not significantly differ from the SHPs obtained with the less precise nonlinear operator treatment -- \eqref{matice2}. And thus this simple but  stable treatment  of the Richards equation operator provided a good estimate for the searched SHPs parameter set.
+\end{tabular}
+ \end{footnotesize}
+\label{shp-vysledky}
+\end{table}
 
-\section{Conclusions} %[michal, lukas]
+\item new optimization for ranges
 
-% This paper has presented an evaluation of the soil hydraulic parameters (SHP) of a mountainous podzolic soil profile. The SHP values for the lower horizons were identified on the basis of standard methods -- a single ring (SR) infiltration experiment and a Guelph permeameter (GP). The SHPs values for the top soil layer were identified on the basis of an inverse analysis of the development of the SR experiment in time. The main objective of this paper was to present an inverse analysis of the topsoil layer.  Since the SR experiment is an inherently three-dimensional process, where the streamlines within the infiltration ring are parallel, but outside the infiltration ring the streamlines are rather axisymmetric. The governing equation for the mathematical concept has been presented here. Since the convective term in the governing equation for axisymmetric flow incorporates the inverse of the distance from the center of the axisymmetric coordinates, which is the center of the infiltration ring, it was necessary to pay attention to an issue related to convective dominance.
-% 
-% The issue of the initial and boundary condition setup has also been discussed here. It was found  that the only physically correct  initial and boundary conditions setup for our  case requires the groundwater table as the bottom boundary condition, despite the fact that it is apparent that the infiltration process cannot interfere with the soil profile so deep below the surface.  We made use here of the adaptive domain decomposition method ($dd$-adaptivity), which enables the computational domain to be split into active and non-active parts. Thus the selected domain extension did not significantly affect the computational speed -- this method has been developed and implemented into DRUtES opensource project~\citep{drutes}.
-% 
-% The equifinality -- non-uniqueness --  of this Richards equation based inverse model was tested. We have found several solutions with distinguished parameter setup, but with excellent fitting qualities. This observation is not so surprising,  since we can take into consideration, that the experimental data can be well interpreted with three-parametric Schwarzendruber equation, and the Richards equation is four or five parametric equation (depending whether we use non-zero specific storage or not). In order to resolve this non-uniqueness, only the parameter set with the physically appropriate values was selected. Coincidentally, it was also the parameter set with the best value of the coefficient of determination -- the global extreme -- however the local extremes with highly distinguished SHPs values exhibited very similar fitting qualities as the global extreme, so we cannot simply conclude, that global extreme has always the best physical interpretation of the inverse model. It turns out that it is useful to inspect local extremes as well, which is, unfortunately,  often non-trivial.
-% 
-% 
-% 
-% % Since the numerical solution of the governing equation is strongly affected by discretization in time and space, the parameters were identified on  nine models with different spatial and temporal discretization.
-% % The minimum of the objective function was searched using a  stochastic method -- differential evolution -- implemented by~\citep{Mullen11} in R~project~\citep{Rstudio}.
-% % 
-% % It was observed that the identified  saturated hydraulic conductivity, together with the specific storage, were not so sensitive to different spatial and temporal discretization. However, the parameters of the retention curve $\alpha$ and $n$ were highly sensitive to spatial discretization. The saturated water content exhibited very low correlation with the objective function. The values identified with our stochastic method were more likely just random numbers.  This inverse analysis was therefore completely inappropriate for a search for this parameter. Surprisingly, the saturated hydraulic conductivity of the top-soil layer also exhibited very low sensitivity. However, unlike the saturated water content values, the identified saturated hydraulic conductivity values for all nine experiments were very similar,  and provided a physically reasonable value. 
-% 
-% Finally, it could be concluded, that our model was in a good agreement with the experimental data, and the identified representative soil profile can be used e.g. as an input for a deterministic catchment runoff model.
+\begin{table}[ht]
+\begin{center}
+\caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=1$. }
+\begin{small}
+\doublespacing
+\begin{tabular}{ l || c c c c }
+\toprule
+% Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
+extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \hline
+\toprule
+{\bf 5} & 0.576 - 0.864 & \num{.001200} - \num{.001800} & 1.268 - 1.903 & 0.875 - 1.311 \\
+{\bf 7} & 0.475 - 0.712 & \num{.0030416} - \num{.0045624} & 1.023 - 1.534 & 0.932 - 1.398 \\
+{\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
+\toprule
+\end{tabular}
+\end{small}
+\label{rozsahy}
+\end{center}
+\end{table}
+
+\item within just 1000 iters new extremes were found (algorithm stopped after the first extreme was found)
+
+\begin{table}[ht]
+% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+ \begin{footnotesize}
+\begin{tabular}{l || c c c c c }
+% \toprule
+no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
+\rowcolor{cyan}{\bf 5} & \num{0.0015607} & 1.3805 & 0.828 &  \num{1.0582} &  \num{7.641e-3} \\
+\rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
+\rowcolor{cyan}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
+\rowcolor{cyan} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
+% \toprule
+\end{tabular}
+ \end{footnotesize}
+\label{shp-vysledky}
+\end{table}
+
+
+\item evaluation for $r_f=2$
+
+\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-5.eps}}
+
+
+\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-8.eps}}
+
+
+\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/n-5.eps}}
+
+\item What can we learn now?
+\begin{itemize}
+\item all local extremes were according to our methodology confirmed
+\item only the local extreme 5 (and maybe, maybe) 7 has physically acceptable values
+\item for refined discretization the objective function suffers with numerical oscillations, difficoult for gradient methods
+\item all identified retention curves despite different van Genuchten parameters point to clay type material
+\rotatebox{-90}{\includegraphics[height=7cm]{retc.eps}}
+\item {\bf SR method can be used for identification of $\alpha, \, n, \, K_s$, and maybe $S_s$ - but this parameter turned to vanish, but it is completely unreliable for $\theta_s$ and obviously for $\theta_r$.}
+\end{itemize}
+
+
+
+
+\end{itemize}
 
 \section{Acknowledgement}
 
