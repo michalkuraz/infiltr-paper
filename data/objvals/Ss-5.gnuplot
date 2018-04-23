@@ -31,6 +31,7 @@ set label 1 "identified S_s=0.0 cm^{-1}"
 set grid
 set output
 set logscale x
+set format x "10^{%L}"
 
 set terminal postscript enhanced colour "Helvetica" 23 lw 3
 # set terminal latex

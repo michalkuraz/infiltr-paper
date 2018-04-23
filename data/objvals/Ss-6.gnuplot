@@ -26,10 +26,11 @@ set label 1 "identified S_s=1.922x10^{-4} cm^{-1}"
 set grid
 set output
 set logscale x
+set format x "10^{%L}"
 
 set terminal postscript enhanced colour "Helvetica" 23 lw 3
 # set terminal latex
-set output "Ss-6.eps"
+set output "Sss-6.eps"
 plot "results-0-0/Ss-5-par.val" smooth unique w l lw 3 title "r_f=0" ,  "results-1-1/Ss-6-par.val" smooth unique w l lw 3 title "r_f=1"
 #----------------------------------------------------------------------------------
 

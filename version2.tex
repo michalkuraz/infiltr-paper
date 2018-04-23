@@ -553,7 +553,7 @@ The objective functions were defined as follows:
 \label{objektiva1}
 \Psi_1 (\vec{p}) = \sqrt{\int\limits_0^{T_{end}} \left( \bar{I}(\vec{p},t) - I(t) \right)^2 \dd t},
 \end{lineq}
-where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error for continous functions. The meaning of the integrals in nominator and denominator is that the average cummulative infiltration accross the Dirichlet boundary is taken.
+where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error for continuous functions. 
 \item Second criterion was the $L_{\infty}$ norm of the difference between the experimental and model data and thus
 \begin{lineq}
 \label{objektiva2}
@@ -589,7 +589,7 @@ memory and restarts. GRADE is a real-coded genetic algorithm combining the ideas
 \section{Results and discussion} %[michal, lukas]
 
 
-The first procedure, which is typically required before proceeding the inverse modeling procedures, is  global sensitivity analyses on the selected parameter ranges, see table~\ref{rozsahy}. For simplicity the sensitivity analyses was conducted just for the first objective function~\eqref{objektiva1}. This strategy is in line with the statments given in the last paragraph of the section~\ref{objdef}. In total 10.000 samples of the objective function \eqref{objektiva1}  were evaluated, in order to obtain the  Total Sobol Index for each parameter~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters. 
+The first procedure, which is typically required before proceeding the inverse modeling procedures, is the global sensitivity analyses on  selected parameter ranges, see table~\ref{rozsahy}. For simplicity the sensitivity analyses was conducted just for the first objective function~\eqref{objektiva1}. This strategy is in line with the statements given in the last paragraph of the section~\ref{objdef}. In total 10.000 samples of the objective function \eqref{objektiva1}  were evaluated, in order to obtain the  Total Sobol Index for each parameter~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters. 
 
 \begin{table}[ht]
 \begin{center}
@@ -609,12 +609,13 @@ Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
 \end{center}
 \end{table}
 
-The first run with discretization level $r_f=0$ generated after 40.000 objective function calls (each call took approximately 3~min, executed on 32-core Intel(R) Xeon(R) CPU E5-2630, bogomips 4801.67) the local extremes are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-4), the local extremes 5-8 refer to inverse model solutions with good fitting properties. An example of bad fitting dataset is depicted on figure~\ref{rf0examples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0examples} - right. Solution for each dataset is then depicted in Appendix, see figures~\ref{rf0ex1}-\ref{rf0ex4}.
+The first run with discretization level $r_f=0$ generated after 40.000 objective function calls (each call took approximately 3~min, executed on 32-core Intel(R) Xeon(R) CPU E5-2630, bogomips 4801.67) the local extremes are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0examples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0examples} - right. Solution for each dataset is then given in Appendix, see figures~\ref{rf0ex1}-\ref{rf0ex4}.
 
 
 
-\begin{center}
+
 \begin{table}[ht]
+\begin{center}
 % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
  \begin{footnotesize}
 \begin{tabular}{l || c c c c c  }
@@ -623,8 +624,8 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \rowcolor{gray}{\bf 1} & \num{2.447e-4} &  2.45 & 0.25 & \num{0.025} & \num{0.419e-2}   \\ 
 \rowcolor{gray}{\bf 2} & \num{0.101e-2} & 0.6517 &  0.271 & \num{1.092} &  \num{2.879e-2}  \\ 
 \rowcolor{gray}{\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{1.092} & \num{1.845e-4} \\
-\rowcolor{gray}{\bf 4} & \num{0.157e-2} & 1.968 & 0.720 & \num{2.07} & \num{1.053e-5}  \\ \hline \hline
-\rowcolor{white}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  \\
+\rowcolor{gray}{\bf 4} & \num{0.157e-2} & 1.968 & 0.720 & \num{2.07} & \num{1.053e-5}  \\ 
+\rowcolor{gray}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  \\ \hline \hline
 \rowcolor{white}{\bf 6} & \num{0.258e-2} & 2.152  & 0.401 &  \num{1.095} & 0  \\ 
 \rowcolor{white}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0  \\ 
 \rowcolor{white} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4}  \\ \hline
@@ -632,172 +633,50 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \end{tabular}
  \end{footnotesize}
 \label{shp-vysledky}
-\end{table}
 \end{center}
+\end{table}
+
 
 \begin{figure}
 \rotatebox{-90}{
-{\includegraphics[height=7cm]{images/husny/4.eps}}}
+{\includegraphics[height=7cm]{images/badfit/2.eps}}}
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{images/hezky/1.eps}}}
 \label{rf0examples}
-\caption{Left: Local extreme 1 -- bad fitting properties, Right: Local extreme 5 -- good fitting properties}
+\caption{Left: Local extreme 2 -- bad fitting properties, Right: Local extreme 5 -- good fitting properties.}
 \end{figure}
 
-\section{Appendix}
+In the next step the refinement level was increased, new mesh was generated, the new mesh discretized the domain into 4503 nodes and 8488 elements. The Picard criterion for the pressure head was refined for \num{1e-3}~cm, and the initial time step was \num{1e-7}~hrs. Only the local extremes 6-8 from table~\ref{shp-vysledky} were further evaluated.
 
-\begin{figure}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/badfit/1.eps}}}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/badfit/2.eps}}}
-\label{rf0ex1}
-\caption{Refinement level $r_f=0$: Local extreme 1 , Right: Local extreme 2.}
-\end{figure}
+For the local extreme 6, the refined numerical treatment $r_f=1$ has not affected the objective function, the figure~\ref{objfnc6} depicts two examples of the scatter plots -- for the parameter $\alpha$ and $n$. The scatter plots of all parameters are given in Appendix, figures~\ref{ext6rf0-an} -- \ref{ext6rf0-Ss3}. The response for the $\alpha$ parameter (figure \ref{objfnc6} - left) seems adequate, which wasn't the case of $n$ parameter  (figure \ref{objfnc6} - right). It turns out that for this parameter set the objective function exhibits poor local sensitivity. However, this wasn't the case of the other local extremes, see figure~\ref{objfnc6.2} - left. 
+
+The local extreme 8 is characterized by nonzero specific storage $S_s$. However, if we look closer to the scatter plot~\ref{objfnc6.2} - right, it becomes apparent, that the specific storage should vanish even for this parametric set. Both local extremes 7 and 8 exhibit similar local sensitivity and similar response for changing the $r_f$ level, as depicted in figure~\ref{objfnc6.2} - right.
+
+
 
 
 \begin{figure}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/badfit/3.eps}}}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/badfit/4.eps}}}
-\label{rf0ex2}
-\caption{Refinement level $r_f=0$: Local extreme 3 , Right: Local extreme 4.}
-\end{figure}
-
-
-\begin{figure}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/goodfit/5.eps}}}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/goodfit/6.eps}}}
-\label{rf0ex3}
-\caption{Refinement level $r_f=0$: Local extreme 5 , Right: Local extreme 6.}
-\end{figure}
-
-\begin{figure}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/goodfit/7.eps}}}
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{images/goodfit/8.eps}}}
-\label{rf0ex4}
-\caption{Refinement level $r_f=0$: Local extreme 7 , Right: Local extreme 8.}
-\end{figure}
-
-
-\begin{itemize}
- 
-
-
-
-
-
-
-\item the cyan data were further evaluated by increasing the refinement level $r_f$ (red datasets were rejected)
-
-\begin{description}
-\item[dataset 5]
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/alpha-3.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/n-3.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ks-3.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/ths-3.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ss-3.eps}}}
-
-
-\item[dataset 6]
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
-
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
+\label{objfnc6}
+\caption{Scatter plots of the objective function~\eqref{objektiva1} for the parameter $\alpha$ (left) and $n$ (right) for extreme 6.}
+\end{figure}
 
 
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ks-4.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
-
-\item[dataset 7]
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
-
+\begin{figure}
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
-
-\item[dataset 8]
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/alpha-6.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/n-6.eps}}}
-
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/Ks-6.eps}}}
-
-\rotatebox{-90}{
-{\includegraphics[height=7cm]{data/objvals/ths-6.eps}}}
-
-
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
+\label{objfnc6.2}
+\caption{Scatter plots of the objective function~\eqref{objektiva1} for the parameter $n$ at extreme 7 (left)  and $S_s$ at extreme 8  (right)}.
+\end{figure}
 
-\end{description}
+For the local extremes 7 and 8, the inverse process was restarted with discretization level $r_f=1$. 
+The new inverse solution was searched in  vicinity of both extremes, and thus two different narrow parameter ranges were defined now -- see table~\ref{rozsahy2}. Based on the results discussed above the specific storage was assumed to vanish from our model. 
 
-\item What can we learn?
-\begin{itemize}
-\item $S_s$ should be neglected from all datasets, the nonzero solutions for $S_s$ are just numerical zeroes
-\item dataset 6 seems uneffected by numerical solution. only $n$ seems inaccurate, should be lower (around 1.8)
-\item datasets 5,7, and 8 will be reevaluated
-\end{itemize}
-
-\begin{table}[ht]
-% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
- \begin{footnotesize}
-\begin{tabular}{l || c c c c c || l }
-% \toprule
-no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] & status\\ \hline \hline
-\rowcolor{red}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  & {\bf recompute}\\
-\rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.800  & 0.401 &  \num{1.095} & 0 & {\bf confirmed} \\ 
-\rowcolor{red}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0 & {\bf recompute} \\ 
-\rowcolor{red} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4} & {\bf recompute} \\ \hline
-% \toprule
-\end{tabular}
- \end{footnotesize}
-\label{shp-vysledky}
-\end{table}
-
-\item new optimization for ranges
 
 \begin{table}[ht]
 \begin{center}
@@ -809,17 +688,42 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
 extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \hline
 \toprule
-{\bf 5} & 0.576 - 0.864 & \num{.001200} - \num{.001800} & 1.268 - 1.903 & 0.875 - 1.311 \\
 {\bf 7} & 0.475 - 0.712 & \num{.0030416} - \num{.0045624} & 1.023 - 1.534 & 0.932 - 1.398 \\
 {\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
 \toprule
 \end{tabular}
 \end{small}
-\label{rozsahy}
+\label{rozsahy2}
 \end{center}
 \end{table}
 
-\item within just 1000 iters new extremes were found (algorithm stopped after the first extreme was found)
+With the increased discretization level the runtime for each simulation increased for 20 minutes on hardware equipment specified above. But since the parameter range was already relatively narrow, the optimization algorithm converged fast and the solution was achieved after 1000 iterations. The process was executed in parallel on 16-core CPU architecture, and thus the results were obtained in less than one day.
+
+\begin{figure}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/7.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/7-new.eps}}}
+\label{rf1examples}
+\caption{Left: Local extreme 7 infiltration curve for the original parameter set obtained at $r_f=0$ and solved on model with discretization $r_f=1$, right: solution for the updated parameter set in  vicinity of the extreme 7.}
+\end{figure}
+
+The updated solutions maintained similar fitting qualities as the solutions obtained at $r_f=0$, see figure~\ref{rf1examples} - right, the solution depicted on figure~\ref{rf1examples} - right is a dataset obtained at previous discretization level tested on model with increased discretization level.
+
+In order to evaluate the results obtained at $r_f=1$ discretization level, the discretization level was increased again for $r_f=2$. New mesh was generated with 6843 nodes and 13122 elements. Initial time step was now set for \num{1e-8}~hrs. New scatter plots were generated, an example is given in figure~\ref{ext6rf1-an2-example}. For all scatter plots see Appendix.
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/ths-4.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/n-4.eps}}}
+\label{ext6rf1-an2-example}
+\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $\theta_S$ and $n$.}
+\end{figure}
+
+
+The location of peaks of the scatter plots for these two sequential disceretization levels don't vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter. 
 
 \begin{table}[ht]
 % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
@@ -827,41 +731,30 @@ extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \
 \begin{tabular}{l || c c c c c }
 % \toprule
 no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
-\rowcolor{cyan}{\bf 5} & \num{0.0015607} & 1.3805 & 0.828 &  \num{1.0582} &  \num{7.641e-3} \\
-\rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
-\rowcolor{cyan}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
-\rowcolor{cyan} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
+\rowcolor{white}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
+\rowcolor{white}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
+\rowcolor{white} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
 % \toprule
 \end{tabular}
  \end{footnotesize}
 \label{shp-vysledky}
 \end{table}
 
+\begin{figure}
+\rotatebox{-90}{
+{\includegraphics[height=10cm]{images/retc.eps}}}
+\label{retc-final}
+\caption{Resulting retention curves obtained from the inverse model.}
+\end{figure}
 
-\item evaluation for $r_f=2$
-
-\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-5.eps}}
-
-
-\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-8.eps}}
-
-
-\rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/n-5.eps}}
-
-\item What can we learn now?
+\section{Conclusions}
 \begin{itemize}
-\item all local extremes were according to our methodology confirmed
-\item only the local extreme 5 (and maybe, maybe) 7 has physically acceptable values
-\item for refined discretization the objective function suffers with numerical oscillations, difficoult for gradient methods
-\item all identified retention curves despite different van Genuchten parameters point to clay type material
-\rotatebox{-90}{\includegraphics[height=7cm]{retc.eps}}
-\item {\bf SR method can be used for identification of $\alpha, \, n, \, K_s$, and maybe $S_s$ - but this parameter turned to vanish, but it is completely unreliable for $\theta_s$ and obviously for $\theta_r$.}
+\item $\theta_s$ cannot be reliably obtained by this inverse modeling 
+\item retention curve parameters refer to a relatively similar retention curves at ranges initial condition : boundary condition, see figure~\ref{retc-final}, unsteady SR experiment seems OK for such identification.
+\item  what else can we say??
 \end{itemize}
 
 
-
-
-\end{itemize}
 
 \section{Acknowledgement}
 
@@ -869,7 +762,385 @@ Financial support from the Czech Science Foundation (research project GACR 13-11
 
 % \section*{References}
 
-\bibliography{mybibfile}
+\bibliography{mybibfile} 
+
+
+\appendix
+
+\section{Solutions after the first identification run with $r_f=0$ and $r_f=1$.}
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/badfit/1.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/badfit/2.eps}}}
+\label{rf0ex1}
+\caption{Refinement level $r_f=0$: Local extreme 1 , Right: Local extreme 2.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/badfit/3.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/badfit/4.eps}}}
+\label{rf0ex2}
+\caption{Refinement level $r_f=0$: Local extreme 3 , Right: Local extreme 4.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/badfit/5.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/goodfit/6.eps}}}
+\label{rf0ex3}
+\caption{Refinement level $r_f=0$: Local extreme 5 , Right: Local extreme 6.}
+\end{figure}
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/goodfit/7.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/goodfit/8.eps}}}
+\label{rf0ex4}
+\caption{Refinement level $r_f=0$: Local extreme 7 , Right: Local extreme 8.}
+\end{figure}
+
+
+\section{Scatter plots for objective functions, $r_f=0,1$}
+ 
+ Scatter plots of the objective functions for the local extreme 6 are depicted in figures~\ref{ext6rf0-an} -- \ref{ext6rf0-Ss}.
+ 
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
+\label{ext6rf0-an}
+\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameters $\alpha$ and $n$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-4.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
+\label{ext6rf0-Kt}
+\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameters $K_s$ and $\theta_s$. }
+\end{figure}
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
+\label{ext6rf0-Ss}
+\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameter $S_s$}
+\end{figure}
+
+Scatter plots of the objective functions for the local extreme 7 are depicted in figures~\ref{ext6rf0-an2} -- \ref{ext6rf0-Ss2}.
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
+\label{ext6rf0-an2}
+\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameters $\alpha$ and $n$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
+\label{ext6rf0-Kt2}
+\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameters $K_s$ and $\theta_s$. }
+\end{figure}
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
+\label{ext6rf0-Ss2}
+\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameter $S_s$}
+\end{figure}
+
+Scatter plots of the objective functions for the local extreme 8 are depicted in figures~\ref{ext6rf0-an3} -- \ref{ext6rf0-Ss3}.
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
+\label{ext6rf0-an3}
+\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameters $\alpha$ and $n$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
+\label{ext6rf0-Kt3}
+\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameters $K_s$ and $\theta_s$. }
+\end{figure}
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
+\label{ext6rf0-Ss3}
+\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameter $S_s$.}
+\end{figure}
+
+
+\section{New solutions for $r_f=1$}
+
+\begin{figure}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/7.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/7-new.eps}}}
+\label{rf0examples}
+\caption{Left: Local extreme 7 infiltration curve for the original parameter set obtained at $r_f=0$ and solved on model with discretization $r_f=1$, right: solution for the updated parameter set in  vicinity of the extreme 7.}
+\end{figure}
+
+\begin{figure}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/8.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{images/fitrf1/8-new.eps}}}
+\label{rf0examples}
+\caption{Left: Local extreme 8 infiltration curve for the original parameter set obtained at $r_f=0$ and solved on model with discretization $r_f=1$, right: solution for the updated parameter set in  vicinity of the extreme 7.}
+\end{figure}
+
+\section{Scatter plots for objective functions, $r_f=1,2$}
+
+Scatter plots of the objective functions for the updated local extreme 7 for $r_f=1,2$ is depicted in figures~\ref{ext6rf1-an} - \ref{ext6rf1-Kt2}.
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/alpha-3.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/n-3.eps}}}
+\label{ext6rf1-an}
+\caption{Scatter plots for $r_f=1,2$ for extreme 7 for parameters $\alpha$ and $n$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/Ks-3.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/ths-3.eps}}}
+\label{ext6rf1-Kt}
+\caption{Scatter plots for $r_f=1,2$ for extreme 7 for parameters $K_s$ and $\theta_s$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/alpha-4.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/n-4.eps}}}
+\label{ext6rf1-an2}
+\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $\alpha$ and $n$.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/Ks-4.eps}}}
+\rotatebox{-90}{
+{\includegraphics[height=7cm]{data/objvals2nd/ths-4.eps}}}
+\label{ext6rf1-Kt2}
+\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $K_s$ and $\theta_s$.}
+\end{figure}
+
+
+
+
+% \begin{itemize}
+%  
+% 
+% 
+% 
+% 
+% 
+% 
+% \item the cyan data were further evaluated by increasing the refinement level $r_f$ (red datasets were rejected)
+% 
+% \begin{description}
+% \item[dataset 5]
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/alpha-3.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/n-3.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ks-3.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/ths-3.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ss-3.eps}}}
+% 
+% 
+% \item[dataset 6]
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ks-4.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
+% 
+% \item[dataset 7]
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
+% 
+% \item[dataset 8]
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/alpha-6.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/n-6.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ks-6.eps}}}
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/ths-6.eps}}}
+% 
+% 
+% \rotatebox{-90}{
+% {\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
+% 
+% \end{description}
+% 
+% \item What can we learn?
+% \begin{itemize}
+% \item $S_s$ should be neglected from all datasets, the nonzero solutions for $S_s$ are just numerical zeroes
+% \item dataset 6 seems uneffected by numerical solution. only $n$ seems inaccurate, should be lower (around 1.8)
+% \item datasets 5,7, and 8 will be reevaluated
+% \end{itemize}
+% 
+% \begin{table}[ht]
+% % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+%  \begin{footnotesize}
+% \begin{tabular}{l || c c c c c || l }
+% % \toprule
+% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] & status\\ \hline \hline
+% \rowcolor{red}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  & {\bf recompute}\\
+% \rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.800  & 0.401 &  \num{1.095} & 0 & {\bf confirmed} \\ 
+% \rowcolor{red}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0 & {\bf recompute} \\ 
+% \rowcolor{red} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4} & {\bf recompute} \\ \hline
+% % \toprule
+% \end{tabular}
+%  \end{footnotesize}
+% \label{shp-vysledky}
+% \end{table}
+% 
+% \item new optimization for ranges
+% 
+% \begin{table}[ht]
+% \begin{center}
+% \caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=1$. }
+% \begin{small}
+% \doublespacing
+% \begin{tabular}{ l || c c c c }
+% \toprule
+% % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
+% extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \hline
+% \toprule
+% {\bf 5} & 0.576 - 0.864 & \num{.001200} - \num{.001800} & 1.268 - 1.903 & 0.875 - 1.311 \\
+% {\bf 7} & 0.475 - 0.712 & \num{.0030416} - \num{.0045624} & 1.023 - 1.534 & 0.932 - 1.398 \\
+% {\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
+% \toprule
+% \end{tabular}
+% \end{small}
+% \label{rozsahy}
+% \end{center}
+% \end{table}
+% 
+% \item within just 1000 iters new extremes were found (algorithm stopped after the first extreme was found)
+% 
+% \begin{table}[ht]
+% % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+%  \begin{footnotesize}
+% \begin{tabular}{l || c c c c c }
+% % \toprule
+% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
+% \rowcolor{cyan}{\bf 5} & \num{0.0015607} & 1.3805 & 0.828 &  \num{1.0582} &  \num{7.641e-3} \\
+% \rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
+% \rowcolor{cyan}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
+% \rowcolor{cyan} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
+% % \toprule
+% \end{tabular}
+%  \end{footnotesize}
+% \label{shp-vysledky}
+% \end{table}
+% 
+% 
+% \item evaluation for $r_f=2$
+% 
+% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-5.eps}}
+% 
+% 
+% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-8.eps}}
+% 
+% 
+% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/n-5.eps}}
+% 
+% \item What can we learn now?
+% \begin{itemize}
+% \item all local extremes were according to our methodology confirmed
+% \item only the local extreme 5 (and maybe, maybe) 7 has physically acceptable values
+% \item for refined discretization the objective function suffers with numerical oscillations, difficoult for gradient methods
+% \item all identified retention curves despite different van Genuchten parameters point to clay type material
+% \rotatebox{-90}{\includegraphics[height=7cm]{retc.eps}}
+% \item {\bf SR method can be used for identification of $\alpha, \, n, \, K_s$, and maybe $S_s$ - but this parameter turned to vanish, but it is completely unreliable for $\theta_s$ and obviously for $\theta_r$.}
+% \end{itemize}
+% 
+% 
+% 
+% 
+% \end{itemize}
+
+
 
 
 \end{document}
