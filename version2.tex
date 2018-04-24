@@ -454,8 +454,17 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
  This semiexplicit method always requires just a single outer iteration. With a short time step the method converges to the exact solution. For inappropriate time steps, the method diverges from the exact solution faster than the method~\eqref{matice}. Nonetheless, the method~\eqref{matice2} is free of possible issues related to the convergence of the nonlinear operator.
 
 The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
-Thus the following methodology for the automatic calibration was proposed here.
 
+Following the concerns about  effects of numerical treatment for the identified values of SHPs parameters a specific  automatic calibration methodology was proposed. The technique is explained in brief in figure~\ref{flowchart}, and  details are given in the following paragraph.
+ 
+
+
+\begin{figure}
+\centering
+\includegraphics[width=12cm]{flowchart/Flow_chart_barvy_new.png}
+\caption{The proposed methodology for the automatic calibration avoiding effects of numerical treatment for the identified SHPs values.}
+\label{flowchart}
+\end{figure}
 
  \begin{enumerate}[label=({\bf \roman*})]
 \item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs (note that all real numbers are represented with double precision in our implementations), and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}_{r_f,max}$, and the minimal values are defined as a vector $\vec{p}_{r_f,min}$. So initially the ranges are extremely broad and exceeding even the physically acceptable values. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
@@ -650,7 +659,7 @@ In the next step the refinement level was increased, new mesh was generated, the
 
 For the local extreme 6, the refined numerical treatment $r_f=1$ has not affected the objective function, the figure~\ref{objfnc6} depicts two examples of the scatter plots -- for the parameter $\alpha$ and $n$. The scatter plots of all parameters are given in Appendix. The response for the $\alpha$ parameter (figure \ref{objfnc6} - left) seems adequate, which wasn't the case of $n$ parameter  (figure \ref{objfnc6} - right). It turns out that for this parameter set the objective function exhibits poor local sensitivity. However, this wasn't the case of the other local extremes, see figure~\ref{objfnc6.2} - left. 
 
-The local extreme 8 is characterized by nonzero specific storage $S_s$. However, if we look closer to the scatter plot~\ref{objfnc6.2} - right, it becomes apparent, that the specific storage should vanish even for this parametric set. Both local extremes 7 and 8 exhibit similar local sensitivity and similar response for changing the $r_f$ level, as depicted in figure~\ref{objfnc6.2} - right.
+The local extreme 8 is characterized by nonzero specific storage $S_s$. However, if we look closer to the scatter plot~\ref{objfnc6.2} - right, it becomes apparent, that the specific storage should vanish even for this parametric set. Both local extremes 7 and 8 exhibit similar local sensitivity and similar response for changing the $r_f$ level, as the one depicted in figure~\ref{objfnc6.2} - right.
 
 
 
@@ -723,26 +732,28 @@ In order to evaluate the results obtained at $r_f=1$ discretization level, the d
 \end{figure}
 
 
-The location of peaks of the scatter plots for these two sequential disceretization levels don't vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter. 
+The location of peaks of the scatter plots for these two sequential disceretization levels don't vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the indentified value 2.152 for new value 1.950 in accordance with the scatter plot in figure~\ref{objfnc6} - right.
 
 \begin{table}[ht]
-% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
- \begin{footnotesize}
+\centering
+\caption{The resulting SHP data sets.}
+ \begin{small}
 \begin{tabular}{l || c c c c c }
-% \toprule
+\toprule
 no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
-\rowcolor{white}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
+\rowcolor{white}{\bf 6} & \num{0.258e-2} & 1.950  & 0.401 &  \num{1.095} & 0  \\ 
 \rowcolor{white}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
 \rowcolor{white} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
-% \toprule
+\toprule
 \end{tabular}
- \end{footnotesize}
+ \end{small}
 \label{shp-vysledky-final}
 \end{table}
 
 \begin{figure}
+\centering
 \rotatebox{-90}{
-{\includegraphics[height=10cm]{images/retc.eps}}}
+{\includegraphics[height=9cm]{images/retc.eps}}}
 \caption{Resulting retention curves obtained from the inverse model.}
 \label{retc-final}
 \end{figure}

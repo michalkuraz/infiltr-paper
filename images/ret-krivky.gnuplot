@@ -1,7 +1,7 @@
 #a5=0.0016337
 #n5=1.3481
 a6=0.00258
-n6=1.8
+n6=1.95
 a7=0.0032285
 n7=1.4421
 a8=0.002276
@@ -17,13 +17,13 @@ f8(x)=1/(1+(-a8*x)**n8)**(1-1/n8)
 
 set xrange [-280:0]
 
-set yrange [0.6:1]
+set yrange [0.7:1]
 
 set xlabel "pressure head [cm]"
 
 set ylabel "{/Symbol q}_E [-]"
 
-set terminal postscript enhanced lw 3 "Helvetica" 25 colour
+set terminal postscript enhanced lw 3 "Helvetica" 22 colour
 
 set grid
 
