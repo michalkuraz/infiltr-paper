@@ -5,45 +5,45 @@ The style file: model2-names.bst
 Database file #1: mybibfile.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty pages in Leps:2007
-You've used 54 entries,
+You've used 58 entries,
             2990 wiz_defined-function locations,
-            1146 strings with 19236 characters,
-and the built_in function-call counts, 36894 in all, are:
-= -- 2864
-> -- 1436
-< -- 21
-+ -- 562
-- -- 498
-* -- 4122
-:= -- 5390
-add.period$ -- 196
-call.type$ -- 54
-change.case$ -- 430
-chr.to.int$ -- 52
-cite$ -- 55
-duplicate$ -- 2676
-empty$ -- 2715
-format.name$ -- 646
-if$ -- 6911
+            1191 strings with 20537 characters,
+and the built_in function-call counts, 39794 in all, are:
+= -- 3099
+> -- 1540
+< -- 23
++ -- 602
+- -- 534
+* -- 4456
+:= -- 5804
+add.period$ -- 211
+call.type$ -- 58
+change.case$ -- 462
+chr.to.int$ -- 56
+cite$ -- 59
+duplicate$ -- 2881
+empty$ -- 2929
+format.name$ -- 698
+if$ -- 7462
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 530
-newline$ -- 319
-num.names$ -- 216
-pop$ -- 888
+missing$ -- 570
+newline$ -- 342
+num.names$ -- 232
+pop$ -- 950
 preamble$ -- 1
-purify$ -- 382
+purify$ -- 410
 quote$ -- 0
-skip$ -- 758
+skip$ -- 813
 stack$ -- 0
-substring$ -- 1670
-swap$ -- 1961
+substring$ -- 1828
+swap$ -- 2117
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 468
+type$ -- 504
 warning$ -- 1
-while$ -- 216
+while$ -- 232
 width$ -- 0
-write$ -- 852
+write$ -- 916
 (There was 1 warning)

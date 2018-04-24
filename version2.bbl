@@ -1,4 +1,4 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{58}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -213,6 +213,15 @@
   \url{http://www.sciencedirect.com/science/article/pii/S0016706116301823},
   \DOIprefix\doi{http://dx.doi.org/10.1016/j.geoderma.2016.04.023}.
 %Type = Article
+\bibitem[{Kamali and Zand-Parsa({2016})}]{Kamali}
+\bibinfo{author}{Kamali, H.R.}, \bibinfo{author}{Zand-Parsa, S.},
+  \bibinfo{year}{{2016}}.
+\newblock \bibinfo{title}{{OPTIMIZATION OF A NEW INVERSE METHOD FOR ESTIMATION
+  OF INDIVIDUAL SOIL HYDRAULIC PARAMETERS UNDER FIELD CONDITIONS}}.
+\newblock \bibinfo{journal}{{Transactions of the ASABE}}
+  \bibinfo{volume}{{59}}, \bibinfo{pages}{{1257--1266}}.
+\newblock \DOIprefix\doi{{10.13031/trans.59.11414}}.
+%Type = Article
 \bibitem[{Knobloch(2008)}]{knobloch2008}
 \bibinfo{author}{Knobloch, P.}, \bibinfo{year}{2008}.
 \newblock \bibinfo{title}{On the choice of the supg parameter at outflow
@@ -240,6 +249,16 @@
   studies}.
 \newblock \bibinfo{journal}{Soil Science Society of America}
   \bibinfo{volume}{49}, \bibinfo{pages}{1348 -- 1354}.
+%Type = Article
+\bibitem[{Kowalsky et~al.({2004})Kowalsky, Finsterle and Rubin}]{Kowalsky04}
+\bibinfo{author}{Kowalsky, M.}, \bibinfo{author}{Finsterle, S.},
+  \bibinfo{author}{Rubin, Y.}, \bibinfo{year}{{2004}}.
+\newblock \bibinfo{title}{{Estimating flow parameter distributions using
+  ground-penetrating radar and hydrological measurements during transient flow
+  in the vadose zone}}.
+\newblock \bibinfo{journal}{{ADVANCES IN WATER RESOURCES}}
+  \bibinfo{volume}{{27}}, \bibinfo{pages}{{583--599}}.
+\newblock \DOIprefix\doi{{10.1016/j.advwatres.2004.03.003}}.
 %Type = Phdthesis
 \bibitem[{Kucerova(2007)}]{Kucerova:2007:PHD}
 \bibinfo{author}{Kucerova, A.}, \bibinfo{year}{2007}.
@@ -346,6 +365,28 @@
   \url{http://www.sciencedirect.com/science/article/pii/002216949390093O},
   \DOIprefix\doi{https://doi.org/10.1016/0022-1694(93)90093-O}.
   \bibinfo{note}{xVI General Assembly of the European Geophysical Society}.
+%Type = Article
+\bibitem[{Nakhaei and Amiri({2015})}]{Nakhaei}
+\bibinfo{author}{Nakhaei, M.}, \bibinfo{author}{Amiri, V.},
+  \bibinfo{year}{{2015}}.
+\newblock \bibinfo{title}{{ESTIMATING THE UNSATURATED SOIL HYDRAULIC PROPERTIES
+  FROM A REDISTRIBUTION EXPERIMENT: APPLICATION TO SYNTHETIC DATA}}.
+\newblock \bibinfo{journal}{{JOURNAL OF POROUS MEDIA}} \bibinfo{volume}{{18}},
+  \bibinfo{pages}{{717--729}}.
+%Type = Article
+\bibitem[{Peña-Sancho et~al.(2017)Peña-Sancho, Ghezzehei, Latorre,
+  González-Cebollada and Moret-Fernández}]{pena17}
+\bibinfo{author}{Peña-Sancho, C.}, \bibinfo{author}{Ghezzehei, T.},
+  \bibinfo{author}{Latorre, B.}, \bibinfo{author}{González-Cebollada, C.},
+  \bibinfo{author}{Moret-Fernández, D.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Upward infiltration–evaporation method to estimate
+  soil hydraulic properties}.
+\newblock \bibinfo{journal}{Hydrological Sciences Journal}
+  \bibinfo{volume}{62}, \bibinfo{pages}{1683--1693}.
+\newblock \URLprefix \url{https://doi.org/10.1080/02626667.2017.1343476},
+  \DOIprefix\doi{10.1080/02626667.2017.1343476},
+  \href{http://arxiv.org/abs/https://doi.org/10.1080/02626667.2017.1343476}{\tt
+  arXiv:https://doi.org/10.1080/02626667.2017.1343476}.
 %Type = Article
 \bibitem[{Ramos et~al.({2006})Ramos, Goncalves, Martins, van Genuchten and
   Pires}]{Ramos}
