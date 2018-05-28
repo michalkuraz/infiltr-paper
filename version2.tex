@@ -591,11 +591,25 @@ memory and restarts. GRADE is a real-coded genetic algorithm combining the ideas
 \subsubsection{Multi-objective Optimization}
 
  In this contribution Average Ranking (AR) \citep{Leps:2007} was used to deal with multi-objective definition. It sums ranks of the objective functions instead of the objective functions' values. Therefore, no weights are needed, however, the Pareto-dominance is not preserved as described in \cite{vitingerova:2010}. An application of the AR algorithm to parameters identification can be found in \cite{Kuraz:2010:JCAM}. 
+ 
+ \subsection{Benchmark evaluations}
+ \label{benchmarks}
+ 
+The purpose of this section is to evaluate the robustness of the proposed methodology, and to experimentally validate the following  research hypotheses, which has arisen   in this manuscript.
+\begin{enumerate}
+\item The SHP properties can be identified from the cumulative volume fluxes measured at Dirichlet boundary. 
+\item Nevertheless, the estimated SHP properties are vulnerable for non-uniqueness.
+\item The estimated SHP properties are affected by accuracy of the numerical solution of the Richards equation, however, the less accurate solution of the Richards equation can be used as an  inverse model estimator.
+\end{enumerate}
+
+
+ For simplicity only a one-dimensional problem, described by the equation~\eqref{richaxi} with zero derivatives with respect to axis $r$, was considered here. Dirichlet boundary conditions were presumed for both boundaries. 
+    
 
 
 
 
-\section{Results and discussion} %[michal, lukas]
+\section{Results and discussion} 
 
 
 The first procedure, which is typically required before proceeding the inverse modeling procedures, is the global sensitivity analyses on  selected parameter ranges, see table~\ref{rozsahy}. For simplicity the sensitivity analyses was conducted just for the first objective function~\eqref{objektiva1}. This strategy is in line with the statements given in the last paragraph of the section~\ref{objdef}. In total 10.000 samples of the objective function \eqref{objektiva1}  were evaluated, in order to obtain the  Total Sobol Index for each parameter~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters. 
