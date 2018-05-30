@@ -599,11 +599,30 @@ The purpose of this section is to evaluate the robustness of the proposed method
 \begin{enumerate}
 \item The SHP properties can be identified from the cumulative volume fluxes measured at Dirichlet boundary. 
 \item Nevertheless, the estimated SHP properties are vulnerable for non-uniqueness.
-\item The estimated SHP properties are affected by accuracy of the numerical solution of the Richards equation, however, the less accurate solution of the Richards equation can be used as an  inverse model estimator.
+\item The estimated SHP properties are affected by accuracy of the numerical solution of the Richards equation, however, the less accurate solution of the Richards equation can be used as an estimator of the inverse model solution.
 \end{enumerate}
 
 
- For simplicity only a one-dimensional problem, described by the equation~\eqref{richaxi} with zero derivatives with respect to axis $r$, was considered here. Dirichlet boundary conditions were presumed for both boundaries. 
+ For simplicity only a one-dimensional problem, described by the equation~\eqref{richaxi} with zero derivatives with respect to axis $r$, was considered here. Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
+ \begin{lineq}
+ \begin{split}
+ H(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
+  H(x,t) &= 3\, cm, \quad \forall (x,t) \in \Gamma_{top} \times  t \in [0, T_{end}) \\ 
+  H(x,t_0) &= 0\, cm , \quad \forall x \in \Omega,
+  \end{split}
+\end{lineq}
+ where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{1e-3}~hrs. Two distiguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}, and are given in table~\ref{tab:bench}
+ 
+ \begin{table}[ht]
+ \begin{center}
+ \caption{SHP properties for benchmark models.}
+ \begin{small}
+ \begin{tabular}{l||c c c c c}
+ & $\alpha$ [$\textrm{cm^{-1}}$] & n [-] & $\theta_r$ [-] & $\theta_s$  [-] & $K_s$ [$\textrm{cm.hrs^{-1}$]  \\ \hline
+ clay loam & 0.019 & 1.31 & 0.095 & 0.41 & 6.24 \\ 
+ sand &  0.145 & 2.68 & 0.045 & 0.43 & 29.7 \\ \hline
+ \end{tabular}
+ 
     
 
 
