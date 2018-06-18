@@ -29,6 +29,9 @@
 \usepackage{multirow}
 \usepackage{url}
 
+%  \usepackage{multirow}
+ \usepackage[table,xcdraw]{xcolor}
+
 % \usepackage{jabbrv}
 
 \usepackage{blindtext}
@@ -149,7 +152,7 @@ The following questions arise:
 \begin{itemize}
 	\item Is it possible to approximate the unsteady SR experiment using the REVG model, where the only unknown parameters represent the thin topsoil layer, by a unique set of parameters? \
 	\item If not, are all parameters vulnerable to non-uniqueness?
-	\item Are the parameters identified by inverse analysis of SR infiltration dependent on the treatment of the nonlinear operator of the Richards equation? Is there any benefit in using the accurate Newton or Picard iteration method, which can often lead to slow convergence or even divergence, or can we obtain a reasonable estimate with just the semi-implicit scheme?
+	\item Are the parameters identified by inverse analysis of SR infiltration dependent on the treatment of the nonlinear operator of the Richards equation? Is there any benefit in using the accurate Newton or Picard iteration method, which can often lead to slow convergence or even divergence, or can we obtain a reasonable estimate with just the semi-implicit scheme (=evaluating nonlinear functions in the Richards equation from previous time level solution)?
 \end{itemize}
 
 
@@ -539,7 +542,7 @@ of the REVG inverse model of SR experiment
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
 $\theta_s$ [-]&$\alpha$ [m$^{-1}$]&n [-]& $K_s$ [m.s$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
 \toprule
-0.25 -- 0.90 & 0.01 -- 5.0 & 1.05 -- 2.10 & $10^{-7}$ -- $10^{-4}$ & 0.0 -- 10.0 \\
+0.25 -- 0.90 & 0.01 -- 5.0 & 1.05 -- 4.5 & $10^{-7}$ -- $10^{-4}$ & 0.0 -- 10.0 \\
 \toprule
 \end{tabular}
 \end{small}
@@ -603,7 +606,7 @@ The purpose of this section is to evaluate the robustness of the proposed method
 \end{enumerate}
 
 
- For simplicity only a one-dimensional problem, described by the equation~\eqref{richaxi} with zero derivatives with respect to axis $r$, was considered here. Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
+ For simplicity only a one-dimensional Richards equation problem was considered here.  Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
  \begin{lineq}
  \begin{split}
  H(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
@@ -611,20 +614,83 @@ The purpose of this section is to evaluate the robustness of the proposed method
   H(x,t_0) &= 0\, cm , \quad \forall x \in \Omega,
   \end{split}
 \end{lineq}
- where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{1e-3}~hrs. Two distiguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}, and are given in table~\ref{tab:bench}
+ where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{e-1}~hrs. Two distinguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}, and are given in table~\ref{tab:bench}
  
  \begin{table}[ht]
  \begin{center}
  \caption{SHP properties for benchmark models.}
  \begin{small}
  \begin{tabular}{l||c c c c c}
- & $\alpha$ [$\textrm{cm^{-1}}$] & n [-] & $\theta_r$ [-] & $\theta_s$  [-] & $K_s$ [$\textrm{cm.hrs^{-1}$]  \\ \hline
+%   & $\alpha$ [$\textrm{cm^{-1}}$] & $n$ [-] & $\theta_r$ [-] & $\theta_s$  [-] & $K_s$ [$\textrm{cm.hrs^{-1}}$]  \\ \hline
+  & $\alpha$  [cm$^{-1}$] & $n$ [-] & $\theta_r$ [-] & $\theta_s$  [-]  &  $K_s$ [cm.hrs$^{-1}$]  \\ \hline
  clay loam & 0.019 & 1.31 & 0.095 & 0.41 & 6.24 \\ 
  sand &  0.145 & 2.68 & 0.045 & 0.43 & 29.7 \\ \hline
  \end{tabular}
+ \end{small}
+ \label{tab:bench}
+ \end{center}
+ \end{table}
  
-    
+ 
+  The computational domain $\Omega$ was uniformly discretized with $\Delta x$=0.5~cm, the initial time step was $\Delta t$=\num{e-7}~hrs, and the error criterion from~\eqref{picard} for solving the nonlinear system~\eqref{matice} was   $\varepsilon$=\num{e-3}~cm.
+ 
+ The reference solutions both for sand and gravel media were obtained from  cumulative flux over the top Dirichlet boundary $\Gamma_{top}$.
+ 
+For the given reference solutions the inverse modeling algorithm described in section~\ref{optima} was employed for searching the original SHP parameters in broad ranges given in table~\ref{rozsahy}. In the first stage the numerical setup of the Richards equation solver was identical with the one used for the reference solution. In the second stage the accuracy of the numerical treatment  of the Richards equation was sharply decreased. The spatial discretization became twice as much coarser with $\Delta x$=1.0~cm, and, more importantly, the nonlinear system~\eqref{matice} was treated  with semiexplicit method~\eqref{matice2}, which applies for $\varepsilon \, \leadsto \, +\infty$. 
+ 
+And thus in total four inverse modeling experiments were conducted -- two for clay medium and two for sand medium -- the first set with the original numerical treatment and the second set with the coarser discretization setup.
 
+
+
+\begin{table}[]
+\centering
+\caption{Results of the benchmark problem. The highlighted rows refer to the correct solution of this benchmark inverse problem.}
+\label{tab-benchres}
+\begin{small}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{343434}}                                         &                           & \multicolumn{4}{c|}{SHP parameters}                                                                                                        &                                                                                                                                 \\ \cline{4-7}
+\multicolumn{2}{|l|}{\multirow{-2}{*}{\cellcolor[HTML]{343434}}}                       & \multirow{-2}{*}{extreme} & $\alpha$ {[}cm$^{-1}${]}         & $n$ {[}-{]}                     & $\theta_s$ {[}-{]}              & $K_s$ {[}cm.hrs$^{-1}${]}       & \multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}objective function \eqref{objektiva1} \\  $\Psi_1$\end{tabular}} \\ \hline \hline
+                                             &                                         & \cellcolor[HTML]{C0C0C0}1 & \cellcolor[HTML]{C0C0C0}0.020367 & \cellcolor[HTML]{C0C0C0}1.3219  & \cellcolor[HTML]{C0C0C0}0.39551 & \cellcolor[HTML]{C0C0C0}6.2261  & \cellcolor[HTML]{C0C0C0}0.04787                                                                                                 \\ \cline{3-8} 
+                                             &                                         & 2                         & 0.011519                         & 1.05                            & 0.2502                          & 7.0108                          & 0.2830367232                                                                                                                    \\ \cline{3-8} 
+                                             & \multirow{-3}{*}{1$^{\mbox{st}}$ stage} & 3                         & 0.00012796                       & 1.1462                          & 0.9                             & 94.904                          & 0.3724314113                                                                                                                    \\ \cline{2-8} 
+                                             &                                         & \cellcolor[HTML]{C0C0C0}1 & \cellcolor[HTML]{C0C0C0}0.019941 & \cellcolor[HTML]{C0C0C0}1.3504  & \cellcolor[HTML]{C0C0C0}0.46568 & \cellcolor[HTML]{C0C0C0}7.005   & \cellcolor[HTML]{C0C0C0}0.560637688                                                                                             \\ \cline{3-8} 
+                                             &                                         & 2                         & 0.094183                         & 3.7989                          & 0.25003                         & 3.8626                          & 1.290496494                                                                                                                     \\ \cline{3-8} 
+\multirow{-6}{*}{clay}                       & \multirow{-3}{*}{2$^{\mbox{nd}}$ stage} & 3                         & 0.019983                         & 1.35                            & 0.26555                         & 6.9927                          & 0.6542315846                                                                                                                    \\ \hline \hline 
+\multicolumn{1}{|c|}{}                       &                                         & 1                         & 0.039412                         & 1.0502                          & 0.25018                         & 35.563                          & 0.02977800386                                                                                                                   \\ \cline{3-8} 
+\multicolumn{1}{|c|}{}                       &                                         & 2                         & 0.026293                         & 1.0872                          & 0.58662                         & 37.877                          & 0.02405719725                                                                                                                   \\ \cline{3-8} 
+\multicolumn{1}{|c|}{}                       & \multirow{-3}{*}{1$^{\mbox{st}}$ stage} & \cellcolor[HTML]{C0C0C0}3 & \cellcolor[HTML]{C0C0C0}0.154    & \cellcolor[HTML]{C0C0C0}2.6543  & \cellcolor[HTML]{C0C0C0}0.46    & \cellcolor[HTML]{C0C0C0}30.145  & \cellcolor[HTML]{C0C0C0}0.02198515637                                                                                           \\ \cline{2-8} 
+\multicolumn{1}{|c|}{}                       &                                         & 1                         & 0.042468                         & 1.1269                          & 0.25569                         & 69.785                          & 0.0157830282                                                                                                                    \\ \cline{3-8} 
+\multicolumn{1}{|c|}{\multirow{-5}{*}{sand}} & \multirow{-2}{*}{2$^{\mbox{nd}}$ stage} & \cellcolor[HTML]{C0C0C0}2 & \cellcolor[HTML]{C0C0C0}0.12224  & \cellcolor[HTML]{C0C0C0}2.45494 & \cellcolor[HTML]{C0C0C0}0.35    & \cellcolor[HTML]{C0C0C0}32.6334 & \cellcolor[HTML]{C0C0C0}0.0139951908                                                                                            \\ \hline
+\end{tabular}
+\end{small}
+\end{table}
+
+Results of the benchmark problem are given in table~\ref{tab-benchres}. For all four benchmark problems the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
+
+In the second stage the inverse problem was solved with less accurate discretization technique. It is apparent, that even the less accurate (but oscillations free) semi-explicit method for treatment of the nonlinear Richards equation operator has given  reasonable estimates of the SHP parameters. 
+
+
+% clay with original settings
+%  0.020367, 1.3219, 0.39551, 6.2261  0.04787
+% 0.011519, 1.05, 0.2502, 7.0108 0.2830367232
+%  0.00012796, 1.1462, 0.9, 94.904 0.3724314113
+ 
+%  clay with semi-explicit
+% 0.019941, 1.3504, 0.46568, 7.005 0.560637688
+%  0.094183, 3.7989, 0.25003, 3.8626 1.290496494
+% 0.019983, 1.35, 0.26555, 6.9927 0.6542315846
+
+% sand with original settings
+% 0.039412, 1.0502, 0.25018, 35.563 0.02977800386
+% 0.026293, 1.0872, 0.58662, 37.877 0.02405719725
+% 0.154 & 2.6543 &  0.46 & 30.145 0.02198515637 
+
+%sand with semiexplicit
+%  0.042468, 1.1269, 0.25569, 69.785 0.0157830282
+% 0.12224    2.45494       0.35    32.6334 0.0139951908
+
+ 
 
 
 
@@ -774,9 +840,9 @@ The location of peaks of the scatter plots for these two sequential disceretizat
 \begin{tabular}{l || c c c c c }
 \toprule
 no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
-\rowcolor{white}{\bf 6} & \num{0.258e-2} & 1.950  & 0.401 &  \num{1.095} & 0  \\ 
-\rowcolor{white}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
-\rowcolor{white} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
+\rowcolor{white}{\bf 6} & \num{0.258e-2} & \num{1.950}  & 0.401 &  \num{1.095} & 0  \\ 
+\rowcolor{white}{\bf 7} & \num{0.0032285} & \num{1.4421} & 0.513 &  \num{1.0995} & 0  \\ 
+\rowcolor{white} {\bf 8} & \num{0.002276} & \num{1.5189} & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
 \toprule
 \end{tabular}
  \end{small}
@@ -792,6 +858,12 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \end{figure}
 
 \section{Conclusions}
+
+The purpose of this paper was to evaluate the capability of an unsteady part of the well known single ring infiltration experiment for estimating  soil hydraulic properties, namely the water retention curve. The main research question was whether the cumulative infiltration curve representing the unsteady part of the single ring experiment is robust enough to give a unique definition for soil hydraulic properties, particularly van Genuchten's parameters $\alpha$, and $n$, saturated water content $\theta_s$, and obviously the saturated hydraulic conductivity $K_s$. 
+  Are all parameters potentially vulnerable to a non-uniqueness? And finally, is there a strong dependence between the inverse task solution and the numerical treatment? Is there any benefit in using the accurate Newton or Picard iteration method, which can often lead to slow convergence or even divergence, or can we obtain a reasonable estimate with just the semi-implicit scheme (=evaluating  nonlinear functions in the Richards equation from the previous time level solution)?
+  
+In order to answer these questions we presented a methodology for inverse modeling for this class of the Richards equation problems. Our  presumptions of multimodality were briefly validated on one-dimensional benchmark problems for two distinct porous materials -- sand and clay. It appeared that an acceptable solution of the inverse task   doesn't necessarily point to a physically acceptable solution. The most noticeable non-uniqueness was discovered with the saturated water content, since  acceptable solutions were identified across  extremely broad ranges  of this parameter.
+  
 \begin{itemize}
 \item $\theta_s$ cannot be reliably obtained by this inverse modeling 
 \item retention curve parameters refer to a relatively similar retention curves at ranges initial condition : boundary condition, see figure~\ref{retc-final}, unsteady SR experiment seems OK for such identification.
@@ -802,7 +874,9 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 
 \section{Acknowledgement}
 
-Financial support from the Czech Science Foundation (research project GACR 13-11977P) is gratefully acknowledged.
+Financial support from ...ADD IGA HERE... is gratefully acknowledged.
+
+
 
 % \section*{References}
 

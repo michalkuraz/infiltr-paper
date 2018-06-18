@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{59}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -133,6 +133,13 @@
   \bibinfo{volume}{44}, \bibinfo{pages}{892--898}.
 \newblock \URLprefix
   \url{http://www.scopus.com/inward/record.url?eid=2-s2.0-0019057216&partnerID=40&md5=1a9a45e1c2b571c00ebb9a9f9ebaaf92}.
+%Type = Misc
+\bibitem[{van Genuchten et~al.()van Genuchten, Simunek, Leiji and Sejna}]{retc}
+\bibinfo{author}{van Genuchten, M.T.}, \bibinfo{author}{Simunek, J.},
+  \bibinfo{author}{Leiji, F.J.}, \bibinfo{author}{Sejna, M.}, .
+\newblock \bibinfo{title}{{RETC}, version 6.02 -- code for quantifying the
+  hydraulic functions of unsaturated soils.}
+\newblock \URLprefix \url{http://www.hydrus3d.com}.
 %Type = Article
 \bibitem[{Hrstka and Kučerová(2004)}]{Hrstka}
 \bibinfo{author}{Hrstka, O.}, \bibinfo{author}{Kučerová, A.},

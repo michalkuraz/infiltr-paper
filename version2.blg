@@ -1,49 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: version2.aux
 The style file: model2-names.bst
 Database file #1: mybibfile.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty pages in Leps:2007
-You've used 58 entries,
+You've used 59 entries,
             2990 wiz_defined-function locations,
-            1191 strings with 20537 characters,
-and the built_in function-call counts, 39794 in all, are:
-= -- 3099
-> -- 1540
+            1195 strings with 20718 characters,
+and the built_in function-call counts, 40385 in all, are:
+= -- 3142
+> -- 1574
 < -- 23
-+ -- 602
-- -- 534
-* -- 4456
-:= -- 5804
-add.period$ -- 211
-call.type$ -- 58
-change.case$ -- 462
-chr.to.int$ -- 56
-cite$ -- 59
-duplicate$ -- 2881
-empty$ -- 2929
-format.name$ -- 698
-if$ -- 7462
++ -- 615
+- -- 546
+* -- 4519
+:= -- 5897
+add.period$ -- 214
+call.type$ -- 59
+change.case$ -- 471
+chr.to.int$ -- 57
+cite$ -- 60
+duplicate$ -- 2923
+empty$ -- 2964
+format.name$ -- 713
+if$ -- 7567
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 570
-newline$ -- 342
-num.names$ -- 232
-pop$ -- 950
+missing$ -- 578
+newline$ -- 347
+num.names$ -- 236
+pop$ -- 974
 preamble$ -- 1
-purify$ -- 410
+purify$ -- 418
 quote$ -- 0
-skip$ -- 813
+skip$ -- 823
 stack$ -- 0
-substring$ -- 1828
-swap$ -- 2117
+substring$ -- 1839
+swap$ -- 2143
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 504
+type$ -- 513
 warning$ -- 1
-while$ -- 232
+while$ -- 235
 width$ -- 0
-write$ -- 916
+write$ -- 929
 (There was 1 warning)
