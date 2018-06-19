@@ -59,6 +59,7 @@
  \newcommand{\Lb}{\pazocal{L}}
  
 \newcommand{\fs}{\footnotesize}
+    \renewcommand{\arraystretch}{1.5}
 
 %opening
 
@@ -161,7 +162,9 @@ The aim of this paper is to answer these questions. We approach these issues usi
 %Since direct measurements are difficult to obtain for the topsoil, it is also very difficult to narrow down the parameter ranges. However, knowledge of the lower soil layers should decrease the number of unknowns of this inverse problem. 
 
 
+\subsection{Comment on system of units applied in this manuscript}
 
+Due to spatial and temporal scales of all model scenarios evaluated in this manuscript, we preferred to make use  instead of the base SI units the {\it non-SI units  accepted for use with the SI}. The length [L] will be always given in [cm], and the time [T] will be always given in [hrs].
 
 
 
@@ -255,10 +258,10 @@ The estimated SHP for the lower horizons below the top soil are depicted in tabl
 \doublespacing
 \begin{tabular}{c | p{2cm}| c c c c c}
 \toprule
-horizon &  GP experiment sites  & $\theta_s$ [-] & $\alpha$ [m$^{-1}$]& $n$ [-]& $K_s$ [ms$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
-E & 28 &  0.46&4.65&1.7408&4.4$\times 10^{-6}$ & 0\\
-Bhs + Bs & 19  &0.47&2.21&1.4494&1.5$\times 10^{-6}$ & 0\\
-C & 8 & 0.50 & 3.52 & 4.03 &  $8.5\times 10^{-6}$ & 0 \\
+horizon &  GP experiment sites  & $\theta_s$ [-] & $\alpha$ [cm$^{-1}$]& $n$ [-]& $K_s$ [cm.hrs$^{-1}$] & $S_s$ [cm$^{-1}$] \\ \hline
+E & 28 &  0.46 & 0.046 & 1.741 & 1.584 & 0\\
+Bhs + Bs & 19  &0.47&  0.022 & 1.450 & 0.540 & 0\\
+C & 8 & 0.50 & 0.035 & 4.03 &  3.060 & 0 \\
 \toprule
 \end{tabular}
 \end{small}
@@ -301,7 +304,7 @@ where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{
 
 
  
-Statistical description of the Swartzendruber parameters and evaluation of the fitting quality of Swartzendruber model is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 = 8.55\times 10^{-4}$~m.s$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 5.16\times 10^{-6}$~m.s$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used as an input curve for identifying the top soil's SHP. SHP of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{shp}.
+Statistical description of the Swartzendruber parameters and evaluation of the fitting quality of Swartzendruber model is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used as an input curve for identifying the top soil's SHP. SHP of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{shp}.
 
 It is already apparent at this stage, that if the infiltration experiment can be well approximated by a three parametric model~\eqref{vyhlaz}, then the five parametric SHP representation potentially leads to over-parameterization and makes the model non-identifiable \citep{bellman1970}.  
 
@@ -476,8 +479,8 @@ Let us assume that this discretization is given by a mesh density function ${\De
 \item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in the local extreme  neighborhood  with improved temporal integration and spatial discretization. For each $\vec{p}^{i_e}_{r_f}$ from the acceptable solutions the neighborhood is defined as
 \begin{lineq}
 \begin{split}
-\vec{p}^{i_e}_{r_f,max} &= 1.25\vec{p}^{i_e}, \\
-\vec{p}^{i_e}_{r_f,min} &= 0.75\vec{p}^{i_e}. 
+\vec{p}^{i_e}_{r_f,max} &= 1.20\vec{p}^{i_e}, \\
+\vec{p}^{i_e}_{r_f,min} &= 0.70\vec{p}^{i_e}. 
 \end{split}
 \end{lineq}
 
@@ -499,7 +502,7 @@ If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will 
    plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
     \item \label{cond} {\bf If} the optima refer to siginificantly different SHP parameters.  
    \begin{itemize}%[label=(\subscript{b}{\arabic*})]
-    \item Proceed the calibration  again with the new parameter range defined as $\vec{p}_{max} = 1.1\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.9\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
+    \item Proceed the calibration  again with the new parameter range defined as $\vec{p}_{max} = 1.2\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.8\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
     \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{val}, and check the condition~\ref{cond}.
     \end{itemize}
     \item {\bf else}
@@ -540,9 +543,9 @@ of the REVG inverse model of SR experiment
 \begin{tabular}{c | c| c| c| c}
 \toprule
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
-$\theta_s$ [-]&$\alpha$ [m$^{-1}$]&n [-]& $K_s$ [m.s$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
+$\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [m.s$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
 \toprule
-0.25 -- 0.90 & 0.01 -- 5.0 & 1.05 -- 4.5 & $10^{-7}$ -- $10^{-4}$ & 0.0 -- 10.0 \\
+0.25 -- 0.90 & \num{0.01e-2} -- \num{5.0e-2} & 1.05 -- 4.5 & 0.300 -- 300.0 & 0.0 -- 0.1 \\
 \toprule
 \end{tabular}
 \end{small}
@@ -609,8 +612,8 @@ The purpose of this section is to evaluate the robustness of the proposed method
  For simplicity only a one-dimensional Richards equation problem was considered here.  Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
  \begin{lineq}
  \begin{split}
- H(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
-  H(x,t) &= 3\, cm, \quad \forall (x,t) \in \Gamma_{top} \times  t \in [0, T_{end}) \\ 
+ h(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
+  h(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{top} \times  t \in [0, T_{end}) \\ 
   H(x,t_0) &= 0\, cm , \quad \forall x \in \Omega,
   \end{split}
 \end{lineq}
@@ -644,26 +647,28 @@ And thus in total four inverse modeling experiments were conducted -- two for cl
 
 \begin{table}[]
 \centering
-\caption{Results of the benchmark problem. The highlighted rows refer to the correct solution of this benchmark inverse problem.}
+\caption{Results of the benchmark problem. The grey highlighted rows refer to the physically acceptable solution of this benchmark inverse problem, and the red highlighted rows contain the exact solution of this inverse problem.}
 \label{tab-benchres}
-\begin{small}
-\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\footnotesize
+\begin{tabular}{|c|c|c|c|c|c|c|c}
 \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{343434}}                                         &                           & \multicolumn{4}{c|}{SHP parameters}                                                                                                        &                                                                                                                                 \\ \cline{4-7}
-\multicolumn{2}{|l|}{\multirow{-2}{*}{\cellcolor[HTML]{343434}}}                       & \multirow{-2}{*}{extreme} & $\alpha$ {[}cm$^{-1}${]}         & $n$ {[}-{]}                     & $\theta_s$ {[}-{]}              & $K_s$ {[}cm.hrs$^{-1}${]}       & \multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}objective function \eqref{objektiva1} \\  $\Psi_1$\end{tabular}} \\ \hline \hline
-                                             &                                         & \cellcolor[HTML]{C0C0C0}1 & \cellcolor[HTML]{C0C0C0}0.020367 & \cellcolor[HTML]{C0C0C0}1.3219  & \cellcolor[HTML]{C0C0C0}0.39551 & \cellcolor[HTML]{C0C0C0}6.2261  & \cellcolor[HTML]{C0C0C0}0.04787                                                                                                 \\ \cline{3-8} 
-                                             &                                         & 2                         & 0.011519                         & 1.05                            & 0.2502                          & 7.0108                          & 0.2830367232                                                                                                                    \\ \cline{3-8} 
-                                             & \multirow{-3}{*}{1$^{\mbox{st}}$ stage} & 3                         & 0.00012796                       & 1.1462                          & 0.9                             & 94.904                          & 0.3724314113                                                                                                                    \\ \cline{2-8} 
-                                             &                                         & \cellcolor[HTML]{C0C0C0}1 & \cellcolor[HTML]{C0C0C0}0.019941 & \cellcolor[HTML]{C0C0C0}1.3504  & \cellcolor[HTML]{C0C0C0}0.46568 & \cellcolor[HTML]{C0C0C0}7.005   & \cellcolor[HTML]{C0C0C0}0.560637688                                                                                             \\ \cline{3-8} 
-                                             &                                         & 2                         & 0.094183                         & 3.7989                          & 0.25003                         & 3.8626                          & 1.290496494                                                                                                                     \\ \cline{3-8} 
-\multirow{-6}{*}{clay}                       & \multirow{-3}{*}{2$^{\mbox{nd}}$ stage} & 3                         & 0.019983                         & 1.35                            & 0.26555                         & 6.9927                          & 0.6542315846                                                                                                                    \\ \hline \hline 
-\multicolumn{1}{|c|}{}                       &                                         & 1                         & 0.039412                         & 1.0502                          & 0.25018                         & 35.563                          & 0.02977800386                                                                                                                   \\ \cline{3-8} 
-\multicolumn{1}{|c|}{}                       &                                         & 2                         & 0.026293                         & 1.0872                          & 0.58662                         & 37.877                          & 0.02405719725                                                                                                                   \\ \cline{3-8} 
-\multicolumn{1}{|c|}{}                       & \multirow{-3}{*}{1$^{\mbox{st}}$ stage} & \cellcolor[HTML]{C0C0C0}3 & \cellcolor[HTML]{C0C0C0}0.154    & \cellcolor[HTML]{C0C0C0}2.6543  & \cellcolor[HTML]{C0C0C0}0.46    & \cellcolor[HTML]{C0C0C0}30.145  & \cellcolor[HTML]{C0C0C0}0.02198515637                                                                                           \\ \cline{2-8} 
-\multicolumn{1}{|c|}{}                       &                                         & 1                         & 0.042468                         & 1.1269                          & 0.25569                         & 69.785                          & 0.0157830282                                                                                                                    \\ \cline{3-8} 
-\multicolumn{1}{|c|}{\multirow{-5}{*}{sand}} & \multirow{-2}{*}{2$^{\mbox{nd}}$ stage} & \cellcolor[HTML]{C0C0C0}2 & \cellcolor[HTML]{C0C0C0}0.12224  & \cellcolor[HTML]{C0C0C0}2.45494 & \cellcolor[HTML]{C0C0C0}0.35    & \cellcolor[HTML]{C0C0C0}32.6334 & \cellcolor[HTML]{C0C0C0}0.0139951908                                                                                            \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{34CDF9}{\color[HTML]{EFEFEF} }}                     &                                                  & \multicolumn{4}{c|}{parameters}                                                                                                                                                                                                                            & \multicolumn{1}{c|}{}                                                                                                            \\ \cline{4-7}
+\multicolumn{2}{|l|}{\multirow{-2}{*}{\cellcolor[HTML]{34CDF9}{\color[HTML]{EFEFEF} }}}   & \multirow{-2}{*}{extreme}                        & $\alpha$ [cm$^{-1}$]                                          & $n$ [-]                                                      & $\theta_s$ [-]                                               & $K_s$ [cm.hrs$^{-1}$]                                        & \multicolumn{1}{c|}{\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}objective function \eqref{objektiva1} \\ $\Psi_1$\end{tabular}}} \\ \hline
+                       & \multicolumn{2}{l|}{\cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                         & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{\num{0.019}}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{1.31}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{0.41}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{6.24}} & \multicolumn{1}{c|}{\cellcolor[HTML]{34CDF9}}                                                                                    \\ \cline{2-8} 
+                       & {\color[HTML]{000000} }                                          & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \num{0.020367}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1.322}         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 0.396}         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 6.226}         & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \num{0.04787}}}                                                \\ \cline{3-8} 
+                       & {\color[HTML]{000000} }                                          & 2                                                & \num{0.011519}                                                & 1.05                                                         & 0.2502                                                       & 7.0108                                                       & \multicolumn{1}{c|}{\num{0.2830367232}}                                                                                          \\ \cline{3-8} 
+                       & \multirow{-3}{*}{{\color[HTML]{000000} 1$^{\textrm{st}}$ stage}} & 3                                                & \num{0.00012796}                                              & 1.146                                                        & 0.900                                                        & 94.904                                                       & \multicolumn{1}{c|}{\num{0.3724314113}}                                                                                          \\ \cline{2-8} 
+                       &                                                                  & \cellcolor[HTML]{C0C0C0}1                        & \cellcolor[HTML]{C0C0C0}\num{0.019941}                        & \cellcolor[HTML]{C0C0C0}1.350                                & \cellcolor[HTML]{C0C0C0}0.466                                & \cellcolor[HTML]{C0C0C0}7.005                                & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\num{0.560637688}}                                                                   \\ \cline{3-8} 
+                       &                                                                  & 2                                                & \num{0.094183}                                                & 3.799                                                        & 0.250                                                        & 3.863                                                        & \multicolumn{1}{c|}{\num{1.290496494}}                                                                                           \\ \cline{3-8} 
+\multirow{-7}{*}{clay} & \multirow{-3}{*}{2$^{\textrm{nd}}$ stage}                        & 3                                                & \num{0.019983}                                                & 1.350                                                        & 0.266                                                        & 6.992                                                        & \multicolumn{1}{c|}{\num{0.6542315846}}                                                                                          \\ \hline
+\multicolumn{8}{|l|}{\cellcolor[HTML]{656565}{\color[HTML]{333333} }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+                       & \multicolumn{2}{l|}{\cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                         & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{\num{0.145}}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{2.68}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{0.43}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{29.7}} & \cellcolor[HTML]{34CDF9}{\color[HTML]{000000} }                                                                                  \\ \cline{2-8} 
+                       &                                                                  & 1                                                & \num{0.039412}                                                & 1.050                                                        & 0.250                                                        & 35.563                                                       & \multicolumn{1}{c|}{\num{0.02977800386}}                                                                                         \\ \cline{3-8} 
+                       &                                                                  & 2                                                & \num{0.026293}                                                & 1.087                                                        & 0.587                                                        & 37.877                                                       & \multicolumn{1}{c|}{\num{0.02405719725}}                                                                                         \\ \cline{3-8} 
+                       & \multirow{-3}{*}{1$^{\textrm{st}}$ stage}                        & \cellcolor[HTML]{C0C0C0}3                        & \cellcolor[HTML]{C0C0C0}\num{0.154}                           & \cellcolor[HTML]{C0C0C0}2.654                                & \cellcolor[HTML]{C0C0C0}0.460                                & \cellcolor[HTML]{C0C0C0}30.145                               & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\num{0.02198515637}}                                                                 \\ \cline{2-8} 
+                       &                                                                  & 1                                                & \num{0.042468}                                                & 1.127                                                        & 0.256                                                        & 69.785                                                       & \multicolumn{1}{c|}{\num{0.0157830282}}                                                                                          \\ \cline{3-8} 
+\multirow{-6}{*}{sand} & \multirow{-2}{*}{2$^{\textrm{nd}}$ stage}                        & \cellcolor[HTML]{C0C0C0}2                        & \cellcolor[HTML]{C0C0C0}\num{0.12224}                         & \cellcolor[HTML]{C0C0C0}2.455                                & \cellcolor[HTML]{C0C0C0}0.35                                 & \cellcolor[HTML]{C0C0C0}32.633                               & \cellcolor[HTML]{C0C0C0}\num{0.0139951908}                                                                                       \\ \hline
 \end{tabular}
-\end{small}
 \end{table}
 
 Results of the benchmark problem are given in table~\ref{tab-benchres}. For all four benchmark problems the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  

@@ -8,36 +8,36 @@ Warning--empty pages in Leps:2007
 You've used 59 entries,
             2990 wiz_defined-function locations,
             1195 strings with 20718 characters,
-and the built_in function-call counts, 40385 in all, are:
+and the built_in function-call counts, 40394 in all, are:
 = -- 3142
 > -- 1574
 < -- 23
 + -- 615
 - -- 546
-* -- 4519
+* -- 4523
 := -- 5897
 add.period$ -- 214
 call.type$ -- 59
 change.case$ -- 471
 chr.to.int$ -- 57
 cite$ -- 60
-duplicate$ -- 2923
-empty$ -- 2964
+duplicate$ -- 2924
+empty$ -- 2965
 format.name$ -- 713
-if$ -- 7567
+if$ -- 7568
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 578
 newline$ -- 347
 num.names$ -- 236
-pop$ -- 974
+pop$ -- 970
 preamble$ -- 1
 purify$ -- 418
 quote$ -- 0
-skip$ -- 823
+skip$ -- 826
 stack$ -- 0
 substring$ -- 1839
-swap$ -- 2143
+swap$ -- 2146
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0

@@ -134,9 +134,11 @@
 \newblock \URLprefix
   \url{http://www.scopus.com/inward/record.url?eid=2-s2.0-0019057216&partnerID=40&md5=1a9a45e1c2b571c00ebb9a9f9ebaaf92}.
 %Type = Misc
-\bibitem[{van Genuchten et~al.()van Genuchten, Simunek, Leiji and Sejna}]{retc}
+\bibitem[{van Genuchten et~al.(2009)van Genuchten, Simunek, Leiji and
+  Sejna}]{retc}
 \bibinfo{author}{van Genuchten, M.T.}, \bibinfo{author}{Simunek, J.},
-  \bibinfo{author}{Leiji, F.J.}, \bibinfo{author}{Sejna, M.}, .
+  \bibinfo{author}{Leiji, F.J.}, \bibinfo{author}{Sejna, M.},
+  \bibinfo{year}{2009}.
 \newblock \bibinfo{title}{{RETC}, version 6.02 -- code for quantifying the
   hydraulic functions of unsaturated soils.}
 \newblock \URLprefix \url{http://www.hydrus3d.com}.
