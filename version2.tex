@@ -86,16 +86,17 @@
 \address[autor2]{Czech Technical University in Prague, Faculty of Civil Engineering, Department of Mechanics}
 
 \begin{abstract}
-This contribution addresses issues in the identification of soil hydraulic properties (SHP) obtained from inverse modeling of a single ring (SR) infiltration experiment. 
-The SR experimental  data  were obtained from a series of in situ experiments conducted on a highly heterogeneous mountainous podzolic soil profile. 
-The main purpose of this inverse analysis was to evaluate the SHP parameterized with the van Genuchten model, and to answer to what extent the well-known SR experiment is robust enough to provide a unique estimate of these parameters.
+This contribution addresses issues in the identification of soil hydraulic properties (SHP) of the top soil layer obtained from inverse modeling of a single ring (SR) infiltration experiment. 
+The SR experimental data were obtained from a series of in situ experiments conducted on a highly heterogeneous mountainous podzolic soil profile. The SHP of the topsoil layer are very difficult to measure directly, since the thickness of the top soil layer is often much smaller than the depth required to embed the SR or Guelph permeameter device or to obtain undisturbed samples for further laboratory experiments.
 
-The SHP of the topsoil layer are very difficult to measure directly, since the thickness of the top soil layer is often much smaller than the depth required to embed the SR or Guelph permeameter device or to obtain undisturbed samples for further laboratory experiments.
+A common problem with automatic optimization procedures are convergence issues. This problem is not trivial and can be difficult to deal with. We present a methodology to avoid convergence issues with the nonlinear operator. With this methodology, we can answer (1) to what extent the well-known SR experiment is robust enough to provide a unique estimate of SHP parameters using the unsteady part of the infiltration experiment and (2) whether all parameters are vulnerable to non-uniqueness. We validated our methodology with synthetic infiltration benchmark problems for clay and sand. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching, which is not possible with commonly used gradient methods. 
+
+Our results show the existence of multimodality in, both, the benchmark problems and the real-world problem. This is an important finding as local optima can be identified, which are not necessarily physical and also for systems that do not exhibit multimodal grain size distributions. The identified local optima were distinct and showed different retention and hydraulic conductivity curves. The most physical set of SHP, could be identified with the knowledge of saturated water content, which makes it yet more obvious that expert knowledge is key in inverse modeling.   
 
 
-We investigated the question whether is it possible to characterize the unsteady part of the SR infiltration experiment with a unique set of parameters representing  SHP, and whether all parameters are vulnerable to non-uniqueness. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching.   
+%To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching.   
+%We also discuss important issues regarding (i) the design of the numerical simulations and (ii) the influence of spatial and temporal discretization on the identified local optima.
 
-We also discuss important issues regarding (i) the design of the numerical simulations, (ii) the influence of spatial and temporal discretization on the identified local optima and (iii) convergence issues with the nonlinear operator. 
 \end{abstract}
 
 \begin{keyword}
