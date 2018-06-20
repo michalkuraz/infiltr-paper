@@ -298,15 +298,11 @@ of one-dimensional infiltration exhibited an excellent fitting quality, with a m
 I(t)=\frac{c_0\left(1-\exp\left(-c_1\sqrt{t}\right)\right)}{c_1}+c_2t,
 \label{vyhlaz}
 \end{lineq}
-where $I$ is the cumulative infiltration [$L$], and where the parameter set $c_{0,1,2}$, is usually expressed in terms of SHP. This physically based interpretation of the Swartzendruber parameters was disregarded, since our infiltration model does not meet the prerequisites for the Swartzendruber model. The Swartzendruber model was considered here as an exponential smoothing and interpolating function only.
-
+where $I$ is the cumulative infiltration [$L$], and $c_{0,1,2}$ are parameters. The Swartzendruber model can estimate 1D saturated conductivity and sorptivity of the soil. However, the model does not account for water moving horizontally and therefore overestimates the hydraulic conductivity and gives no information on water retention or unsaturated hydraulic conductivity. The Swartzendruber model was only considered as an exponential smoothing and interpolating function.
 
 
  
-Statistical description of the Swartzendruber parameters and evaluation of the fitting quality of Swartzendruber model is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The evaluated representative  parameter set, together with the model~\eqref{vyhlaz}, will be used as an input curve for identifying the top soil's SHP. SHP of the lower horizons were already estimated from direct measurements as described in the previous section~\ref{shp}.
-
-It is already apparent at this stage, that if the infiltration experiment can be well approximated by a three parametric model~\eqref{vyhlaz}, then the five parametric SHP representation potentially leads to over-parameterization and makes the model non-identifiable \citep{bellman1970}.  
-
+A statistical description of the Swartzendruber parameters and their fitting quality is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The parameter set was used to compute the infiltration curve with Eq. \ref{vyhlaz} for the identification of the SHP in the top soil layer.
 
 
 
