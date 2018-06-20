@@ -1,5 +1,5 @@
 % \documentclass[a4paper,10pt]{article}
- \documentclass[review]{elsarticle}
+ \documentclass[review,times,3p,twocolumn,10pt]{elsarticle}
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphicx}
@@ -61,9 +61,9 @@
 \newcommand{\fs}{\footnotesize}
     \renewcommand{\arraystretch}{1.5}
 
-%opening
 
-% \usepackage[table]{xcolor} 
+
+\journal{Advanced Water Resources}
 
 \begin{document}
 
@@ -205,11 +205,11 @@ are given in the table~\ref{tab:soiltxt}.
 %spodic horizon is Bhs and Bs
 %
 
- \begin{table}[ht]
+ \begin{table*}[ht]
+ \fs
  	\begin{center}
  		\caption{Fractions of the fine soil ($<$ 2 mm) and skeleton ($>$ 2 mm) and bulk density of the E and Bhs+Bs horizons.}
  		\begin{small}
- 			\doublespacing
  			\begin{tabular}{l c  c  c  c  c}
  				\toprule
  				horizon & clay & silt & sand  & gravel & bulk density  \\ 
@@ -227,7 +227,7 @@ are given in the table~\ref{tab:soiltxt}.
  		\end{small}
  		\label{tab:soiltxt}
  	\end{center}
- \end{table}
+ \end{table*}
 
 
 
@@ -251,11 +251,10 @@ It is well known that pedotransfer functions work well for spodic and eluvial ho
 
 The estimated SHP for the lower horizons below the top soil are depicted in table~\ref{tab_SHP}.
 
-\begin{table}[ht]
+\begin{table*}[ht]
 \begin{center}
 \caption{Soil hydraulic parameters for the lower horizons.}
-\begin{small}
-\doublespacing
+\fs
 \begin{tabular}{c | p{2cm}| c c c c c}
 \toprule
 horizon &  GP experiment sites  & $\theta_s$ [-] & $\alpha$ [cm$^{-1}$]& $n$ [-]& $K_s$ [cm.hrs$^{-1}$] & $S_s$ [cm$^{-1}$] \\ \hline
@@ -264,10 +263,9 @@ Bhs + Bs & 19  &0.47&  0.022 & 1.450 & 0.540 & 0\\
 C & 8 & 0.50 & 0.035 & 4.03 &  3.060 & 0 \\
 \toprule
 \end{tabular}
-\end{small}
 \label{tab_SHP}
 \end{center}
-\end{table}
+\end{table*}
 
 
 \subsubsection{Obtaining unsteady infiltration data for the top soil}
@@ -354,13 +352,13 @@ Note that we should avoid using the coordinates, where $r=0$.
 
 \subsection{Domain scheme, initial conditions and boundary conditions}%[michal]
 \label{bccond}
- \begin{figure}
+ \begin{figure*}
 \centering
 \rotatebox{90}{
 \includegraphics[height=11cm]{infilsit.pdf}}
  \caption{Scheme of the computational domain geometry and domain triangularization.}
  \label{valec}
-\end{figure}
+\end{figure*}
 
 The goal of the model was to achieve cumulative infiltration -- the cumulative flux over the top Dirichlet boundary.
 The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- the soil surface. Inside the ring, a Dirichlet condition defines the ponding depth; outside the infiltration ring a Neumann condition defines the no-flow boundary. Locating the bottom boundary was more problematic. The following options are available
@@ -411,7 +409,7 @@ As discussed in \ref{restrconvect} the left hand side boundary was located at $r
  \begin{figure}
 \centering
 \rotatebox{90}{
-\includegraphics[height=12cm]{schemabc.pdf}}
+\includegraphics[height=8cm]{schemabc.pdf}}
  \caption{Scheme of the computational domain geometry and the domain boundaries.}
  \label{valecbc}
 \end{figure}
@@ -465,12 +463,12 @@ Following the concerns about  effects of numerical treatment for the identified 
  
 
 
-\begin{figure}
+\begin{figure*}
 \centering
 \includegraphics[width=12cm]{flowchart/Flow_chart_barvy_new.png}
 \caption{The proposed methodology for the automatic calibration avoiding effects of numerical treatment for the identified SHPs values.}
 \label{flowchart}
-\end{figure}
+\end{figure*}
 
  \begin{enumerate}[label=({\bf \roman*})]
 \item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs (note that all real numbers are represented with double precision in our implementations), and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}_{r_f,max}$, and the minimal values are defined as a vector $\vec{p}_{r_f,min}$. So initially the ranges are extremely broad and exceeding even the physically acceptable values. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
@@ -533,13 +531,12 @@ The following sections will further explain the definition of the objective func
 The soil hydraulic parameters (SHP) of the top soil that will be identified were specified in section~\ref{shp}.
 Since the parameters will be identified using a stochastic method, we have to introduce a physically reasonable range for each parameter. The ranges for the SHP are specified in table~\ref{rozsahy}.
 
-\begin{table}[ht]
+\begin{table*}[ht]
 \begin{center}
 \caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=0$. Note that the initial ranges are extremly broad especially for the saturated water content $\theta_s$. This broad range was selected in order to explore the uniqnuess
 of the REVG inverse model of SR experiment
  even beyond the physically acceptable solutions. }
-\begin{small}
-\doublespacing
+\fs
 \begin{tabular}{c | c| c| c| c}
 \toprule
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
@@ -548,10 +545,9 @@ $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [m.s$^{-1}$] & $S_s$ [m$^{-1}$]
 0.25 -- 0.90 & \num{0.01e-2} -- \num{5.0e-2} & 1.05 -- 4.5 & 0.300 -- 300.0 & 0.0 -- 0.1 \\
 \toprule
 \end{tabular}
-\end{small}
 \label{rozsahy}
 \end{center}
-\end{table}
+\end{table*}
 
 The objective function is defined in the following paragraph.
 
@@ -619,20 +615,19 @@ The purpose of this section is to evaluate the robustness of the proposed method
 \end{lineq}
  where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{e-1}~hrs. Two distinguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}, and are given in table~\ref{tab:bench}
  
- \begin{table}[ht]
+ \begin{table*}[ht]
  \begin{center}
  \caption{SHP properties for benchmark models.}
- \begin{small}
+\fs
  \begin{tabular}{l||c c c c c}
 %   & $\alpha$ [$\textrm{cm^{-1}}$] & $n$ [-] & $\theta_r$ [-] & $\theta_s$  [-] & $K_s$ [$\textrm{cm.hrs^{-1}}$]  \\ \hline
   & $\alpha$  [cm$^{-1}$] & $n$ [-] & $\theta_r$ [-] & $\theta_s$  [-]  &  $K_s$ [cm.hrs$^{-1}$]  \\ \hline
  clay loam & 0.019 & 1.31 & 0.095 & 0.41 & 6.24 \\ 
  sand &  0.145 & 2.68 & 0.045 & 0.43 & 29.7 \\ \hline
  \end{tabular}
- \end{small}
  \label{tab:bench}
  \end{center}
- \end{table}
+ \end{table*}
  
  
   The computational domain $\Omega$ was uniformly discretized with $\Delta x$=0.5~cm, the initial time step was $\Delta t$=\num{e-7}~hrs, and the error criterion from~\eqref{picard} for solving the nonlinear system~\eqref{matice} was   $\varepsilon$=\num{e-3}~cm.
@@ -645,7 +640,7 @@ And thus in total four inverse modeling experiments were conducted -- two for cl
 
 
 
-\begin{table}[]
+\begin{table*}[]
 \centering
 \caption{Results of the benchmark problem. The grey highlighted rows refer to the physically acceptable solution of this benchmark inverse problem, and the red highlighted rows contain the exact solution of this inverse problem.}
 \label{tab-benchres}
@@ -669,7 +664,7 @@ And thus in total four inverse modeling experiments were conducted -- two for cl
                        &                                                                  & 1                                                & \num{0.042468}                                                & 1.127                                                        & 0.256                                                        & 69.785                                                       & \multicolumn{1}{c|}{\num{0.0157830282}}                                                                                          \\ \cline{3-8} 
 \multirow{-6}{*}{sand} & \multirow{-2}{*}{2$^{\textrm{nd}}$ stage}                        & \cellcolor[HTML]{C0C0C0}2                        & \cellcolor[HTML]{C0C0C0}\num{0.12224}                         & \cellcolor[HTML]{C0C0C0}2.455                                & \cellcolor[HTML]{C0C0C0}0.35                                 & \cellcolor[HTML]{C0C0C0}32.633                               & \cellcolor[HTML]{C0C0C0}\num{0.0139951908}                                                                                       \\ \hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 Results of the benchmark problem are given in table~\ref{tab-benchres}. For all four benchmark problems the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
 
@@ -727,10 +722,10 @@ The first run with discretization level $r_f=0$ generated after 40.000 objective
 
 
 
-\begin{table}
+\begin{table*}
 \begin{center}
 \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
- \begin{small}
+\fs
 \begin{tabular}{l || c c c c c  }
 \toprule
 no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] \\ \hline \hline
@@ -744,10 +739,9 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \rowcolor{white} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4}  \\ \hline
 \toprule
 \end{tabular}
- \end{small}
  \label{shp-vysledky}
 \end{center}
-\end{table}
+\end{table*}
 
 
 \begin{figure}
@@ -791,11 +785,10 @@ For the local extremes 7 and 8, the inverse process was restarted with discretiz
 The new inverse solution was searched in  vicinity of both extremes, and thus two different narrow parameter ranges were defined now -- see table~\ref{rozsahy2}. Based on the results discussed above the specific storage was assumed to vanish from our model. 
 
 
-\begin{table}[ht]
+\begin{table*}[ht]
 \begin{center}
 \caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for { refinement level} $r_f=1$. }
-\begin{small}
-\doublespacing
+\fs
 \begin{tabular}{ l || c | c| c| c }
 \toprule
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
@@ -805,10 +798,9 @@ extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \
 {\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
 \toprule
 \end{tabular}
-\end{small}
 \label{rozsahy2}
 \end{center}
-\end{table}
+\end{table*}
 
 With the increased discretization level the runtime for each simulation increased for 20 minutes on hardware equipment specified above. But since the parameter range was already relatively narrow, the optimization algorithm converged fast and the solution was achieved after 1000 iterations. The process was executed in parallel on 16-core CPU architecture, and thus the results were obtained in less than one day.
 
@@ -838,10 +830,10 @@ In order to evaluate the results obtained at $r_f=1$ discretization level, the d
 
 The location of peaks of the scatter plots for these two sequential disceretization levels don't vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the indentified value 2.152 for new value 1.950 in accordance with the scatter plot in figure~\ref{objfnc6} - right.
 
-\begin{table}[ht]
+\begin{table*}[ht]
 \centering
 \caption{The resulting SHP data sets.}
- \begin{small}
+\fs
 \begin{tabular}{l || c c c c c }
 \toprule
 no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
@@ -850,9 +842,8 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \rowcolor{white} {\bf 8} & \num{0.002276} & \num{1.5189} & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
 \toprule
 \end{tabular}
- \end{small}
 \label{shp-vysledky-final}
-\end{table}
+\end{table*}
 
 \begin{figure}
 \centering
