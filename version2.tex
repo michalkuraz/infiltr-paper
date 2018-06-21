@@ -145,7 +145,7 @@ a non-unique definition where both the unknown residual and saturated water cont
 The definition of a unique inverse function for identification of macroscopic media was treated in~\citep{zou200126}, where the recommended approach was to assemble the objective function from transient data of the capillary pressure and from the steady state water content data. %Another issue is the equifinality in the mathematical model setup in terms of the initial and boundary condition data, this problem was studied by~\citep{klaus-hydrol}.
 
 Another challenging issue is the treatment of the nonlinear operator of the Richards equation. \cite{beven2003-uncertain} reported that 56\% of the simulations were rejected during Monte Carlo simulations on a wide range of parameters, because of convergence problems. 
-Their study did not mention explicitly why. We assume that these convergence issues originated from the nonlinear operator treatment -- the outer iterations.
+Their study did not mention explicitly why. We assume that these convergence issues originated from the nonlinear operator treatment.
 It could be concluded, that if we use a simple Picard method for the nonlinear operator, and we increase the iteration criterion (which is typically referred to as $h$ or $\theta$ tolerance), we will obtain a less accurate solution but we will also need less iterations for the Picard method. If we increase the criterion enough, we end up with a semi-implicit solution, where the constitutive functions in the Richards equation are evaluated from the previous time level solution -- thus we just need a single outer iteration.
 
 
@@ -240,7 +240,7 @@ are given in the table~\ref{tab:soiltxt}.
 \label{shp}
 
 Guelph permeameter measurements (GP) were used to estimate the saturated hydraulic conductivity of the lower horizons. The constant head GP method applied here is described in~\citep{Jacka1}.
-It is well known that pedotransfer functions work well for spodic and eluvial horizons characterized by high percentage of sand, without a distinct structure, and with a bulk density and porosity corresponding to a standard mineral soil. Parameters representing the retention curves for spodic horizons and eluvial horizon below the top-soil were estimated using the soil texture and the bulk density information with pedotransfer function implemented in Rosetta code~\citep{Schaap}.
+It is known that pedotransfer functions work well for spodic and eluvial horizons characterized by high percentage of sand, without a distinct structure, and with a bulk density and porosity corresponding to a standard mineral soil. Parameters representing the retention curves for spodic horizons and eluvial horizon below the top-soil were estimated using the soil texture and the bulk density information with pedotransfer function implemented in Rosetta code~\citep{Schaap}.
 
 
 
@@ -314,14 +314,14 @@ A statistical description of the Swartzendruber parameters and their fitting qua
 \label{goveq}
 
 
-The field infiltration experiment is characterized by variably saturated conditions ranging between unsaturated and saturated states. It is well known that the flux in porous media under variably saturated conditions can be expressed by the Darcy-Buckingham law~\citep{buckingham} \begin{lineq}\label{darcybuck}\vec{q} = -\mathbf{K}(\theta) \nabla H,\end{lineq} where $\vec{q}$ is the volumetric flux [L.T$^{-1}$], $H$ is the total hydraulic head [$L$] defined as $H=h+z$, where $h$ is the pressure head [$L$], $z$ is the potential head [$L$], $\theta$ is the water content [-], and $\mathbf{K}(\theta)$ is the unsaturated hydraulic conductivity  [L.T$^{-1}$]; in general it is a  second order tensor. The relation $\theta(h)$ is referred to as the retention curve~\citep{vangenuchten}.
+The field infiltration experiment is characterized by variably saturated conditions ranging between unsaturated and saturated states. The flux in porous media under variably saturated conditions can be expressed by the Darcy-Buckingham law~\citep{buckingham} \begin{lineq}\label{darcybuck}\vec{q} = -\mathbf{K}(\theta) \nabla H,\end{lineq} where $\vec{q}$ is the volumetric flux [L.T$^{-1}$], $H$ is the total hydraulic head [$L$] defined as $H=h+z$, where $h$ is the pressure head [$L$], $z$ is the potential head [$L$], $\theta$ is the water content [-], and $\mathbf{K}(\theta)$ is the unsaturated hydraulic conductivity  [L.T$^{-1}$]; in general it is a  second order tensor. The relation $\theta(h)$ is referred to as the retention curve~\citep{vangenuchten}.
 
 The geometry of the flow is inherently three-dimensional, but the domain dimension can be reduced by considering the axisymmetric geometry. The law of mass conservation  for incompressible flow in cylindric coordinates is expressed as ~\citep{bear1979}.
 \begin{lineq}
 \label{conti}
 -\frac{\partial V}{\partial t} = \frac{\partial q_r}{\partial r} + \frac{q_r}{r} + \frac{\partial q_{\alpha}}{\partial \alpha} + \frac{\partial q_z}{\partial z} ,
 \end{lineq}
-where $V$ is the volume function [-],  $r$ is the radial coordinate, $\alpha$ is the angular coordinate,  $z$ is the vertical coordinate, and $q_{r, \alpha, z}$ is the  volume flux [L.T$^{-1}$]. The ring infiltration experiment is characterized by rotational symmetric flow, so the angular derivative vanishes. Then the governing equation for  variably saturated and rotational symmetric flow is obtained by substituting the flux in \eqref{conti} by the Darcy-Buckingham law~\eqref{darcybuck}. Together with the consideration of linear elasticity for a porous medium the variably saturated axisymmetric flow in isotropic media is governed by
+where $V$ is the volume function [-],  $r$ is the radial coordinate, $\alpha$ is the angular coordinate,  $z$ is the vertical coordinate, and $q_{r, \alpha, z}$ is the  volume flux [L.T$^{-1}$]. The ring infiltration experiment is characterized by rotational symmetric flow, so the angular derivative vanishes. Then the governing equation for  variably saturated and rotational symmetric flow is obtained by substituting the flux in \eqref{conti} by the Darcy-Buckingham law~\eqref{darcybuck}. Together with the consideration of linear elasticity (expressed by specific storage $S_s$) for a porous medium the variably saturated axisymmetric flow in isotropic media is governed by
 \begin{lineq}
 \label{richaxi}
 \left(\frac{\dd \theta}{\dd h} + S_s\frac{\theta(h)}{\theta_s} \right) \frac{\partial h}{\partial t}  =  \frac{\partial K(h) \frac{\partial H}{\partial z}}{\partial z} + \frac{\partial K(h) \frac{\partial H}{\partial r}}{\partial r} + c(\vec{x})\frac{\partial H}{\partial r},
@@ -336,7 +336,7 @@ where $S_s$ is the specific storage [L$^{-1}$], $\theta_s$ is the saturated wate
  \label{valecproudy}
 \end{figure}
 
-Let us consider the model of the infiltration experiment depicted in figure~\ref{valecproudy}. Let the entire flow domain $\Omega=\Omega_{inner} \cup \Omega_{outer}$, where $\Omega_{outer}$ is the flow domain outside the infiltration ring and $\Omega_{inner}$ is the flow domain within the infiltration ring, exactly as depicted in figure~\ref{valec}. It is apparent that the streamlines inside subdomain $\Omega_{inner}$ are parallel, but the streamlines outside the infiltration ring (inside $\Omega_{outer}$) are only axisymmetric. The convection coefficient $c(\vec{x})$ is then defined as follows
+If we consider the model of the infiltration experiment depicted in figure~\ref{valecproudy} with the entire flow domain $\Omega=\Omega_{inner} \cup \Omega_{outer}$, where $\Omega_{outer}$ is the flow domain outside the infiltration ring and $\Omega_{inner}$ is the flow domain within the infiltration ring, exactly as depicted in figure~\ref{valec}. It is then apparent that the streamlines inside subdomain $\Omega_{inner}$ are parallel, but the streamlines outside the infiltration ring (inside $\Omega_{outer}$) are only axisymmetric. The convection coefficient $c(\vec{x})$ is then defined as follows
 \begin{lineq}
 \label{convect}
 c(\vec{x}) = \begin{cases}
@@ -444,7 +444,7 @@ Equation~\eqref{richaxi} was implemented into the DRUtES library~\citep{drutes}.
 \label{matice}
 \mathbf{A}(\vec{x}_l^k) \vec{x}_l^{k+1} = \vec{b}(\vec{x}_l^k),
 \end{lineq}
-where $k$ denotes the iteration level, and $l$ denotes the time level, until \begin{lineq} \label{picard} ||\vec{x}_l^{k+1} - \vec{x}_l^k||_2 < \varepsilon , \end{lineq} where $\varepsilon$ is the desired iteration criterion. The iterations required for~\eqref{matice} to converge are denoted as the outer iterations. It is apparent that the number of required outer iterations depends on the $\varepsilon$ criterion. 
+where $k$ denotes the iteration level, and $l$ denotes the time level, until \begin{lineq} \label{picard} ||\vec{x}_l^{k+1} - \vec{x}_l^k||_2 < \varepsilon , \end{lineq} where $\varepsilon$ is the desired iteration criterion.  It is apparent that the number of required  iterations depends on the $\varepsilon$ criterion. 
 
 
 The method~\eqref{matice} degenerates into a kind of semiexplicit approximation if the error criterion $\varepsilon$ was "infinitely huge" -- it means taken from the extended real numbers, $\varepsilon \in {\overline {\mathbb {R} }}$, and assigned as $\varepsilon = + \infty$. This semiexplicit approximation is denoted as
@@ -454,9 +454,19 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 \end{lineq}
  This semiexplicit method always requires just a single outer iteration. With a short time step the method converges to the exact solution. For inappropriate time steps, the method diverges from the exact solution faster than the method~\eqref{matice}. Nonetheless, the method~\eqref{matice2} is free of possible issues related to the convergence of the nonlinear operator.
 
-The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is well known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
+The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
 
 Following the concerns about  effects of numerical treatment for the identified values of SHPs parameters a specific  automatic calibration methodology was proposed. The technique is explained in brief in figure~\ref{flowchart}, and  details are given in the following paragraph.
+
+Before we start with automatic calibration description, the following nomenclature will  be defined % I really wanted to say here Let us define :)
+\begin{description}
+\item[$\vec{p}$] -- vector of SHP parameters, vector contains the values of $\alpha$, $n$, $\theta_s$, $K_s$, $S_s$,
+\item[$r_f$] -- "refinement level", the problem is treated with different spatial and temporal discretization setups, each setup is denoted by value of $r_f$ index,
+\item[$\vec{p}_{max,min}^{r_f}$] -- maximal, resp. minimal values of SHP parameters,
+\item[$i_e$] -- local extreme index,
+\item[$\Delta(\vec{x})$] -- spatial discretization (mesh density, mesh is non-uniform).
+\end{description}
+
  
 
 
@@ -467,37 +477,38 @@ Following the concerns about  effects of numerical treatment for the identified 
 \label{flowchart}
 \end{figure*}
 
+The calibration algorithm is described as follows:
+
  \begin{enumerate}[label=({\bf \roman*})]
-\item Proceed the calibration procedure with the quasi-explicit stable numerical technique for treating the nonlinear operator explained in equation~\eqref{matice2}, with the initial time step $t_{init}= 10^{-6}$~hrs (note that all real numbers are represented with double precision in our implementations), and for each subsequent time level $l$, $\Delta t_l = 1.05 \Delta t_{l-1}$, where $l=\{1,n_t\}$, where $n_t$ is the number of time levels used for the temporal discretization. The ranges of parameters for this calibration are given in table~\ref{rozsahy}, so the maximal values of SHP are defined as a vector $\vec{p}_{r_f,max}$, and the minimal values are defined as a vector $\vec{p}_{r_f,min}$. So initially the ranges are extremely broad and exceeding even the physically acceptable values. The spatial discretization for this step of calibration was given in the beginning of this section -- 2097 nodes and 3861 elements. 
-Let us assume that this discretization is given by a mesh density function ${\Delta}(\vec{x})^{r_f}$. The function $\Delta(\vec{x})^{r_f}$ is understood as a spatial distribution of mesh size density, which was used as an input for the mesh generator T3D~\citep{t3d}. The superscript $r_f$ defines the refinement level, where $r_f=0$ at this initial stage, and the vector $\vec{x}$ refers to spatial coordinates inside the domain $\Omega$.
-\item Let us pressume that this inverse model will have more than just a single solution. \begin{itemize} \item Then this calibration will generate vectors of SHP values $\vec{p}^{i_e}_{r_f}$, where the superscript $i_e=\{1,...,n_e\}$, where $n_e$     denotes the number of  local extremes. \end{itemize} 
-\item To validate the inverse modeling results, select physically acceptable local extremes with good fitting qualities, and create a scatter plot of the objective function in the local extreme  neighborhood  with improved temporal integration and spatial discretization. For each $\vec{p}^{i_e}_{r_f}$ from the acceptable solutions the neighborhood is defined as
+\item {\bf Do} initial calibration with semiexplicit treatment of~\eqref{matice} ($\varepsilon \leadsto +\infty$), $r_f$=0,  vectors $\vec{p}_{max,min}^{r_f}$ are taken from table~\ref{rozsahy}. 
+\item {\bf If} the problem is multimodal\begin{itemize} \item {\bf Then} sequence of vectors $\vec{p}^{i_e}_{r_f}$ is generated. \end{itemize} 
+\item {\bf Do} validation: \begin{itemize} \item select local extremes with good fitting qualities, \item increase $r_f=r_f+1$ as follows 
+                  \begin{lineq}
+                  \label{coeffs}
+                  \begin{split}
+                  \Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2}, \\
+                  \varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 1, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
+                  t_{init}^{r_f} &=  \frac{t_{init}^{r_f-1}}{10} \; \mbox{hrs} .
+                  \end{split}
+                  \end{lineq}
+\item create a response plot of the objective function~\eqref{objektiva1} for current $r_f$ and $r_f-1$ in the neighborhood defined as 
 \begin{lineq}
 \begin{split}
-\vec{p}^{i_e}_{r_f,max} &= 1.20\vec{p}^{i_e}, \\
-\vec{p}^{i_e}_{r_f,min} &= 0.70\vec{p}^{i_e}. 
+\vec{p}^{i_e, r_f}_{max} &= 1.20\vec{p}^{i_e}, \\
+\vec{p}^{i_e,r_f}_{min} &= 0.70\vec{p}^{i_e}. 
 \end{split}
 \end{lineq}
+\end{itemize}
 
+\begin{enumerate}
+\item {\bf Validation methodology:}
 
- The improvement of the numerical treatment will be processed as follows:
-
-Increase the discretization level \begin{lineq} r_f=r_f+1,\end{lineq} and update the following parameters of the numerical treatment
-\begin{lineq}
-\label{coeffs}
-\begin{split}
-\Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2}, \\
-\varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 1, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
-t_{init}^{r_f} &=  \frac{t_{init}^{r_f-1}}{10} \; \mbox{hrs} .
-\end{split}
-\end{lineq}
-If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will be solved by the Schwarz-Picard method -- an adaptive domain decomposition~\citep{mojeamc2}. To validate the inverse model solution for $r_f-1$ discretization level perform the following:
   \begin{enumerate}
-    \item \label{val} Compare the scatter 
-   plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$. For this local extreme a vector of SHP parameters $\vec{p}_{r_f-1}^{i_e}$ is handled.  
-    \item \label{cond} {\bf If} the optima refer to siginificantly different SHP parameters.  
+    \item \label{val} Compare the response 
+   plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$.
+    \item \label{cond} {\bf If} the response plots differ significantly.
    \begin{itemize}%[label=(\subscript{b}{\arabic*})]
-    \item Proceed the calibration  again with the new parameter range defined as $\vec{p}_{max} = 1.2\vec{p}_{r_f-1}^{i_e}$ and  $\vec{p}_{min} = 0.8\vec{p}_{r_f-1}^{i_e}$. This new calibration will update the vector  $\vec{p}_{r_f-1}^{i_e}$ to $\vec{p}_{r_f}^{i_e}$.
+    \item {\bf Then} do the calibration at parameter range: \begin{lineq} \begin{split} \vec{p}_{max} &= 1.2\vec{p}^{i_e,r_f-1}, \\   \vec{p}_{min} &= 0.8\vec{p}^{i_e,r_f-1 }. \end{split}\end{lineq} New sets of vectors  $\vec{p}_{r_f}^{i_e}$ will be generated.
     \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{val}, and check the condition~\ref{cond}.
     \end{itemize}
     \item {\bf else}
@@ -506,7 +517,7 @@ If $r_f > 0$, then the nonlinear problem represented now by~\eqref{matice} will 
     \end{itemize}
   \end{enumerate}
 \end{enumerate}
-
+\end{enumerate}
 % In the second stage the unknown SHP parameters will be reduced and the automatic calibration using the initial mesh together with the simple quasi-explicit approximation~\eqref{matice2} will proceed.
 % The unknown SHP parameters will be sequentially reduced in the following order until just a single extreme will be identified.
 % \begin{enumerate}[label=({\bf \Roman*})]
@@ -561,7 +572,7 @@ The objective functions were defined as follows:
 \label{objektiva1}
 \Psi_1 (\vec{p}) = \sqrt{\int\limits_0^{T_{end}} \left( \bar{I}(\vec{p},t) - I(t) \right)^2 \dd t},
 \end{lineq}
-where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error for continuous functions. 
+where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error (RMSE) for continuous functions. 
 \item Second criterion was the $L_{\infty}$ norm of the difference between the experimental and model data and thus
 \begin{lineq}
 \label{objektiva2}
@@ -594,12 +605,7 @@ memory and restarts. GRADE is a real-coded genetic algorithm combining the ideas
  \subsection{Benchmark evaluations}
  \label{benchmarks}
  
-The purpose of this section is to evaluate the robustness of the proposed methodology, and to experimentally validate the following  research hypotheses, which has arisen   in this manuscript.
-\begin{enumerate}
-\item The SHP properties can be identified from the cumulative volume fluxes measured at Dirichlet boundary. 
-\item Nevertheless, the estimated SHP properties are vulnerable for non-uniqueness.
-\item The estimated SHP properties are affected by accuracy of the numerical solution of the Richards equation, however, the less accurate solution of the Richards equation can be used as an estimator of the inverse model solution.
-\end{enumerate}
+The purpose of this benchmark example was to demonstrate, whether this class of problem -- identification of SHP parameters from cumulative flux measured at Dirichlet boundary -- can be affected by multimodality.
 
 
  For simplicity only a one-dimensional Richards equation problem was considered here.  Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
@@ -631,9 +637,10 @@ The purpose of this section is to evaluate the robustness of the proposed method
  
  The reference solutions both for sand and gravel media were obtained from  cumulative flux over the top Dirichlet boundary $\Gamma_{top}$.
  
-For the given reference solutions the inverse modeling algorithm described in section~\ref{optima} was employed for searching the original SHP parameters in broad ranges given in table~\ref{rozsahy}. In the first stage the numerical setup of the Richards equation solver was identical with the one used for the reference solution. In the second stage the accuracy of the numerical treatment  of the Richards equation was sharply decreased. The spatial discretization became twice as much coarser with $\Delta x$=1.0~cm, and, more importantly, the nonlinear system~\eqref{matice} was treated  with semiexplicit method~\eqref{matice2}, which applies for $\varepsilon \, \leadsto \, +\infty$. 
+For the given reference solutions the inverse modeling algorithm described in section~\ref{optima} was employed for searching the original SHP parameters in broad ranges given in table~\ref{rozsahy}. 
+In order to avoid effects of numerical treatment of the Richards equation, the numerical solver had exactly the same configuration as the one used for the reference solution. 
  
-And thus in total four inverse modeling experiments were conducted -- two for clay medium and two for sand medium -- the first set with the original numerical treatment and the second set with the coarser discretization setup.
+
 
 
 
@@ -642,30 +649,25 @@ And thus in total four inverse modeling experiments were conducted -- two for cl
 \caption{Results of the benchmark problem. The grey highlighted rows refer to the physically acceptable solution of this benchmark inverse problem, and the red highlighted rows contain the exact solution of this inverse problem.}
 \label{tab-benchres}
 \footnotesize
-\begin{tabular}{|c|c|c|c|c|c|c|c}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{34CDF9}{\color[HTML]{EFEFEF} }}                     &                                                  & \multicolumn{4}{c|}{parameters}                                                                                                                                                                                                                            & \multicolumn{1}{c|}{}                                                                                                            \\ \cline{4-7}
-\multicolumn{2}{|l|}{\multirow{-2}{*}{\cellcolor[HTML]{34CDF9}{\color[HTML]{EFEFEF} }}}   & \multirow{-2}{*}{extreme}                        & $\alpha$ [cm$^{-1}$]                                          & $n$ [-]                                                      & $\theta_s$ [-]                                               & $K_s$ [cm.hrs$^{-1}$]                                        & \multicolumn{1}{c|}{\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}objective function \eqref{objektiva1} \\ $\Psi_1$\end{tabular}}} \\ \hline
-                       & \multicolumn{2}{l|}{\cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                         & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{\num{0.019}}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{1.31}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{0.41}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{6.24}} & \multicolumn{1}{c|}{\cellcolor[HTML]{34CDF9}}                                                                                    \\ \cline{2-8} 
-                       & {\color[HTML]{000000} }                                          & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \num{0.020367}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 1.322}         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 0.396}         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} 6.226}         & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \num{0.04787}}}                                                \\ \cline{3-8} 
-                       & {\color[HTML]{000000} }                                          & 2                                                & \num{0.011519}                                                & 1.05                                                         & 0.2502                                                       & 7.0108                                                       & \multicolumn{1}{c|}{\num{0.2830367232}}                                                                                          \\ \cline{3-8} 
-                       & \multirow{-3}{*}{{\color[HTML]{000000} 1$^{\textrm{st}}$ stage}} & 3                                                & \num{0.00012796}                                              & 1.146                                                        & 0.900                                                        & 94.904                                                       & \multicolumn{1}{c|}{\num{0.3724314113}}                                                                                          \\ \cline{2-8} 
-                       &                                                                  & \cellcolor[HTML]{C0C0C0}1                        & \cellcolor[HTML]{C0C0C0}\num{0.019941}                        & \cellcolor[HTML]{C0C0C0}1.350                                & \cellcolor[HTML]{C0C0C0}0.466                                & \cellcolor[HTML]{C0C0C0}7.005                                & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\num{0.560637688}}                                                                   \\ \cline{3-8} 
-                       &                                                                  & 2                                                & \num{0.094183}                                                & 3.799                                                        & 0.250                                                        & 3.863                                                        & \multicolumn{1}{c|}{\num{1.290496494}}                                                                                           \\ \cline{3-8} 
-\multirow{-7}{*}{clay} & \multirow{-3}{*}{2$^{\textrm{nd}}$ stage}                        & 3                                                & \num{0.019983}                                                & 1.350                                                        & 0.266                                                        & 6.992                                                        & \multicolumn{1}{c|}{\num{0.6542315846}}                                                                                          \\ \hline
-\multicolumn{8}{|l|}{\cellcolor[HTML]{656565}{\color[HTML]{333333} }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
-                       & \multicolumn{2}{l|}{\cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                         & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{\num{0.145}}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{2.68}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{0.43}} & \cellcolor[HTML]{FE0000}{\color[HTML]{FFFFFF} \textbf{29.7}} & \cellcolor[HTML]{34CDF9}{\color[HTML]{000000} }                                                                                  \\ \cline{2-8} 
-                       &                                                                  & 1                                                & \num{0.039412}                                                & 1.050                                                        & 0.250                                                        & 35.563                                                       & \multicolumn{1}{c|}{\num{0.02977800386}}                                                                                         \\ \cline{3-8} 
-                       &                                                                  & 2                                                & \num{0.026293}                                                & 1.087                                                        & 0.587                                                        & 37.877                                                       & \multicolumn{1}{c|}{\num{0.02405719725}}                                                                                         \\ \cline{3-8} 
-                       & \multirow{-3}{*}{1$^{\textrm{st}}$ stage}                        & \cellcolor[HTML]{C0C0C0}3                        & \cellcolor[HTML]{C0C0C0}\num{0.154}                           & \cellcolor[HTML]{C0C0C0}2.654                                & \cellcolor[HTML]{C0C0C0}0.460                                & \cellcolor[HTML]{C0C0C0}30.145                               & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\num{0.02198515637}}                                                                 \\ \cline{2-8} 
-                       &                                                                  & 1                                                & \num{0.042468}                                                & 1.127                                                        & 0.256                                                        & 69.785                                                       & \multicolumn{1}{c|}{\num{0.0157830282}}                                                                                          \\ \cline{3-8} 
-\multirow{-6}{*}{sand} & \multirow{-2}{*}{2$^{\textrm{nd}}$ stage}                        & \cellcolor[HTML]{C0C0C0}2                        & \cellcolor[HTML]{C0C0C0}\num{0.12224}                         & \cellcolor[HTML]{C0C0C0}2.455                                & \cellcolor[HTML]{C0C0C0}0.35                                 & \cellcolor[HTML]{C0C0C0}32.633                               & \cellcolor[HTML]{C0C0C0}\num{0.0139951908}                                                                                       \\ \hline
+\multicolumn{3}{|c|}{\cellcolor[HTML]{34CDF9}}                                                                                                                        & \multicolumn{4}{c|}{parameters}                                                                                                                                                                                                                            &                                             \\ \cline{4-7}
+\multicolumn{3}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{34CDF9}}}                                                                                                      & $\alpha$ [cm$^{-1}$]                                          & $n$ [-]                                                      & $\theta_s$ [-]                                               & $K_s$ [cm.hrs$^{-1}$]                                        & \multirow{-2}{*}{RMSE error}                \\ \hline
+                                     & \multicolumn{2}{c|}{\cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                                    & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{0.019}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{1.31}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{0.41}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{6.24}} & \cellcolor[HTML]{34CDF9}                    \\ \cline{2-8} 
+                                     &                                                                                           & \cellcolor[HTML]{C0C0C0}\textbf{1} & \cellcolor[HTML]{C0C0C0}0.020                                 & \cellcolor[HTML]{C0C0C0}1.321                                & \cellcolor[HTML]{C0C0C0}0.395                                & \cellcolor[HTML]{C0C0C0}6.226                                & \cellcolor[HTML]{C0C0C0}\num{0.04787}       \\ \cline{3-8} 
+                                     &                                                                                           & \textbf{2}                         & 0.012                                                         & 1.050                                                        & 0.250                                                        & 7.011                                                        & \num{0.2830367232}                          \\ \cline{3-8} 
+\multirow{-4}{*}{\textbf{clay loam}} & \multirow{-3}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}identified\\ solutions\end{tabular}}} & \textbf{3}                         & \num{0.00012796}                                              & 1.146                                                        & 0.900                                                        & 94.904                                                       & \num{0.3724314113}                          \\ \hline
+\multicolumn{8}{|l|}{\cellcolor[HTML]{656565}}                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+                                     & \multicolumn{2}{c|}{\cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{exact solution}}}                                    & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{0.145}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{2.68}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{0.43}} & \cellcolor[HTML]{CB0000}{\color[HTML]{FFFFFF} \textbf{29.7}} & \cellcolor[HTML]{34CDF9}                    \\ \cline{2-8} 
+                                     &                                                                                           & \textbf{1}                         & 0.039                                                         & 1.050                                                        & 0.250                                                        & 35.563                                                       & \num{0.02977800386}                         \\ \cline{3-8} 
+                                     &                                                                                           & \textbf{2}                         & 0.026                                                         & 1.087                                                        & 0.587                                                        & 37.877                                                       & \num{0.02405719725}                         \\ \cline{3-8} 
+\multirow{-4}{*}{\textbf{sand}}      & \multirow{-3}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}identified\\ solutions\end{tabular}}} & \cellcolor[HTML]{C0C0C0}\textbf{3} & \cellcolor[HTML]{C0C0C0}0.154                                 & \cellcolor[HTML]{C0C0C0}2.654                                & \cellcolor[HTML]{C0C0C0}0.460                                & \cellcolor[HTML]{C0C0C0}30.145                               & \cellcolor[HTML]{C0C0C0}\num{0.02198515637} \\ \hline
 \end{tabular}
 \end{table*}
 
-Results of the benchmark problem are given in table~\ref{tab-benchres}. For all four benchmark problems the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
+Results of the benchmark problem are given in table~\ref{tab-benchres}. For these two different soil types involved  the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
 
-In the second stage the inverse problem was solved with less accurate discretization technique. It is apparent, that even the less accurate (but oscillations free) semi-explicit method for treatment of the nonlinear Richards equation operator has given  reasonable estimates of the SHP parameters. 
+
 
 
 % clay with original settings
@@ -694,25 +696,7 @@ In the second stage the inverse problem was solved with less accurate discretiza
 \section{Results and discussion} 
 
 
-The first procedure, which is typically required before proceeding the inverse modeling procedures, is the global sensitivity analyses on  selected parameter ranges, see table~\ref{rozsahy}. For simplicity the sensitivity analyses was conducted just for the first objective function~\eqref{objektiva1}. This strategy is in line with the statements given in the last paragraph of the section~\ref{objdef}. In total 10.000 samples of the objective function \eqref{objektiva1}  were evaluated, in order to obtain the  Total Sobol Index for each parameter~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters. 
 
-\begin{table}[ht]
-\begin{center}
-\caption{Total Sobol indices for the searched SHPs parameters.}
-\begin{small}
-\doublespacing
-\begin{tabular}{l||c c c c c}
-\toprule
-% Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
-parameter & $\alpha$ & $n$ & $K_s$ & $\theta_s$ & $S_s$ \\ \hline
-\toprule
-Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
-\toprule
-\end{tabular}
-\end{small}
-\label{citlivost}
-\end{center}
-\end{table}
 
 The first run with discretization level $r_f=0$ generated after 40.000 objective function calls (each call took approximately 3~min, executed on 32-core Intel(R) Xeon(R) CPU E5-2630, bogomips 4801.67) the local extremes are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix.
 
@@ -877,6 +861,27 @@ Financial support from ...ADD IGA HERE... is gratefully acknowledged.
 
 
 \appendix
+ \section{Sensitivity analyses} 
+
+The first procedure, which is typically required before proceeding the inverse modeling procedures, is the global sensitivity analyses on  selected parameter ranges, see table~\ref{rozsahy}. For simplicity the sensitivity analyses was conducted just for the first objective function~\eqref{objektiva1}. This strategy is in line with the statements given in the last paragraph of the section~\ref{objdef}. In total 10.000 samples of the objective function \eqref{objektiva1}  were evaluated, in order to obtain the  Total Sobol Index for each parameter~\citep{kniha-citlivost}. The values of the Total Sobol Indices are given in table~\ref{citlivost}. Since the evaluated Total Sobol Index for each parameter was nearly 0.9, our model exhibits an excellent sensitivity for all SHPs parameters. 
+
+\begin{table*}[ht]
+\begin{center}
+\caption{Total Sobol indices for the searched SHPs parameters.}
+\begin{small}
+\doublespacing
+\begin{tabular}{l||c c c c c}
+\toprule
+% Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
+parameter & $\alpha$ & $n$ & $K_s$ & $\theta_s$ & $S_s$ \\ \hline
+\toprule
+Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
+\toprule
+\end{tabular}
+\end{small}
+\label{citlivost}
+\end{center}
+\end{table*}
 
 \section{Solutions after the first identification run with $r_f=0$ and $r_f=1$.}
 
