@@ -100,7 +100,7 @@ Our results show the existence of multimodality in, both, the benchmark problems
 \end{abstract}
 
 \begin{keyword}
-soil hydraulic properties \sep inverse modeling of the Richards equation \sep FEM approximation of the Richards equation \sep differential evolution \sep application of dd-adaptivity algorithm \sep computational hydrology \sep computational soil science
+soil hydraulic properties \sep inverse modeling \sep Richards equation \sep convergence issues  \sep automatic calibration \sep computational issues in geosciences  
 
 %% MSC codes here, in the form: \MSC code \sep code
 %% or \MSC[2008] code \sep code (2000 is the default)
@@ -152,15 +152,14 @@ It could be concluded, that if we use a simple Picard method for the nonlinear o
 
 The following questions arise: 
 \begin{itemize}
-	\item Is it possible to approximate the unsteady SR experiment using the REVG model, where the only unknown parameters represent the thin topsoil layer, by a unique set of parameters? \
-	\item If not, are all parameters vulnerable to non-uniqueness?
-	\item Are the parameters identified by inverse analysis of SR infiltration dependent on the treatment of the nonlinear operator of the Richards equation? Is there any benefit in using the accurate Newton or Picard iteration method, which can often lead to slow convergence or even divergence, or can we obtain a reasonable estimate with just the semi-implicit scheme (= evaluating nonlinear functions in the Richards equation from previous time level solution)?
+\item How can convergence issues be avoided, especially when the parameter range is wide? 
+\item Is it possible to approximate the unsteady SR experiment using the REVG model, where the only unknown parameters represent the thin topsoil layer, by a unique set of parameters? 
+\item  If not, are all parameters vulnerable to non-uniqueness?
 \end{itemize}
 
+To answer these questions we employed a new calibration methodology. 
 
 
-The aim of this paper is to answer these questions. We approach these issues using a real-world problem aiming to identify SHP for the top soil layer in the experimental catchment Modrava in the \v{S}umava National Park, Czech Republic. The SHP for lower soil layers were already identified through various field and laboratory experiments and by data processing %(e.g. pedotransfer functions, see Rosetta code~\citep{Schaap}). 
-%Since direct measurements are difficult to obtain for the topsoil, it is also very difficult to narrow down the parameter ranges. However, knowledge of the lower soil layers should decrease the number of unknowns of this inverse problem. 
 
 
 \subsection{Comment on system of units applied in this manuscript}
@@ -208,9 +207,8 @@ are given in the table~\ref{tab:soiltxt}.
 
  \begin{table*}[ht]
  \fs
- 	\begin{center}
+\centering
  		\caption{Fractions of the fine soil ($<$ 2 mm) and skeleton ($>$ 2 mm) and bulk density of the E and Bhs+Bs horizons.}
- 		\begin{small}
  			\begin{tabular}{l c  c  c  c  c}
  				\toprule
  				horizon & clay & silt & sand  & gravel & bulk density  \\ 
@@ -225,9 +223,7 @@ are given in the table~\ref{tab:soiltxt}.
  				
  				\toprule
  			\end{tabular}
- 		\end{small}
  		\label{tab:soiltxt}
- 	\end{center}
  \end{table*}
 
 
@@ -347,7 +343,7 @@ c(\vec{x}) = \begin{cases}
 Note that we should avoid using the coordinates, where $r=0$.
 
 
-\subsection{Domain scheme, initial conditions and boundary conditions}%[michal]
+\subsection{Domain setup}%[michal]
 \label{bccond}
  \begin{figure*}
 \centering
@@ -357,20 +353,16 @@ Note that we should avoid using the coordinates, where $r=0$.
  \label{valec}
 \end{figure*}
 
-The goal of the model was to achieve cumulative infiltration -- the cumulative flux over the top Dirichlet boundary.
-The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- the soil surface. Inside the ring, a Dirichlet condition defines the ponding depth; outside the infiltration ring a Neumann condition defines the no-flow boundary. Locating the bottom boundary was more problematic. We consider following commonly used options:
-\begin{itemize}
-\item the no-flow boundary (Neumann)
-\item the free drainage boundary (Neumann)
-\item the groundwater level - zero pressure head (Dirichlet)
-\end{itemize}
-It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would therefore probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth. The free drainage boundary defines fluxes that probably do not appear in our system at all.  If we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
-\begin{lineq}
-\frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{\footnotesize free drainage}} \times [0,T).
-\end{lineq}
-is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces extra computational costs. The computational process, that is produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
 
-It turns out that the only physically correct boundary condition for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. The average depth of the groundwater table is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
+\subsubsection{Domain shape restrictions}
+
+Since \cite{Dusek} mentioned several difficulties with incorrect triangular mesh setup while modeling the SR experiment, we tried to avoid possible numerical issues connected with domains with sharp spikes.
+
+% The governing equation~\eqref{richaxi} will be solved here by linear finite element method, which is a subset of variational methods. Using standard setup the solution $H$ of~\eqref{richaxi} will be taken from Sobolev functional space defined for functions on Lipschitz bounded domains~\citep{braess, pum}.
+
+%reseni rovnice bylo ve std pojeti, reseni ze sobolevova prostoru funkci definovanych na oblasti z lips hranici
+Sudden changes in domain shapes, spikes and discontinuities yield numerical difficulties (e.g. the Lipschitz boundary restrictions~\citep{braess}).
+In order to avoid computational difficulties during the automatic calibration procedure the infiltration ring thickness was oversized  to 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring thickness yields possible numerical issues.  It is expected, that oversizing the ring thickness does not significantly affect the fluxes through the top Dirichlet boundary, which is the only important part of the solution of~\eqref{richaxi} for our calibration process.
 
 
 \subsubsection{Stability restrictions of convection dominant problems}
@@ -389,17 +381,34 @@ Pe =  \frac{\frac{1}{r}K(h) \Delta x}{2K(h)} = \frac{\Delta x}{2r}.
 Since our mesh is triangular, $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of anisotropy is such that the Peclet number is sufficiently low. If we want to make our computation free of the well known spurious oscillations~\cite{zienkiewicz1976, roos-layers}, a sufficiently low Peclet number $Pe\le 1$ is required. Therefore, the distance from the axis of anisotropy is given by the domain discretization step at the left hand side boundary. The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore detached by 2~cm from the axis of anisotropy, and thus the Peclet number was 0.5 only.
 
 
-\subsubsection{Domain shape restrictions}
 
-Since \cite{Dusek} mentioned several difficulties with incorrect triangular mesh setup while modeling the SR experiment, we tried to avoid possible numerical issues connected with domains with sharp spikes.
 
-% The governing equation~\eqref{richaxi} will be solved here by linear finite element method, which is a subset of variational methods. Using standard setup the solution $H$ of~\eqref{richaxi} will be taken from Sobolev functional space defined for functions on Lipschitz bounded domains~\citep{braess, pum}.
 
-%reseni rovnice bylo ve std pojeti, reseni ze sobolevova prostoru funkci definovanych na oblasti z lips hranici
-Sudden changes in domain shapes, spikes and discontinuities yield numerical difficulties (e.g. the Lipschitz boundary restrictions~\citep{braess}).
-In order to avoid computational difficulties during the automatic calibration procedure the infiltration ring thickness was oversized  to 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring thickness yields possible numerical issues.  It is expected, that oversizing the ring thickness does not significantly affect the fluxes through the top Dirichlet boundary, which is the only important part of the solution of~\eqref{richaxi} for our calibration process.
+
+
+
+
+
+
 
 \subsubsection{Initial and boundary condition setup}
+
+
+The goal of the model was to achieve cumulative infiltration -- the cumulative flux over the top Dirichlet boundary.
+The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- the soil surface. Inside the ring, a Dirichlet condition defines the ponding depth; outside the infiltration ring a Neumann condition defines the no-flow boundary. Locating the bottom boundary was more problematic. We consider following commonly used options:
+\begin{itemize}
+\item the no-flow boundary (Neumann)
+\item the free drainage boundary (Neumann)
+\item the groundwater level - zero pressure head (Dirichlet)
+\end{itemize}
+It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would therefore probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth. The free drainage boundary defines fluxes that probably do not appear in our system at all.  If we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
+\begin{lineq}
+\frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{\footnotesize free drainage}} \times [0,T).
+\end{lineq}
+is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces extra computational costs. The computational process, that is produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
+
+It turns out that the only physically correct boundary condition for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. The average depth of the groundwater table is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
+
 
 As discussed in \ref{restrconvect} the left hand side boundary was located at $r=2$~cm. The right hand side boundary was located at a distance $r=73$~cm and 60~cm from the infiltration ring. 
 
@@ -428,8 +437,7 @@ H(x) = -280.0 \; \mbox{cm}; \quad \forall x \in \Omega,
 \end{lineq}
 and thus $\frac{\partial h}{\partial z} = -1$.
 
-
-\subsubsection{Numerical solution, temporal and spatial discretization, automatic calibration methodology}%[michal]
+\subsubsection{Numerical solution and computational issues}
 \label{trapoty}
 
 Equation~\eqref{richaxi} was implemented into the DRUtES library~\citep{drutes}. It is an object-oriented library written in Fortran 2003/2008 standard for solving nonlinear coupled convection-diffusion-reaction type problems. The problem was approximated by the linear finite element method for spatial derivatives and Rothe's method for temporal derivatives. The nonlinear operator was treated with the Schwarz-Picard method -- an adaptive domain decomposition  ($dd$-adaptivity) -- with the ability to activate and deactivate subregions of the computational domain sequentially ~\citep{mojecomp, mojejcam2, mojeamc2}.
@@ -453,6 +461,13 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 \mathbf{A}(\vec{x}_{l-1}) \vec{x}_l = \vec{b}(\vec{x}_{l-1}).
 \end{lineq}
  This semiexplicit method always requires just a single outer iteration. With a short time step the method converges to the exact solution. For inappropriate time steps, the method diverges from the exact solution faster than the method~\eqref{matice}. Nonetheless, the method~\eqref{matice2} is free of possible issues related to the convergence of the nonlinear operator.
+
+
+
+\section{Automatic calibration methodology}%[michal]
+
+
+
 
 The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
 
