@@ -394,23 +394,27 @@ Since our mesh is triangular, $\Delta x$ can be roughly assumed to be the greate
 \subsubsection{Initial and boundary condition setup}
 
 
-The goal of the model was to achieve cumulative infiltration -- the cumulative flux over the top Dirichlet boundary.
-The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- the soil surface. Inside the ring, a Dirichlet condition defines the ponding depth; outside the infiltration ring a Neumann condition defines the no-flow boundary. Locating the bottom boundary was more problematic. We consider following commonly used options:
+
+The initial condition was assumed as a steady state  solution  of \eqref{richaxi} with the boundary $\Gamma_1 \cup \Gamma_2$ assumed as a no-flow boundary -- thus the entire domain $\Omega$ was considered to be in hydrostatic state. The initial condition states that 
+\begin{lineq}
+	H(x) = -280.0 \; \mbox{cm}; \quad \forall x \in \Omega,
+\end{lineq}
+and thus $\frac{\partial h}{\partial z} = -1$.
+
+As discussed in \ref{restrconvect} the left hand side boundary was located at $r=2$~cm. The right hand side boundary was located at a distance $r=73$~cm and 60~cm from the infiltration ring. The computational domain is depicted in figure~\ref{valec} together with the discretization mesh. The location of the top boundary was natural -- the soil surface. Inside the ring, a Dirichlet condition defines the ponding depth; outside the infiltration ring a Neumann condition defines the no-flow boundary. The depth and definition of the bottom boundary was more problematic. We consider following commonly used options:
 \begin{itemize}
 \item the no-flow boundary (Neumann)
 \item the free drainage boundary (Neumann)
 \item the groundwater level - zero pressure head (Dirichlet)
 \end{itemize}
-It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would therefore probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth. The free drainage boundary defines fluxes that probably do not appear in our system at all.  If we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
+It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth, because we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
 \begin{lineq}
 \frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{\footnotesize free drainage}} \times [0,T).
 \end{lineq}
-is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), which is again physically incorrect, and produces extra computational costs. The computational process, that is produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
+is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), and produces extra computational costs. The computed fluxes produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
 
-It turns out that the only physically correct boundary condition for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. The average depth of the groundwater table is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
+Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. The average depth of the groundwater table is approximately -280~cm below the surface. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
 
-
-As discussed in \ref{restrconvect} the left hand side boundary was located at $r=2$~cm. The right hand side boundary was located at a distance $r=73$~cm and 60~cm from the infiltration ring. 
 
  \begin{figure}
 \centering
@@ -430,12 +434,6 @@ h(x,t) &= 0  \; \mbox{cm}  \; \Rightarrow \; H(x,t) = -280.0  \; \mbox{cm}; \qua
 \end{split}
 \end{lineq}
 where $T$ is the simulation end time [T], and $\vec{n}$ is the boundary normal vector.
-
-The initial condition was assumed as a steady state  solution  of \eqref{richaxi} with the boundary $\Gamma_1 \cup \Gamma_2$ assumed as a no-flow boundary -- thus the entire domain $\Omega$ was considered to be in hydrostatic state. The initial condition states that 
-\begin{lineq}
-H(x) = -280.0 \; \mbox{cm}; \quad \forall x \in \Omega,
-\end{lineq}
-and thus $\frac{\partial h}{\partial z} = -1$.
 
 
 
@@ -634,7 +632,7 @@ The following sections will further explain the definition of the objective func
 
 
 
-\subsection{Benchmark evaluations}
+\subsection{Synthetic problem}
  \label{benchmarks}
  
 The purpose of this benchmark example was to demonstrate, whether this class of problem -- identification of SHP parameters from cumulative flux measured at Dirichlet boundary -- can be affected by multimodality.
@@ -665,7 +663,7 @@ In order to avoid effects of numerical treatment of the Richards equation, the n
 
 \begin{table*}[]
 \centering
-\caption{Results of the benchmark problem. The grey highlighted rows refer to the physically acceptable solution of this benchmark inverse problem, and the red highlighted rows contain the exact solution of this inverse problem.}
+\caption{Results of the synthetic problem. The grey highlighted rows refer to the physically acceptable solution of this benchmark inverse problem, and the red highlighted rows contain the exact solution of this inverse problem.}
 \label{tab-benchres}
 \footnotesize
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -684,7 +682,7 @@ In order to avoid effects of numerical treatment of the Richards equation, the n
 \end{tabular}
 \end{table*}
 
-Results of the benchmark problem are given in table~\ref{tab-benchres}. For these two different soil types involved  the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
+Results of the synthetic problem are given in table~\ref{tab-benchres}. For these two different soil types involved  the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
 
 
 
@@ -709,8 +707,9 @@ Results of the benchmark problem are given in table~\ref{tab-benchres}. For thes
 % 0.12224    2.45494       0.35    32.6334 0.0139951908
 
 
+\subsection{Real-world problem}
 
- The local extremes for the refinement level $r_f=0$ are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix. Complete settings specifications for each $r_f$ level involved here are given in table~\ref{tab:rfset}.
+ We found multiple optima for the real world problems. The local extremes for the refinement level $r_f=0$ are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix. Complete settings specifications for each $r_f$ level involved here are given in table~\ref{tab:rfset}.
 
 
 
@@ -862,18 +861,23 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \label{retc-final}
 \end{figure}
 
+
+\subsection{Limitations and realism of results}
+
+
+Local optima 7 resulted in the most realistic results for the podzolic top O+Ah soil layer. The saturated conductivity is similar across identified optima and slightly lower than in the lower horizon E. The O+Ah top layer horizon can swell up and the infiltration may reduce the volume of the effective pores. The identified saturated conductivity is highly limited by the input data and will always be lower than the 1D saturated conductivity fitted with the Swartzendruber equation. The porosity is slightly lower than expected. The humidifcation process and the high organic content can cause high curvature in the pore system, which may have caused an overestimation of the horizon.  The identified values for $\alpha$ are also similar in range across the optima. $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. 
+In the evaluation of the realism of the optimization we the treatment of the initial condition and the representativeness of the input curve as the greatest limitation. This however, does not delimit the applicability of the proposed calibration methodology. 
+
+ 
+
 \section{Conclusions}
 
-The purpose of this paper was to evaluate the capability of an unsteady part of the well known single ring infiltration experiment for estimating  soil hydraulic properties, namely the water retention curve. The main research question was whether the cumulative infiltration curve representing the unsteady part of the single ring experiment is robust enough to give a unique definition for soil hydraulic properties, particularly van Genuchten's parameters $\alpha$, and $n$, saturated water content $\theta_s$, and obviously the saturated hydraulic conductivity $K_s$. 
-  Are all parameters potentially vulnerable to a non-uniqueness? And finally, is there a strong dependence between the inverse task solution and the numerical treatment? Is there any benefit in using the accurate Newton or Picard iteration method, which can often lead to slow convergence or even divergence, or can we obtain a reasonable estimate with just the semi-implicit scheme (=evaluating  nonlinear functions in the Richards equation from the previous time level solution)?
-  
-In order to answer these questions we presented a methodology for inverse modeling for this class of the Richards equation problems. Our  presumptions of multimodality were briefly validated on one-dimensional benchmark problems for two distinct porous materials -- sand and clay. It appeared that an acceptable solution of the inverse task   doesn't necessarily point to a physically acceptable solution. The most noticeable non-uniqueness was discovered with the saturated water content, since  acceptable solutions were identified across  extremely broad ranges  of this parameter.
-  
-\begin{itemize}
-\item $\theta_s$ cannot be reliably obtained by this inverse modeling 
-\item retention curve parameters refer to a relatively similar retention curves at ranges initial condition : boundary condition, see figure~\ref{retc-final}, unsteady SR experiment seems OK for such identification.
-\item  what else can we say??
-\end{itemize}
+We presented an automated calibration procedure that is able to identify optima from a relatively wide range of input parameters without convergence issues of the nonlinear operator. We also showed numerical considerations in the domain set-up of a challenging problem. We show that starting with the semi-explicit scheme can identify regions of interest. However, the identified SHP can change dramatically with an improved numerical set-up, so that several stages of refinement are required until SHP estimates can be confirmed. We also acknowledge that for this calibration to work, the optimization algorithm needs to be able to identify multiple optima. 
+
+We applied the methodology to synthetic and a real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
+
+Research outlook:
+
 
 
 
