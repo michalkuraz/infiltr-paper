@@ -146,9 +146,6 @@ The definition of a unique inverse function for identification of macroscopic me
 
 A challenging issue is the treatment of the nonlinear operator of the Richards equation. \cite{beven2003-uncertain} reported that 56\% of the simulations were rejected during Monte Carlo simulations on a wide range of parameters, because of convergence problems. 
 Their study did not mention explicitly why. We assume that these convergence issues originated from the nonlinear operator treatment.
-It could be concluded, that if we use a simple Picard method for the nonlinear operator, and we increase the iteration criterion (which is typically referred to as $h$ or $\theta$ tolerance), we will obtain a less accurate solution but we will also need less iterations for the Picard method. If we increase the criterion enough, we end up with a semi-implicit solution, where the constitutive functions in the Richards equation are evaluated from the previous time level solution -- thus we just need a single  iteration.
-
-
 
 The following questions arise: 
 \begin{itemize}
@@ -413,7 +410,7 @@ It is apparent that the wetting front originating from our infiltration experime
 \end{lineq}
 is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), and produces extra computational costs. The computed fluxes produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
 
-Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. The average depth of the groundwater table is approximately -280~cm below the surface, and  we assume that the water table remains constant during the experiment. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valecbc}.
+Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. The average depth of the groundwater table is approximately -280~cm below the surface, and  we assume that the water table remains constant during the experiment. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valec}.
 
 
  \begin{figure}
@@ -538,7 +535,7 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 \section{Automatic calibration methodology}%[michal]
 
 
-
+\textcolor{red}{\huge{MICHAL: We need a better introduction for this section}}
 
 The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
 
@@ -710,7 +707,7 @@ Results of the synthetic problem are given in table~\ref{tab-benchres}. For thes
 
 \subsection{Real-world problem}
 
- We found multiple optima for the real world problems. The local extremes for the refinement level $r_f=0$ are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix. Complete settings specifications for each $r_f$ level involved here are given in table~\ref{tab:rfset}.
+ We found multiple optima for the real-world problem. The local extremes for the refinement level $r_f=0$ are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix. Complete settings specifications for each $r_f$ level involved here are given in table~\ref{tab:rfset}.
 
 
 
@@ -857,7 +854,7 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \begin{figure}
 \centering
 \rotatebox{-90}{
-{\includegraphics[height=9cm]{images/retc.eps}}}
+{\includegraphics[height=8cm]{images/retc.eps}}}
 \caption{Resulting retention curves obtained from the inverse model.}
 \label{retc-final}
 \end{figure}
@@ -878,7 +875,7 @@ We presented an automated calibration procedure that is able to identify optima 
 We applied the methodology to synthetic and a real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
 Research outlook:
-
+\textcolor{red}{\huge{MICHAL: Add research outlook}}
 
 
 
