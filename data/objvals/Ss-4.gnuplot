@@ -11,7 +11,7 @@
 xbod=1e-8
 ymax=2.5
 ymin=0.01
-xtext=0.000001
+xtext=1.5e-8
 ytext=3.5
 
 set yrange[0:25]
@@ -31,6 +31,8 @@ set label 1 "identified S_s=0.0 cm^{-1}"
 set grid
 set output
 set logscale x
+set format x "10^{%L}"
+
 
 set terminal postscript enhanced colour "Helvetica" 23 lw 3
 # set terminal latex

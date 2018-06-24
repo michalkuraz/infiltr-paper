@@ -1,0 +1,574 @@
+\begin{thebibliography}{57}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Angulo-Jaramillo et~al.(2000)Angulo-Jaramillo, Vandervaere, Roulier,
+  Thony, Gaudet and Vauclin}]{AnguloJaramillo}
+\bibinfo{author}{Angulo-Jaramillo, R.}, \bibinfo{author}{Vandervaere, J.P.},
+  \bibinfo{author}{Roulier, S.}, \bibinfo{author}{Thony, J.L.},
+  \bibinfo{author}{Gaudet, J.P.}, \bibinfo{author}{Vauclin, M.},
+  \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Field measurement of soil surface hydraulic
+  properties by disc and ring infiltrometers: A review and recent
+  developments}.
+\newblock \bibinfo{journal}{Soil Tillage Res.} \bibinfo{volume}{55},
+  \bibinfo{pages}{1--29}.
+\newblock \DOIprefix\doi{10.1016/S0167-1987(00)00098-2}.
+%Type = Article
+\bibitem[{Bagarello et~al.(2017)Bagarello, Prima and Iovino}]{BAGARELLO201770}
+\bibinfo{author}{Bagarello, V.}, \bibinfo{author}{Prima, S.D.},
+  \bibinfo{author}{Iovino, M.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Estimating saturated soil hydraulic conductivity by
+  the near steady-state phase of a beerkan infiltration test}.
+\newblock \bibinfo{journal}{Geoderma} \bibinfo{volume}{303}, \bibinfo{pages}{70
+  -- 77}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S001670611730201X},
+  \DOIprefix\doi{https://doi.org/10.1016/j.geoderma.2017.04.030}.
+%Type = Book
+\bibitem[{Bear(1979)}]{bear1979}
+\bibinfo{author}{Bear, J.}, \bibinfo{year}{1979}.
+\newblock \bibinfo{title}{Hydraulics of groundwater}.
+\newblock McGraw-Hill series in water resources and environmental engineering,
+  \bibinfo{publisher}{McGraw-Hill International Book Co.}
+%Type = Article
+\bibitem[{Binley and Beven(2003)}]{beven2003-uncertain}
+\bibinfo{author}{Binley, A.}, \bibinfo{author}{Beven, K.},
+  \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Vadose zone flow model uncertainty as conditioned on
+  geophysical data}.
+\newblock \bibinfo{journal}{Ground Water} \bibinfo{volume}{41},
+  \bibinfo{pages}{119--127}.
+\newblock \URLprefix
+  \url{http://dx.doi.org/10.1111/j.1745-6584.2003.tb02576.x},
+  \DOIprefix\doi{10.1111/j.1745-6584.2003.tb02576.x}.
+%Type = Book
+\bibitem[{Braess(1997)}]{braess}
+\bibinfo{author}{Braess, D.}, \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{Finite elements: Theory, fast solvers, and
+  applications in solid mechanics}.
+\newblock \bibinfo{publisher}{Cambridge University Press}.
+%Type = Article
+\bibitem[{Buckingham(1907)}]{buckingham}
+\bibinfo{author}{Buckingham, E.}, \bibinfo{year}{1907}.
+\newblock \bibinfo{title}{Studies on the movement of soil moisture}.
+\newblock \bibinfo{journal}{USDA Bureau of Soils -- Bulletin}
+  \bibinfo{volume}{38}.
+%Type = Article
+\bibitem[{Celia et~al.(1990)Celia, Bouloutas and Zarba}]{celia}
+\bibinfo{author}{Celia, M.A.}, \bibinfo{author}{Bouloutas, E.T.},
+  \bibinfo{author}{Zarba, R.L.}, \bibinfo{year}{1990}.
+\newblock \bibinfo{title}{A general mass-conservative numerical solution for
+  the unsaturated flow equation}.
+\newblock \bibinfo{journal}{Water Resources Research} \bibinfo{volume}{26},
+  \bibinfo{pages}{1483--1496}.
+\newblock \DOIprefix\doi{10.1029/WR026i007p01483}.
+%Type = Article
+\bibitem[{Cheng et~al.(2011)Cheng, Chen, Chen, Zhang and Ling}]{Cheng}
+\bibinfo{author}{Cheng, Q.}, \bibinfo{author}{Chen, X.}, \bibinfo{author}{Chen,
+  X.}, \bibinfo{author}{Zhang, Z.}, \bibinfo{author}{Ling, M.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Water infiltration underneath single-ring
+  permeameters and hydraulic conductivity determination}.
+\newblock \bibinfo{journal}{J. Hydrol.} \bibinfo{volume}{398},
+  \bibinfo{pages}{135--143}.
+\newblock \DOIprefix\doi{10.1016/j.jhydrol.2010.12.017}.
+%Type = Article
+\bibitem[{Christie et~al.(1976)Christie, Griffiths, Mitchell and
+  Zienkiewicz}]{zienkiewicz1976}
+\bibinfo{author}{Christie, I.}, \bibinfo{author}{Griffiths, D.F.},
+  \bibinfo{author}{Mitchell, A.R.}, \bibinfo{author}{Zienkiewicz, O.C.},
+  \bibinfo{year}{1976}.
+\newblock \bibinfo{title}{Finite element methods for second order differential
+  equations with significant first derivatives}.
+\newblock \bibinfo{journal}{International Journal for Numerical Methods in
+  Engineering} \bibinfo{volume}{10}, \bibinfo{pages}{1389--1396}.
+\newblock \URLprefix \url{http://dx.doi.org/10.1002/nme.1620100617},
+  \DOIprefix\doi{10.1002/nme.1620100617}.
+%Type = Article
+\bibitem[{Dusek et~al.(2009)Dusek, Dohnal and Vogel}]{Dusek}
+\bibinfo{author}{Dusek, J.}, \bibinfo{author}{Dohnal, M.},
+  \bibinfo{author}{Vogel, T.}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{Numerical analysis of ponded infiltration experiment
+  under different experimental conditions}.
+\newblock \bibinfo{journal}{Soil and Water Research} \bibinfo{volume}{4},
+  \bibinfo{pages}{22--27}.
+%Type = Article
+\bibitem[{Fodor et~al.(2011)Fodor, Sándor, Orfánus, Lichner and
+  Rajkai}]{Fodor}
+\bibinfo{author}{Fodor, N.}, \bibinfo{author}{Sándor, R.},
+  \bibinfo{author}{Orfánus, T.}, \bibinfo{author}{Lichner, L.},
+  \bibinfo{author}{Rajkai, K.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Evaluation method dependency of measured saturated
+  hydraulic conductivity}.
+\newblock \bibinfo{journal}{Geoderma} \bibinfo{volume}{165},
+  \bibinfo{pages}{60--68}.
+\newblock \DOIprefix\doi{10.1016/j.geoderma.2011.07.004}.
+%Type = Article
+\bibitem[{van Genuchten(1980)}]{vangenuchten}
+\bibinfo{author}{van Genuchten, M.}, \bibinfo{year}{1980}.
+\newblock \bibinfo{title}{Closed-form equation for predicting the hydraulic
+  conductivity of unsaturated soils}.
+\newblock \bibinfo{journal}{Soil Science Society of America Journal}
+  \bibinfo{volume}{44}, \bibinfo{pages}{892--898}.
+\newblock \URLprefix
+  \url{http://www.scopus.com/inward/record.url?eid=2-s2.0-0019057216&partnerID=40&md5=1a9a45e1c2b571c00ebb9a9f9ebaaf92}.
+%Type = Misc
+\bibitem[{van Genuchten et~al.(2009)van Genuchten, Simunek, Leiji and
+  Sejna}]{retc}
+\bibinfo{author}{van Genuchten, M.T.}, \bibinfo{author}{Simunek, J.},
+  \bibinfo{author}{Leiji, F.J.}, \bibinfo{author}{Sejna, M.},
+  \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{{RETC}, version 6.02 -- code for quantifying the
+  hydraulic functions of unsaturated soils.}
+\newblock \URLprefix \url{http://www.hydrus3d.com}.
+%Type = Article
+\bibitem[{Hrstka and Kucerova(2004)}]{Hrstka}
+\bibinfo{author}{Hrstka, O.}, \bibinfo{author}{Kucerova, A.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Improvements of real coded genetic algorithms based
+  on differential operators preventing premature convergence}.
+\newblock \bibinfo{journal}{Advances in Engineering Software}
+  \bibinfo{volume}{35}, \bibinfo{pages}{237 -- 246}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0965997803001133},
+  \DOIprefix\doi{https://doi.org/10.1016/S0965-9978(03)00113-3}.
+%Type = Article
+\bibitem[{Hwang and Powers(2003)}]{ihlwang2003}
+\bibinfo{author}{Hwang, S.I.}, \bibinfo{author}{Powers, S.E.},
+  \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Estimating unique soil hydraulic parameters for sandy
+  media from multi-step outflow experiments}.
+\newblock \bibinfo{journal}{Advances in Water Resources} \bibinfo{volume}{26},
+  \bibinfo{pages}{445 -- 456}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0309170802001070},
+  \DOIprefix\doi{https://doi.org/10.1016/S0309-1708(02)00107-0}.
+%Type = Article
+\bibitem[{Ibrahimbegovi\'c et~al.(2004)Ibrahimbegovi\'c, Knopf-Lenoir, Kucerova
+  and Villon}]{grade}
+\bibinfo{author}{Ibrahimbegovi\'c, A.}, \bibinfo{author}{Knopf-Lenoir, C.},
+  \bibinfo{author}{Kucerova, A.}, \bibinfo{author}{Villon, P.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Optimal design and optimal control of structures
+  undergoing finite rotations and elastic deformations}.
+\newblock \bibinfo{journal}{International Journal for Numerical Methods in
+  Engineering} \bibinfo{volume}{61}, \bibinfo{pages}{2428--2460}.
+%Type = Article
+\bibitem[{Inoue et~al.(2000)Inoue, \v{S}im\o{u}nek, Shiozawa and
+  Hopmans}]{simunek-infiltr2shp}
+\bibinfo{author}{Inoue, M.}, \bibinfo{author}{\v{S}im\o{u}nek, J.},
+  \bibinfo{author}{Shiozawa, S.}, \bibinfo{author}{Hopmans, J.},
+  \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Simultaneous estimation of soil hydraulic and solute
+  transport parameters from transient infiltration experiments}.
+\newblock \bibinfo{journal}{Advances in Water Resources} \bibinfo{volume}{23},
+  \bibinfo{pages}{677 -- 688}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0309170800000117},
+  \DOIprefix\doi{https://doi.org/10.1016/S0309-1708(00)00011-7}.
+%Type = Article
+\bibitem[{Jačka et~al.(2012)Jačka, Pavlásek, Jindrová, Bašta, Černý,
+  Balvín and Pech}]{Jacka2}
+\bibinfo{author}{Jačka, L.}, \bibinfo{author}{Pavlásek, J.},
+  \bibinfo{author}{Jindrová, M.}, \bibinfo{author}{Bašta, P.},
+  \bibinfo{author}{Černý, M.}, \bibinfo{author}{Balvín, A.},
+  \bibinfo{author}{Pech, P.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Steady infiltration rates estimated for a mountain
+  forest catchment based on the distribution of plant species}.
+\newblock \bibinfo{journal}{J. For. Sci.} \bibinfo{volume}{58},
+  \bibinfo{pages}{536--544}.
+%Type = Article
+\bibitem[{Jačka et~al.(2014)Jačka, Pavlásek, Kuráž and Pech}]{Jacka1}
+\bibinfo{author}{Jačka, L.}, \bibinfo{author}{Pavlásek, J.},
+  \bibinfo{author}{Kuráž, V.}, \bibinfo{author}{Pech, P.},
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{A comparison of three measuring methods for
+  estimating the saturated hydraulic conductivity in the shallow subsurface
+  layer of mountain podzols}.
+\newblock \bibinfo{journal}{Geoderma} \bibinfo{volume}{219--220},
+  \bibinfo{pages}{82 -- 88}.
+\newblock \DOIprefix\doi{10.1016/j.geoderma.2013.12.027}.
+%Type = Article
+\bibitem[{Jačka et~al.(2016)Jačka, Pavlásek, Pech and Kuráž}]{jacka-site}
+\bibinfo{author}{Jačka, L.}, \bibinfo{author}{Pavlásek, J.},
+  \bibinfo{author}{Pech, P.}, \bibinfo{author}{Kuráž, V.},
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Assessment of evaluation methods using infiltration
+  data measured in heterogeneous mountain soils}.
+\newblock \bibinfo{journal}{Geoderma} \bibinfo{volume}{276}, \bibinfo{pages}{74
+  -- 83}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0016706116301823},
+  \DOIprefix\doi{http://dx.doi.org/10.1016/j.geoderma.2016.04.023}.
+%Type = Article
+\bibitem[{Kamali and Zand-Parsa({2016})}]{Kamali}
+\bibinfo{author}{Kamali, H.R.}, \bibinfo{author}{Zand-Parsa, S.},
+  \bibinfo{year}{{2016}}.
+\newblock \bibinfo{title}{{OPTIMIZATION OF A NEW INVERSE METHOD FOR ESTIMATION
+  OF INDIVIDUAL SOIL HYDRAULIC PARAMETERS UNDER FIELD CONDITIONS}}.
+\newblock \bibinfo{journal}{{Transactions of the ASABE}}
+  \bibinfo{volume}{{59}}, \bibinfo{pages}{{1257--1266}}.
+\newblock \DOIprefix\doi{{10.13031/trans.59.11414}}.
+%Type = Article
+\bibitem[{Knobloch(2008)}]{knobloch2008}
+\bibinfo{author}{Knobloch, P.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{On the choice of the supg parameter at outflow
+  boundary layers}.
+\newblock \bibinfo{journal}{Advances in Computational Mathematics}
+  \bibinfo{volume}{31}, \bibinfo{pages}{369}.
+\newblock \URLprefix \url{https://doi.org/10.1007/s10444-008-9075-6},
+  \DOIprefix\doi{10.1007/s10444-008-9075-6}.
+%Type = Article
+\bibitem[{Kohne et~al.(2006)Kohne, Mohanty and Simunek}]{simunek2-infiltr2shp}
+\bibinfo{author}{Kohne, J.}, \bibinfo{author}{Mohanty, B.},
+  \bibinfo{author}{Simunek, J.}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Inverse dual-permeability modeling of preferential
+  water flow in a soil column and implications for field-scale solute
+  transport}.
+\newblock \bibinfo{journal}{Vadose zone journal} \bibinfo{volume}{5},
+  \bibinfo{pages}{59 -- 76}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.2136/vzj2005.0008}.
+%Type = Article
+\bibitem[{Kool et~al.(1985)Kool, Parker and Van~Genuchten}]{kool1985}
+\bibinfo{author}{Kool, J.}, \bibinfo{author}{Parker, J.},
+  \bibinfo{author}{Van~Genuchten, M.}, \bibinfo{year}{1985}.
+\newblock \bibinfo{title}{Determining soil hydraulic properties from one-step
+  outflow experiments by parameter estimation. i. theory and numerical
+  studies}.
+\newblock \bibinfo{journal}{Soil Science Society of America}
+  \bibinfo{volume}{49}, \bibinfo{pages}{1348 -- 1354}.
+%Type = Article
+\bibitem[{Kowalsky et~al.({2004})Kowalsky, Finsterle and Rubin}]{Kowalsky04}
+\bibinfo{author}{Kowalsky, M.}, \bibinfo{author}{Finsterle, S.},
+  \bibinfo{author}{Rubin, Y.}, \bibinfo{year}{{2004}}.
+\newblock \bibinfo{title}{{Estimating flow parameter distributions using
+  ground-penetrating radar and hydrological measurements during transient flow
+  in the vadose zone}}.
+\newblock \bibinfo{journal}{{ADVANCES IN WATER RESOURCES}}
+  \bibinfo{volume}{{27}}, \bibinfo{pages}{{583--599}}.
+\newblock \DOIprefix\doi{{10.1016/j.advwatres.2004.03.003}}.
+%Type = Phdthesis
+\bibitem[{Kucerova(2007)}]{Kucerova:2007:PHD}
+\bibinfo{author}{Kucerova, A.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{Identification of nonlinear mechanical model
+  parameters based on softcomputing methods}.
+\newblock Ph.D. thesis. Ecole Normale Sup\'erieure de Cachan, Laboratoire de
+  M\'ecanique et Technologie.
+%Type = Misc
+\bibitem[{Kuraz and Mayer(2008)}]{drutes}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Drutes -- an opensource library for solving coupled
+  nonlinear convection-diffusion-reaction equations}.
+\newblock \URLprefix \url{http://www.drutes.org}.
+%Type = Article
+\bibitem[{Kuraz and Mayer(2013)}]{mojeacta}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Algorithms for solving darcian flow in structured
+  porous media}.
+\newblock \bibinfo{journal}{Acta Polytecnica} \bibinfo{volume}{53},
+  \bibinfo{pages}{347--358}.
+%Type = Article
+\bibitem[{Kuraz et~al.(2013a)Kuraz, Mayer, Havlicek and Pech}]{mojecomp}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Havlicek, V.}, \bibinfo{author}{Pech, P.},
+  \bibinfo{year}{2013}a.
+\newblock \bibinfo{title}{Domain decomposition adaptivity for the richards
+  equation model}.
+\newblock \bibinfo{journal}{Computing} \bibinfo{volume}{95},
+  \bibinfo{pages}{501--519}.
+\newblock \URLprefix \url{http://dx.doi.org/10.1007/s00607-012-0279-8},
+  \DOIprefix\doi{10.1007/s00607-012-0279-8}.
+%Type = Article
+\bibitem[{Kuraz et~al.(2013b)Kuraz, Mayer, Havlicek, Pech and
+  Pavlasek}]{mojeamc}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Havlicek, V.}, \bibinfo{author}{Pech, P.},
+  \bibinfo{author}{Pavlasek, J.}, \bibinfo{year}{2013}b.
+\newblock \bibinfo{title}{Dual permeability variably saturated flow and
+  contaminant transport modeling of a nuclear waste repository with capillary
+  barrier protection}.
+\newblock \bibinfo{journal}{Applied Mathematics and Computation}
+  \bibinfo{volume}{219}, \bibinfo{pages}{7127 -- 7138}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.1016/j.amc.2011.08.109}.
+%Type = Article
+\bibitem[{Kuraz et~al.(2010)Kuraz, Mayer, Lep\v{s} and
+  Trpko\v{s}ov\'a}]{Kuraz:2010:JCAM}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Lep\v{s}, M.}, \bibinfo{author}{Trpko\v{s}ov\'a, D.},
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{An adaptive time discretization of the classical and
+  the dual porosity model of {R}ichards' equation}.
+\newblock \bibinfo{journal}{Journal of Computational and Applied Mathematics}
+  \bibinfo{volume}{233}, \bibinfo{pages}{3167--3177}.
+\newblock \bibinfo{note}{ISSN: 0377-0427}.
+%Type = Article
+\bibitem[{Kuraz et~al.(2014)Kuraz, Mayer and Pech}]{mojejcam2}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Pech, P.}, \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Solving the nonlinear richards equation model with
+  adaptive domain decomposition}.
+\newblock \bibinfo{journal}{Journal of Computational and Applied Mathematics}
+  \bibinfo{volume}{270}, \bibinfo{pages}{2 -- 11}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0377042714001502},
+  \DOIprefix\doi{http://dx.doi.org/10.1016/j.cam.2014.03.010}.
+  \bibinfo{note}{fourth International Conference on Finite Element Methods in
+  Engineering and Sciences (FEMTEC 2013)}.
+%Type = Article
+\bibitem[{Kuraz et~al.(2015)Kuraz, Mayer and Pech}]{mojeamc2}
+\bibinfo{author}{Kuraz, M.}, \bibinfo{author}{Mayer, P.},
+  \bibinfo{author}{Pech, P.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Solving the nonlinear and nonstationary richards
+  equation with two-level adaptive domain decomposition (dd-adaptivity)}.
+\newblock \bibinfo{journal}{Applied Mathematics and Computation}
+  \bibinfo{volume}{267}, \bibinfo{pages}{207 -- 222}.
+%Type = Article
+\bibitem[{Lassabatère et~al.(2006)Lassabatère, Angulo-Jaramillo,
+  Soria~Ugalde, Cuenca, Braud and Haverkamp}]{infiltr2shp}
+\bibinfo{author}{Lassabatère, L.}, \bibinfo{author}{Angulo-Jaramillo, R.},
+  \bibinfo{author}{Soria~Ugalde, J.M.}, \bibinfo{author}{Cuenca, R.},
+  \bibinfo{author}{Braud, I.}, \bibinfo{author}{Haverkamp, R.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Beerkan estimation of soil transfer parameters
+  through infiltration experiments--best}.
+\newblock \bibinfo{journal}{Soil Science Society of America Journal}
+  \bibinfo{volume}{70}, \bibinfo{pages}{521 -- 532}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.2136/sssaj2005.0026}.
+%Type = Inproceedings
+\bibitem[{Leps(2007)}]{Leps2007}
+\bibinfo{author}{Leps, M.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{Parallel multi-objective identification of material
+  parameters for concrete}, in: \bibinfo{booktitle}{Proceedings of the Ninth
+  International Conference on the Application of Artificial Intelligence to
+  Civil, Structural and Environmental Engineering, Stirling: Civil-Comp Press
+  Ltd}.
+%Type = Article
+\bibitem[{Mous(1993)}]{mous1993}
+\bibinfo{author}{Mous, S.}, \bibinfo{year}{1993}.
+\newblock \bibinfo{title}{Identification of the movement of water in
+  unsaturated soils: the problem of identifiability of the model}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{143},
+  \bibinfo{pages}{153 -- 167}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/002216949390093O},
+  \DOIprefix\doi{https://doi.org/10.1016/0022-1694(93)90093-O}.
+  \bibinfo{note}{xVI General Assembly of the European Geophysical Society}.
+%Type = Article
+\bibitem[{Nakhaei and Amiri({2015})}]{Nakhaei}
+\bibinfo{author}{Nakhaei, M.}, \bibinfo{author}{Amiri, V.},
+  \bibinfo{year}{{2015}}.
+\newblock \bibinfo{title}{{ESTIMATING THE UNSATURATED SOIL HYDRAULIC PROPERTIES
+  FROM A REDISTRIBUTION EXPERIMENT: APPLICATION TO SYNTHETIC DATA}}.
+\newblock \bibinfo{journal}{{JOURNAL OF POROUS MEDIA}} \bibinfo{volume}{{18}},
+  \bibinfo{pages}{{717--729}}.
+%Type = Article
+\bibitem[{Peña-Sancho et~al.(2017)Peña-Sancho, Ghezzehei, Latorre,
+  González-Cebollada and Moret-Fernández}]{pena17}
+\bibinfo{author}{Peña-Sancho, C.}, \bibinfo{author}{Ghezzehei, T.},
+  \bibinfo{author}{Latorre, B.}, \bibinfo{author}{González-Cebollada, C.},
+  \bibinfo{author}{Moret-Fernández, D.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Upward infiltration–evaporation method to estimate
+  soil hydraulic properties}.
+\newblock \bibinfo{journal}{Hydrological Sciences Journal}
+  \bibinfo{volume}{62}, \bibinfo{pages}{1683--1693}.
+\newblock \URLprefix \url{https://doi.org/10.1080/02626667.2017.1343476},
+  \DOIprefix\doi{10.1080/02626667.2017.1343476},
+  \href{http://arxiv.org/abs/https://doi.org/10.1080/02626667.2017.1343476}{\tt
+  arXiv:https://doi.org/10.1080/02626667.2017.1343476}.
+%Type = Article
+\bibitem[{Ramos et~al.({2006})Ramos, Goncalves, Martins, van Genuchten and
+  Pires}]{Ramos}
+\bibinfo{author}{Ramos, T.}, \bibinfo{author}{Goncalves, M.},
+  \bibinfo{author}{Martins, J.}, \bibinfo{author}{van Genuchten, M.},
+  \bibinfo{author}{Pires, F.}, \bibinfo{year}{{2006}}.
+\newblock \bibinfo{title}{{Estimation of soil hydraulic properties from
+  numerical inversion of tension disk infiltrometer data}}.
+\newblock \bibinfo{journal}{{VADOSE ZONE JOURNAL}} \bibinfo{volume}{{5}},
+  \bibinfo{pages}{{684--696}}.
+\newblock \DOIprefix\doi{10.2136/vzj2005.0076}.
+%Type = Book
+\bibitem[{Reynolds(2008a)}]{ReynoldsWD}
+\bibinfo{author}{Reynolds, W.D.}, \bibinfo{year}{2008}a.
+\newblock \bibinfo{title}{Saturated hydraulic properties: Ring infiltrometer,
+  in: Carter M.R., Gregorich, E.G. [Eds.], Soil Sampling and Methods of
+  Analysis, 2nd ed}.
+\newblock \bibinfo{publisher}{CRC Press Taylor \& Francis, Boca Raton, USA, pp.
+  1043--1056}.
+%Type = Book
+\bibitem[{Reynolds(2008b)}]{ReynoldsWDGP}
+\bibinfo{author}{Reynolds, W.D.}, \bibinfo{year}{2008}b.
+\newblock \bibinfo{title}{Saturated hydraulic properties: Well permeameter, in:
+  Carter M.R., Gregorich, E.G. [Eds.], Soil Sampling and Methods of Analysis,
+  2nd ed}.
+\newblock \bibinfo{publisher}{CRC Press Taylor \& Francis, Boca Raton, USA, pp.
+  1025--1042}.
+%Type = Article
+\bibitem[{Rezaei et~al.(2016)Rezaei, Seuntjens, Shahidi, Joris, Boënne,
+  Al-Barri and Cornelis}]{rezaei}
+\bibinfo{author}{Rezaei, M.}, \bibinfo{author}{Seuntjens, P.},
+  \bibinfo{author}{Shahidi, R.}, \bibinfo{author}{Joris, I.},
+  \bibinfo{author}{Boënne, W.}, \bibinfo{author}{Al-Barri, B.},
+  \bibinfo{author}{Cornelis, W.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{The relevance of in-situ and laboratory
+  characterization of sandy soil hydraulic properties for soil water
+  simulations}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{534},
+  \bibinfo{pages}{251 -- 265}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0022169416000044},
+  \DOIprefix\doi{http://dx.doi.org/10.1016/j.jhydrol.2015.12.062}.
+%Type = Article
+\bibitem[{Richards(1931)}]{richards}
+\bibinfo{author}{Richards, L.A.}, \bibinfo{year}{1931}.
+\newblock \bibinfo{title}{Capillary conduction of liquids through porous
+  mediums}.
+\newblock \bibinfo{journal}{Journal of Applied Physics} \bibinfo{volume}{1},
+  \bibinfo{pages}{318--333}.
+\newblock \DOIprefix\doi{10.1063/1.1745010}.
+%Type = Book
+\bibitem[{Roos et~al.(1996)Roos, Stynes and Tobiska}]{roos-layers}
+\bibinfo{author}{Roos, H., G.}, \bibinfo{author}{Stynes, M.},
+  \bibinfo{author}{Tobiska, L.}, \bibinfo{year}{1996}.
+\newblock \bibinfo{title}{Numerical Methods for Singularly Perturbed
+  Differential Equations, Convection-Diffusion and Flow Problems}.
+\newblock \bibinfo{publisher}{Springer-Verlag Berlin Heidelberg}.
+%Type = Book
+\bibitem[{Saltelli et~al.(2000)Saltelli, Chan and Scott}]{kniha-citlivost}
+\bibinfo{author}{Saltelli, A.}, \bibinfo{author}{Chan, K.},
+  \bibinfo{author}{Scott, E.}, \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Sensitivity Analysis}.
+\newblock Wiley series in probabillity analysis, \bibinfo{publisher}{John Wiley
+  \& Sons}.
+%Type = Article
+\bibitem[{Schaap et~al.(2001)Schaap, Leij and van Genuchten}]{Schaap}
+\bibinfo{author}{Schaap, M.G.}, \bibinfo{author}{Leij, F.J.},
+  \bibinfo{author}{van Genuchten, M.T.}, \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{rosetta: a computer program for estimating soil
+  hydraulic parameters with hierarchical pedotransfer functions}.
+\newblock \bibinfo{journal}{J. Hydrol.} \bibinfo{volume}{251},
+  \bibinfo{pages}{163 -- 176}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.1016/S0022-1694(01)00466-8}.
+%Type = Article
+\bibitem[{Scharnagl et~al.(2011)Scharnagl, Vrugt, Vereecken and
+  Herbst}]{scharnagl}
+\bibinfo{author}{Scharnagl, B.}, \bibinfo{author}{Vrugt, J.A.},
+  \bibinfo{author}{Vereecken, H.}, \bibinfo{author}{Herbst, M.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Inverse modelling of in situ soil water dynamics:
+  investigating the effect of different prior distributions of the soil
+  hydraulic parameters}.
+\newblock \bibinfo{journal}{Hydrology and Earth System Sciences}
+  \bibinfo{volume}{15}, \bibinfo{pages}{3043--3059}.
+\newblock \URLprefix \url{http://www.hydrol-earth-syst-sci.net/15/3043/2011/},
+  \DOIprefix\doi{10.5194/hess-15-3043-2011}.
+%Type = Article
+\bibitem[{Schwartz and Evett({2002})}]{Schwartz}
+\bibinfo{author}{Schwartz, R.}, \bibinfo{author}{Evett, S.},
+  \bibinfo{year}{{2002}}.
+\newblock \bibinfo{title}{{Estimating hydraulic properties of a fine-textured
+  soil using a disc infiltrometer}}.
+\newblock \bibinfo{journal}{{SOIL SCIENCE SOCIETY OF AMERICA JOURNAL}}
+  \bibinfo{volume}{{66}}, \bibinfo{pages}{{1409--1423}}.
+%Type = Article
+\bibitem[{Simunek et~al.(1998)Simunek, van Genuchten, Gribb and
+  Hopmans}]{Simunek1}
+\bibinfo{author}{Simunek, J.}, \bibinfo{author}{van Genuchten, M., T.},
+  \bibinfo{author}{Gribb, M.}, \bibinfo{author}{Hopmans, J.W.},
+  \bibinfo{year}{1998}.
+\newblock \bibinfo{title}{Parameter estimation of unsaturated soil hydraulic
+  properties from transient flow processes1}.
+\newblock \bibinfo{journal}{Soil Tillage Res.} \bibinfo{volume}{47},
+  \bibinfo{pages}{27 -- 36}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.1016/S0167-1987(98)00069-5}.
+%Type = Article
+\bibitem[{Simunek et~al.({1999})Simunek, Wendroth and van Genuchten}]{Simunek2}
+\bibinfo{author}{Simunek, J.}, \bibinfo{author}{Wendroth, O.},
+  \bibinfo{author}{van Genuchten, M.}, \bibinfo{year}{{1999}}.
+\newblock \bibinfo{title}{{Estimating unsaturated soil hydraulic properties
+  from laboratory tension disc infiltrometer experiments}}.
+\newblock \bibinfo{journal}{{WATER RESOURCES RESEARCH}} \bibinfo{volume}{{35}},
+  \bibinfo{pages}{{2965--2979}}.
+\newblock \DOIprefix\doi{{10.1029/1999WR900179}}.
+%Type = Article
+\bibitem[{Swartzendruber({1987})}]{Swartzendruber}
+\bibinfo{author}{Swartzendruber, D.}, \bibinfo{year}{{1987}}.
+\newblock \bibinfo{title}{{ A Quasi-Solution of Richards Equation for the
+  Downward Infiltration of Water into Soil}}.
+\newblock \bibinfo{journal}{{Water Resour. Res.}} \bibinfo{volume}{{23}},
+  \bibinfo{pages}{{809--817}}.
+\newblock \DOIprefix\doi{10.1029/WR023i005p00809}.
+%Type = Article
+\bibitem[{Ventrella et~al.(2005)Ventrella, Losavio, Vonella and
+  Leij}]{Ventrella}
+\bibinfo{author}{Ventrella, D.}, \bibinfo{author}{Losavio, N.},
+  \bibinfo{author}{Vonella, A.}, \bibinfo{author}{Leij, F.},
+  \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{Estimating hydraulic conductivity of a fine-textured
+  soil using tension infiltrometry}.
+\newblock \bibinfo{journal}{Geoderma} \bibinfo{volume}{124},
+  \bibinfo{pages}{267 -- 277}.
+\newblock \DOIprefix\doi{http://dx.doi.org/10.1016/j.geoderma.2004.05.005}.
+%Type = Article
+\bibitem[{Verbist et~al.({2009})Verbist, Cornelis, Gabriels, Alaerts and
+  Soto}]{Verbist}
+\bibinfo{author}{Verbist, K.}, \bibinfo{author}{Cornelis, W.M.},
+  \bibinfo{author}{Gabriels, D.}, \bibinfo{author}{Alaerts, K.},
+  \bibinfo{author}{Soto, G.}, \bibinfo{year}{{2009}}.
+\newblock \bibinfo{title}{{Using an inverse modelling approach to evaluate the
+  water retention in a simple water harvesting technique}}.
+\newblock \bibinfo{journal}{{HYDROLOGY AND EARTH SYSTEM SCIENCES}}
+  \bibinfo{volume}{{13}}, \bibinfo{pages}{{1979--1992}}.
+%Type = Phdthesis
+\bibitem[{Vitingerova(2010)}]{vitingerova:2010}
+\bibinfo{author}{Vitingerova, Z.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Evolutionary Algorithms for Multi-Objective Parameter
+  Estimation}.
+\newblock Ph.D. thesis. CTU in Prague, Fac. of Civil Eng.
+%Type = Article
+\bibitem[{Xu et~al.(2012)Xu, Lewis, Liu, Albertson and Kiely}]{XU201234}
+\bibinfo{author}{Xu, X.}, \bibinfo{author}{Lewis, C.}, \bibinfo{author}{Liu,
+  W.}, \bibinfo{author}{Albertson, J.}, \bibinfo{author}{Kiely, G.},
+  \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Analysis of single-ring infiltrometer data for soil
+  hydraulic properties estimation: Comparison of best and wu methods}.
+\newblock \bibinfo{journal}{Agricultural Water Management}
+  \bibinfo{volume}{107}, \bibinfo{pages}{34 -- 41}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0378377412000200},
+  \DOIprefix\doi{https://doi.org/10.1016/j.agwat.2012.01.004}.
+%Type = Article
+\bibitem[{Younes et~al.(2017)Younes, Mara, Fahs, Grunberger and
+  Ackerer}]{hess-Younes-2017}
+\bibinfo{author}{Younes, A.}, \bibinfo{author}{Mara, T.},
+  \bibinfo{author}{Fahs, M.}, \bibinfo{author}{Grunberger, O.},
+  \bibinfo{author}{Ackerer, P.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Hydraulic and transport parameter assessment using
+  column infiltration experiments}.
+\newblock \bibinfo{journal}{Hydrology and Earth System Sciences}
+  \bibinfo{volume}{21}, \bibinfo{pages}{2263--2275}.
+\newblock \URLprefix \url{https://www.hydrol-earth-syst-sci.net/21/2263/2017/},
+  \DOIprefix\doi{10.5194/hess-21-2263-2017}.
+%Type = Article
+\bibitem[{Zou et~al.(2001)Zou, Young, Li and Wierenga}]{zou200126}
+\bibinfo{author}{Zou, Z.Y.}, \bibinfo{author}{Young, M.}, \bibinfo{author}{Li,
+  Z.}, \bibinfo{author}{Wierenga, P.}, \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{Estimation of depth averaged unsaturated soil
+  hydraulic properties from infiltration experiments}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{242},
+  \bibinfo{pages}{26 -- 42}.
+\newblock \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0022169400003851},
+  \DOIprefix\doi{http://dx.doi.org/10.1016/S0022-1694(00)00385-1}.
+
+\end{thebibliography}

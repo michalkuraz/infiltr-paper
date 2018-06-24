@@ -18,7 +18,18 @@
 % \usepackage{a4wide} %full page
 \usepackage{fullpage}
 \usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\usepackage{jabbrv}
+\setlength{\bibsep}{1.0pt}
+\bibliographystyle{myplainnat}
 \usepackage{natbib}
+
 \usepackage{amsmath,amssymb}
 \usepackage{setspace}
 \usepackage[scientific-notation=true]{siunitx} %VVV
@@ -39,7 +50,7 @@
 
  \RequirePackage{lineno} 
 
-\bibliographystyle{model2-names}
+% \bibliographystyle{model2-names}
 \biboptions{authoryear}
 
 \newenvironment{lineq}
@@ -138,7 +149,7 @@ There are various theories explaining the issue to be due to (i) the effect of h
 However, several studies  reported a close correspondence between the retention curve parameters obtained from laboratory experiments and from REVG analyses \citep{Ramos, Schwartz}. 
 The identification of SHP from transient infiltration experiments has been a subject of numerous publications in past decades \citep{simunek-infiltr2shp, infiltr2shp, simunek2-infiltr2shp, XU201234, BAGARELLO201770,  hess-Younes-2017}.  \cite{simunek-infiltr2shp} reported a close correspondence between the SHP obtained from the inverse modeling of dynamic transient infiltration experiments with those obtained from steady-state laboratory experiments, where the uniqueness of the inverse model was preserved by considering the dynamically changing pressure head, water content and even tracer concentration.
 
-The non-uniqueness of the REVG inverse model is already a very well-known issue, and has been described by a number of publications over the last decades~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain,Kowalsky04,Nakhaei, Kamali,pena17}.% \todo{must be checked!!}\textbf{However, we have not succeeded in our search for more recent contributions in this field.} 
+The non-uniqueness of the REVG inverse model is already a very well-known issue, and has been described by a number of publications over the last decades~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain,Kowalsky04,Nakhaei, Kamali,pena17}.
 \cite{mous1993} defined criteria for model identifiability based on the sensitivity matrix rank, however numerical computation of the sensitivity matrix, which is defined by the derivatives of the objective function, often involves difficulties in managing truncation and round-off errors.
 \cite{beven2003-uncertain} demonstrated on a real world case study of Sherwood Sandstone Aquifer that many different SHP parameters of macroscopic media can represent the layered unsaturated zone and provide acceptable simulations of the observed aquifer recharges.  \cite{mous1993} explained that in case of the absence of water content data, the residual water content should be excluded from the identification to avoid non-uniqueness. However, \cite{beven2003-uncertain} used
 a non-unique definition where both the unknown residual and saturated water content were considered.
@@ -295,7 +306,7 @@ where $I$ is the cumulative infiltration [$L$], and $c_{0,1,2}$ are parameters. 
 
 
  
-A statistical description of the Swartzendruber parameters and their fitting quality is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The parameter set was used to compute the infiltration curve with Eq. \ref{vyhlaz} for the identification of the SHP in the top soil layer.
+A statistical description of the Swartzendruber parameters and their fitting quality is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The parameter set was used to compute the infiltration curve with \eqref{vyhlaz} for the identification of the SHP in the top soil layer.
 
 
 
@@ -404,13 +415,13 @@ As discussed in \ref{restrconvect} the left hand side boundary was located at $r
 \item the free drainage boundary (Neumann)
 \item the groundwater level - zero pressure head (Dirichlet)
 \end{itemize}
-It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would probably not have a significant effect on the derivative of the solution of \eqref{richaxi} at the top boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth, because we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
+It is apparent that the wetting front originating from our infiltration experiment affects the soil column only to a certain depth. Defining the Neumann no-flow boundary at a sufficient depth would probably not have a significant effect on the cumulative flux at the top Dirichlet boundary. At the same time, the only physically acceptable location of the no-flow boundary is the groundwater table. The second option -- the free drainage boundary -- would be completely incorrect for any depth, because we consider the initial condition to represent a hydrostatic state, and so \begin{lineq} \frac{\partial h}{\partial z}(x) = -1, \quad \forall x \in \Omega .\end{lineq} The free drainage boundary condition, which is defined as
 \begin{lineq}
 \frac{\partial h}{\partial \vec{n}}(x) = 0, \quad \forall (x,t) \in \Gamma_{\mbox{\footnotesize free drainage}} \times [0,T).
 \end{lineq}
 is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), and produces extra computational costs. The computed fluxes produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
 
-Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. The average depth of the groundwater table is approximately -280~cm below the surface, and  we assume that the water table remains constant during the experiment. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valec}.
+Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary at the impermeable layer or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. The average depth of the groundwater table is approximately -280~cm below the surface, and  we assume that the water table remains constant during the experiment. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valec}.
 
 
  \begin{figure}
@@ -425,9 +436,9 @@ Physically correct boundary conditions for the bottom boundary is either the Neu
 The locations of the domain boundaries are depicted in figure~\ref{valecbc}. The boundary conditions are specified as follows (with the reference level $z=0$ located at the top boundary)
 \begin{lineq} 
 \begin{split}
-h(x,t) &= 4 \; \mbox{cm} \Rightarrow H(x,t) = 4 \; \mbox{cm}; \quad \forall (x,t) \in \Gamma_1 \times [0,T), \\
-\frac{\partial H}{\partial \vec{n}} &= 0; \quad \forall (x,t) \in \Gamma_2 \times [0,T), \\
-h(x,t) &= 0  \; \mbox{cm}  \; \Rightarrow \; H(x,t) = -280.0  \; \mbox{cm}; \quad \forall (x,t) \in \Gamma_3 \times [0,T).
+h(x,t) &= 4 \; \mbox{cm} \Rightarrow H(x,t) = 4 \; \mbox{cm}; \\ &\forall (x,t) \in \Gamma_1 \times [0,T), \\
+\frac{\partial H}{\partial \vec{n}} &= 0; \, \forall (x,t) \in \Gamma_2 \times [0,T), \\
+h(x,t) &= 0  \; \mbox{cm}  \; \Rightarrow \; H(x,t) = -280.0  \; \mbox{cm}; \\ &\forall (x,t) \in \Gamma_3 \times [0,T).
 \end{split}
 \end{lineq}
 where $T$ is the simulation end time [T], and $\vec{n}$ is the boundary normal vector.
@@ -441,7 +452,7 @@ where $T$ is the simulation end time [T], and $\vec{n}$ is the boundary normal v
 \label{objdef}
 
 The soil hydraulic parameters (SHP) of the top soil that will be identified were specified in section~\ref{shp}.
-Since the parameters will be identified using a stochastic method, we have to introduce a physically reasonable range for each parameter. The ranges for the SHP are specified in table~\ref{rozsahy}.
+Since the parameters will be identified using a stochastic method, we have to introduce a  range for each parameter. The ranges for the SHP are specified in table~\ref{rozsahy}. These initial ranges are very broad, since we are trying to explore a possible non-uniqnuess of this inverse model.
 
 \begin{table*}[ht]
 \begin{center}
@@ -502,7 +513,7 @@ In this contribution we used the modified genetic algorithm GRADE \citep{grade,K
 memory and restarts. GRADE is a real-coded genetic algorithm combining the ideas of genetic operators: cross-over, mutation and selection taken from the standard genetic algorithm and differential operators taken from differential evolution. When GRADE converges, the current position of the optimization algorithm is marked as a local extreme and a forbidden area is built around it in order to forbid the optimization algorithm to fall into the same local extreme again. The main setting of the optimization procedure was as follows: the population of the genetic algorithm contains 30 independent solutions, the whole identification stops after 20.000 objective function evaluations and a local extreme was marked after 600 evaluations without any improvement.
 
 GRADE project is capable for multi-objective definition for the objective function, which is achieved with so-called
- Average Ranking (AR) \citep{Leps:2007}. It sums ranks of the objective functions instead of the objective functions' values. Therefore, no weights are needed, however, the Pareto-dominance is not preserved as described in \cite{vitingerova:2010}. An application of the AR algorithm to parameters identification can be found in \cite{Kuraz:2010:JCAM}. 
+ Average Ranking (AR) \citep{Leps2007}. It sums ranks of the objective functions instead of the objective functions' values. Therefore, no weights are needed, however, the Pareto-dominance is not preserved as described in \cite{vitingerova:2010}. An application of the AR algorithm to parameters identification can be found in \cite{Kuraz:2010:JCAM}. 
 
 
 \subsection{Numerical solution and computational issues}
@@ -523,7 +534,7 @@ Equation~\eqref{richaxi} was implemented into the DRUtES library~\citep{drutes}.
 where $k$ denotes the iteration level, and $l$ denotes the time level, until \begin{lineq} \label{picard} ||\vec{x}_l^{k+1} - \vec{x}_l^k||_2 < \varepsilon , \end{lineq} where $\varepsilon$ is the desired iteration criterion.  It is apparent that the number of required  iterations depends on the $\varepsilon$ criterion. 
 
 
-The method~\eqref{matice} degenerates into a kind of semiexplicit approximation if the error criterion $\varepsilon$ was "infinitely huge" -- inn theory it means taken from the extended real numbers, $\varepsilon \in {\overline {\mathbb {R} }}$, and assigned as $\varepsilon = + \infty$. This semiexplicit approximation is denoted as
+The method~\eqref{matice} degenerates into a kind of semiexplicit approximation if the error criterion $\varepsilon$ was "infinitely huge" (in a theory it means taken from the extended real numbers, $\varepsilon \in {\overline {\mathbb {R} }}$, and assigned as $\varepsilon = + \infty$). This semiexplicit approximation is denoted as
 \begin{lineq}
 \label{matice2}
 \mathbf{A}(\vec{x}_{l-1}) \vec{x}_l = \vec{b}(\vec{x}_{l-1}).
@@ -533,13 +544,14 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 
 
 \section{Automatic calibration methodology}%[michal]
+\label{methodo}
 
 
-\textcolor{red}{\huge{MICHAL: We need a better introduction for this section}}
+The purpose of this section is to focus on the automatic calibration methodology, which has been derived here for this specific inverse task. 
+It was taken into consideration that the  available input experimental data refers to cumulative  infiltration flux.
+The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}. Moreover, we are also aware of the possible problem multimodality on the broad SHP parameter range from table~\ref{rozsahy}. 
 
-The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
-
-Following the concerns about  effects of numerical treatment for the identified values of SHP parameters a specific  automatic calibration methodology was proposed. The technique is explained in brief in figure~\ref{flowchart}, and  details are given in the following paragraph.
+Following the concerns about  effects of numerical treatment for the identified values of SHP parameters a specific  automatic calibration methodology was proposed. The technique is explained  in figure~\ref{flowchart}, and  details are given in the following algorithm scheme. In brief only, the proposed method uses less accurate, but fast and converge issues free numerical technique, to identify  several different  parameter regions (if the multimodality applies here). With an improved numerical treatment of the Richards equation solver the SHP estimate is later updated on each parameter region to avoid the influence of the numerical solver setup. It is presumed here, that the inverse model solution is non-unique on the initial broad parameter range, but unimodal on the narrow region(s), which are investigated later. 
 
 Before we start with automatic calibration description, the following nomenclature will  be defined % I really wanted to say here Let us define :)
 
@@ -564,62 +576,53 @@ Before we start with automatic calibration description, the following nomenclatu
 
 The calibration algorithm is described as follows:
 
- \begin{enumerate}[label=({\bf \roman*})]
-\item {\bf Do} initial calibration with semiexplicit treatment of~\eqref{matice} ($\varepsilon \leadsto +\infty$), $r_f$=0,  vectors $\vec{p}_{max,min}^{r_f}$ are taken from table~\ref{rozsahy}. 
-\item {\bf If} the problem is multimodal\begin{itemize} \item {\bf Then} sequence of vectors $\vec{p}^{i_e}_{r_f}$ is generated. \end{itemize} 
-\item {\bf Do} validation: \begin{itemize} \item select local extremes with good fitting qualities, \item increase $r_f=r_f+1$ as follows 
+ \begin{enumerate}[label={\bf \Roman* .}]
+    \item  {\bf Do} initial calibration with semiexplicit treatment of~\eqref{matice} ($\varepsilon \leadsto +\infty$), $r_f$=0,  vectors $\vec{p}_{max,min}^{r_f}$ are taken from table~\ref{rozsahy}. 
+     \item \label{docal} {\bf Create}  sequence of vectors $\vec{p}^{i_e}_{r_f}$. 
+     \item {\bf If} the problem is multimodal 
+       \begin{itemize} 
+           \item {\bf then} $i_e > $ 1, 
+           \item {\bf else} $i_e = $ 1.
+       \end{itemize} 
+ \item {\bf Do validation:}  
+    \begin{enumerate} 
+      \item {\bf select} local extremes with good fitting qualities,
+        \item {\bf increase} $r_f=r_f+1$ as follows 
                   \begin{lineq}
                   \label{coeffs}
                   \begin{split}
                   \Delta(\vec{x})^{r_f}  &= \frac{\Delta(\vec{x})^{r_f-1}}{2}, \\
-                  \varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 1, \; \; \mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
+                  \varepsilon^{r_f} &= 10^{-3} \; \mbox{cm} \quad  \mbox{if} \; r_f = 1, \; \; \\ &\mbox{else} \quad \varepsilon^{r_f} = \frac{\varepsilon^{r_f-1}}{10}, \\
                   t_{init}^{r_f} &=  \frac{t_{init}^{r_f-1}}{10} \; \mbox{hrs} .
                   \end{split}
                   \end{lineq}
-\item create a response plot of the objective function~\eqref{objektiva1} for current $r_f$ and $r_f-1$ in the neighborhood defined as 
-\begin{lineq}
-\label{parrange}
-\begin{split}
-\vec{p}^{i_e, r_f}_{max} &= 1.20\vec{p}^{i_e}, \\
-\vec{p}^{i_e,r_f}_{min} &= 0.70\vec{p}^{i_e}. 
-\end{split}
-\end{lineq}
-\end{itemize}
+        \item {\bf create} a response plot of \eqref{objektiva1} for current $r_f$ and $r_f-1$ in the neighborhood defined as 
+            \begin{lineq}
+            \label{parrange}
+              \begin{split}
+              \vec{p}^{i_e, r_f}_{max} &= 1.20\vec{p}^{i_e}, \\
+              \vec{p}^{i_e,r_f}_{min} &= 0.70\vec{p}^{i_e}. 
+              \end{split}
+            \end{lineq}
+            
+       \item {\bf Validation methodology:}
+       
+       \begin{enumerate}
+       \item Visually {\bf inspect} response  plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$.
+       \item \label{cond} {\bf If} the response plots differ significantly,
+       \begin{itemize}
+          \item {\bf then} {\bf redefine} the parameter range as specified in~\eqref{parrange}, {\bf return} to \ref{docal},  new sets of vectors  $\vec{p}_{r_f}^{i_e}$ will be generated (only global extreme accepted at this stage,  $i_e$ points to the original local extreme), {\bf proceed new validation}.  
+          \item {\bf else} {\bf exit} the calibration process.
+      \end{itemize}
+\end{enumerate}
 
-\begin{enumerate}
-\item {\bf Validation methodology:}
-
-  \begin{enumerate}
-    \item \label{val} Compare the response 
-   plots for the selected local extreme $i_e$ created with discretization $r_f$ and $r_f-1$.
-    \item \label{cond} {\bf If} the response plots differ significantly.
-   \begin{itemize}%[label=(\subscript{b}{\arabic*})]
-    \item {\bf Then} do the calibration at parameter range defined in~\eqref{parrange}. New sets of vectors  $\vec{p}_{r_f}^{i_e}$ will be generated.
-    \item \label{ll2} Increase the discretization level $r_f$ as $r_f=r_f+1$, perform the update~\eqref{coeffs}, return to~\ref{val}, and check the condition~\ref{cond}.
-    \end{itemize}
-    \item {\bf else}
-    \begin{itemize}%[label=(\subscript{c}{\arabic*})]
-    \item Exit the calibration process.
-    \end{itemize}
-  \end{enumerate}
 \end{enumerate}
 \end{enumerate}
-% In the second stage the unknown SHP parameters will be reduced and the automatic calibration using the initial mesh together with the simple quasi-explicit approximation~\eqref{matice2} will proceed.
-% The unknown SHP parameters will be sequentially reduced in the following order until just a single extreme will be identified.
-% \begin{enumerate}[label=({\bf \Roman*})]
-% \item $S_s$ -- specific storage is often neglected for the unsaturated zone, and thus for the first unknown parameter reduction will be assigned $S_s=0\;\mbox{m}^{-1}$
-% \item $\theta_s$ -- water content is often easy to measure directly, despite there are no available data for top soil layer, let's presume $\theta_s = 0.6.$
-% \item $K_s$ -- if the identifiability of the inverse model will require also reduction of $K_s$, then this inverse task became inappropriate for any further analyses, and the conducted SR measurements will be declared as non-identifiable setup for SHP parameters.
-% \end{enumerate}
-
-
-The following sections will further explain the definition of the objective function and the parameter identification algorithm.
 
 
 
 
- 
- 
+
 
  
 
@@ -627,8 +630,7 @@ The following sections will further explain the definition of the objective func
 
 \section{Results and discussion} 
 
-
-
+This section begins with  a simple synthetic problem with known exact solution, which is given here to test the multimodality of this class of Richards equation inverse model, to provide a support for the methodology given in section~\ref{methodo}. Later,  we continue in section~\ref{rworld} with presenting our real world problem example, where we  present our parameter estimate for the top soil organic horizon, obtained from the methodological approach explained above in~\ref{methodo}.
 
 \subsection{Synthetic problem}
  \label{benchmarks}
@@ -706,6 +708,7 @@ Results of the synthetic problem are given in table~\ref{tab-benchres}. For thes
 
 
 \subsection{Real-world problem}
+\label{rworld}
 
  We found multiple optima for the real-world problem. The local extremes for the refinement level $r_f=0$ are given in table~\ref{shp-vysledky}, where the gray lines refer to local extremes with bad fitting properties (extremes 1-5), the local extremes 6-8 refer to inverse model solutions with good fitting properties. The results were visually inspected. An example of bad fitting dataset is depicted on figure~\ref{rf0samples} - left, and the example of the good fitting dataset is depicted on figure~\ref{rf0samples} - right. Solution for each dataset is  given in Appendix. Complete settings specifications for each $r_f$ level involved here are given in table~\ref{tab:rfset}.
 
@@ -761,9 +764,9 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 
 In the next step the refinement level was increased, new mesh was generated.
 
-For the local extreme 6, the refined numerical treatment $r_f=1$ has not affected the objective function, the figure~\ref{objfnc6} depicts two examples of the scatter plots -- for the parameter $\alpha$ and $n$. The scatter plots of all parameters are given in Appendix. The response for the $\alpha$ parameter (figure \ref{objfnc6} - left) seems adequate, which was not the case of $n$ parameter  (figure \ref{objfnc6} - right). It turns out that for this parameter set the objective function exhibits poor local sensitivity. However, this was not the case of the other local extremes, see figure~\ref{objfnc6.2} - left. 
+For the local extreme 6, the refined numerical treatment $r_f=1$ has not affected the objective function, the figure~\ref{objfnc6} depicts two examples of the response plots -- for the parameter $\alpha$ and $n$. The response plots of all parameters are given in Appendix. The response for the $\alpha$ parameter (figure \ref{objfnc6} - left) seems adequate, which was not the case of $n$ parameter  (figure \ref{objfnc6} - right). It turns out that for this parameter set the objective function exhibits poor local sensitivity. However, this was not the case of the other local extremes, see figure~\ref{objfnc6.2} - left. 
 
-The local extreme 8 is characterized by nonzero specific storage $S_s$. However, if we look closer to the scatter plot~\ref{objfnc6.2} - right, it becomes apparent, that the specific storage should vanish even for this parametric set. Both local extremes 7 and 8 exhibit similar local sensitivity and similar response for changing the $r_f$ level, as the one depicted in figure~\ref{objfnc6.2} - right.
+The local extreme 8 is characterized by nonzero specific storage $S_s$. However, if we look closer to the response plot~\ref{objfnc6.2} - right, it becomes apparent, that the specific storage should vanish even for this parametric set. Both local extremes 7 and 8 exhibit similar local sensitivity and similar response for changing the $r_f$ level, as the one depicted in figure~\ref{objfnc6.2} - right.
 
 
 
@@ -773,7 +776,7 @@ The local extreme 8 is characterized by nonzero specific storage $S_s$. However,
 {\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
-\caption{Scatter plots of the objective function~\eqref{objektiva1} for the parameter $\alpha$ (left) and $n$ (right) for extreme 6.}
+\caption{Response plots of the objective function~\eqref{objektiva1} for the parameter $\alpha$ (left) and $n$ (right) for extreme 6.}
 \label{objfnc6}
 \end{figure}
 
@@ -783,7 +786,7 @@ The local extreme 8 is characterized by nonzero specific storage $S_s$. However,
 {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
-\caption{Scatter plots of the objective function~\eqref{objektiva1} for the parameter $n$ at extreme 7 (left)  and $S_s$ at extreme 8  (right)}.
+\caption{Response plots of the objective function~\eqref{objektiva1} for the parameter $n$ at extreme 7 (left)  and $S_s$ at extreme 8  (right)}.
 \label{objfnc6.2}
 \end{figure}
 
@@ -821,7 +824,7 @@ extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \
 
 The updated solutions maintained similar fitting qualities as the solutions obtained at $r_f=0$, see figure~\ref{rf1examples} - right. Whereas the solution depicted on figure~\ref{rf1examples} - left was created with SHP dataset obtained at previous discretization level ($r_f=0$) tested on model with increased discretization level ($r_f=1$).
 
-In order to evaluate the results obtained at $r_f=1$ discretization level, the discretization level was increased again for $r_f=2$.  New scatter plots were generated, an example is given in figure~\ref{ext6rf1-an2-example}. For all scatter plots see Appendix.
+In order to evaluate the results obtained at $r_f=1$ discretization level, the discretization level was increased again for $r_f=2$.  New response plots were generated, an example is given in figure~\ref{ext6rf1-an2-example}. For all response plots see Appendix.
 
 
 \begin{figure}[htb!]
@@ -830,11 +833,11 @@ In order to evaluate the results obtained at $r_f=1$ discretization level, the d
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals2nd/n-4.eps}}}
 \label{ext6rf1-an2-example}
-\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $\theta_S$ and $n$.}
+\caption{Response plots for $r_f=1,2$ for extreme 8 for parameters $\theta_S$ and $n$.}
 \end{figure}
 
 
-The location of peaks of the scatter plots for these two sequential disceretization levels do not vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the identified value 2.152 for new value 1.950 in accordance with the scatter plot in figure~\ref{objfnc6} - right.
+The location of peaks of the response plots for these two sequential disceretization levels do not vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the identified value 2.152 for new value 1.950 in accordance with the response plot in figure~\ref{objfnc6} - right.
 
 \begin{table*}[ht]
 \centering
@@ -863,7 +866,7 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \subsection{Limitations and realism of results}
 
 
-Local optima 7 resulted in the most realistic results for the podzolic top O+Ah soil layer. The saturated conductivity is similar across identified optima and slightly lower than in the lower horizon E. The O+Ah top layer horizon can swell up and the infiltration may reduce the volume of the effective pores. The identified saturated conductivity is highly limited by the input data and will always be lower than the 1D saturated conductivity fitted with the Swartzendruber equation. The porosity is slightly lower than expected. The humidifcation process and the high organic content can cause high curvature in the pore system, which may have caused an overestimation of the horizon.  The identified values for $\alpha$ are also similar in range across the optima. $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. 
+Local optima 7 resulted in the most realistic results for the podzolic top O+Ah soil layer. The saturated conductivity is similar across identified optima and slightly lower than in the lower horizon E. The O+Ah top layer horizon can swell up and the infiltration may reduce the volume of the effective pores. The identified saturated conductivity is highly limited by the input data and will always be lower than the 1D saturated conductivity fitted with the Swartzendruber equation. The porosity is slightly lower than expected. The humidification process and the high organic content can cause high curvature in the pore system, which may have caused an overestimation of the horizon.  The identified values for $\alpha$ are also similar in range across the optima. $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. 
 In the evaluation of the realism of the optimization we the treatment of the initial condition and the representativeness of the input curve as the greatest limitation. This however, does not delimit the applicability of the proposed calibration methodology. 
 
  
@@ -874,14 +877,16 @@ We presented an automated calibration procedure that is able to identify optima 
 
 We applied the methodology to synthetic and a real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
-Research outlook:
-\textcolor{red}{\huge{MICHAL: Add research outlook}}
+
+Our future research  work will focus into several distinct directions. The representativeness of the catchment by a single SHP parameter set, which is obtained from average experimental data is limited. Rather than fitting a single average infiltration curve, we will focus on defining SHP parameter distributions according to the distribution of the experimental data, where even different initial conditions will be taken into consideration. Secondly, we will try to replace the empirical/expert knowledge based parameters in our inverse modeling methodology (such as setting the narrow parameter range, re-meshing, Picard error and time-steps) by rather analytically based estimates, which should incorporate the SHP parameter magnitude, nonlinear nature of the retention curve, and aposteriori error estimates for finite element method approximations. And finally, our research work will be further focused to a development of efficient numerical techniques for solving the challenging problems of the Richards equation, such as development of time adaptive asynchronous and domain decomposition methods. Our research contributions form a part of a development of our opensource project DRUtES~\citep{drutes}. 
 
 
+\bigskip
+~
 
 \section{Acknowledgement}
 
-Funding: Financial support from the internal grant agency of the faculty of environmental science with project number:  42200/1312/3149 is gratefully acknowledged.
+Financial support from the Internal Grant Agency of the Faculty of Environmental Sciences, Czech University of Life Sciences Prague, Czech Republic (research project 42200/1312/3149) and from the Czech Science Foundation (research project GACR 13-11977P) is gratefully acknowledged.
 
 
 
@@ -954,9 +959,9 @@ Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
 \end{figure}
 
 
-\section{Scatter plots for objective functions, $r_f=0,1$}
+\section{Response plots for objective functions, $r_f=0,1$}
  
- Scatter plots of the objective functions for the local extreme 6 are depicted in figures~\ref{ext6rf0-an} -- \ref{ext6rf0-Ss}.
+ Response plots of the objective functions for the local extreme 6 are depicted in figures~\ref{ext6rf0-an} -- \ref{ext6rf0-Ss}.
  
 \begin{figure}[htb!]
 \rotatebox{-90}{
@@ -964,7 +969,7 @@ Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
 \label{ext6rf0-an}
-\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameters $\alpha$ and $n$.}
+\caption{Response plots for $r_f=0,1$ for extreme 6 for parameters $\alpha$ and $n$.}
 \end{figure}
 
 
@@ -974,17 +979,17 @@ Total Sobol Index & 0.850 & 0.921 & 0.876 & 0.868 & 0.884 \\
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
 \label{ext6rf0-Kt}
-\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameters $K_s$ and $\theta_s$. }
+\caption{Response plots for $r_f=0,1$ for extreme 6 for parameters $K_s$ and $\theta_s$. }
 \end{figure}
 
 \begin{figure}[htb!]
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
 \label{ext6rf0-Ss}
-\caption{Scatter plots for $r_f=0,1$ for extreme 6 for parameter $S_s$}
+\caption{Response plots for $r_f=0,1$ for extreme 6 for parameter $S_s$}
 \end{figure}
 
-Scatter plots of the objective functions for the local extreme 7 are depicted in figures~\ref{ext6rf0-an2} -- \ref{ext6rf0-Ss2}.
+Response plots of the objective functions for the local extreme 7 are depicted in figures~\ref{ext6rf0-an2} -- \ref{ext6rf0-Ss2}.
 
 \begin{figure}[htb!]
 \rotatebox{-90}{
@@ -992,7 +997,7 @@ Scatter plots of the objective functions for the local extreme 7 are depicted in
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
 \label{ext6rf0-an2}
-\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameters $\alpha$ and $n$.}
+\caption{Response plots for $r_f=0,1$ for extreme 7 for parameters $\alpha$ and $n$.}
 \end{figure}
 
 
@@ -1002,17 +1007,17 @@ Scatter plots of the objective functions for the local extreme 7 are depicted in
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
 \label{ext6rf0-Kt2}
-\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameters $K_s$ and $\theta_s$. }
+\caption{Response plots for $r_f=0,1$ for extreme 7 for parameters $K_s$ and $\theta_s$. }
 \end{figure}
 
 \begin{figure}[htb!]
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
 \label{ext6rf0-Ss2}
-\caption{Scatter plots for $r_f=0,1$ for extreme 7 for parameter $S_s$}
+\caption{Response plots for $r_f=0,1$ for extreme 7 for parameter $S_s$}
 \end{figure}
 
-Scatter plots of the objective functions for the local extreme 8 are depicted in figures~\ref{ext6rf0-an3} -- \ref{ext6rf0-Ss3}.
+Response plots of the objective functions for the local extreme 8 are depicted in figures~\ref{ext6rf0-an3} -- \ref{ext6rf0-Ss3}.
 
 \begin{figure}[htb!]
 \rotatebox{-90}{
@@ -1020,7 +1025,7 @@ Scatter plots of the objective functions for the local extreme 8 are depicted in
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
 \label{ext6rf0-an3}
-\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameters $\alpha$ and $n$.}
+\caption{Response plots for $r_f=0,1$ for extreme 8 for parameters $\alpha$ and $n$.}
 \end{figure}
 
 
@@ -1030,14 +1035,14 @@ Scatter plots of the objective functions for the local extreme 8 are depicted in
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/ths-6.eps}}}
 \label{ext6rf0-Kt3}
-\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameters $K_s$ and $\theta_s$. }
+\caption{Response plots for $r_f=0,1$ for extreme 8 for parameters $K_s$ and $\theta_s$. }
 \end{figure}
 
 \begin{figure}[htb!]
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
 \label{ext6rf0-Ss3}
-\caption{Scatter plots for $r_f=0,1$ for extreme 8 for parameter $S_s$.}
+\caption{Response plots for $r_f=0,1$ for extreme 8 for parameter $S_s$.}
 \end{figure}
 
 
@@ -1063,9 +1068,9 @@ The updated solutions for the local extremes 7 and 8 are depicted in figures~\re
 \caption{Left: Local extreme 8 infiltration curve for the original parameter set obtained at $r_f=0$ and solved on model with discretization $r_f=1$, right: solution for the updated parameter set in  vicinity of the extreme 7.}
 \end{figure}
 
-\section{Scatter plots for objective functions, $r_f=1,2$}
+\section{Response plots for objective functions, $r_f=1,2$}
 
-Scatter plots of the objective functions for the updated local extreme 7 for $r_f=1,2$ is depicted in figures~\ref{ext6rf1-an} - \ref{ext6rf1-Kt2}.
+Response plots of the objective functions for the updated local extreme 7 for $r_f=1,2$ is depicted in figures~\ref{ext6rf1-an} - \ref{ext6rf1-Kt2}.
 
 
 \begin{figure}[htb!]
@@ -1074,7 +1079,7 @@ Scatter plots of the objective functions for the updated local extreme 7 for $r_
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals2nd/n-3.eps}}}
 \label{ext6rf1-an}
-\caption{Scatter plots for $r_f=1,2$ for extreme 7 for parameters $\alpha$ and $n$.}
+\caption{Response plots for $r_f=1,2$ for extreme 7 for parameters $\alpha$ and $n$.}
 \end{figure}
 
 
@@ -1084,7 +1089,7 @@ Scatter plots of the objective functions for the updated local extreme 7 for $r_
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals2nd/ths-3.eps}}}
 \label{ext6rf1-Kt}
-\caption{Scatter plots for $r_f=1,2$ for extreme 7 for parameters $K_s$ and $\theta_s$.}
+\caption{Response plots for $r_f=1,2$ for extreme 7 for parameters $K_s$ and $\theta_s$.}
 \end{figure}
 
 
@@ -1094,7 +1099,7 @@ Scatter plots of the objective functions for the updated local extreme 7 for $r_
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals2nd/n-4.eps}}}
 \label{ext6rf1-an2}
-\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $\alpha$ and $n$.}
+\caption{Response plots for $r_f=1,2$ for extreme 8 for parameters $\alpha$ and $n$.}
 \end{figure}
 
 
@@ -1104,189 +1109,13 @@ Scatter plots of the objective functions for the updated local extreme 7 for $r_
 \rotatebox{-90}{
 {\includegraphics[height=7cm]{data/objvals2nd/ths-4.eps}}}
 \label{ext6rf1-Kt2}
-\caption{Scatter plots for $r_f=1,2$ for extreme 8 for parameters $K_s$ and $\theta_s$.}
+\caption{Response plots for $r_f=1,2$ for extreme 8 for parameters $K_s$ and $\theta_s$.}
 \end{figure}
 
 
 
 
-% \begin{itemize}
-%  
-% 
-% 
-% 
-% 
-% 
-% 
-% \item the cyan data were further evaluated by increasing the refinement level $r_f$ (red datasets were rejected)
-% 
-% \begin{description}
-% \item[dataset 5]
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/alpha-3.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/n-3.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ks-3.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/ths-3.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ss-3.eps}}}
-% 
-% 
-% \item[dataset 6]
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/alpha-4.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/n-4.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ks-4.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/ths-4.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ss-4.eps}}}
-% 
-% \item[dataset 7]
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/alpha-5.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/n-5.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ks-5.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/ths-5.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ss-5.eps}}}
-% 
-% \item[dataset 8]
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/alpha-6.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/n-6.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ks-6.eps}}}
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/ths-6.eps}}}
-% 
-% 
-% \rotatebox{-90}{
-% {\includegraphics[height=7cm]{data/objvals/Ss-6.eps}}}
-% 
-% \end{description}
-% 
-% \item What can we learn?
-% \begin{itemize}
-% \item $S_s$ should be neglected from all datasets, the nonzero solutions for $S_s$ are just numerical zeroes
-% \item dataset 6 seems uneffected by numerical solution. only $n$ seems inaccurate, should be lower (around 1.8)
-% \item datasets 5,7, and 8 will be reevaluated
-% \end{itemize}
-% 
-% \begin{table}[ht]
-% % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
-%  \begin{footnotesize}
-% \begin{tabular}{l || c c c c c || l }
-% % \toprule
-% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] & status\\ \hline \hline
-% \rowcolor{red}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  & {\bf recompute}\\
-% \rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.800  & 0.401 &  \num{1.095} & 0 & {\bf confirmed} \\ 
-% \rowcolor{red}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0 & {\bf recompute} \\ 
-% \rowcolor{red} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4} & {\bf recompute} \\ \hline
-% % \toprule
-% \end{tabular}
-%  \end{footnotesize}
-% \label{shp-vysledky}
-% \end{table}
-% 
-% \item new optimization for ranges
-% 
-% \begin{table}[ht]
-% \begin{center}
-% \caption{Ranges of SHPs ($\vec{p}_{max}$ and $\vec{p}_{min}$) for identifying the SHPs in the top-soil layer for {\it refinement level} $r_f=1$. }
-% \begin{small}
-% \doublespacing
-% \begin{tabular}{ l || c c c c }
-% \toprule
-% % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
-% extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \hline
-% \toprule
-% {\bf 5} & 0.576 - 0.864 & \num{.001200} - \num{.001800} & 1.268 - 1.903 & 0.875 - 1.311 \\
-% {\bf 7} & 0.475 - 0.712 & \num{.0030416} - \num{.0045624} & 1.023 - 1.534 & 0.932 - 1.398 \\
-% {\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
-% \toprule
-% \end{tabular}
-% \end{small}
-% \label{rozsahy}
-% \end{center}
-% \end{table}
-% 
-% \item within just 1000 iters new extremes were found (algorithm stopped after the first extreme was found)
-% 
-% \begin{table}[ht]
-% % \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
-%  \begin{footnotesize}
-% \begin{tabular}{l || c c c c c }
-% % \toprule
-% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
-% \rowcolor{cyan}{\bf 5} & \num{0.0015607} & 1.3805 & 0.828 &  \num{1.0582} &  \num{7.641e-3} \\
-% \rowcolor{cyan}{\bf 6} & \num{0.258e-2} & 1.750  & 0.401 &  \num{1.095} & 0  \\ 
-% \rowcolor{cyan}{\bf 7} & \num{0.0032285} & 1.4421 & 0.513 &  \num{1.0995} & 0  \\ 
-% \rowcolor{cyan} {\bf 8} & \num{0.002276} & 1.5189 & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
-% % \toprule
-% \end{tabular}
-%  \end{footnotesize}
-% \label{shp-vysledky}
-% \end{table}
-% 
-% 
-% \item evaluation for $r_f=2$
-% 
-% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-5.eps}}
-% 
-% 
-% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/ths-8.eps}}
-% 
-% 
-% \rotatebox{-90}{\includegraphics[height=7cm]{images/rf1/n-5.eps}}
-% 
-% \item What can we learn now?
-% \begin{itemize}
-% \item all local extremes were according to our methodology confirmed
-% \item only the local extreme 5 (and maybe, maybe) 7 has physically acceptable values
-% \item for refined discretization the objective function suffers with numerical oscillations, difficoult for gradient methods
-% \item all identified retention curves despite different van Genuchten parameters point to clay type material
-% \rotatebox{-90}{\includegraphics[height=7cm]{retc.eps}}
-% \item {\bf SR method can be used for identification of $\alpha, \, n, \, K_s$, and maybe $S_s$ - but this parameter turned to vanish, but it is completely unreliable for $\theta_s$ and obviously for $\theta_r$.}
-% \end{itemize}
-% 
-% 
-% 
-% 
-% \end{itemize}
+
 
 
 
