@@ -547,13 +547,15 @@ The method~\eqref{matice} degenerates into a kind of semiexplicit approximation 
 \label{methodo}
 
 
-The purpose of this section is to focus on the automatic calibration methodology, which has been derived here for this specific inverse task. 
-It was taken into consideration that the  available input experimental data refers to cumulative  infiltration flux.
-The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi},  and  it is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia}. We are aware of the possible impact of spatial and temporal discretization on the identified SHP values. We are also aware of possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}. Moreover, we are also aware of the possible problem multimodality on the broad SHP parameter range from table~\ref{rozsahy}. 
 
-Following the concerns about  effects of numerical treatment for the identified values of SHP parameters a specific  automatic calibration methodology was proposed. The technique is explained  in figure~\ref{flowchart}, and  details are given in the following algorithm scheme. In brief only, the proposed method uses less accurate, but fast and converge issues free numerical technique, to identify  several different  parameter regions (if the multimodality applies here). With an improved numerical treatment of the Richards equation solver the SHP estimate is later updated on each parameter region to avoid the influence of the numerical solver setup. It is presumed here, that the inverse model solution is non-unique on the initial broad parameter range, but unimodal on the narrow region(s), which are investigated later. 
+%It was taken into consideration that the available experimental input data refers to cumulative infiltration flux. The infiltration flux is obtained from the numerical derivative of the solution of \eqref{richaxi}. 
+We address possible difficulties with convergence of the linearized discrete system~\eqref{matice} for certain combinations of SHP parameters during the automatic calibration, as discussed by~\cite{beven2003-uncertain}.
+Moreover, we address the problem of multimodality when the initial range of SHP parameter is broad as in table~\ref{rozsahy}.
+It is known that inaccurate approximation of the capacity term (time derivative term) yields inaccurate mass properties~\citep{celia} and are aware of the possible impact of spatial and temporal discretization on the identified SHP values.  
 
-Before we start with automatic calibration description, the following nomenclature will  be defined % I really wanted to say here Let us define :)
+Following the concerns about effects of the numerical treatment on the identified SHP, we propose an automatic calibration methodology depicted in figure~\ref{flowchart}. Details are given in the following algorithm scheme. In brief, the proposed method uses less accurate, but fast and convergence-issue-free numerical technique, to identify (several) promising parameter regions. To avoid the influence of the numerical solver setup,  the SHP estimate is consequently updated in each parameter region with an improved numerical treatment of the Richards equation solver. It is presumed that the inverse model solution is non-unique on the initial broad parameter range, but unimodal on the narrow region(s), which are subsequently investigated. 
+
+Let us define the following nomenclature: % I really wanted to say here Let us define :) I think it's fine here :)
 
 \hrulefill
 \begin{description}
@@ -837,7 +839,7 @@ In order to evaluate the results obtained at $r_f=1$ discretization level, the d
 \end{figure}
 
 
-The location of peaks of the response plots for these two sequential disceretization levels do not vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the identified value 2.152 for new value 1.950 in accordance with the response plot in figure~\ref{objfnc6} - right.
+The location of peaks of the response plots for these two sequential discretization levels do not vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the identified value 2.152 for new value 1.950 in accordance with the response plot in figure~\ref{objfnc6} - right.
 
 \begin{table*}[ht]
 \centering
@@ -877,8 +879,10 @@ We presented an automated calibration procedure that is able to identify optima 
 
 We applied the methodology to synthetic and a real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
+Improvements of calibration methodology should include research on efficient numerical techniques to solve the Richards equation, such as the development of time adaptive asynchronous and domain decomposition methods.
 
-Our future research  work will focus into several distinct directions. The representativeness of the catchment by a single SHP parameter set, which is obtained from average experimental data is limited. Rather than fitting a single average infiltration curve, we will focus on defining SHP parameter distributions according to the distribution of the experimental data, where even different initial conditions will be taken into consideration. Secondly, we will try to replace the empirical/expert knowledge based parameters in our inverse modeling methodology (such as setting the narrow parameter range, re-meshing, Picard error and time-steps) by rather analytically based estimates, which should incorporate the SHP parameter magnitude, nonlinear nature of the retention curve, and aposteriori error estimates for finite element method approximations. And finally, our research work will be further focused to a development of efficient numerical techniques for solving the challenging problems of the Richards equation, such as development of time adaptive asynchronous and domain decomposition methods. Our research contributions form a part of a development of our opensource project DRUtES~\citep{drutes}. 
+
+%Our future research  work will focus into several distinct directions. The representativeness of the catchment by a single SHP parameter set, which is obtained from average experimental data is limited. Rather than fitting a single average infiltration curve, we will focus on defining SHP parameter distributions according to the distribution of the experimental data, where even different initial conditions will be taken into consideration. Secondly, we will try to replace the empirical/expert knowledge based parameters in our inverse modeling methodology (such as setting the narrow parameter range, re-meshing, Picard error and time-steps) by rather analytically based estimates, which should incorporate the SHP parameter magnitude, nonlinear nature of the retention curve, and aposteriori error estimates for finite element method approximations. And finally, our research work will be further focused to a development of efficient numerical techniques for solving the challenging problems of the Richards equation, such as development of time adaptive asynchronous and domain decomposition methods. Our research contributions form a part of a development of our opensource project DRUtES~\citep{drutes}. 
 
 
 \bigskip
