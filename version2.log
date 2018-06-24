@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2017.12.6)  24 JUN 2018 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2017.12.6)  24 JUN 2018 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2234,7 +2234,17 @@ Overfull \hbox (13.13809pt too wide) in paragraph at lines 861--863
  [][] 
  []
 
-[18 <./images/retc-eps-converted-to.pdf>] (./version2.bbl
+
+Underfull \hbox (badness 2245) in paragraph at lines 878--879
+[]\OT1/txr/m/n/10 We pre-sented an au-to-mated cal-i-bra-tion pro-ce-
+ []
+
+[18 <./images/retc-eps-converted-to.pdf>]
+Underfull \hbox (badness 4229) in paragraph at lines 882--883
+[]\OT1/txr/m/n/10 Improvements of the cal-i-bra-tion method-ol-ogy
+ []
+
+(./version2.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
@@ -2300,7 +2310,7 @@ Package epstopdf Info: Source file: <images/badfit/1.eps>
 ted-to.pdf images/badfit/1.eps>
 (epstopdf)             \includegraphics on input line 929.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/1-eps-converted-to.pdf, id=690, 505.89pt x 722.7pt>
+<images/badfit/1-eps-converted-to.pdf, id=692, 505.89pt x 722.7pt>
 File: images/badfit/1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/1-eps-converted-to.pdf>
@@ -2338,7 +2348,7 @@ Package epstopdf Info: Source file: <images/badfit/3.eps>
 ted-to.pdf images/badfit/3.eps>
 (epstopdf)             \includegraphics on input line 939.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/3-eps-converted-to.pdf, id=691, 505.89pt x 722.7pt>
+<images/badfit/3-eps-converted-to.pdf, id=693, 505.89pt x 722.7pt>
 File: images/badfit/3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/3-eps-converted-to.pdf>
@@ -2356,7 +2366,7 @@ ted-to.pdf images/badfit/4.eps>
 (epstopdf)             \includegraphics on input line 941.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/4-eps-converted-to.pdf, id=692, 505.89pt x 722.7pt>
+<images/badfit/4-eps-converted-to.pdf, id=694, 505.89pt x 722.7pt>
 File: images/badfit/4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/4-eps-converted-to.pdf>
@@ -2378,7 +2388,7 @@ Package epstopdf Info: Source file: <images/badfit/5.eps>
 ted-to.pdf images/badfit/5.eps>
 (epstopdf)             \includegraphics on input line 949.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/5-eps-converted-to.pdf, id=693, 505.89pt x 722.7pt>
+<images/badfit/5-eps-converted-to.pdf, id=695, 505.89pt x 722.7pt>
 File: images/badfit/5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/5-eps-converted-to.pdf>
@@ -2396,7 +2406,7 @@ rted-to.pdf images/goodfit/6.eps>
 (epstopdf)             \includegraphics on input line 951.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/6-eps-converted-to.pdf, id=694, 505.89pt x 722.7pt>
+<images/goodfit/6-eps-converted-to.pdf, id=696, 505.89pt x 722.7pt>
 File: images/goodfit/6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/6-eps-converted-to.pdf>
@@ -2418,7 +2428,7 @@ Package epstopdf Info: Source file: <images/goodfit/7.eps>
 rted-to.pdf images/goodfit/7.eps>
 (epstopdf)             \includegraphics on input line 958.
 Package epstopdf Info: Output file is already uptodate.
-<images/goodfit/7-eps-converted-to.pdf, id=695, 505.89pt x 722.7pt>
+<images/goodfit/7-eps-converted-to.pdf, id=697, 505.89pt x 722.7pt>
 File: images/goodfit/7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/7-eps-converted-to.pdf>
@@ -2436,7 +2446,7 @@ rted-to.pdf images/goodfit/8.eps>
 (epstopdf)             \includegraphics on input line 960.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/8-eps-converted-to.pdf, id=696, 505.89pt x 722.7pt>
+<images/goodfit/8-eps-converted-to.pdf, id=698, 505.89pt x 722.7pt>
 File: images/goodfit/8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/8-eps-converted-to.pdf>
@@ -2460,6 +2470,19 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 966.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 22 contains only floats.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./images/badfit/1-eps-converted-to.pdf> <./images/badfit/3-eps-converted-
+to.pdf> <./images/badfit/4-eps-converted-to.pdf> <./images/badfit/5-eps-convert
+ed-to.pdf> <./images/goodfit/6-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <data/objvals/alpha-4.eps>
 (epstopdf)                    date: 2018-06-22 21:20:07
 (epstopdf)                    size: 26123 bytes
@@ -2472,6 +2495,7 @@ onverted-to.pdf data/objvals/alpha-4.eps>
 (epstopdf)             \includegraphics on input line 972.
 Package epstopdf Info: Output file is already uptodate.
 File: data/objvals/alpha-4-eps-converted-to.pdf Graphic file (type pdf)
+
 <use data/objvals/alpha-4-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/alpha-4-eps-converted-to.pdf used on inpu
 t line 972.
@@ -2507,7 +2531,7 @@ Package epstopdf Info: Source file: <data/objvals/Ks-4.eps>
 erted-to.pdf data/objvals/Ks-4.eps>
 (epstopdf)             \includegraphics on input line 982.
 Package epstopdf Info: Output file is already uptodate.
-<data/objvals/Ks-4-eps-converted-to.pdf, id=699, 505.89pt x 722.7pt>
+<data/objvals/Ks-4-eps-converted-to.pdf, id=737, 505.89pt x 722.7pt>
 File: data/objvals/Ks-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ks-4-eps-converted-to.pdf>
@@ -2525,7 +2549,7 @@ verted-to.pdf data/objvals/ths-4.eps>
 (epstopdf)             \includegraphics on input line 984.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/ths-4-eps-converted-to.pdf, id=700, 505.89pt x 722.7pt>
+<data/objvals/ths-4-eps-converted-to.pdf, id=738, 505.89pt x 722.7pt>
 File: data/objvals/ths-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/ths-4-eps-converted-to.pdf>
@@ -2547,23 +2571,13 @@ Package epstopdf Info: Source file: <data/objvals/Ss-4.eps>
 erted-to.pdf data/objvals/Ss-4.eps>
 (epstopdf)             \includegraphics on input line 991.
 Package epstopdf Info: Output file is already uptodate.
-<data/objvals/Ss-4-eps-converted-to.pdf, id=701, 505.89pt x 722.7pt>
+<data/objvals/Ss-4-eps-converted-to.pdf, id=739, 505.89pt x 722.7pt>
 File: data/objvals/Ss-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ss-4-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/Ss-4-eps-converted-to.pdf used on input l
 ine 991.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
-
-
-LaTeX Warning: Text page 22 contains only floats.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./images/badfit/1-eps-converted-to.pdf> <./images/badfit/3-eps-converted-
-to.pdf> <./images/badfit/4-eps-converted-to.pdf> <./images/badfit/5-eps-convert
-ed-to.pdf> <./images/goodfit/6-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <data/objvals/alpha-5.eps>
 (epstopdf)                    date: 2018-06-22 21:20:07
 (epstopdf)                    size: 25895 bytes
@@ -3064,10 +3078,10 @@ elvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
 mb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on version2.pdf (27 pages, 637269 bytes).
+Output written on version2.pdf (27 pages, 637267 bytes).
 PDF statistics:
- 1047 PDF objects out of 1200 (max. 8388607)
- 895 compressed objects within 9 object streams
+ 1049 PDF objects out of 1200 (max. 8388607)
+ 897 compressed objects within 9 object streams
  189 named destinations out of 1000 (max. 500000)
  437 words of extra memory for PDF output out of 10000 (max. 10000000)
 
