@@ -879,14 +879,18 @@ We presented an automated calibration procedure that is able to identify optima 
 
 We applied the methodology to synthetic and real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
-Improvements of the calibration methodology should include research on efficient numerical techniques to solve the Richards equation, such as the development of time adaptive asynchronous and domain decomposition methods.
+% Improvements of the calibration methodology should include research on efficient numerical techniques to solve the Richards equation, such as the development of time adaptive asynchronous and domain decomposition methods.
 
+
+Our future development of the proposed calibration methodology should focus on improving the analytical background for the empirical constants governing the sequential refinement levels, as well as on the numerical treatment of the Richards equation. 
+% In would agree deleting this last sentence...
+Particularly, the nonlinear operator treatment as well as the time adaptive domain decomposition and asynchronous methods for the Richards equation problems are still a challenging research topic.
 
 %Our future research  work will focus into several distinct directions. The representativeness of the catchment by a single SHP parameter set, which is obtained from average experimental data is limited. Rather than fitting a single average infiltration curve, we will focus on defining SHP parameter distributions according to the distribution of the experimental data, where even different initial conditions will be taken into consideration. Secondly, we will try to replace the empirical/expert knowledge based parameters in our inverse modeling methodology (such as setting the narrow parameter range, re-meshing, Picard error and time-steps) by rather analytically based estimates, which should incorporate the SHP parameter magnitude, nonlinear nature of the retention curve, and aposteriori error estimates for finite element method approximations. And finally, our research work will be further focused to a development of efficient numerical techniques for solving the challenging problems of the Richards equation, such as development of time adaptive asynchronous and domain decomposition methods. Our research contributions form a part of a development of our opensource project DRUtES~\citep{drutes}. 
 
 
-\bigskip
-~
+% \bigskip
+% ~
 
 \section{Acknowledgement}
 
