@@ -191,8 +191,8 @@ M.~Kuraz, P.~Mayer, M.~Lep\v{s}, and D.~Trpko\v{s}ov\'a.
   233:\penalty0 3167--3177, 2010.
 \newblock ISSN: 0377-0427.
 
-\bibitem[Kuraz et~al.(2008)Kuraz, Mayer, and Bloecher]{drutes}
-M.~Kuraz, P.~Mayer, and J.~Bloecher.
+\bibitem[Kuraz et~al.(2008)Kuraz, Mayer, and Bl\"ocher]{drutes}
+M.~Kuraz, P.~Mayer, and J.~R. Bl\"ocher.
 \newblock {DRUtES} -- an opensource library for solving coupled nonlinear
   convection-diffusion-reaction equations,, 2008.
 \newblock Development version 2018, \newline \url{http://www.drutes.org}~~.

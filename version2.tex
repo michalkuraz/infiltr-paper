@@ -86,7 +86,7 @@
 
 \author[autor1]{Lukas Jacka}
 
-\author[autor1]{Johanna Ruth Bloecher}
+\author[autor1]{Johanna Ruth Bl\"ocher}
 
 \author[autor2]{Matej Leps}
 
@@ -463,7 +463,7 @@ of the REVG inverse model of SR experiment
 \begin{tabular}{c | c| c| c| c}
 \toprule
 % Ranges of depths, horizon(s)&\multicolumn{4}{c}{Input values for inverse modelling}\\ \cline{2-5}
-$\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [m.s$^{-1}$] & $S_s$ [m$^{-1}$] \\ \hline
+$\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$] & $S_s$ [cm$^{-1}$] \\ \hline
 \toprule
 0.25 -- 0.90 & \num{0.01e-2} -- \num{5.0e-2} & 1.05 -- 4.5 & 0.300 -- 300.0 & 0.0 -- 0.1 \\
 \toprule
@@ -806,7 +806,7 @@ The new inverse solution was searched in  vicinity of both extremes, and thus tw
 extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  \\ \hline
 \toprule
 {\bf 7} & 0.475 - 0.712 & \num{.0030416} - \num{.0045624} & 1.023 - 1.534 & 0.932 - 1.398 \\
-{\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.8952 - 1.342  \\
+{\bf 8} & 0.203 - 0.305 & \num{.002040} - \num{.003060} & 1.107 - 1.661 & 0.895 - 1.342  \\
 \toprule
 \end{tabular}
 \label{rozsahy2}
@@ -868,29 +868,34 @@ no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & 
 \subsection{Limitations and realism of results}
 
 
-Local optima 7 resulted in the most realistic results for the podzolic top O+Ah soil layer. The saturated conductivity is similar across identified optima and slightly lower than in the lower horizon E. The O+Ah top layer horizon can swell up and the infiltration may reduce the volume of the effective pores. The identified saturated conductivity is highly limited by the input data and will always be lower than the 1D saturated conductivity fitted with the Swartzendruber equation. The porosity is slightly lower than expected. The humidification process and the high organic content can cause high curvature in the pore system, which may have caused an overestimation of the horizon.  The identified values for $\alpha$ are also similar in range across the optima. $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. 
-In the evaluation of the realism of the optimization we the treatment of the initial condition and the representativeness of the input curve as the greatest limitation. This however, does not delimit the applicability of the proposed calibration methodology. 
+Local optima 7 resulted in the most realistic set for the podzolic top O+Ah soil layer, because of the most realistic value of $\theta_s$, which is slightly higher than for the E horizon (table \ref{tab_SHP}). Table \ref{shp-vysledky-final} shows a wide range of $\theta_s$ values, which can have huge implications for the water storage of the soil. The saturated hydraulic conductivity $K_s$ is similar across identified optima (table \ref{shp-vysledky-final}) and slightly lower than the lower horizon E (table \ref{tab_SHP}). A physical explanation for the lower estimate can be that the O+Ah top layer can swell and air can be entrapped during infiltration and therefore, the volume of the effective pores can be decreased. This can be indicated by the lower values of $\theta_s$. The identified $K_s$ will be lower than the $K_s$ fitted with the 1D Swartzendruber equation, because we are modeling 2D axisymmetric flow. 
+
+The identified values for $\alpha$ are also similar in range across the optima (table \ref{shp-vysledky-final}). $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. Figure \ref{retc-final} shows that $\alpha$ barely impacts the shape of the retention curve in the modeled pressure head range, whereas $\theta_s$ and also $n$ impact the retention curve significantly. 
+
+In the evaluation of the realism of the optimization we consider the treatment of the initial condition and the representativeness of the input curve as the greatest limitation. This however, does not delimit the applicability of the proposed calibration methodology. 
 
  
 
 \section{Conclusions}
+\bigskip
 
 We presented an automated calibration procedure that is able to identify optima from a relatively wide range of input parameters without convergence issues of the nonlinear operator. To solve the Richards equation we employed our open-source solver DRUtES~\citep{drutes}. We also showed numerical considerations in the domain set-up of a challenging problem. We show that starting with the semi-explicit scheme can identify regions of interest. However, the identified SHP can change dramatically with an improved numerical set-up, so that several stages of refinement are required until SHP estimates can be confirmed. We also acknowledge that for this calibration to work, the optimization algorithm needs to be able to identify multiple optima. 
 
 We applied the methodology to synthetic and real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
-% Improvements of the calibration methodology should include research on efficient numerical techniques to solve the Richards equation, such as the development of time adaptive asynchronous and domain decomposition methods.
+Improvements of the calibration methodology should include research on efficient numerical techniques to solve the Richards equation, such as the development of $hp$-adaptive approximations and adaptive domain decomposition  methods.
 
 
-Our future development of the proposed calibration methodology should focus on improving the analytical background for the empirical constants governing the sequential refinement levels, as well as on the numerical treatment of the Richards equation. 
-% In would agree deleting this last sentence...
-Particularly, the nonlinear operator treatment as well as the time adaptive domain decomposition and asynchronous methods for the Richards equation problems are still a challenging research topic.
+% Our future development of the proposed calibration methodology should focus on improving the analytical background for the empirical constants governing the sequential refinement levels, as well as on the numerical treatment of the Richards equation. 
+% % In would agree deleting this last sentence...
+% Particularly, the nonlinear operator treatment as well as the time adaptive domain decomposition and asynchronous methods for the Richards equation problems are still a challenging research topic.
 
 %Our future research  work will focus into several distinct directions. The representativeness of the catchment by a single SHP parameter set, which is obtained from average experimental data is limited. Rather than fitting a single average infiltration curve, we will focus on defining SHP parameter distributions according to the distribution of the experimental data, where even different initial conditions will be taken into consideration. Secondly, we will try to replace the empirical/expert knowledge based parameters in our inverse modeling methodology (such as setting the narrow parameter range, re-meshing, Picard error and time-steps) by rather analytically based estimates, which should incorporate the SHP parameter magnitude, nonlinear nature of the retention curve, and aposteriori error estimates for finite element method approximations. And finally, our research work will be further focused to a development of efficient numerical techniques for solving the challenging problems of the Richards equation, such as development of time adaptive asynchronous and domain decomposition methods. Our research contributions form a part of a development of our opensource project DRUtES~\citep{drutes}. 
 
 
-% \bigskip
-% ~
+\bigskip
+~
+\bigskip
 
 \section{Acknowledgement}
 
