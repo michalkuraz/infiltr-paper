@@ -1,5 +1,5 @@
 % \documentclass[a4paper,10pt]{article}
- \documentclass[review,times,3p,twocolumn,10pt]{elsarticle}
+ \documentclass[review,times,3p,10pt]{elsarticle}
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphicx}
@@ -74,7 +74,7 @@
 
 
 
-\journal{Advances in Water Resources}
+\journal{Journal of Hydrology}
 
 \begin{document}
 
@@ -477,15 +477,15 @@ The objective function is defined in the following paragraph.
 
 Let $\bar{I}(\vec{p},t)$ be the cumulative infiltration obtained from solving the mathematical model~\eqref{richaxi} bounded by the initial and boundary conditions  defined in section~\ref{bccond} for a certain vector of SHP parameters $\vec{p}$ considered as
 \begin{lineq}\bar{I}(\vec{p},t) = \frac{\int\limits_0^t \int\limits_{\Gamma_1}-K \frac{\partial H}{\partial \vec{n}}(t)  \dd \Gamma_1 \dd t}{\int\limits_{\Gamma_1} \dd \Gamma_1}.\end{lineq}
-Let $I(t)$ be the cumulative infiltration defined by \eqref{vyhlaz} with parameters given in section~\ref{krivka}. 
+Let $I(t)$ be the cumulative infiltration given by \eqref{vyhlaz} with parameters given in section~\ref{krivka}.  
 Then the objective function was defined for three different criteria in order to avoid ill-posed objective function definition.
 
-The objective functions were defined as follows:
+ Both $\bar{I}(\vec{p},t)$ and $I(t)$ are continuous functions. Note please, that this is not a standard configuration. The objective functions were then defined as follows:
 \begin{enumerate}[label={\bf \Roman*}.]
 \item First criterion $\Psi_1$ was defined as $L_2$ norm of the difference between the  experimental and model data and thus
 \begin{lineq}
 \label{objektiva1}
-\Psi_1 (\vec{p}) = \sqrt{\int\limits_0^{T_{end}} \left( \bar{I}(\vec{p},t) - I(t) \right)^2 \dd t},
+\Psi_1 (\vec{p}) = \frac{\sqrt{\int\limits_0^{T_{end}} \left( \bar{I}(\vec{p},t) - I(t) \right)^2 \dd t}}{T_{end}},
 \end{lineq}
 where $T_{end}$ is the final simulation time [$T$], which is indeed the root mean square error (RMSE) for continuous functions. 
 \item Second criterion was the $L_{\infty}$ norm of the difference between the experimental and model data and thus
@@ -732,28 +732,56 @@ Results of the synthetic problem are given in table~\ref{tab-benchres}. For thes
 \end{table*}
 
 
+% 
+% \begin{table*}
+% \begin{center}
+% \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+% \fs
+% \begin{tabular}{l || c c c c c  }
+% \toprule
+% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] \\ \hline \hline
+% \rowcolor{gray}{\bf 1} & \num{2.447e-4} &  2.45 & 0.25 & \num{0.025} & \num{0.419e-2}   \\ 
+% \rowcolor{gray}{\bf 2} & \num{0.101e-2} & 0.6517 &  0.271 & \num{1.092} &  \num{2.879e-2}  \\ 
+% \rowcolor{gray}{\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{1.092} & \num{1.845e-4} \\
+% \rowcolor{gray}{\bf 4} & \num{0.157e-2} & 1.968 & 0.720 & \num{2.07} & \num{1.053e-5}  \\ 
+% \rowcolor{gray}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  \\ \hline \hline
+% \rowcolor{white}{\bf 6} & \num{0.258e-2} & 2.152  & 0.401 &  \num{1.095} & 0  \\ 
+% \rowcolor{white}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0  \\ 
+% \rowcolor{white} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4}  \\ \hline
+% \toprule
+% \end{tabular}
+%  \label{shp-vysledky}
+% \end{center}
+% \end{table*}
 
-\begin{table*}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table*}[]
 \begin{center}
-\caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
-\fs
-\begin{tabular}{l || c c c c c  }
-\toprule
-no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$] \\ \hline \hline
-\rowcolor{gray}{\bf 1} & \num{2.447e-4} &  2.45 & 0.25 & \num{0.025} & \num{0.419e-2}   \\ 
-\rowcolor{gray}{\bf 2} & \num{0.101e-2} & 0.6517 &  0.271 & \num{1.092} &  \num{2.879e-2}  \\ 
-\rowcolor{gray}{\bf 3} & \num{1.840e-2} & 2.098 & 0.353 & \num{1.092} & \num{1.845e-4} \\
-\rowcolor{gray}{\bf 4} & \num{0.157e-2} & 1.968 & 0.720 & \num{2.07} & \num{1.053e-5}  \\ 
-\rowcolor{gray}{\bf 5} & \num{0.150e-2} & 1.586 & 0.720 &  \num{1.093} &  \num{7.641e-3}  \\ \hline \hline
-\rowcolor{white}{\bf 6} & \num{0.258e-2} & 2.152  & 0.401 &  \num{1.095} & 0  \\ 
-\rowcolor{white}{\bf 7} & \num{0.3802e-2} & 1.279 & 0.594 &  \num{1.165} & 0  \\ 
-\rowcolor{white} {\bf 8} & \num{0.255e-2} & 1.384 & 0.254 &  \num{1.119} &  \num{1.922e-4}  \\ \hline
-\toprule
+ \caption{Identified local extremes of Pareto front during the first run of parameter search procedure.}
+ \fs
+\begin{tabular}{|c||c|c|c|c|c||c|c|}
+\hline
+                         &                                        &                           &                                  &                                         &                                      & \multicolumn{2}{c|}{RMSE error \eqref{objektiva1} [cm]}                                                              \\ \cline{7-8} 
+\multirow{-2}{*}{no.}    & \multirow{-2}{*}{$\alpha$ [cm$^{-1}$]} & \multirow{-2}{*}{$n$ [-]} & \multirow{-2}{*}{$\theta_s$ [-]} & \multirow{-2}{*}{$K_s$ [cm.hrs$^{-1}$]} & \multirow{-2}{*}{$S_s$  [cm$^{-1}$]} & $r_f$ =0          & $r_f$ = 1                                                                                        \\ \hline \hline
+\rowcolor[HTML]{C0C0C0} 
+{\bf 1}                  & \num{2.447e-4}                         & 2.450                     & 0.25                             & \num{0.025}                             & \num{0.419e-2}                       & \num{0.3631858}   & \cellcolor[HTML]{C0C0C0}                                                                         \\ \cline{1-7}
+\rowcolor[HTML]{C0C0C0} 
+{\bf 2}                  & \num{0.101e-2}                         & 2.651                     & 0.271                            & \num{1.092}                             & \num{2.879e-2}                       & \num{27.22928}    & \cellcolor[HTML]{C0C0C0}                                                                         \\ \cline{1-7}
+\rowcolor[HTML]{C0C0C0} 
+{\bf 3}                  & \num{1.840e-2}                         & 2.098                     & 0.353                            & \num{1.092}                             & \num{1.845e-4}                       & \num{0.9532764}   & \cellcolor[HTML]{C0C0C0}                                                                         \\ \cline{1-7}
+\rowcolor[HTML]{C0C0C0} 
+{\bf 4}                  & \num{0.157e-2}                         & 1.968                     & 0.720                            & \num{2.07}                              & \num{1.053e-5}                       & \num{0.229022}    & \cellcolor[HTML]{C0C0C0}                                                                         \\ \cline{1-7}
+\rowcolor[HTML]{C0C0C0} 
+{\bf 5}                  & \num{0.150e-2}                         & 1.586                     & 0.720                            & \num{1.093}                             & \num{7.641e-5}                       & \num{9.93226}     & \multirow{-5}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}not\\ computed\end{tabular}} \\ \hline
+\rowcolor{white}{\bf 6}  & \num{0.258e-2}                         & 2.152                     & 0.401                            & \num{1.095}                             & 0                                    & \num{0.01992916}  & \num{0.01362932}                                                                                 \\ \hline
+\rowcolor{white}{\bf 7}  & \num{0.3802e-2}                        & 1.279                     & 0.594                            & \num{1.165}                             & 0                                    & \num{0.009694036} & \num{0.08630053}                                                                                 \\ \hline
+\rowcolor{white} {\bf 8} & \num{0.255e-2}                         & 1.384                     & 0.254                            & \num{1.119}                             & \num{1.922e-4}                       & \num{0.01030408}  & \num{0.04151718}                                                                                 \\ \hline
 \end{tabular}
  \label{shp-vysledky}
 \end{center}
 \end{table*}
-
 
 \begin{figure}
 \rotatebox{-90}{
@@ -841,17 +869,33 @@ In order to evaluate the results obtained at $r_f=1$ discretization level, the d
 
 The location of peaks of the response plots for these two sequential discretization levels do not vary significantly, and so no further refinements were required. The table~\ref{shp-vysledky} provides the final results of this inverse problem. As mentioned above the solution for the extreme 6 didn't require further updates, except for  the $n$ parameter, which has been slightly updated from the identified value 2.152 for new value 1.950 in accordance with the response plot in figure~\ref{objfnc6} - right.
 
+% \begin{table*}[ht]
+% \centering
+% \caption{The resulting SHP data sets.}
+% \fs
+% \begin{tabular}{l || c c c c c }
+% \toprule
+% no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
+% \rowcolor{white}{\bf 6} & \num{0.258e-2} & \num{1.950}  & 0.401 &  \num{1.095} & 0  \\ 
+% \rowcolor{white}{\bf 7} & \num{0.0032285} & \num{1.4421} & 0.513 &  \num{1.0995} & 0  \\ 
+% \rowcolor{white} {\bf 8} & \num{0.002276} & \num{1.5189} & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
+% \toprule
+% \end{tabular}
+% \label{shp-vysledky-final}
+% \end{table*}
+
 \begin{table*}[ht]
 \centering
 \caption{The resulting SHP data sets.}
 \fs
-\begin{tabular}{l || c c c c c }
-\toprule
-no. & $\alpha$ [cm$^{-1}$] & $n$ [-] & $\theta_s$ [-] & $K_s$ [cm.hrs$^{-1}$] & $S_s$  [cm$^{-1}$]\\ \hline \hline
-\rowcolor{white}{\bf 6} & \num{0.258e-2} & \num{1.950}  & 0.401 &  \num{1.095} & 0  \\ 
-\rowcolor{white}{\bf 7} & \num{0.0032285} & \num{1.4421} & 0.513 &  \num{1.0995} & 0  \\ 
-\rowcolor{white} {\bf 8} & \num{0.002276} & \num{1.5189} & 0.236 &  \num{1.0356} &  \num{0}\\ \hline
-\toprule
+\begin{tabular}{|c||c|c|c|c|c||c|c|}
+\hline
+                         &                                        &                           &                                  &                                         &                                      & \multicolumn{2}{c|}{RMSE error \eqref{objektiva1} [cm]}                                                 \\ \cline{7-8} 
+\multirow{-2}{*}{no.}    & \multirow{-2}{*}{$\alpha$ [cm$^{-1}$]} & \multirow{-2}{*}{$n$ [-]} & \multirow{-2}{*}{$\theta_s$ [-]} & \multirow{-2}{*}{$K_s$ [cm.hrs$^{-1}$]} & \multirow{-2}{*}{$S_s$  [cm$^{-1}$]} & $r_f$ = 1                                           & $r_f$=2                                           \\ \hline
+\rowcolor{white}{\bf 6}  & \num{0.258e-2}                         & \num{1.950}               & 0.401                            & \num{1.095}                             & 0                                    & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}computed and\\ confirmed at previous level\end{tabular}} \\ \hline
+\rowcolor[HTML]{FFFE65} 
+{\bf 7}                  & \num{0.0032285}                        & \num{1.4421}              & 0.513                            & \num{1.0195}                            & 0                                    & \num{0.05210686}                                   & \num{0.01217005}                                  \\ \hline
+\rowcolor{white} {\bf 8} & \num{0.002276}                         & \num{1.5189}              & 0.236                            & \num{1.0356}                            & \num{0}                              & \num{0.02809722}                                    & \num{0.0306573}                                   \\ \hline
 \end{tabular}
 \label{shp-vysledky-final}
 \end{table*}
