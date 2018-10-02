@@ -74,13 +74,13 @@
 
 
 
-\journal{Journal of Hydrology}
+\journal{Computers \& Mathematics with Applications}
 
 \begin{document}
 
 \begin{frontmatter}
 
-\title{Issues in the inverse modeling of a single ring infiltration experiment}
+\title{Inverse modeling of a single ring infiltration experiment: a key for analyzing unsaturated hydraulic properties of soils?}
 
 \author[autor1]{Michal Kuraz}
 
@@ -97,10 +97,12 @@
 \address[autor2]{Czech Technical University in Prague, Faculty of Civil Engineering, Department of Mechanics}
 
 \begin{abstract}
-This contribution addresses issues in the identification of soil hydraulic properties (SHP) of the top soil layer obtained from inverse modeling of a single ring (SR) infiltration experiment. 
-The SR experimental data were obtained from a series of in situ experiments conducted on a highly heterogeneous mountainous podzolic soil profile. The SHP of the topsoil layer are very difficult to measure directly, since the thickness of the top soil layer is often much smaller than the depth required to embed the SR or Guelph permeameter device or to obtain undisturbed samples for further laboratory experiments.
+This contribution evaluates a possibility of identification of soil hydraulic properties (SHP) from inverse modeling of a single ring (hereafter SR) infiltration experiment. The SR experiment is a standard and robust  dynamic field experiment. The steady state part of this experiment is traditionaly used for an identification of saturated hydraulic conductivity. In this contribution we explore the possibility of extending an applicability of this experiment for evaluating the unsaturated hydraulic parameters from an unsteady part of this experiment.
 
-A common problem with automatic optimization procedures are convergence issues. This problem is not trivial and can be difficult to deal with. We present a methodology to avoid convergence issues with the nonlinear operator. With this methodology, we can answer (1) to what extent the well-known SR experiment is robust enough to provide a unique estimate of SHP parameters using the unsteady part of the infiltration experiment and (2) whether all parameters are vulnerable to non-uniqueness. We validated our methodology with synthetic infiltration benchmark problems for clay and sand. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching, which is not possible with commonly used gradient methods. 
+
+
+The problem of SR infiltration is governed by qualisilinear Richards equation.
+We further present a methodology to avoid convergence issues with the nonlinear operator, originating from non-physical combinations of input parameters, which can be hard to avoid when automaticaly analyzing broad parameter space.  With this methodology, we can answer (1) to what extent the well-known SR experiment is robust enough to provide a unique estimate of SHP parameters using the unsteady part of the infiltration experiment and (2) whether all parameters are vulnerable to non-uniqueness. We validated our methodology with synthetic infiltration benchmark problems for clay and sand, and applied on a real-world SR infiltration data. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching, which is not possible with commonly used gradient methods. 
 
 Our results show the existence of multimodality in, both, the benchmark problems and the real-world problem. This is an important finding as local optima can be identified, which are not necessarily physical and also for systems that do not exhibit multimodal grain size distributions. The identified local optima were distinct and showed different retention and hydraulic conductivity curves. The most physical set of SHP could be identified with the knowledge of saturated water content, which makes it yet more obvious that expert knowledge is key in inverse modeling.   
 
@@ -133,7 +135,7 @@ Due to the rocks present and the dense root system of the covering vegetation, a
 
 In our study, the well-known single ring (hereafter SR) method was used to obtain experimental input data (cumulative infiltration) for inverse modeling. The SR infiltrometer is a widely accepted, simple, robust field method, which is able to measure the infiltration process, which affects the entire soil profile including the top-soil,  and can sample a relatively large volume (depending on the diameter of the ring)~\citep{Cheng,ReynoldsWD}.  The SR infiltration experiment is an in situ experiment, which does not require soil samples to be collected, so the porous medium is kept relatively undisturbed. With the widely-used ring diameter of 30~cm, the affected porous media is far more representative than any soil sample we were able to collect. The top-soil can also be measured (with some alteration of the surface) using other well-known field infiltration methods, e.g. the tension infiltrometer or the well permeameter  \citep{AnguloJaramillo,ReynoldsWDGP}. 
 
-The Richards equation ~\citep{richards} describes flow in variably saturated porous media. In order to model environmental processes and engineering applications with the Richards equation knowledge of the SHP is essential. SHP can be summarized by the soil water retention curve and soil hydraulic conductivity curve. In this contribution, the SHP are parametrized with the frequently used Mualem-van Genuchten model ~\citep{vangenuchten}. We refer to this model as REVG.
+The Richards equation ~\citep{richards} describes flow in variably saturated porous media. In order to model environmental processes and engineering applications with the Richards equation knowledge of the SHP is essential. SHP can be summarized by the soil water retention curve and soil hydraulic conductivity curve. In this contribution, the SHP are parametrized with the frequently used Mualem-van Genuchten model~\citep{vangenuchten}. We refer to this model as REVG.
 
 
 
@@ -144,9 +146,7 @@ The Richards equation ~\citep{richards} describes flow in variably saturated por
 
 
 
-Several studies compared REVG inverse modeling of tension infiltrometers \citep{Simunek1,Simunek2, Schwartz,Ventrella,Ramos, Verbist,rezaei}. They state that the retention curves obtained from inverse modeling using tension infiltrometer data are often not in good agreement with laboratory experiments on undisturbed samples. In particular, the saturated water content obtained from an inverse model of REVG is typically distinctly lower than the experimentally established value \citep{Simunek1, Verbist}. 
-There are various theories explaining the issue to be due to (i) the effect of hysteresis as the drying process in the laboratory differs from the wetting process in the field, (ii) the effect of entrapped air in the field ~\citep{Fodor}, where the saturation may not fully correspond to the pressure head, and (iii) the effect of macropores, which are excluded when a tension infiltrometer is used.  Most importantly the soil samples usually examined in the laboratory are typically much smaller than the representative elementary volume~\citep{scharnagl}.
-However, several studies  reported a close correspondence between the retention curve parameters obtained from laboratory experiments and from REVG analyses \citep{Ramos, Schwartz}. 
+ 
 The identification of SHP from transient infiltration experiments has been a subject of numerous publications in past decades \citep{simunek-infiltr2shp, infiltr2shp, simunek2-infiltr2shp, XU201234, BAGARELLO201770,  hess-Younes-2017}.  \cite{simunek-infiltr2shp} reported a close correspondence between the SHP obtained from the inverse modeling of dynamic transient infiltration experiments with those obtained from steady-state laboratory experiments, where the uniqueness of the inverse model was preserved by considering the dynamically changing pressure head, water content and even tracer concentration.
 
 The non-uniqueness of the REVG inverse model is already a very well-known issue, and has been described by a number of publications over the last decades~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain,Kowalsky04,Nakhaei, Kamali,pena17}.
@@ -197,42 +197,9 @@ Section~\ref{bccond} discusses issues in creating the domain scheme and selectin
 \subsubsection{Site description and assembling the experimental data}%[lukas]
 \label{site}
 The study site is located in the \v{S}umava National Park, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented by \cite{Jacka2}.
-A haplic podzol with distinct soil horizons is dominant on this site. The mean depths of the podzolic horizons are as follows:
-\begin{itemize}
-\item organic horizon O and humus horizon Ah altogether (the top-soil) 7.5 cm, 
-\item eluvial bleached horizon E 12.5 cm, 
-\item spodic horizons Bhs and Bs 40 cm,
-\item weathered bedrock C.
-\end{itemize}
-The average groundwater table level can be roughly estimated at -280~cm below the surface. 
-
-The soil characteristics of the horizons below the top-soil %or we can include top-soil in the table and use NA
-are given in the table~\ref{tab:soiltxt}.
-
-%comment Lukas: The percentages of particles < 2mm are used for USDA classification. that is why the sum of clay, silt and sand gives 100%, additional information is about percentages of skelet >2mm
-%spodic horizon is Bhs and Bs
-%
-
- \begin{table*}[ht]
- \fs
-\centering
- 		\caption{Fractions of the fine soil ($<$ 2 mm) and skeleton ($>$ 2 mm) and bulk density of the E and Bhs+Bs horizons.}
- 			\begin{tabular}{l c  c  c  c  c}
- 				\toprule
- 				horizon & clay & silt & sand  & gravel & bulk density  \\ 
- 				&  $<2\;\mu$m & $2\;\mu$m -- 0.05~mm & 0.05 -- 2 mm & $>$ 2 mm & g.cm$^{-3}$ \\ \hline
- 				\multirow{2}{*}{E}      & \multicolumn{3}{c}{68\%}               & \multirow{1}{*}{32\%}  &\multirow{1}{*}{1.4}   \\ 
- 				\cmidrule{2-4}
- 				&  1\%               & 20\%                        & 79\%      & &\\
- 				\cmidrule{2-6}
- 				\multirow{2}{*}{Bhs + Bs }      & \multicolumn{3}{c}{70\%}               & \multirow{1}{*}{30\%}  &\multirow{1}{*}{1.3}   \\ 
- 				\cmidrule{2-4}
- 				&7\%           & 32\%                       & 61\%          & &\\
- 				
- 				\toprule
- 			\end{tabular}
- 		\label{tab:soiltxt}
- \end{table*}
+The soil profile is described by four different layers as seen on figure~\ref{experiment}. The average groundwater table level can be roughly estimated at -280~cm below the surface.
+The soil hydraulic properties of the lower layers were identified by Guelph permeameter measurements (GP) with a methodology described by~\cite{Jacka1}. 
+Table \ref{tab_SHP} shows SHP parameters for spodic and eluvial horizons E, Bhs/BS and C below the top-soil calculated with the pedotransfer function implemented in Rosetta~\citep{Schaap} based on soil texture and the bulk density measurements.
 
 
 
@@ -240,15 +207,6 @@ are given in the table~\ref{tab:soiltxt}.
 
 
 
-\subsubsection{Obtaining SHP parameters for lower horizons}
-\label{shp}
-
-Guelph permeameter measurements (GP) were used to estimate the saturated hydraulic conductivity of the lower horizons. The constant head GP method is described in~\citep{Jacka1}.
-Pedotransfer functions work well for spodic and eluvial horizons characterized by high percentage of sand, without a distinct structure, and with a bulk density and porosity corresponding to a standard mineral soil. Table \ref{tab_SHP} shows SHP parameters for spodic and eluvial horizons E, Bhs/BS and C below the top-soil calculated with the pedotransfer function implemented in Rosetta~\citep{Schaap} based on soil texture and the bulk density measurements.
-
-
-
-%%%%%%%dat za lukasovi rovnice.
  
 
 
@@ -273,10 +231,10 @@ C & 8 & 0.50 & 0.035 & 4.030 &  3.060 & 0 \\
 \end{table*}
 
 
-\subsubsection{Obtaining unsteady infiltration data for the top soil}
+\subsubsection{SR experimental setup}
 \label{krivka}
 
-The purpose of this section is to explain the methodology used to obtain the input data for the inverse analysis. 
+ 
 
 
  \begin{figure}
@@ -288,11 +246,8 @@ The purpose of this section is to explain the methodology used to obtain the inp
 \end{figure}
 
 
-For the O+Ah horizon smoothed experimental data from unsteady single ring (SR) infiltration were used as input for inverse modeling of REVG.
-The experimental setup was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil. The average experiment duration was 60~minutes.
 
-
-
+The experimental setup of the SR experiment was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil. The average experiment duration was 60~minutes.
 
 
 A total of 22 SR experiments were conducted on the site. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed with the Swartzendruber analytical model \citep{Swartzendruber}
@@ -364,12 +319,12 @@ Note that we should avoid using the coordinates, where $r=0$.
 
 \subsubsection{Domain shape restrictions}
 
- \cite{Dusek} mentioned several difficulties with incorrect triangular mesh setup while modeling the SR experiment, we tried to avoid possible numerical issues connected with domains with sharp spikes.
+%  \cite{Dusek} mentioned several difficulties with incorrect triangular mesh setup while modeling the SR experiment, we tried to avoid possible numerical issues connected with domains with sharp spikes.
 
 % The governing equation~\eqref{richaxi} will be solved here by linear finite element method, which is a subset of variational methods. Using standard setup the solution $H$ of~\eqref{richaxi} will be taken from Sobolev functional space defined for functions on Lipschitz bounded domains~\citep{braess, pum}.
 
 %reseni rovnice bylo ve std pojeti, reseni ze sobolevova prostoru funkci definovanych na oblasti z lips hranici
-Sudden changes in domain shapes, spikes and discontinuities yield numerical difficulties (e.g. the Lipschitz boundary restrictions~\citep{braess}).
+It is well-known that sudden changes in domain shapes, spikes and discontinuities yield numerical difficulties (e.g. the Lipschitz boundary restrictions~\citep{braess}).
 In order to avoid computational difficulties during the automatic calibration procedure the infiltration ring thickness was oversized  to 2.5~cm. It is obvious that the real ring thickness is much smaller (in our case 2~mm), but using the real ring thickness yields possible numerical issues.  It is expected, that oversizing the ring thickness does not significantly affect the fluxes through the top Dirichlet boundary, which is the only important part of the solution of~\eqref{richaxi} for our calibration process.
 
 
