@@ -97,7 +97,7 @@
 \address[autor2]{Czech Technical University in Prague, Faculty of Civil Engineering, Department of Mechanics}
 
 \begin{abstract}
-This contribution evaluates a possibility of identification of soil hydraulic properties (SHP) from inverse modeling of a single ring (hereafter SR) infiltration experiment. The SR experiment is a standard and robust  dynamic field experiment. The steady state part of this experiment is traditionaly used for an identification of saturated hydraulic conductivity. In this contribution we explore the possibility of extending an applicability of this experiment for evaluating the unsaturated hydraulic parameters from an unsteady part of this experiment.
+This contribution evaluates a possibility of identification of soil hydraulic properties (SHP) from inverse modeling of a single ring (hereafter SR) infiltration experiment. The SR experiment is a standard and robust  dynamic field experiment. The steady state part of this experiment is traditionally used for an identification of saturated hydraulic conductivity. In this contribution, we explore the possibility of extending an applicability of this experiment for evaluating the unsaturated hydraulic parameters from an unsteady part of this experiment using inverse analyses of the governing flow motion equation.
 
 
 
@@ -105,6 +105,7 @@ The problem of SR infiltration is governed by qualisilinear Richards equation.
 We further present a methodology to avoid convergence issues with the nonlinear operator, originating from non-physical combinations of input parameters, which can be hard to avoid when automaticaly analyzing broad parameter space.  With this methodology, we can answer (1) to what extent the well-known SR experiment is robust enough to provide a unique estimate of SHP parameters using the unsteady part of the infiltration experiment and (2) whether all parameters are vulnerable to non-uniqueness. We validated our methodology with synthetic infiltration benchmark problems for clay and sand, and applied on a real-world SR infiltration data. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching, which is not possible with commonly used gradient methods. 
 
 Our results show the existence of multimodality in, both, the benchmark problems and the real-world problem. This is an important finding as local optima can be identified, which are not necessarily physical and also for systems that do not exhibit multimodal grain size distributions. The identified local optima were distinct and showed different retention and hydraulic conductivity curves. The most physical set of SHP could be identified with the knowledge of saturated water content, which makes it yet more obvious that expert knowledge is key in inverse modeling.   
+
 
 
 %To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching.   
@@ -135,7 +136,7 @@ Due to the rocks present and the dense root system of the covering vegetation, a
 
 In our study, the well-known single ring (hereafter SR) method was used to obtain experimental input data (cumulative infiltration) for inverse modeling. The SR infiltrometer is a widely accepted, simple, robust field method, which is able to measure the infiltration process, which affects the entire soil profile including the top-soil,  and can sample a relatively large volume (depending on the diameter of the ring)~\citep{Cheng,ReynoldsWD}.  The SR infiltration experiment is an in situ experiment, which does not require soil samples to be collected, so the porous medium is kept relatively undisturbed. With the widely-used ring diameter of 30~cm, the affected porous media is far more representative than any soil sample we were able to collect. The top-soil can also be measured (with some alteration of the surface) using other well-known field infiltration methods, e.g. the tension infiltrometer or the well permeameter  \citep{AnguloJaramillo,ReynoldsWDGP}. 
 
-The Richards equation ~\citep{richards} describes flow in variably saturated porous media. In order to model environmental processes and engineering applications with the Richards equation knowledge of the SHP is essential. SHP can be summarized by the soil water retention curve and soil hydraulic conductivity curve. In this contribution, the SHP are parametrized with the frequently used Mualem-van Genuchten model~\citep{vangenuchten}. We refer to this model as REVG.
+The Richards equation~\citep{richards} describes flow in variably saturated porous media. In order to model environmental processes and engineering applications with the Richards equation knowledge of the SHP is essential. SHP can be summarized by the soil water retention curve and soil hydraulic conductivity curve. In this contribution, the SHP are parametrized with the frequently used Mualem-van Genuchten model~\citep{vangenuchten}. We refer to this model as REVG.
 
 
 

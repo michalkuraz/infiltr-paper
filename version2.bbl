@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{48}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -66,13 +66,6 @@ I.~Christie, D.~F. Griffiths, A.~R. Mitchell, and O.~C. Zienkiewicz.
   significant first derivatives.
 \newblock {\em\JournalTitle{International Journal for Numerical Methods in
   Engineering}}, 10\penalty0 (6):\penalty0 1389--1396, 1976.
-
-\bibitem[Dusek et~al.(2009)Dusek, Dohnal, and Vogel]{Dusek}
-J.~Dusek, M.~Dohnal, and T.~Vogel.
-\newblock Numerical analysis of ponded infiltration experiment under different
-  experimental conditions.
-\newblock {\em\JournalTitle{Soil and Water Research}}, 4\penalty0 (SPECIAL
-  ISSUE 2):\penalty0 22--27, 2009.
 
 \bibitem[Fodor et~al.(2011)Fodor, Sándor, Orfánus, Lichner, and
   Rajkai]{Fodor}
@@ -269,14 +262,6 @@ C.~Peña-Sancho, T.~Ghezzehei, B.~Latorre, C.~González-Cebollada, and
 \newblock {\em\JournalTitle{Hydrological Sciences Journal}}, 62\penalty0
   (10):\penalty0 1683--1693, 2017.
 
-\bibitem[Ramos et~al.({2006})Ramos, Goncalves, Martins, van Genuchten, and
-  Pires]{Ramos}
-T.~Ramos, M.~Goncalves, J.~Martins, M.~van Genuchten, and F.~Pires.
-\newblock {Estimation of soil hydraulic properties from numerical inversion of
-  tension disk infiltrometer data}.
-\newblock {\em\JournalTitle{Vadose Zone Journal}}, {5}\penalty0 ({2}):\penalty0
-  {684--696}, {MAY} {2006}.
-
 \bibitem[Reynolds(2008{\natexlab{a}})]{ReynoldsWD}
 W.~D. Reynolds.
 \newblock \emph{Saturated hydraulic properties: Ring infiltrometer, in: Carter
@@ -290,15 +275,6 @@ W.~D. Reynolds.
   M.R., Gregorich, E.G. [Eds.], Soil Sampling and Methods of Analysis, 2nd ed}.
 \newblock CRC Press Taylor \& Francis, Boca Raton, USA, pp. 1025--1042,
   2008{\natexlab{b}}.
-
-\bibitem[Rezaei et~al.(2016)Rezaei, Seuntjens, Shahidi, Joris, Boënne,
-  Al-Barri, and Cornelis]{rezaei}
-M.~Rezaei, P.~Seuntjens, R.~Shahidi, I.~Joris, W.~Boënne, B.~Al-Barri, and
-  W.~Cornelis.
-\newblock The relevance of in-situ and laboratory characterization of sandy
-  soil hydraulic properties for soil water simulations.
-\newblock {\em\JournalTitle{Journal of Hydrology}}, 534:\penalty0 251 -- 265,
-  2016.
 
 \bibitem[Richards(1931)]{richards}
 L.~A. Richards.
@@ -324,36 +300,6 @@ M.~G. Schaap, F.~J. Leij, and M.~T. van Genuchten.
 \newblock {\em\JournalTitle{J. Hydrol.}}, 251\penalty0 (3–4):\penalty0 163 --
   176, 2001.
 
-\bibitem[Scharnagl et~al.(2011)Scharnagl, Vrugt, Vereecken, and
-  Herbst]{scharnagl}
-B.~Scharnagl, J.~A. Vrugt, H.~Vereecken, and M.~Herbst.
-\newblock Inverse modelling of in situ soil water dynamics: investigating the
-  effect of different prior distributions of the soil hydraulic parameters.
-\newblock {\em\JournalTitle{Hydrology and Earth System Sciences}}, 15\penalty0
-  (10):\penalty0 3043--3059, 2011.
-
-\bibitem[Schwartz and Evett({2002})]{Schwartz}
-R.~Schwartz and S.~Evett.
-\newblock {Estimating hydraulic properties of a fine-textured soil using a disc
-  infiltrometer}.
-\newblock {\em\JournalTitle{Soil Science Society of America Journal}},
-  {66}\penalty0 ({5}):\penalty0 {1409--1423}, {2002}.
-
-\bibitem[Simunek et~al.(1998)Simunek, van Genuchten, Gribb, and
-  Hopmans]{Simunek1}
-J.~Simunek, T.~van Genuchten, M., M.~Gribb, and J.~W. Hopmans.
-\newblock Parameter estimation of unsaturated soil hydraulic properties from
-  transient flow processes1.
-\newblock {\em\JournalTitle{Soil Tillage Res.}}, 47\penalty0 (1–2):\penalty0
-  27 -- 36, 1998.
-
-\bibitem[Simunek et~al.({1999})Simunek, Wendroth, and van Genuchten]{Simunek2}
-J.~Simunek, O.~Wendroth, and M.~van Genuchten.
-\newblock {Estimating unsaturated soil hydraulic properties from laboratory
-  tension disc infiltrometer experiments}.
-\newblock {\em\JournalTitle{Water Resources Research}}, {35}\penalty0
-  ({10}):\penalty0 {2965--2979}, {OCT} {1999}.
-
 \bibitem[Swartzendruber({1987})]{Swartzendruber}
 D.~Swartzendruber.
 \newblock { A Quasi-Solution of Richards Equation for the Downward Infiltration
@@ -373,22 +319,6 @@ M.~van Genuchten.
   unsaturated soils.
 \newblock {\em\JournalTitle{Soil Science Society of America Journal}},
   44\penalty0 (5):\penalty0 892--898, 1980.
-
-\bibitem[Ventrella et~al.(2005)Ventrella, Losavio, Vonella, and
-  Leij]{Ventrella}
-D.~Ventrella, N.~Losavio, A.~Vonella, and F.~Leij.
-\newblock Estimating hydraulic conductivity of a fine-textured soil using
-  tension infiltrometry.
-\newblock {\em\JournalTitle{Geoderma}}, 124\penalty0 (3–4):\penalty0 267 --
-  277, 2005.
-
-\bibitem[Verbist et~al.({2009})Verbist, Cornelis, Gabriels, Alaerts, and
-  Soto]{Verbist}
-K.~Verbist, W.~M. Cornelis, D.~Gabriels, K.~Alaerts, and G.~Soto.
-\newblock {Using an inverse modelling approach to evaluate the water retention
-  in a simple water harvesting technique}.
-\newblock {\em\JournalTitle{Hydrology and Earth System Sciences}},
-  {13}\penalty0 ({10}):\penalty0 {1979--1992}, {2009}.
 
 \bibitem[Vitingerova(2010)]{vitingerova:2010}
 Z.~Vitingerova.
