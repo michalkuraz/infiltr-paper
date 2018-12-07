@@ -11,7 +11,7 @@ dpinit[2]=0.2
 dpinit[3]=0.2
 dpinit[4]=0.2
 
-prec=100000000
+prec=1000000
 
 nproc=32
 

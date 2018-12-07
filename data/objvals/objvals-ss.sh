@@ -19,9 +19,9 @@ for i in `seq 1 ${#dp[@]}`; do
 done
 
 
-prec=100000000
+prec=1000000
 
-nproc=22 
+nproc=32
 
 npars=${#dp[@]}
 
