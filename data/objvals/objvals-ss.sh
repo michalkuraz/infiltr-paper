@@ -21,7 +21,7 @@ done
 
 prec=1000000
 
-nproc=32
+nproc=16
 
 npars=${#dp[@]}
 
