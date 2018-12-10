@@ -15,20 +15,20 @@ function run_drutes {
   n=$3
   ths=$4
   Ks=$5
-  Ss=0.0
+  Ss=$6
 
   m=`echo "scale=12; 1.0-1.0/$n" | bc`
    
   sed -e 's/!A/'$a'/g' -e 's/!N/'$n'/g' -e 's/!M/'$m'/g' -e 's/!K/'$Ks'/g' -e 's/!T/'$ths'/g' -e 's/!S/'$Ss'/g' drutes.conf/water.conf/matrix.conf.temp > drutes.conf/water.conf/matrix.conf
   
-  echo "running drutes with parameters:" $a $n $ths $Ks
+ # echo "running drutes with parameters:" $a $n $ths $Ks
   bin/drutes > /dev/null
   
-  Rscript ../evol.R
+  Rscript evol.R
   
-  read val < objfnc.val
+  read val < objfnc1.val
   
-  echo "finished with objfnc val" $val
+ # echo "finished with objfnc val" $val
   
   echo "$1 $val" >> ../drutes.vals
   
@@ -59,7 +59,7 @@ function run_drutes {
 
     
 let nproc=0
-while read l a b c d 
+while read l a b c d e 
   do
     if [[  $l == "p"  ]]; then
       let nproc=nproc+1
@@ -68,14 +68,14 @@ while read l a b c d
   
 
 let z=0
-while read l a b c d 
+while read l a b c d e
   do
     if [[  $l == "p"  ]]; then
       let z=z+1
       if [[ $z -lt $nproc ]] ; then
-        run_drutes $z $a $b $c $d  &
+        run_drutes $z $a $b $c $d $e  &
       else
-        run_drutes $z $a $b $c $d  
+        run_drutes $z $a $b $c $d $e 
       fi
     fi
   done < pars.in
