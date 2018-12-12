@@ -1,0 +1,91 @@
+\documentclass[a4paper,10pt]{letter}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+% If you want headings on subsequent pages,
+% remove the ``%'' on the next line:
+% \pagestyle{headings}
+
+\begin{letter}{TO_ADDRESS}
+\address{$$ADDRESS$$}
+
+% \opening{$$SALUTATION$$}
+
+
+
+
+\signature{\\$$TITLE$$}
+
+% \closing{$$CLOSING$$}
+
+%enclosure listing
+%\encl{}
+
+\begin{enumerate}
+ \item {\it 1)	The abstract is very long; I suggest shortening it to convey the major points of this research.}
+ 
+ {\bf done}
+ \item {\it Typically, the last paragraph of the introduction section is reserved for describing the aim, innovation, general methodology of the research. This is missing from this manuscript. I like the fact that the authors present their research questions, but they also need to briefly describe the methodology used to answer them and how it is novel. } 
+ 
+ {\bf done}
+ 
+ \item {The authors should state the country where the study area is located. Also, a short description of the synthetic problem should go under section 1.2} 
+ 
+ {\bf done}
+ 
+ \item {\it How was the boundary condition of H=-280 cm obtained? Was this based on experimental data?}
+ 
+ {\bf Lukas }
+ 
+ \item {\it The authors have assumed that the water table remains constant during the experiment. What are the potential implications of this assumption? }
+ {\bf The water table is very far away from the infiltration, added graph}
+ 
+ \item {\it There is an issue on line 186} 
+ 
+ {\bf fixed}
+ 
+ \item {\it The main issue I have with the methodology is related to the use of a multi-objective algorithm to solve the inverse problem. The argument that the authors make for using a multi-objective algorithm is not convincing. According to the multi-objective optimization definition the objective functions should be competing. I do not quite understand how the multi-objective optimization can work with non-competing objectives. }
+ 
+ {\bf This is not truly multi-objective algorithm Matej will explain}
+ 
+ \item {\it More details are needed for the genetic algorithm (about mutation, cross-over parameters, the choice of stopping criteria etc). How were these choices made? }
+ 
+ {\bf Matej}
+ 
+ \item {\it On line 337 and elsewhere the authors state that expert knowledge is needed.  I understand that expert knowledge is an important part of this methodology, but very little details are given throughout the manuscript about this. Please elaborate on the use of expert knowledge and how it will be incorporated in the methodology.}
+ 
+ {\bf The expert knowledge sentence is deleted, and replaced by our explanation of decision making strategy. Broader range was  selected for the optimization to see if we can even get unusual (unexpected) parameter combinations, and to see if the unusual parameters can provide better fitting qualities than the physical paramaters. Discussed in conclusions.}
+ 
+ 
+ \item {\it   Line 352 is not clear. Please explain in a more clear way your point about specific storage. I do not see what you explain reflected in figure 8.}
+ 
+ {\bf We have figure out the our conclusions on removing the specific storage were incorect, we thank you for this comment, details are explained in the paper. Figure 8 updated.}
+ 
+ 
+\end{enumerate}
+
+
+\begin{enumerate}
+ \item {\it As this study aims to identify non-uniqueness of parameters it is critical that the inverse problem is solved properly and converged solutions are obtained. It is clear from a number of the objective vs parameter plots that the GA obtained solutions have not converged. What is currently claimed as non-uniqueness could be merely a characterization of the poor convergence of the optimizer as opposed something inherent to the problem. This is confirmed with the statement that the GA strategy may compute dominated solutions, this is not sensible at all as these clearly indicate sub-optimality. Non converged solutions should be refined e.g. GA + Nelder-Mead / gradient based strategy to obtain converged solutions, converged solutions must be ensured at all cost before this work can be published. The authors have to do due diligence here
+ to avoid making improper conclusions about the nature of the problem.}
+
+{\it we have updated the methodology by emplying gradient based method for each identified optima by GA, all response plots, were the optima wasn't reached were updated, see our updated methodology in the paper.}
+
+\item {\it The authors consider the discretization error and it would significantly enhance the quality of the manuscript if they properly quantify the effect of the discretization error for all local minima and not only selected ones. Hence, parameters for r0, r1 and r2 should be presented (it would be convenient to display them on a single graph) and the variance in the parameters quantified.}
+
+{\bf All rejected optima had usually a huge value of objective functions. Our genetic algorithm defines an optimum as a point, were the objective function doesn't decrease anymore, which can also be a case, were the objective function space is flat or has a saddle point. These solutions has to be simply rejected. Yes, the reponse plots were added into a single graph for a better overview. } 
+
+\item { \it 22 SR experiments are conducted and reduced to an expected value using a smoothing operation. Including the variance of experimental data in this study would significantly enhance the merit of the work. Suggestions is to show the parameters for the expected value, as well as one standard deviation away from the expected value to quantify the variance of the parameters based on the experimental data, this would indicate valid ranges of the parameters that one can expect and allow for a holistic view on ill-posed nature of the problem when including uncertainty in the experimental data.}
+
+{\bf We are aware that representing  series of experiments requires uncertainty analyses, quantification of data variance, etc. But this was already part of a different co-author's paper. Since this paper as well as the journal is rather focused on algorithmization than data presentation, we have decided to simplify the experimental data description. A detailed data analyses can be found in the references given. The designed procedure should be a problem independent. However, standard deviations were added. }
+
+\end{enumerate}
+
+\end{letter}
+
+
+
+
+
+
+\end{document}
