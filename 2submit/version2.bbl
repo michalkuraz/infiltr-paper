@@ -1,0 +1,421 @@
+\begin{thebibliography}{57}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angulo-Jaramillo et~al.(2000)Angulo-Jaramillo, Vandervaere, Roulier,
+  Thony, Gaudet, and Vauclin]{AnguloJaramillo}
+R.~Angulo-Jaramillo, J.-P. Vandervaere, S.~Roulier, J.-L. Thony, J.-P. Gaudet,
+  and M.~Vauclin.
+\newblock Field measurement of soil surface hydraulic properties by disc and
+  ring infiltrometers: A review and recent developments.
+\newblock {\em\JournalTitle{Soil Tillage Res.}}, 55\penalty0 (1–2):\penalty0
+  1--29, 2000.
+
+\bibitem[Bagarello et~al.(2017)Bagarello, Prima, and Iovino]{BAGARELLO201770}
+V.~Bagarello, S.~D. Prima, and M.~Iovino.
+\newblock Estimating saturated soil hydraulic conductivity by the near
+  steady-state phase of a beerkan infiltration test.
+\newblock {\em\JournalTitle{Geoderma}}, 303\penalty0 (Supplement C):\penalty0
+  70 -- 77, 2017.
+
+\bibitem[Bear(1979)]{bear1979}
+J.~Bear.
+\newblock \emph{Hydraulics of groundwater}.
+\newblock McGraw-Hill series in water resources and environmental engineering.
+  McGraw-Hill International Book Co., 1979.
+
+\bibitem[Binley and Beven(2003)]{beven2003-uncertain}
+A.~Binley and K.~Beven.
+\newblock Vadose zone flow model uncertainty as conditioned on geophysical
+  data.
+\newblock {\em\JournalTitle{Ground Water}}, 41\penalty0 (2):\penalty0 119--127,
+  2003.
+
+\bibitem[Braess(1997)]{braess}
+D.~Braess.
+\newblock \emph{Finite elements: Theory, fast solvers, and applications in
+  solid mechanics}.
+\newblock Cambridge University Press, 1997.
+
+\bibitem[Buckingham(1907)]{buckingham}
+E.~Buckingham.
+\newblock Studies on the movement of soil moisture.
+\newblock {\em\JournalTitle{USDA Bureau of Soils -- Bulletin}}, 38, 1907.
+
+\bibitem[Celia et~al.(1990)Celia, Bouloutas, and Zarba]{celia}
+M.~A. Celia, E.~T. Bouloutas, and R.~L. Zarba.
+\newblock A general mass-conservative numerical solution for the unsaturated
+  flow equation.
+\newblock {\em\JournalTitle{Water Resources Research}}, 26\penalty0
+  (7):\penalty0 1483--1496, 1990.
+
+\bibitem[Cheng et~al.(2011)Cheng, Chen, Chen, Zhang, and Ling]{Cheng}
+Q.~Cheng, X.~Chen, X.~Chen, Z.~Zhang, and M.~Ling.
+\newblock Water infiltration underneath single-ring permeameters and hydraulic
+  conductivity determination.
+\newblock {\em\JournalTitle{J. Hydrol.}}, 398\penalty0 (1–2):\penalty0
+  135--143, 2011.
+
+\bibitem[Christie et~al.(1976)Christie, Griffiths, Mitchell, and
+  Zienkiewicz]{zienkiewicz1976}
+I.~Christie, D.~F. Griffiths, A.~R. Mitchell, and O.~C. Zienkiewicz.
+\newblock Finite element methods for second order differential equations with
+  significant first derivatives.
+\newblock {\em\JournalTitle{International Journal for Numerical Methods in
+  Engineering}}, 10\penalty0 (6):\penalty0 1389--1396, 1976.
+
+\bibitem[Dusek et~al.(2009)Dusek, Dohnal, and Vogel]{Dusek}
+J.~Dusek, M.~Dohnal, and T.~Vogel.
+\newblock Numerical analysis of ponded infiltration experiment under different
+  experimental conditions.
+\newblock {\em\JournalTitle{Soil and Water Research}}, 4\penalty0 (SPECIAL
+  ISSUE 2):\penalty0 22--27, 2009.
+
+\bibitem[Fodor et~al.(2011)Fodor, Sándor, Orfánus, Lichner, and
+  Rajkai]{Fodor}
+N.~Fodor, R.~Sándor, T.~Orfánus, L.~Lichner, and K.~Rajkai.
+\newblock Evaluation method dependency of measured saturated hydraulic
+  conductivity.
+\newblock {\em\JournalTitle{Geoderma}}, 165\penalty0 (1):\penalty0 60--68,
+  2011.
+
+\bibitem[Hrstka and Kucerova(2004)]{Hrstka}
+O.~Hrstka and A.~Kucerova.
+\newblock Improvements of real coded genetic algorithms based on differential
+  operators preventing premature convergence.
+\newblock {\em\JournalTitle{Advances in Engineering Software}}, 35\penalty0
+  (3):\penalty0 237 -- 246, 2004.
+
+\bibitem[Hwang and Powers(2003)]{ihlwang2003}
+S.~I. Hwang and S.~E. Powers.
+\newblock Estimating unique soil hydraulic parameters for sandy media from
+  multi-step outflow experiments.
+\newblock {\em\JournalTitle{Advances in Water Resources}}, 26\penalty0
+  (4):\penalty0 445 -- 456, 2003.
+
+\bibitem[Ibrahimbegovi\'c et~al.(2004)Ibrahimbegovi\'c, Knopf-Lenoir, Kucerova,
+  and Villon]{grade}
+A.~Ibrahimbegovi\'c, C.~Knopf-Lenoir, A.~Kucerova, and P.~Villon.
+\newblock Optimal design and optimal control of structures undergoing finite
+  rotations and elastic deformations.
+\newblock {\em\JournalTitle{International Journal for Numerical Methods in
+  Engineering}}, 61\penalty0 (14):\penalty0 2428--2460, 2004.
+
+\bibitem[Inoue et~al.(2000)Inoue, \v{S}im\o{u}nek, Shiozawa, and
+  Hopmans]{simunek-infiltr2shp}
+M.~Inoue, J.~\v{S}im\o{u}nek, S.~Shiozawa, and J.~Hopmans.
+\newblock Simultaneous estimation of soil hydraulic and solute transport
+  parameters from transient infiltration experiments.
+\newblock {\em\JournalTitle{Advances in Water Resources}}, 23\penalty0
+  (7):\penalty0 677 -- 688, 2000.
+
+\bibitem[Jačka et~al.(2012)Jačka, Pavlásek, Jindrová, Bašta, Černý,
+  Balvín, and Pech]{Jacka2}
+L.~Jačka, J.~Pavlásek, M.~Jindrová, P.~Bašta, M.~Černý, A.~Balvín, and
+  P.~Pech.
+\newblock Steady infiltration rates estimated for a mountain forest catchment
+  based on the distribution of plant species.
+\newblock {\em\JournalTitle{J. For. Sci.}}, 58\penalty0 (12):\penalty0
+  536--544, 2012.
+
+\bibitem[Jačka et~al.(2014)Jačka, Pavlásek, Kuráž, and Pech]{Jacka1}
+L.~Jačka, J.~Pavlásek, V.~Kuráž, and P.~Pech.
+\newblock A comparison of three measuring methods for estimating the saturated
+  hydraulic conductivity in the shallow subsurface layer of mountain podzols.
+\newblock {\em\JournalTitle{Geoderma}}, 219--220\penalty0 (0):\penalty0 82 --
+  88, 2014.
+
+\bibitem[Jačka et~al.(2016)Jačka, Pavlásek, Pech, and Kuráž]{jacka-site}
+L.~Jačka, J.~Pavlásek, P.~Pech, and V.~Kuráž.
+\newblock Assessment of evaluation methods using infiltration data measured in
+  heterogeneous mountain soils.
+\newblock {\em\JournalTitle{Geoderma}}, 276:\penalty0 74 -- 83, 2016.
+
+\bibitem[Kamali and Zand-Parsa({2016})]{Kamali}
+H.~R. Kamali and S.~Zand-Parsa.
+\newblock Optimization of a new inverse method for estimation of individual
+  soil hydraulic parameters under field conditions.
+\newblock {\em\JournalTitle{{Transactions of the ASABE}}}, {59}\penalty0
+  ({5}):\penalty0 {1257--1266}, {2016}.
+
+\bibitem[Knobloch(2008)]{knobloch2008}
+P.~Knobloch.
+\newblock On the choice of the supg parameter at outflow boundary layers.
+\newblock {\em\JournalTitle{Advances in Computational Mathematics}},
+  31\penalty0 (4):\penalty0 369, Apr 2008.
+
+\bibitem[Kohne et~al.(2006)Kohne, Mohanty, and Simunek]{simunek2-infiltr2shp}
+J.~Kohne, B.~Mohanty, and J.~Simunek.
+\newblock Inverse dual-permeability modeling of preferential water flow in a
+  soil column and implications for field-scale solute transport.
+\newblock {\em\JournalTitle{Vadose zone journal}}, 5\penalty0 (1):\penalty0 59
+  -- 76, 2006.
+
+\bibitem[Kool et~al.(1985)Kool, Parker, and Van~Genuchten]{kool1985}
+J.~Kool, J.~Parker, and M.~Van~Genuchten.
+\newblock Determining soil hydraulic properties from one-step outflow
+  experiments by parameter estimation. i. theory and numerical studies.
+\newblock {\em\JournalTitle{Soil Science Society of America}}, 49:\penalty0
+  1348 -- 1354, 1985.
+
+\bibitem[Kowalsky et~al.({2004})Kowalsky, Finsterle, and Rubin]{Kowalsky04}
+M.~Kowalsky, S.~Finsterle, and Y.~Rubin.
+\newblock {Estimating flow parameter distributions using ground-penetrating
+  radar and hydrological measurements during transient flow in the vadose
+  zone}.
+\newblock {\em\JournalTitle{Advances in Water Resources}}, {27}\penalty0
+  ({6}):\penalty0 {583--599}, {JUN} {2004}.
+
+\bibitem[Kucerova(2007)]{Kucerova:2007:PHD}
+A.~Kucerova.
+\newblock \emph{Identification of nonlinear mechanical model parameters based
+  on softcomputing methods}.
+\newblock PhD thesis, Ecole Normale Sup\'erieure de Cachan, Laboratoire de
+  M\'ecanique et Technologie, 2007.
+
+\bibitem[Kuraz and Mayer(2013)]{mojeacta}
+M.~Kuraz and P.~Mayer.
+\newblock Algorithms for solving darcian flow in structured porous media.
+\newblock {\em\JournalTitle{Acta Polytecnica}}, 53\penalty0 (4):\penalty0
+  347--358, 2013.
+
+\bibitem[Kuraz et~al.(2010)Kuraz, Mayer, Lep\v{s}, and
+  Trpko\v{s}ov\'a]{Kuraz:2010:JCAM}
+M.~Kuraz, P.~Mayer, M.~Lep\v{s}, and D.~Trpko\v{s}ov\'a.
+\newblock An adaptive time discretization of the classical and the dual
+  porosity model of {R}ichards' equation.
+\newblock {\em\JournalTitle{Journal of Computational and Applied Mathematics}},
+  233:\penalty0 3167--3177, 2010.
+\newblock ISSN: 0377-0427.
+
+\bibitem[Kuraz et~al.(2008)Kuraz, Mayer, and Bl\"ocher]{drutes}
+M.~Kuraz, P.~Mayer, and J.~R. Bl\"ocher.
+\newblock {DRUtES} -- an opensource library for solving coupled nonlinear
+  convection-diffusion-reaction equations,, 2008.
+\newblock Development version 2018, \newline \url{http://www.drutes.org}~~.
+
+\bibitem[Kuraz et~al.(2013{\natexlab{a}})Kuraz, Mayer, Havlicek, and
+  Pech]{mojecomp}
+M.~Kuraz, P.~Mayer, V.~Havlicek, and P.~Pech.
+\newblock Domain decomposition adaptivity for the richards equation model.
+\newblock {\em\JournalTitle{Computing}}, 95\penalty0 (1):\penalty0 501--519,
+  2013{\natexlab{a}}.
+
+\bibitem[Kuraz et~al.(2013{\natexlab{b}})Kuraz, Mayer, Havlicek, Pech, and
+  Pavlasek]{mojeamc}
+M.~Kuraz, P.~Mayer, V.~Havlicek, P.~Pech, and J.~Pavlasek.
+\newblock Dual permeability variably saturated flow and contaminant transport
+  modeling of a nuclear waste repository with capillary barrier protection.
+\newblock {\em\JournalTitle{Applied Mathematics and Computation}}, 219\penalty0
+  (13):\penalty0 7127 -- 7138, 2013{\natexlab{b}}.
+
+\bibitem[Kuraz et~al.(2014)Kuraz, Mayer, and Pech]{mojejcam2}
+M.~Kuraz, P.~Mayer, and P.~Pech.
+\newblock Solving the nonlinear richards equation model with adaptive domain
+  decomposition.
+\newblock {\em\JournalTitle{Journal of Computational and Applied Mathematics}},
+  270:\penalty0 2 -- 11, 2014.
+\newblock Fourth International Conference on Finite Element Methods in
+  Engineering and Sciences (FEMTEC 2013).
+
+\bibitem[Kuraz et~al.(2015)Kuraz, Mayer, and Pech]{mojeamc2}
+M.~Kuraz, P.~Mayer, and P.~Pech.
+\newblock Solving the nonlinear and nonstationary richards equation with
+  two-level adaptive domain decomposition (dd-adaptivity).
+\newblock {\em\JournalTitle{Applied Mathematics and Computation}},
+  267:\penalty0 207 -- 222, 2015.
+
+\bibitem[Lassabatère et~al.(2006)Lassabatère, Angulo-Jaramillo, Soria~Ugalde,
+  Cuenca, Braud, and Haverkamp]{infiltr2shp}
+L.~Lassabatère, R.~Angulo-Jaramillo, J.~M. Soria~Ugalde, R.~Cuenca, I.~Braud,
+  and R.~Haverkamp.
+\newblock Beerkan estimation of soil transfer parameters through infiltration
+  experiments--best.
+\newblock {\em\JournalTitle{Soil Science Society of America Journal}},
+  70\penalty0 (7):\penalty0 521 -- 532, 2006.
+
+\bibitem[Leps(2007)]{Leps2007}
+M.~Leps.
+\newblock Parallel multi-objective identification of material parameters for
+  concrete.
+\newblock In \emph{Proceedings of the Ninth International Conference on the
+  Application of Artificial Intelligence to Civil, Structural and Environmental
+  Engineering, Stirling: Civil-Comp Press Ltd}, 2007.
+
+\bibitem[Mous(1993)]{mous1993}
+S.~Mous.
+\newblock Identification of the movement of water in unsaturated soils: the
+  problem of identifiability of the model.
+\newblock {\em\JournalTitle{Journal of Hydrology}}, 143\penalty0 (1):\penalty0
+  153 -- 167, 1993.
+\newblock XVI General Assembly of the European Geophysical Society.
+
+\bibitem[Nakhaei and Amiri({2015})]{Nakhaei}
+M.~Nakhaei and V.~Amiri.
+\newblock Estimating the unsaturated soil hydraulic properties from a
+  redistribution experiment: Application to synthetic data.
+\newblock {\em\JournalTitle{Journal of Porous Media}}, {18}\penalty0
+  ({7}):\penalty0 {717--729}, {2015}.
+
+\bibitem[Peña-Sancho et~al.(2017)Peña-Sancho, Ghezzehei, Latorre,
+  González-Cebollada, and Moret-Fernández]{pena17}
+C.~Peña-Sancho, T.~Ghezzehei, B.~Latorre, C.~González-Cebollada, and
+  D.~Moret-Fernández.
+\newblock Upward infiltration–evaporation method to estimate soil hydraulic
+  properties.
+\newblock {\em\JournalTitle{Hydrological Sciences Journal}}, 62\penalty0
+  (10):\penalty0 1683--1693, 2017.
+
+\bibitem[Ramos et~al.({2006})Ramos, Goncalves, Martins, van Genuchten, and
+  Pires]{Ramos}
+T.~Ramos, M.~Goncalves, J.~Martins, M.~van Genuchten, and F.~Pires.
+\newblock {Estimation of soil hydraulic properties from numerical inversion of
+  tension disk infiltrometer data}.
+\newblock {\em\JournalTitle{Vadose Zone Journal}}, {5}\penalty0 ({2}):\penalty0
+  {684--696}, {MAY} {2006}.
+
+\bibitem[Reynolds(2008{\natexlab{a}})]{ReynoldsWD}
+W.~D. Reynolds.
+\newblock \emph{Saturated hydraulic properties: Ring infiltrometer, in: Carter
+  M.R., Gregorich, E.G. [Eds.], Soil Sampling and Methods of Analysis, 2nd ed}.
+\newblock CRC Press Taylor \& Francis, Boca Raton, USA, pp. 1043--1056,
+  2008{\natexlab{a}}.
+
+\bibitem[Reynolds(2008{\natexlab{b}})]{ReynoldsWDGP}
+W.~D. Reynolds.
+\newblock \emph{Saturated hydraulic properties: Well permeameter, in: Carter
+  M.R., Gregorich, E.G. [Eds.], Soil Sampling and Methods of Analysis, 2nd ed}.
+\newblock CRC Press Taylor \& Francis, Boca Raton, USA, pp. 1025--1042,
+  2008{\natexlab{b}}.
+
+\bibitem[Rezaei et~al.(2016)Rezaei, Seuntjens, Shahidi, Joris, Boënne,
+  Al-Barri, and Cornelis]{rezaei}
+M.~Rezaei, P.~Seuntjens, R.~Shahidi, I.~Joris, W.~Boënne, B.~Al-Barri, and
+  W.~Cornelis.
+\newblock The relevance of in-situ and laboratory characterization of sandy
+  soil hydraulic properties for soil water simulations.
+\newblock {\em\JournalTitle{Journal of Hydrology}}, 534:\penalty0 251 -- 265,
+  2016.
+
+\bibitem[Richards(1931)]{richards}
+L.~A. Richards.
+\newblock Capillary conduction of liquids through porous mediums.
+\newblock {\em\JournalTitle{Journal of Applied Physics}}, 1\penalty0
+  (5):\penalty0 318--333, 1931.
+
+\bibitem[Roos et~al.(1996)]{roos-layers}
+G.~Roos, H., M.~Stynes, and L.~Tobiska.
+\newblock \emph{Numerical Methods for Singularly Perturbed Differential
+  Equations, Convection-Diffusion and Flow Problems}.
+\newblock Springer-Verlag Berlin Heidelberg, 1996.
+
+\bibitem[Saltelli et~al.(2000)]{kniha-citlivost}
+A.~Saltelli, K.~Chan, and E.~Scott.
+\newblock \emph{Sensitivity Analysis}.
+\newblock Wiley series in probabillity analysis. John Wiley \& Sons, 2000.
+
+\bibitem[Schaap et~al.(2001)Schaap, Leij, and van Genuchten]{Schaap}
+M.~G. Schaap, F.~J. Leij, and M.~T. van Genuchten.
+\newblock rosetta: a computer program for estimating soil hydraulic parameters
+  with hierarchical pedotransfer functions.
+\newblock {\em\JournalTitle{J. Hydrol.}}, 251\penalty0 (3–4):\penalty0 163 --
+  176, 2001.
+
+\bibitem[Scharnagl et~al.(2011)Scharnagl, Vrugt, Vereecken, and
+  Herbst]{scharnagl}
+B.~Scharnagl, J.~A. Vrugt, H.~Vereecken, and M.~Herbst.
+\newblock Inverse modelling of in situ soil water dynamics: investigating the
+  effect of different prior distributions of the soil hydraulic parameters.
+\newblock {\em\JournalTitle{Hydrology and Earth System Sciences}}, 15\penalty0
+  (10):\penalty0 3043--3059, 2011.
+
+\bibitem[Schwartz and Evett({2002})]{Schwartz}
+R.~Schwartz and S.~Evett.
+\newblock {Estimating hydraulic properties of a fine-textured soil using a disc
+  infiltrometer}.
+\newblock {\em\JournalTitle{Soil Science Society of America Journal}},
+  {66}\penalty0 ({5}):\penalty0 {1409--1423}, {2002}.
+
+\bibitem[Simunek et~al.(1998)Simunek, van Genuchten, Gribb, and
+  Hopmans]{Simunek1}
+J.~Simunek, T.~van Genuchten, M., M.~Gribb, and J.~W. Hopmans.
+\newblock Parameter estimation of unsaturated soil hydraulic properties from
+  transient flow processes1.
+\newblock {\em\JournalTitle{Soil Tillage Res.}}, 47\penalty0 (1–2):\penalty0
+  27 -- 36, 1998.
+
+\bibitem[Simunek et~al.({1999})Simunek, Wendroth, and van Genuchten]{Simunek2}
+J.~Simunek, O.~Wendroth, and M.~van Genuchten.
+\newblock {Estimating unsaturated soil hydraulic properties from laboratory
+  tension disc infiltrometer experiments}.
+\newblock {\em\JournalTitle{Water Resources Research}}, {35}\penalty0
+  ({10}):\penalty0 {2965--2979}, {OCT} {1999}.
+
+\bibitem[Swartzendruber({1987})]{Swartzendruber}
+D.~Swartzendruber.
+\newblock { A Quasi-Solution of Richards Equation for the Downward Infiltration
+  of Water into Soil}.
+\newblock {\em\JournalTitle{{Water Resour. Res.}}}, {23}\penalty0
+  ({5}):\penalty0 {809--817}, {MAY} {1987}.
+
+\bibitem[van Genuchten et~al.(2009)van Genuchten, Simunek, Leiji, and
+  Sejna]{retc}
+M.~T. van Genuchten, J.~Simunek, F.~J. Leiji, and M.~Sejna.
+\newblock {RETC}, version 6.02 -- code for quantifying the hydraulic functions
+  of unsaturated soils., 2009.
+
+\bibitem[van Genuchten(1980)]{vangenuchten}
+M.~van Genuchten.
+\newblock Closed-form equation for predicting the hydraulic conductivity of
+  unsaturated soils.
+\newblock {\em\JournalTitle{Soil Science Society of America Journal}},
+  44\penalty0 (5):\penalty0 892--898, 1980.
+
+\bibitem[Ventrella et~al.(2005)Ventrella, Losavio, Vonella, and
+  Leij]{Ventrella}
+D.~Ventrella, N.~Losavio, A.~Vonella, and F.~Leij.
+\newblock Estimating hydraulic conductivity of a fine-textured soil using
+  tension infiltrometry.
+\newblock {\em\JournalTitle{Geoderma}}, 124\penalty0 (3–4):\penalty0 267 --
+  277, 2005.
+
+\bibitem[Verbist et~al.({2009})Verbist, Cornelis, Gabriels, Alaerts, and
+  Soto]{Verbist}
+K.~Verbist, W.~M. Cornelis, D.~Gabriels, K.~Alaerts, and G.~Soto.
+\newblock {Using an inverse modelling approach to evaluate the water retention
+  in a simple water harvesting technique}.
+\newblock {\em\JournalTitle{Hydrology and Earth System Sciences}},
+  {13}\penalty0 ({10}):\penalty0 {1979--1992}, {2009}.
+
+\bibitem[Vitingerova(2010)]{vitingerova:2010}
+Z.~Vitingerova.
+\newblock \emph{Evolutionary Algorithms for Multi-Objective Parameter
+  Estimation}.
+\newblock PhD thesis, CTU in Prague, Fac. of Civil Eng., 2010.
+
+\bibitem[Xu et~al.(2012)Xu, Lewis, Liu, Albertson, and Kiely]{XU201234}
+X.~Xu, C.~Lewis, W.~Liu, J.~Albertson, and G.~Kiely.
+\newblock Analysis of single-ring infiltrometer data for soil hydraulic
+  properties estimation: Comparison of best and wu methods.
+\newblock {\em\JournalTitle{Agricultural Water Management}}, 107\penalty0
+  (Supplement C):\penalty0 34 -- 41, 2012.
+
+\bibitem[Younes et~al.(2017)Younes, Mara, Fahs, Grunberger, and
+  Ackerer]{hess-Younes-2017}
+A.~Younes, T.~Mara, M.~Fahs, O.~Grunberger, and P.~Ackerer.
+\newblock Hydraulic and transport parameter assessment using column
+  infiltration experiments.
+\newblock {\em\JournalTitle{Hydrology and Earth System Sciences}}, 21\penalty0
+  (5):\penalty0 2263--2275, 2017.
+
+\bibitem[Zou et~al.(2001)Zou, Young, Li, and Wierenga]{zou200126}
+Z.-Y. Zou, M.~Young, Z.~Li, and P.~Wierenga.
+\newblock Estimation of depth averaged unsaturated soil hydraulic properties
+  from infiltration experiments.
+\newblock {\em\JournalTitle{Journal of Hydrology}}, 242\penalty0
+  (1–2):\penalty0 26 -- 42, 2001.
+
+\end{thebibliography}

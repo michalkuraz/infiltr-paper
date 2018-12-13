@@ -1,0 +1,67 @@
+# t3d -d 100.0
+# obal hranice
+vertex 1 xyz 2.0 -280.0 0.0 property 101
+vertex 2 xyz 72.5 -280.0 0.0 property 101
+vertex 3 xyz 72.5 0.0 0.0 property 101
+vertex 4 xyz 15.2 0.0 0.0  property 101
+vertex 5 xyz 15.2 -12.5 0.0 property 101
+vertex 6 xyz 15.0 -12.5 0.0 property 101
+vertex 7 xyz 15.0 0.0 0.0 property 102
+vertex 8 xyz 2.0 0.0 0.0 property 102 
+#------
+
+# vrstvy
+#1. vrstva
+vertex 9 xyz 2.0 -7.5 0.0 
+vertex 10 xyz 15.0 -7.5 0.0
+vertex 11 xyz 15.2 -7.5 0.0 
+vertex 12 xyz 72.5 -7.5 0.0
+
+#2. vrstva
+vertex 13 xyz 2.0 -20.0 0.0
+vertex 14 xyz 72.5 -20.0 0.0
+
+#3. vrstva
+vertex 15 xyz 2.0 -30.0 0.0
+vertex 16 xyz 72.5 -30.0 0.0
+
+
+
+curve 1 vertex 8 9 size 2.0 property 101
+curve 2 vertex 9 13 size 2.0 property 101
+curve 3 vertex 13 15 size 2.0 property 101
+curve 4 vertex 15 1 size 2.0 property 101
+
+#curve 5 vertex 1 2 16 property 101
+curve 5 vertex 1 2 property 101
+curve 6 vertex 16 14 property 101
+curve 7 vertex 14 12 property 101
+curve 8 vertex 12 3 property 101
+curve 9 vertex 3 4 property 101
+curve 10 vertex 4 11 size 7.5 property 101
+#curve 11 vertex 11 5 6 10 size 7.5 property 101 
+curve 11 vertex 11 5 size 7.5 property 101
+curve 12 vertex 10 7 size 7.5 property 101
+
+curve 13 vertex 7 8 size 7.5 property 102
+
+
+
+
+curve 14 vertex 9 10 
+curve 15 vertex 11 12
+curve 16 vertex 13 14
+curve 17 vertex 15 16 
+
+curve 18 vertex 2 16 property 101
+
+curve 19 vertex 5 6 size 7.5 property 101
+curve 20 vertex 6 10 size 7.5 property 101
+
+patch 1 normal 0 0 1 boundary curve 1 14 12 13 size 7.5 property 10001
+patch 2 normal 0 0 1 boundary curve 10 15 8 9 size 20.0 property 10001
+patch 3 normal 0 0 1 boundary curve 2 16 7 -15 11 19 20 -14 size 7.5  property 10002
+patch 4 normal 0 0 1 boundary curve 3 17 6 -16 size 10.0 property 10003
+patch 5 normal 0 0 1 boundary curve 4 5 18 -17 size 100 property 10003   
+
+

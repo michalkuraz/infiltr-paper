@@ -9,32 +9,20 @@
   
  DRUtES is initialising, reading input files
  ---------------------------------------------------------------
- 19hrs : 47min : 43.442s  -  2018/12/11    total number of parallel images is:                    1
+ 16hrs : 22min : 32.226s  -  2018/12/13    total number of parallel images is:                    1
  ---------------------------------------------------------------
- 19hrs : 47min : 43.442s  -  2018/12/11    reading input files and allocating...
+ 16hrs : 22min : 32.226s  -  2018/12/13    reading input files and allocating...
  ---------------------------------------------------------------
- 19hrs : 47min : 43.498s  -  2018/12/11    number of nodes:                 3453 number of elements:                 6614
+ 16hrs : 22min : 32.673s  -  2018/12/13    number of nodes:                32328 number of elements:                64080
  ---------------------------------------------------------------
- 19hrs : 47min : 43.580s  -  2018/12/11    calculating elements geometrical properties...
+ 16hrs : 22min : 32.696s  -  2018/12/13    calculating elements geometrical properties...
  ---------------------------------------------------------------
- 19hrs : 47min : 43.634s  -  2018/12/11    analyzing mesh structure...
+ 16hrs : 22min : 32.730s  -  2018/12/13    analyzing mesh structure...
  ---------------------------------------------------------------
- 19hrs : 47min : 43.637s  -  2018/12/11    creating graph of the discretization mesh, and searching for boundary nodes...
+ 16hrs : 22min : 32.753s  -  2018/12/13    creating graph of the discretization mesh, and searching for boundary nodes...
  ---------------------------------------------------------------
- 19hrs : 47min : 43.767s  -  2018/12/11    DRUtES solves Richards' equation, in                    2 D, in cylindric coordinates and axysimmetric flow, in total hydraulic head form.
+ 16hrs : 22min : 36.595s  -  2018/12/13    DRUtES solves Richards' equation, in                    2 D, in cylindric coordinates and axysimmetric flow, in total hydraulic head form.
  ---------------------------------------------------------------
- 19hrs : 47min : 43.768s  -  2018/12/11    making output files for observation time
+ 16hrs : 22min : 36.595s  -  2018/12/13    making output files for observation time
  ---------------------------------------------------------------
- 19hrs : 47min : 45.566s  -  2018/12/11    go 4 solving
- ---------------------------------------------------------------
- 22hrs : 31min : 20.798s  -  2018/12/11    making output files for observation time
- ---------------------------------------------------------------
- 22hrs : 31min : 22.524s  -  2018/12/11    # real elapsed CPU time =   2.72650037977430555555555555555555549 hrs
- ---------------------------------------------------------------
- 22hrs : 31min : 22.524s  -  2018/12/11    minimal adjusted time step was   9.99999999999999999999999999999999930E-0007
- ---------------------------------------------------------------
- 22hrs : 31min : 22.524s  -  2018/12/11    F I N I S H E D !!!!!
- ---------------------------------------------------------------
- 22hrs : 31min : 22.524s  -  2018/12/11    Peak RAM  consumption on image                    1 was:                16380 kB
- ---------------------------------------------------------------
- 22hrs : 31min : 22.524s  -  2018/12/11    Peak SWAP consumption on image                    1 was:                    0 kB
+ 16hrs : 22min : 41.550s  -  2018/12/13    go 4 solving
