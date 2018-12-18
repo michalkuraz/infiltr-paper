@@ -28,6 +28,12 @@ DRU = function(){
   
 
   write(errorCumi, file="objfnc.val")
+  
+  itcounts=read.table("out/itcount")
+   
+  val=sum(itcounts[,2])
+  
+  write(errorCumi, file="itcount.val")
 
 
 }

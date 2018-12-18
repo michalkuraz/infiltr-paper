@@ -29,6 +29,10 @@ function run_drutes {
   
   #evaluation of objective function
   Rscript ../evol4grad.R
+  
+  read itcount<itcount.val
+  
+  echo $a $itcount >> ../itcounts
 
   cd ..
     
