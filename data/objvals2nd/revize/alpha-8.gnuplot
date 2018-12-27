@@ -8,14 +8,14 @@
 
 
 # bod 5 -------------------------------
-ylow=0.02
-yhigh=0.08
+ylow=0.012
+yhigh=0.018
 xbod=0.00380
 ymax=0.0227
 xmax=0.0036
 ymin=0.02
-xlow=0.0032
-xhigh=0.0044
+xlow=0.002
+xhigh=0.0036
 
 
 set yrange[ylow:yhigh]
@@ -48,11 +48,11 @@ xpos11=(0.00406-0.0032)*xscale + xlow
 ypos11=(0.064-0.02)*yscale + ylow
 set object 1 rect from xpos1,ypos1 to xpos11,ypos11 lw 5
 
-xtext=(0.00357-xlow)*xscale + xlow
-ytext=(0.066 - ylow)*yscale + ylow
+xtext=(0.00357-0.0032)*xscale + xlow
+ytext=(0.066 - 0.02)*yscale + ylow
 
 set label 1 at xtext, ytext
-set label 1 "identified {/Symbol a}=0.00380 cm^{-1} for r_f=0"
+set label 1 "identified {/Symbol a}=0.00255 cm^{-1} for r_f=0"
 
 xpos2=(0.00356-0.0032)*xscale + xlow
 ypos2=(0.059-0.02)*yscale + ylow
@@ -110,21 +110,21 @@ set object 6 rect from xpos4,ypos4 to xpos44,ypos44 lw 5 fs empty border lc rgb 
 # set label 5 at x5, y5
 # set label 5 "r_f=2, 2^{nd} iter. "
 
-x6=(0.00357-xlow)*xscale +xlow
-y6=(0.057-ylow)*yscale + ylow
+x6=(0.00357-0.0032)*xscale + xlow
+y6=(0.057-0.02)*yscale + ylow
 set label 6 at x6,y6
-set label 6 "identified {/Symbol a}=0.00395 cm^{-1} for r_f=1"
+set label 6 "identified {/Symbol a}=0.00306 cm^{-1} for r_f=1"
 
 
 set size ratio 0.5
 set terminal postscript enhanced colour "Helvetica" 16 lw 3
 # set terminal latex
-set output "alpha-5.eps"
+set output "alpha-6.eps"
 
 
 
-f(x) = 43301.1685333345*(x-0.0002)**2 - 328.182481513453*(x-0.0002) + 0.656148123558243
-plot "../../objvals/results-0-0/alpha-4-par.val" smooth unique w l lw 3 dt 2 linecolor rgb "red"  title "r_f=0, 1^{st} iter." ,  "../../objvals/results-1-1/alpha-5-par.val"  smooth unique w l lw 3  dt 2 linecolor rgb "blue" title "r_f=1, 1^{st} iter." , "+" u 1:(NaN) title " " w dots linecolor rgb "white",  "alpha-1-par.val" smooth unique w l lw 3   linecolor rgb "red"  title   "r_f=1, 2^{nd} iter." , f(x)   lw 3   linecolor rgb "blue"  title "r_f=2, 2^{nd} iter.", "alpha-0.ext" pt 1 ps 5  lc rgb '#008800'  lw 5 notitle , "alpha-1.ext" pt 2 ps 5  lc rgb '#880080' lw 5 notitle 
+# f(x) = 43301.1685333345*(x-0.0002)**2 - 328.182481513453*(x-0.0002) + 0.656148123558243
+plot "../../objvals/results-0-0/alpha-5-par.val" smooth unique w l lw 3 dt 2 linecolor rgb "red"  title "r_f=0, 1^{st} iter." ,  "../../objvals/results-1-1/alpha"  smooth unique w l lw 3  dt 2 linecolor rgb "blue" title "r_f=1, 1^{st} iter." , "+" u 1:(NaN) title " " w dots linecolor rgb "white",  "alpha2" smooth unique w l lw 3   linecolor rgb "red"  title   "r_f=1, 2^{nd} iter." ,  "rf2/alpha2" smooth unique w l lw 3   linecolor rgb "blue"  title "r_f=2, 2^{nd} iter.", "alpha2-0.ext" pt 1 ps 5  lc rgb '#008800'  lw 2 notitle , "alpha2-1.ext" pt 2 ps 5  lc rgb '#880080' lw 2 notitle 
 #----------------------------------------------------------------------------------
 
 
