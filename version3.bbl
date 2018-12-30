@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{49}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -305,13 +305,6 @@ D.~Rypl.
 A.~Saltelli, K.~Chan, and E.~Scott.
 \newblock \emph{Sensitivity Analysis}.
 \newblock Wiley series in probabillity analysis. John Wiley \& Sons, 2000.
-
-\bibitem[Schaap et~al.(2001)Schaap, Leij, and van Genuchten]{Schaap}
-M.~G. Schaap, F.~J. Leij, and M.~T. van Genuchten.
-\newblock rosetta: a computer program for estimating soil hydraulic parameters
-  with hierarchical pedotransfer functions.
-\newblock {\em\JournalTitle{J. Hydrol.}}, 251\penalty0 (3–4):\penalty0 163 --
-  176, 2001.
 
 \bibitem[Swartzendruber({1987})]{Swartzendruber}
 D.~Swartzendruber.

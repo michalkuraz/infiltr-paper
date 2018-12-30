@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.10.22)  19 DEC 2018 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.10.22)  30 DEC 2018 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1959,34 +1959,34 @@ File: omstxr.fd 2000/12/15 v3.1
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 164.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 224--224
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\OT1/txr/m/n/8 GP ex-per-i-ment
  []
 
-<valec-exp.pdf, id=240, 397.485pt x 614.295pt>
+<valec-exp.pdf, id=236, 397.485pt x 614.295pt>
 File: valec-exp.pdf Graphic file (type pdf)
  <use valec-exp.pdf>
-Package pdftex.def Info: valec-exp.pdf used on input line 244.
+Package pdftex.def Info: valec-exp.pdf used on input line 245.
 (pdftex.def)             Requested size: 138.07863pt x 213.39566pt.
- [4 <./valec-exp.pdf>] [5] <valcovazk.pdf, id=278, 397.485pt x 614.295pt>
+ [4 <./valec-exp.pdf>] [5] <valcovazk.pdf, id=277, 397.485pt x 614.295pt>
 File: valcovazk.pdf Graphic file (type pdf)
 
 <use valcovazk.pdf>
 Package pdftex.def Info: valcovazk.pdf used on input line 294.
 (pdftex.def)             Requested size: 138.07863pt x 213.39566pt.
- <schemabc.pdf, id=281, 397.485pt x 614.295pt>
+ <schemabc.pdf, id=280, 397.485pt x 614.295pt>
 File: schemabc.pdf Graphic file (type pdf)
 
 <use schemabc.pdf>
 Package pdftex.def Info: schemabc.pdf used on input line 324.
 (pdftex.def)             Requested size: 147.28549pt x 227.62204pt.
  [6 <./valcovazk.pdf>] [7 <./schemabc.pdf>]
-<infilsit.pdf, id=308, 597.23125pt x 845.1575pt>
+<infilsit.pdf, id=307, 597.23125pt x 845.1575pt>
 File: infilsit.pdf Graphic file (type pdf)
  <use infilsit.pdf>
 Package pdftex.def Info: infilsit.pdf used on input line 373.
 (pdftex.def)             Requested size: 221.17258pt x 312.9803pt.
- [8 <./infilsit.pdf>] <data/mesh-evals/site-eval.pdf, id=329, 397.485pt x 614.2
+ [8 <./infilsit.pdf>] <data/mesh-evals/site-eval.pdf, id=328, 397.485pt x 614.2
 95pt>
 File: data/mesh-evals/site-eval.pdf Graphic file (type pdf)
 
@@ -1994,18 +1994,21 @@ File: data/mesh-evals/site-eval.pdf Graphic file (type pdf)
 Package pdftex.def Info: data/mesh-evals/site-eval.pdf used on input line 401.
 (pdftex.def)             Requested size: 202.52058pt x 312.9803pt.
 Package epstopdf Info: Source file: <data/mesh-evals/meshdiff.eps>
-(epstopdf)                    date: 2018-12-14 11:09:48
-(epstopdf)                    size: 28514 bytes
+(epstopdf)                    date: 2018-12-30 21:16:50
+(epstopdf)                    size: 27260 bytes
 (epstopdf)             Output file: <data/mesh-evals/meshdiff-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2018-12-14 11:09:48
-(epstopdf)                    size: 7773 bytes
+(epstopdf)                    date: 2018-12-30 21:53:56
+(epstopdf)                    size: 7833 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/mesh-evals/meshdiff-e
 ps-converted-to.pdf data/mesh-evals/meshdiff.eps>
 (epstopdf)             \includegraphics on input line 401.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/mesh-evals/meshdiff-eps-converted-to.pdf, id=330, 505.89pt x 722.7pt>
+
+pdfTeX warning: pdflatex (file ./data/mesh-evals/meshdiff-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<data/mesh-evals/meshdiff-eps-converted-to.pdf, id=329, 505.89pt x 722.7pt>
 File: data/mesh-evals/meshdiff-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/mesh-evals/meshdiff-eps-converted-to.pdf>
@@ -2016,8 +2019,12 @@ input line 401.
 
 LaTeX Warning: Reference `shp' on page 10 undefined on input line 443.
 
-[10 <./data/mesh-evals/meshdiff-eps-converted-to.pdf>] [11] [12] [13]
-<flowchart/Flow_chart_cb_new.png, id=459, 761.84625pt x 1119.18124pt>
+[10 <./data/mesh-evals/meshdiff-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `krivka' on page 11 undefined on input line 469.
+
+[11] [12] [13]
+<flowchart/Flow_chart_cb_new.png, id=457, 761.84625pt x 1119.18124pt>
 File: flowchart/Flow_chart_cb_new.png Graphic file (type png)
 
 <use flowchart/Flow_chart_cb_new.png>
@@ -2048,7 +2055,7 @@ Package epstopdf Info: Source file: <images/badfit/2.eps>
 ted-to.pdf images/badfit/2.eps>
 (epstopdf)             \includegraphics on input line 777.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/2-eps-converted-to.pdf, id=514, 505.89pt x 722.7pt>
+<images/badfit/2-eps-converted-to.pdf, id=512, 505.89pt x 722.7pt>
 File: images/badfit/2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/2-eps-converted-to.pdf>
@@ -2066,7 +2073,7 @@ ed-to.pdf images/hezky/1.eps>
 (epstopdf)             \includegraphics on input line 779.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/hezky/1-eps-converted-to.pdf, id=515, 505.89pt x 722.7pt>
+<images/hezky/1-eps-converted-to.pdf, id=513, 505.89pt x 722.7pt>
 File: images/hezky/1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/hezky/1-eps-converted-to.pdf>
@@ -2087,7 +2094,7 @@ onverted-to.pdf data/objvals/alpha-4.eps>
 (epstopdf)             \includegraphics on input line 795.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/alpha-4-eps-converted-to.pdf, id=539, 505.89pt x 722.7pt>
+<data/objvals/alpha-4-eps-converted-to.pdf, id=537, 505.89pt x 722.7pt>
 File: data/objvals/alpha-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/alpha-4-eps-converted-to.pdf>
@@ -2105,7 +2112,7 @@ rted-to.pdf data/objvals/n-4.eps>
 (epstopdf)             \includegraphics on input line 797.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/n-4-eps-converted-to.pdf, id=540, 505.89pt x 722.7pt>
+<data/objvals/n-4-eps-converted-to.pdf, id=538, 505.89pt x 722.7pt>
 File: data/objvals/n-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/n-4-eps-converted-to.pdf>
@@ -2123,7 +2130,7 @@ rted-to.pdf data/objvals/n-5.eps>
 (epstopdf)             \includegraphics on input line 805.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/n-5-eps-converted-to.pdf, id=542, 505.89pt x 722.7pt>
+<data/objvals/n-5-eps-converted-to.pdf, id=540, 505.89pt x 722.7pt>
 File: data/objvals/n-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/n-5-eps-converted-to.pdf>
@@ -2131,17 +2138,20 @@ Package pdftex.def Info: data/objvals/n-5-eps-converted-to.pdf used on input li
 ne 805.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <data/objvals/Ss-6.eps>
-(epstopdf)                    date: 2018-04-23 18:51:17
-(epstopdf)                    size: 27466 bytes
+(epstopdf)                    date: 2018-12-20 00:43:35
+(epstopdf)                    size: 25960 bytes
 (epstopdf)             Output file: <data/objvals/Ss-6-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-23 21:43:47
-(epstopdf)                    size: 8994 bytes
+(epstopdf)                    date: 2018-12-30 21:53:57
+(epstopdf)                    size: 8320 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/Ss-6-eps-conv
 erted-to.pdf data/objvals/Ss-6.eps>
 (epstopdf)             \includegraphics on input line 807.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ss-6-eps-converted-to.pdf, id=543, 505.89pt x 722.7pt>
+
+pdfTeX warning: pdflatex (file ./data/objvals/Ss-6-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<data/objvals/Ss-6-eps-converted-to.pdf, id=541, 505.89pt x 722.7pt>
 File: data/objvals/Ss-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ss-6-eps-converted-to.pdf>
@@ -2159,7 +2169,7 @@ ted-to.pdf images/fitrf1/7.eps>
 (epstopdf)             \includegraphics on input line 837.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/7-eps-converted-to.pdf, id=546, 505.89pt x 722.7pt>
+<images/fitrf1/7-eps-converted-to.pdf, id=544, 505.89pt x 722.7pt>
 File: images/fitrf1/7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/7-eps-converted-to.pdf>
@@ -2177,7 +2187,7 @@ nverted-to.pdf images/fitrf1/7-new.eps>
 (epstopdf)             \includegraphics on input line 839.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/7-new-eps-converted-to.pdf, id=547, 505.89pt x 722.7pt>
+<images/fitrf1/7-new-eps-converted-to.pdf, id=545, 505.89pt x 722.7pt>
 File: images/fitrf1/7-new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/7-new-eps-converted-to.pdf>
@@ -2199,7 +2209,7 @@ converted-to.pdf data/objvals2nd/ths-4.eps>
 (epstopdf)             \includegraphics on input line 851.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/ths-4-eps-converted-to.pdf, id=596, 505.89pt x 722.7pt>
+<data/objvals2nd/ths-4-eps-converted-to.pdf, id=594, 505.89pt x 722.7pt>
 File: data/objvals2nd/ths-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/ths-4-eps-converted-to.pdf>
@@ -2217,7 +2227,7 @@ nverted-to.pdf data/objvals2nd/n-4.eps>
 (epstopdf)             \includegraphics on input line 853.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/n-4-eps-converted-to.pdf, id=597, 505.89pt x 722.7pt>
+<data/objvals2nd/n-4-eps-converted-to.pdf, id=595, 505.89pt x 722.7pt>
 File: data/objvals2nd/n-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/n-4-eps-converted-to.pdf>
@@ -2235,7 +2245,7 @@ to.pdf images/retc.eps>
 (epstopdf)             \includegraphics on input line 895.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/retc-eps-converted-to.pdf, id=601, 505.89pt x 722.7pt>
+<images/retc-eps-converted-to.pdf, id=599, 505.89pt x 722.7pt>
 File: images/retc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/retc-eps-converted-to.pdf>
@@ -2283,7 +2293,7 @@ Package epstopdf Info: Source file: <images/badfit/1.eps>
 ted-to.pdf images/badfit/1.eps>
 (epstopdf)             \includegraphics on input line 971.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/1-eps-converted-to.pdf, id=682, 505.89pt x 722.7pt>
+<images/badfit/1-eps-converted-to.pdf, id=681, 505.89pt x 722.7pt>
 File: images/badfit/1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/1-eps-converted-to.pdf>
@@ -2317,7 +2327,7 @@ ted-to.pdf images/badfit/3.eps>
 (epstopdf)             \includegraphics on input line 981.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/3-eps-converted-to.pdf, id=683, 505.89pt x 722.7pt>
+<images/badfit/3-eps-converted-to.pdf, id=682, 505.89pt x 722.7pt>
 File: images/badfit/3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/3-eps-converted-to.pdf>
@@ -2335,7 +2345,7 @@ ted-to.pdf images/badfit/4.eps>
 (epstopdf)             \includegraphics on input line 983.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/4-eps-converted-to.pdf, id=684, 505.89pt x 722.7pt>
+<images/badfit/4-eps-converted-to.pdf, id=683, 505.89pt x 722.7pt>
 File: images/badfit/4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/4-eps-converted-to.pdf>
@@ -2353,7 +2363,7 @@ ted-to.pdf images/badfit/5.eps>
 (epstopdf)             \includegraphics on input line 991.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/5-eps-converted-to.pdf, id=685, 505.89pt x 722.7pt>
+<images/badfit/5-eps-converted-to.pdf, id=684, 505.89pt x 722.7pt>
 File: images/badfit/5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/5-eps-converted-to.pdf>
@@ -2371,7 +2381,7 @@ rted-to.pdf images/goodfit/6.eps>
 (epstopdf)             \includegraphics on input line 993.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/6-eps-converted-to.pdf, id=686, 505.89pt x 722.7pt>
+<images/goodfit/6-eps-converted-to.pdf, id=685, 505.89pt x 722.7pt>
 File: images/goodfit/6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/6-eps-converted-to.pdf>
@@ -2389,7 +2399,7 @@ rted-to.pdf images/goodfit/7.eps>
 (epstopdf)             \includegraphics on input line 1000.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/7-eps-converted-to.pdf, id=687, 505.89pt x 722.7pt>
+<images/goodfit/7-eps-converted-to.pdf, id=686, 505.89pt x 722.7pt>
 File: images/goodfit/7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/7-eps-converted-to.pdf>
@@ -2407,7 +2417,7 @@ rted-to.pdf images/goodfit/8.eps>
 (epstopdf)             \includegraphics on input line 1002.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/8-eps-converted-to.pdf, id=688, 505.89pt x 722.7pt>
+<images/goodfit/8-eps-converted-to.pdf, id=687, 505.89pt x 722.7pt>
 File: images/goodfit/8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/8-eps-converted-to.pdf>
@@ -2470,7 +2480,7 @@ erted-to.pdf data/objvals/Ks-4.eps>
 (epstopdf)             \includegraphics on input line 1024.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ks-4-eps-converted-to.pdf, id=691, 505.89pt x 722.7pt>
+<data/objvals/Ks-4-eps-converted-to.pdf, id=690, 505.89pt x 722.7pt>
 File: data/objvals/Ks-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ks-4-eps-converted-to.pdf>
@@ -2488,7 +2498,7 @@ verted-to.pdf data/objvals/ths-4.eps>
 (epstopdf)             \includegraphics on input line 1026.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/ths-4-eps-converted-to.pdf, id=692, 505.89pt x 722.7pt>
+<data/objvals/ths-4-eps-converted-to.pdf, id=691, 505.89pt x 722.7pt>
 File: data/objvals/ths-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/ths-4-eps-converted-to.pdf>
@@ -2506,7 +2516,7 @@ erted-to.pdf data/objvals/Ss-4.eps>
 (epstopdf)             \includegraphics on input line 1033.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ss-4-eps-converted-to.pdf, id=693, 505.89pt x 722.7pt>
+<data/objvals/Ss-4-eps-converted-to.pdf, id=692, 505.89pt x 722.7pt>
 File: data/objvals/Ss-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ss-4-eps-converted-to.pdf>
@@ -2525,7 +2535,7 @@ onverted-to.pdf data/objvals/alpha-5.eps>
 (epstopdf)             \includegraphics on input line 1042.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/alpha-5-eps-converted-to.pdf, id=696, 505.89pt x 722.7pt>
+<data/objvals/alpha-5-eps-converted-to.pdf, id=695, 505.89pt x 722.7pt>
 File: data/objvals/alpha-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/alpha-5-eps-converted-to.pdf>
@@ -2559,7 +2569,7 @@ erted-to.pdf data/objvals/Ks-5.eps>
 (epstopdf)             \includegraphics on input line 1052.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ks-5-eps-converted-to.pdf, id=697, 505.89pt x 722.7pt>
+<data/objvals/Ks-5-eps-converted-to.pdf, id=696, 505.89pt x 722.7pt>
 File: data/objvals/Ks-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ks-5-eps-converted-to.pdf>
@@ -2577,7 +2587,7 @@ verted-to.pdf data/objvals/ths-5.eps>
 (epstopdf)             \includegraphics on input line 1054.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/ths-5-eps-converted-to.pdf, id=698, 505.89pt x 722.7pt>
+<data/objvals/ths-5-eps-converted-to.pdf, id=697, 505.89pt x 722.7pt>
 File: data/objvals/ths-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/ths-5-eps-converted-to.pdf>
@@ -2595,7 +2605,7 @@ erted-to.pdf data/objvals/Ss-5.eps>
 (epstopdf)             \includegraphics on input line 1061.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ss-5-eps-converted-to.pdf, id=699, 505.89pt x 722.7pt>
+<data/objvals/Ss-5-eps-converted-to.pdf, id=698, 505.89pt x 722.7pt>
 File: data/objvals/Ss-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ss-5-eps-converted-to.pdf>
@@ -2647,7 +2657,7 @@ erted-to.pdf data/objvals/Ks-6.eps>
 (epstopdf)             \includegraphics on input line 1080.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/Ks-6-eps-converted-to.pdf, id=735, 505.89pt x 722.7pt>
+<data/objvals/Ks-6-eps-converted-to.pdf, id=733, 505.89pt x 722.7pt>
 File: data/objvals/Ks-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/Ks-6-eps-converted-to.pdf>
@@ -2665,7 +2675,7 @@ verted-to.pdf data/objvals/ths-6.eps>
 (epstopdf)             \includegraphics on input line 1082.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals/ths-6-eps-converted-to.pdf, id=736, 505.89pt x 722.7pt>
+<data/objvals/ths-6-eps-converted-to.pdf, id=734, 505.89pt x 722.7pt>
 File: data/objvals/ths-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/ths-6-eps-converted-to.pdf>
@@ -2673,11 +2683,11 @@ Package pdftex.def Info: data/objvals/ths-6-eps-converted-to.pdf used on input
 line 1082.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <data/objvals/Ss-6.eps>
-(epstopdf)                    date: 2018-04-23 18:51:17
-(epstopdf)                    size: 27466 bytes
+(epstopdf)                    date: 2018-12-20 00:43:35
+(epstopdf)                    size: 25960 bytes
 (epstopdf)             Output file: <data/objvals/Ss-6-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-23 21:43:47
-(epstopdf)                    size: 8994 bytes
+(epstopdf)                    date: 2018-12-30 21:53:57
+(epstopdf)                    size: 8320 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/Ss-6-eps-conv
 erted-to.pdf data/objvals/Ss-6.eps>
 (epstopdf)             \includegraphics on input line 1089.
@@ -2743,7 +2753,7 @@ ted-to.pdf images/fitrf1/8.eps>
 (epstopdf)             \includegraphics on input line 1110.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/8-eps-converted-to.pdf, id=739, 505.89pt x 722.7pt>
+<images/fitrf1/8-eps-converted-to.pdf, id=737, 505.89pt x 722.7pt>
 File: images/fitrf1/8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/8-eps-converted-to.pdf>
@@ -2761,7 +2771,7 @@ nverted-to.pdf images/fitrf1/8-new.eps>
 (epstopdf)             \includegraphics on input line 1112.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/8-new-eps-converted-to.pdf, id=740, 505.89pt x 722.7pt>
+<images/fitrf1/8-new-eps-converted-to.pdf, id=738, 505.89pt x 722.7pt>
 File: images/fitrf1/8-new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/8-new-eps-converted-to.pdf>
@@ -2796,7 +2806,7 @@ s-converted-to.pdf data/objvals2nd/alpha-3.eps>
 (epstopdf)             \includegraphics on input line 1124.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/alpha-3-eps-converted-to.pdf, id=776, 505.89pt x 722.7pt>
+<data/objvals2nd/alpha-3-eps-converted-to.pdf, id=774, 505.89pt x 722.7pt>
 File: data/objvals2nd/alpha-3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/alpha-3-eps-converted-to.pdf>
@@ -2814,7 +2824,7 @@ nverted-to.pdf data/objvals2nd/n-3.eps>
 (epstopdf)             \includegraphics on input line 1126.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/n-3-eps-converted-to.pdf, id=777, 505.89pt x 722.7pt>
+<data/objvals2nd/n-3-eps-converted-to.pdf, id=775, 505.89pt x 722.7pt>
 File: data/objvals2nd/n-3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/n-3-eps-converted-to.pdf>
@@ -2833,7 +2843,7 @@ onverted-to.pdf data/objvals2nd/Ks-3.eps>
 (epstopdf)             \includegraphics on input line 1134.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/Ks-3-eps-converted-to.pdf, id=778, 505.89pt x 722.7pt>
+<data/objvals2nd/Ks-3-eps-converted-to.pdf, id=776, 505.89pt x 722.7pt>
 File: data/objvals2nd/Ks-3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/Ks-3-eps-converted-to.pdf>
@@ -2852,7 +2862,7 @@ converted-to.pdf data/objvals2nd/ths-3.eps>
 (epstopdf)             \includegraphics on input line 1136.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/ths-3-eps-converted-to.pdf, id=779, 505.89pt x 722.7pt>
+<data/objvals2nd/ths-3-eps-converted-to.pdf, id=777, 505.89pt x 722.7pt>
 File: data/objvals2nd/ths-3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/ths-3-eps-converted-to.pdf>
@@ -2871,7 +2881,7 @@ s-converted-to.pdf data/objvals2nd/alpha-4.eps>
 (epstopdf)             \includegraphics on input line 1144.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/alpha-4-eps-converted-to.pdf, id=780, 505.89pt x 722.7pt>
+<data/objvals2nd/alpha-4-eps-converted-to.pdf, id=778, 505.89pt x 722.7pt>
 File: data/objvals2nd/alpha-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/alpha-4-eps-converted-to.pdf>
@@ -2906,7 +2916,7 @@ onverted-to.pdf data/objvals2nd/Ks-4.eps>
 (epstopdf)             \includegraphics on input line 1154.
 Package epstopdf Info: Output file is already uptodate.
 
-<data/objvals2nd/Ks-4-eps-converted-to.pdf, id=781, 505.89pt x 722.7pt>
+<data/objvals2nd/Ks-4-eps-converted-to.pdf, id=779, 505.89pt x 722.7pt>
 File: data/objvals2nd/Ks-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/Ks-4-eps-converted-to.pdf>
@@ -2949,7 +2959,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1169.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1169.
 
 Package rerunfilecheck Info: File `version3.out' has not changed.
-(rerunfilecheck)             Checksum: E08D7DF9CA23B5A0B22E24E16D25FF51;2109.
+(rerunfilecheck)             Checksum: 6EF079FF994450D745D7A9E86ECBF67C;2028.
 
 
 LaTeX Warning: There were undefined references.
@@ -2960,10 +2970,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1169.
  ) 
 Here is how much of TeX's memory you used:
- 36319 strings out of 493013
- 756229 string characters out of 6135681
- 687167 words of memory out of 5000000
- 39112 multiletter control sequences out of 15000+600000
+ 36313 strings out of 493013
+ 756136 string characters out of 6135681
+ 687077 words of memory out of 5000000
+ 39108 multiletter control sequences out of 15000+600000
  67223 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,121p,10414b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2981,10 +2991,10 @@ t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 bi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on version3.pdf (30 pages, 1096880 bytes).
+Output written on version3.pdf (30 pages, 1095868 bytes).
 PDF statistics:
- 1044 PDF objects out of 1200 (max. 8388607)
- 888 compressed objects within 9 object streams
- 185 named destinations out of 1000 (max. 500000)
- 439 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1042 PDF objects out of 1200 (max. 8388607)
+ 886 compressed objects within 9 object streams
+ 183 named destinations out of 1000 (max. 500000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -197,11 +197,13 @@ Section~\ref{bccond} discusses issues in creating the domain scheme and selectin
 
 \subsubsection{Site description and assembling the experimental data}%[lukas]
 \label{site}
-The study site is located in the \v{S}umava National Park, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented by \cite{Jacka2}.
-The soil profile is described by four different layers as seen on figure~\ref{experiment}. The average groundwater table level can be roughly estimated at -280~cm below the surface.
-The soil hydraulic properties of the lower layers were identified by Guelph permeameter measurements (GP) with a methodology described by~\cite{Jacka1}. 
-Table \ref{tab_SHP} shows SHP parameters for spodic and eluvial horizons E, Bhs/BS and C below the top-soil calculated with the pedotransfer function implemented in Rosetta~\citep{Schaap} based on soil texture and the bulk density measurements.
 
+\mich{In this section a brief description of the conducted experiments is given. Since this contribution is focused on calibration methodology, we will significantly reduce the experimental data description. And so this real-world example will be represented here by a single average data set. Complete statistical description of this experiment is given in~\citep{jacka-site}, whilst effects of the input data variability on the identified SHPs will be covered in another contribution.}
+
+
+The study site is located in the \v{S}umava National Park, Czech Republic, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented by \cite{Jacka2}.
+The soil profile is described by four different layers as seen on figure~\ref{experiment}. The average groundwater table level can be roughly estimated at -280~cm below the surface.
+The SHP of the lower layers were identified by Guelph permeameter measurements (GP) with a methodology described by~\cite{Jacka1}, and are presented in table~\ref{tab_SHP}. 
 
 
 
@@ -232,8 +234,7 @@ C & 8 & 0.50 & 0.035 & 4.030 &  3.060 & 0 \\
 \end{table*}
 
 
-\subsubsection{SR experimental setup}
-\label{krivka}
+
 
  
 
@@ -251,18 +252,17 @@ C & 8 & 0.50 & 0.035 & 4.030 &  3.060 & 0 \\
 The experimental setup of the SR experiment was as follows. A steel ring 30~cm in inner diameter, 25~cm in length, and 2~mm in thickness was inserted into the soil to a depth of 12.5~cm, see figure~\ref{experiment}. The depth of ponding was kept approximately at a constant level defined by a reference spike, which was placed 4~cm above the surface of the soil. The average experiment duration was 60~minutes.
 
 
-A total of 22 SR experiments were conducted on the site. In order to eliminate noise from the experimental values, each SR experiment data set was smoothed with the Swartzendruber analytical model \citep{Swartzendruber}
-%add citation to bibtex please: Swartzendruber, D., 1987. A quasi-solution of Richards equation for the downward inﬁltration of water into soil. Water Resour. Res. 23, 809–817. http://dx.doi.org/10.1029/WR023i005p00809.
-of one-dimensional infiltration, which exhibited an excellent fitting quality, with a mean Nash-Sutcliffe model efficiency coefficient  0.9974. The Swartzendruber equation for cumulative infiltration states that
+A total of 22 SR experiments were conducted on the site. \mich{In this paper, the experimental data will be represented  by a single average curve, which was analyticaly described by  Swartzendruber analytical model \citep{Swartzendruber}. A detailed description is given in~\citep{jacka-site}. 
+ The Swartzendruber equation for cumulative infiltration states that
 \begin{lineq}
 I(t)=\frac{c_0\left(1-\exp\left(-c_1\sqrt{t}\right)\right)}{c_1}+c_2t,
 \label{vyhlaz}
 \end{lineq}
-where $I$ is the cumulative infiltration [$L$], and $c_{0,1,2}$ are parameters. The Swartzendruber model can estimate 1D saturated conductivity and sorptivity of the soil. However, the model does not account for water moving horizontally and therefore overestimates the hydraulic conductivity and gives no information on water retention or unsaturated hydraulic conductivity and is therefore not sufficient. The Swartzendruber model was only considered as an exponential smoothing and interpolating function.
-
-
- 
-A statistical description of the Swartzendruber parameters and their fitting quality is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. The parameter set was used to compute the infiltration curve with \eqref{vyhlaz} for the identification of the SHP in the top soil layer.
+where $I$ is the cumulative infiltration [$L$], and $c_{0,1,2}$ are parameters. The Swartzendruber model 
+describes one-dimensional infiltration into homogeneous medium, and is therefore not sufficient. The Swartzendruber model was only considered as an  interpolating function.
+A statistical description of the Swartzendruber parameters and their fitting quality is given in~\citep{jacka-site}, see datasets collected on site 3. Representative mean values are as follows: $c_0 =5.130$~cm.hrs$^{-0.5}$, $c_1 = 1.13 \times 10^{-1}$~[-], and $c_2 = 1.858$~cm.hrs$^{-1}$. This parameter set together with \eqref{vyhlaz}  was used here to represent the input infiltration curve  for demonstrating the 
+proposed calibration methodology.
+}
 
 
 
