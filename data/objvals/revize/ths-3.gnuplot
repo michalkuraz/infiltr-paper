@@ -28,9 +28,9 @@ set label 1 "identified {/Symbol q}=0.362 "
 set grid
 set output
 
-set terminal postscript enhanced colour "Helvetica" 23 lw 3
+set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
-set output "ths-3.eps"
+set output "ths-6.eps"
 plot "ths-1-par.val" smooth unique w l lw 3 title "r_f=0" , "rf1/ths-1-par.val" smooth unique w l lw 3 title "r_f=1"
 #----------------------------------------------------------------------------------
 

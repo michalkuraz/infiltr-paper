@@ -1,14 +1,14 @@
 #a5=0.0016337
 #n5=1.3481
-a6=0.00258
-n6=1.95
-a7=0.0032285
-n7=1.4421
-a8=0.002276
-n8=1.5189
-ths6=0.401
-ths7=0.513
-ths8=0.236
+a6=2.775e-3
+n6=2.138
+a7=3.8e-3
+n7=1.30
+a8=3.06e-3
+n8=1.364
+ths6=0.362
+ths7=0.621
+ths8=0.243
 
 #f5(x)=1/(1+(-a5*x)**n5)**(1-1/n5)
 
@@ -26,11 +26,11 @@ set xlabel "pressure head [cm]"
 
 set ylabel "{/Symbol q}_s [-]"
 
-set terminal postscript enhanced lw 3 "Helvetica" 22 colour
+set terminal postscript enhanced lw 3 "Helvetica" 26 colour
 
 set grid
 
-set key top left
+set key bottom right
 
 set output "retc.eps"
 

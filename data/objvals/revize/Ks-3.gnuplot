@@ -7,10 +7,10 @@
 
 # bod 3 -------------------------------
 xbod=1.059653
-ymax=0.036
+ymax=0.04
 ymin=0.01
-xtext=0.94
-ytext=0.038
+xtext=0.92
+ytext=0.042
 
 # set yrange[0:0.11]
 set xlabel "K_s [cm.hrs^{-1}]"
@@ -29,9 +29,9 @@ set grid
 
 
 
-set terminal postscript enhanced colour "Helvetica" 23 lw 3
+set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
-set output "Ks-3.eps"
+set output "Ks-6.eps"
 plot "Ks-1-par.val" smooth unique w l lw 3 title "r_f=0" , "rf1/Ks-1-par.val" smooth unique w l lw 3 title "r_f=1"
 #----------------------------------------------------------------------------------
 

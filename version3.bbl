@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{56}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -45,6 +45,12 @@ E.~Buckingham.
 \newblock Studies on the movement of soil moisture.
 \newblock {\em\JournalTitle{USDA Bureau of Soils -- Bulletin}}, 38, 1907.
 
+\bibitem[Byrd et~al.(1995)Byrd, Lu, Nocedal, and Zhu]{byrd1995}
+R.~Byrd, P.~Lu, J.~Nocedal, and C.~Zhu.
+\newblock A limited memory algorithm for bound constrained optimization.
+\newblock {\em\JournalTitle{SIAM Journal on Scientific Computing}}, 16\penalty0
+  (5):\penalty0 1190--1208, 1995.
+
 \bibitem[Celia et~al.(1990)Celia, Bouloutas, and Zarba]{celia}
 M.~A. Celia, E.~T. Bouloutas, and R.~L. Zarba.
 \newblock A general mass-conservative numerical solution for the unsaturated
@@ -74,6 +80,13 @@ N.~Fodor, R.~Sándor, T.~Orfánus, L.~Lichner, and K.~Rajkai.
   conductivity.
 \newblock {\em\JournalTitle{Geoderma}}, 165\penalty0 (1):\penalty0 60--68,
   2011.
+
+\bibitem[Gong et~al.(2015)Gong, Duan, Li, Wang, di, ye, Miao, and
+  Dai]{Gong:2015}
+W.~Gong, Q.~Duan, J.~Li, C.~Wang, Z.~di, A.~ye, C.~Miao, and Y.~Dai.
+\newblock Multi-objective adaptive surrogate modeling-based optimization for
+  parameter estimation of large, complex geophysical models.
+\newblock {\em\JournalTitle{Water Resources Research}}, 52, 12 2015.
 
 \bibitem[Hrstka and Kucerova(2004)]{Hrstka}
 O.~Hrstka and A.~Kucerova.
@@ -127,6 +140,13 @@ L.~Jačka, J.~Pavlásek, P.~Pech, and V.~Kuráž.
   heterogeneous mountain soils.
 \newblock {\em\JournalTitle{Geoderma}}, 276:\penalty0 74 -- 83, 2016.
 
+\bibitem[Jensen(2004)]{Jensen:2004}
+M.~T. Jensen.
+\newblock Helper-objectives: Using multi-objective evolutionary algorithms for
+  single-objective optimisation.
+\newblock {\em\JournalTitle{Journal of Mathematical Modelling and Algorithms}},
+  pages 323--347, 2004.
+
 \bibitem[Kamali and Zand-Parsa({2016})]{Kamali}
 H.~R. Kamali and S.~Zand-Parsa.
 \newblock Optimization of a new inverse method for estimation of individual
@@ -139,6 +159,14 @@ P.~Knobloch.
 \newblock On the choice of the supg parameter at outflow boundary layers.
 \newblock {\em\JournalTitle{Advances in Computational Mathematics}},
   31\penalty0 (4):\penalty0 369, Apr 2008.
+
+\bibitem[Knowles et~al.(2001)Knowles, Watson, and Corne]{knowles:2001}
+J.~D. Knowles, R.~Watson, and D.~W. Corne.
+\newblock Reducing local optima in single-objective problems by
+  multi-objectivization.
+\newblock In \emph{First International Conference on Evolutionary
+  Multi-Criterion Optimization}, pages 269--283. Springer-Verlag. Lecture Notes
+  in Computer Science No. 1993, 2001.
 
 \bibitem[Kohne et~al.(2006)Kohne, Mohanty, and Simunek]{simunek2-infiltr2shp}
 J.~Kohne, B.~Mohanty, and J.~Simunek.
@@ -161,6 +189,12 @@ M.~Kowalsky, S.~Finsterle, and Y.~Rubin.
   zone}.
 \newblock {\em\JournalTitle{Advances in Water Resources}}, {27}\penalty0
   ({6}):\penalty0 {583--599}, {JUN} {2004}.
+
+\bibitem[Kruis et~al.(2002)Kruis, Matou\v{s}, and Dost\'{a}l]{kruis2002}
+J.~Kruis, K.~Matou\v{s}, and Z.~Dost\'{a}l.
+\newblock Solving laminated plates by domain decomposition.
+\newblock {\em\JournalTitle{Adv. Eng. Softw.}}, 33\penalty0 (7-10):\penalty0
+  445--452, 2002.
 
 \bibitem[Kucerova(2007)]{Kucerova:2007:PHD}
 A.~Kucerova.
@@ -262,6 +296,11 @@ C.~Peña-Sancho, T.~Ghezzehei, B.~Latorre, C.~González-Cebollada, and
 \newblock {\em\JournalTitle{Hydrological Sciences Journal}}, 62\penalty0
   (10):\penalty0 1683--1693, 2017.
 
+\bibitem[{R Core Team}(2017)]{R-env}
+{R Core Team}.
+\newblock \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2017.
+
 \bibitem[Reynolds(2008{\natexlab{a}})]{ReynoldsWD}
 W.~D. Reynolds.
 \newblock \emph{Saturated hydraulic properties: Ring infiltrometer, in: Carter
@@ -331,6 +370,12 @@ Z.~Vitingerova.
 \newblock \emph{Evolutionary Algorithms for Multi-Objective Parameter
   Estimation}.
 \newblock PhD thesis, CTU in Prague, Fac. of Civil Eng., 2010.
+
+\bibitem[Weise et~al.(2009)]{Weise:2009}
+T.~Weise, M.~Zapf, R.~Chiong, and A.~J. Nebro.
+\newblock \emph{Nature-Inspired Algorithms for Optimisation}, volume SCI 193,
+  chapter Why Is Optimization Difficult?, pages 1--50.
+\newblock Springer-Verlag Berlin Heidelberg, 2009.
 
 \bibitem[Xu et~al.(2012)Xu, Lewis, Liu, Albertson, and Kiely]{XU201234}
 X.~Xu, C.~Lewis, W.~Liu, J.~Albertson, and G.~Kiely.

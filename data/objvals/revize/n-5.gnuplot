@@ -26,9 +26,9 @@ set label 1 "identified n= 2.138"
 set grid
 set output
 
-set terminal postscript enhanced colour "Helvetica" 23 lw 3
+set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
-set output "n-5.eps"
-plot "n-1-par.val" smooth unique w l lw 3 title "r_f=1" ,"rf1/n-1-par.val" smooth unique w l lw 3 title "r_f=0"
+set output "n-6.eps"
+plot  "rf1/n-1-par.val" smooth unique w l lw 3 title "r_f=1", "n-1-par.val" smooth unique w l lw 3 title "r_f=0"
 #----------------------------------------------------------------------------------
 

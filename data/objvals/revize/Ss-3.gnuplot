@@ -30,9 +30,9 @@ set grid
 set output
 # set logscale x
 
-set terminal postscript enhanced colour "Helvetica" 23 lw 3
+set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
-set output "Ss-3.eps"
+set output "Ss-6.eps"
 plot "Ss-1-par.val" smooth unique w l lw 3 title "r_f=0" , "rf1/Ss-1-par.val" smooth unique w l lw 3 title "r_f=1"
 #----------------------------------------------------------------------------------
 

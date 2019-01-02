@@ -4,10 +4,10 @@
 
 # bod 6 -------------------------------
 xbod=0.002775
-ymax=0.05
+ymax=0.065
 ymin=0.01
 xtext=0.00243
-ytext=0.052
+ytext=0.07
 
 xrf1=0.0025
 yrf1=0.07
@@ -38,7 +38,7 @@ set label 1 "identified {/Symbol a}=0.002775 cm^{-1}"
 set grid
 set output
 
-set terminal postscript enhanced colour "Helvetica" 23 lw 3
+set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
 set output "alpha-6.eps"
 plot "alpha-1-par.val" smooth unique w l lw 3 title "r_f=1" , "rf1/alpha-1-par.val" smooth unique w l lw 3 title "r_f=0"
