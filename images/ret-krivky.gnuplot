@@ -20,7 +20,7 @@ f8(x)=ths8/(1+(-a8*x)**n8)**(1-1/n8)
 
 set xrange [-280:0]
 
- set yrange [0.:0.6]
+ set yrange [0.15:0.65]
 
 set xlabel "pressure head [cm]"
 
@@ -30,7 +30,7 @@ set terminal postscript enhanced lw 3 "Helvetica" 26 colour
 
 set grid
 
-set key bottom right
+set key center left
 
 set output "retc.eps"
 

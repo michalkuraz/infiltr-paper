@@ -48,6 +48,7 @@
 \usepackage{blindtext}
 \usepackage{todonotes}
 
+
  \RequirePackage{lineno} 
 
 % \bibliographystyle{model2-names}
@@ -72,7 +73,7 @@
 \newcommand{\fs}{\footnotesize}
     \renewcommand{\arraystretch}{1.5}
 
-\newcommand{\mich}[1]{{\color{blue}{#1}}}
+\newcommand{\mich}[1]{{\color{magenta}{#1}}}
 
 \journal{Computers \& Mathematics with Applications}
 
@@ -97,14 +98,11 @@
 \address[autor2]{Czech Technical University in Prague, Faculty of Civil Engineering, Department of Mechanics}
 
 \begin{abstract}
-This contribution evaluates a possibility of identification of soil hydraulic properties (SHP) from inverse modeling of a single ring (hereafter SR) infiltration experiment. The SR experiment is a standard and robust  dynamic field experiment. The steady state part of this experiment is traditionally used for an identification of saturated hydraulic conductivity. In this contribution, we explore the possibility of extending an applicability of this experiment for evaluating the unsaturated hydraulic parameters from an unsteady part of this experiment using inverse analyses of the governing flow motion equation.
+The single ring (hereafter SR) infiltration experiment is a standard and robust dynamic field experiment. The steady state part of this experiment is traditionally used for an identification of saturated hydraulic conductivity. In this contribution, we explore the possibility of extending an applicability of this experiment for evaluating the unsaturated hydraulic parameters from an unsteady part of this experiment for the top soil layer using inverse analyses of the governing flow motion equation.
 
+The problem of SR infiltration is governed by the qualisilinear Richards equation. We present a new scanning methodology to avoid convergence issues with the nonlinear operator, originating from difficult combinations of input parameters, which can be hard to avoid when automatically analyzing a broad parameter space. We validated our methodology with virtual infiltration problems for clay and sand, and applied it on real-world SR infiltration data. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching.
+Our results show the existence of multimodality in, both, the benchmark problems and the real-world problem. This is an important finding as local optima can be identified, which are not necessarily physical and also for systems that do not exhibit multimodal grain size distributions. The identified local optima were distinct and showed different retention and hydraulic conductivity curves. The most physical set of SHP could be identified with the knowledge of the saturated water content. 
 
-
-The problem of SR infiltration is governed by qualisilinear Richards equation.
-We further present a methodology to avoid convergence issues with the nonlinear operator, originating from non-physical combinations of input parameters, which can be hard to avoid when automaticaly analyzing broad parameter space.  With this methodology, we can answer (1) to what extent the well-known SR experiment is robust enough to provide a unique estimate of SHP parameters using the unsteady part of the infiltration experiment and (2) whether all parameters are vulnerable to non-uniqueness. We validated our methodology with synthetic infiltration benchmark problems for clay and sand, and applied on a real-world SR infiltration data. To evaluate non-uniqueness, local optima were identified and mapped using a modified genetic algorithm with niching, which is not possible with commonly used gradient methods. 
-
-Our results show the existence of multimodality in, both, the benchmark problems and the real-world problem. This is an important finding as local optima can be identified, which are not necessarily physical and also for systems that do not exhibit multimodal grain size distributions. The identified local optima were distinct and showed different retention and hydraulic conductivity curves. The most physical set of SHP could be identified with the knowledge of saturated water content, which makes it yet more obvious that expert knowledge is key in inverse modeling.   
 
 
 
@@ -134,7 +132,9 @@ Soil hydraulic properties (hereafter SHP) are important for many hydrological mo
 Due to the rocks present and the dense root system of the covering vegetation, and due to the possible extension of the representative elementary volume, it is often impossible to collect undisturbed samples of top-soil for laboratory measurements in order to obtain the SHP parameters~\citep{Jacka1}. The SHP of the topsoil are therefore very difficult to measure directly~\citep{Fodor, Jacka1}. 
 
 
-In our study, the well-known single ring (hereafter SR) method was used to obtain experimental input data (cumulative infiltration) for inverse modeling. The SR infiltrometer is a widely accepted, simple, robust field method, which is able to measure the infiltration process, which affects the entire soil profile including the top-soil,  and can sample a relatively large volume (depending on the diameter of the ring)~\citep{Cheng,ReynoldsWD}.  The SR infiltration experiment is an in situ experiment, which does not require soil samples to be collected, so the porous medium is kept relatively undisturbed. With the widely-used ring diameter of 30~cm, the affected porous media is far more representative than any soil sample we were able to collect. The top-soil can also be measured (with some alteration of the surface) using other well-known field infiltration methods, e.g. the tension infiltrometer or the well permeameter  \citep{AnguloJaramillo,ReynoldsWDGP}. 
+ 
+\mich{In our study, we explore an applicability of the well-known single ring (hereafter SR) infiltration for evaluating the SHPs of the top soil from an unsteady part of this experiment.}
+The SR infiltrometer is a widely accepted, simple, robust field method, which is able to measure the infiltration process, which affects the entire soil profile including the top-soil,  and can sample a relatively large volume (depending on the diameter of the ring)~\citep{Cheng,ReynoldsWD}.  The SR infiltration experiment is an in situ experiment, which does not require soil samples to be collected, so the porous medium is kept relatively undisturbed. With the widely-used ring diameter of 30~cm, the affected porous media is far more representative than any soil sample we were able to collect. The top-soil can also be measured (with some alteration of the surface) using other well-known field infiltration methods, e.g. the tension infiltrometer or the well permeameter  \citep{AnguloJaramillo,ReynoldsWDGP}. 
 
 The Richards equation~\citep{richards} describes flow in variably saturated porous media. In order to model environmental processes and engineering applications with the Richards equation knowledge of the SHP is essential. SHP can be summarized by the soil water retention curve and soil hydraulic conductivity curve. In this contribution, the SHP are parametrized with the frequently used Mualem-van Genuchten model~\citep{vangenuchten}. We refer to this model as REVG.
 
@@ -154,10 +154,12 @@ The non-uniqueness of the REVG inverse model is already a very well-known issue,
 \cite{mous1993} defined criteria for model identifiability based on the sensitivity matrix rank, however numerical computation of the sensitivity matrix, which is defined by the derivatives of the objective function, often involves difficulties in managing truncation and round-off errors.
 \cite{beven2003-uncertain} demonstrated on a real world case study of Sherwood Sandstone Aquifer that many different SHP parameters of macroscopic media can represent the layered unsaturated zone and provide acceptable simulations of the observed aquifer recharges.  \cite{mous1993} explained that in case of the absence of water content data, the residual water content should be excluded from the identification to avoid non-uniqueness. However, \cite{beven2003-uncertain} used
 a non-unique definition where both the unknown residual and saturated water content were considered.
-The definition of a unique inverse function for identification of macroscopic media was treated in~\citep{zou200126}, where the recommended approach was to assemble the objective function from transient data of the capillary pressure and from the steady state water content data. %Another issue is the equifinality in the mathematical model setup in terms of the initial and boundary condition data, this problem was studied by~\citep{klaus-hydrol}.
+The definition of a unique inverse function for identification of macroscopic media was treated in~\citep{zou200126}, where the recommended approach was to assemble the objective function from transient data of the capillary pressure and from the steady state water content data. 
 
 A challenging issue is the treatment of the nonlinear operator of the Richards equation. \cite{beven2003-uncertain} reported that 56\% of the simulations were rejected during Monte Carlo simulations on a wide range of parameters, because of convergence problems. 
-Their study did not mention explicitly why. We assume that these convergence issues originated from the nonlinear operator treatment.
+Their study did not mention explicitly why. \mich{ We assume that these convergence issues originated from 
+ difficult combinations of input parameters, which can be hard to avoid when automatically analyzing a broad parameter space. }
+
 
 The following questions arise: 
 \begin{itemize}
@@ -166,7 +168,12 @@ The following questions arise:
 \item  If not, are all parameters vulnerable to non-uniqueness?
 \end{itemize}
 
-To answer these questions we employed a new calibration methodology. 
+To answer these questions we employed a new calibration methodology.
+
+ \mich{The purpose of this paper is to answer the given research questions. The first part of the paper presents the real world background of the analyzed SR infiltration data. However, for the demonstrative purposes of this contribution, we have significantly reduced this data part, and only the mean values are analyzed here. Data error propagation and further statistical analyzes are beyond the scope of this paper. The major part of this paper is focused on a design calibration methodology of the SR experiment. We start with derivation of the governing equation for this class of problems. Numerical issues with convective term as well as the domain shape restrictions and boundary condition setup is given. Then we continue with a synthetic inverse problem with known exact solution, where we try to identify SHPs from cumulative fluxes across the Dirichlet boundary, which is an analogy to the infiltration experiment. Based on the results of this synthetic problem we construct calibration methodology. With the proposed calibration methodology we presume smooth and continuous convergence properties of the inverse problem, which is represented by a discrete analogue of the Richards equation, for both nonlinear operator stopping criterion, temporal discretization and spatial discretization. Based on the results from the synthetic problem, we are already aware of multimodality of this inverse model. In order to obtain a unique solution we employ an expert knowledge as a final decision making criterion, since each parametric set comes with a distinct porosity value. Despite we can't measure the exact porosity of the top soil layer, since it is impossible to collect undisturbed samples with representative volume size, and so removing this parameter from the inverse model is questionable, acceptable ranges of porosity form a part of the expert knowledge. 
+ 
+ In general, the proposed novel calibration methodology can be applied  for inverse analyses of quasi-linear parabolic differential equations, such as the Richards equation problems.
+ }
 
 
 
@@ -204,7 +211,7 @@ Section~\ref{bccond} discusses issues in creating the domain scheme and selectin
 
 The study site was located in the \v{S}umava National Park, Czech Republic, and has been described in \citep{Jacka1}. The location of the site in a map of Modrava 2 catchment is presented by \cite{Jacka2}.
 The soil profile is described by four different layers as seen on figure~\ref{experiment}. 
-\mich{Series of tension meter measurements of the top soil layer have been conducted on the site. The average soil suction head was estimated at 280~cm. If we further assume no-flow initial condition, then the average groundwater table can be roughly estimated at 280~cm below the surface. We are aware, that this assumption is a subject of a strong uncertainty. In a real world the soil suction head distribution is almost never hydrostatic (especially for this relatively humid mountainous region), as well as the tension meter data exhibit sever uncertainties. And so the estimated groundwater table is rather an overhead limit, which is already a significantly distant from the top-soil layer.}
+\mich{Series of tension meter measurements of the top soil layer have been conducted on the site. The average soil suction head was estimated at 280~cm. If we further assume no-flow initial condition, then the average groundwater table can be roughly estimated at 280~cm below the surface. We are aware, that this assumption is a subject of a strong uncertainty. In a real world the soil suction head distribution is almost never hydrostatic (especially for this relatively humid mountainous region), as well as the tension meter data exhibit sever uncertainties. And so the estimated groundwater table is rather an overhead limit, which is already a significantly distant from the top-soil layer. With such hydrogeological configuration the effect of groundwater on infiltration experiment is expected to vanish. }
 
 
 
@@ -446,7 +453,7 @@ detached for $r_{min}=$0.2,~1.0, and 2.0~cm from the center of anisotropy, were 
 \centering
 \rotatebox{-90}{
 \includegraphics[height=7cm]{data/mesh-dens/denses.eps}}
- \caption{Relation between the distance from the axis of anisotropy ($r_{min}$) and the mesh size (NDOFs), while maintaining the Peclet number of convective dominance~\eqref{peclet-re} at constant level. Over 100 meshes with T3D mesh generator~\cite{t3d} were generated for this plot, the relation is not monotoneous, since different mesh densities yield different triangularizations.}
+ \caption{Relation between the distance from the axis of anisotropy ($r_{min}$) and the mesh size (NDOFs), while maintaining the Peclet number of convective dominance~\eqref{peclet-re} at constant level. Over 100 meshes with T3D mesh generator~\citep{t3d} were generated for this plot, the relation is not monotoneous, since different mesh densities yield different triangularizations.}
  \label{mesh-dens}
 \end{figure}
 
@@ -455,7 +462,7 @@ detached for $r_{min}=$0.2,~1.0, and 2.0~cm from the center of anisotropy, were 
 \centering
 \rotatebox{-90}{
 \includegraphics[height=7cm]{data/mesh-evals2/mesh-diff.eps}}
- \caption{Relation between the distance from the axis of anisotropy ($r_{min}$) and the mesh size (NDOFs), while maintaining the Peclet number of convective dominance~\eqref{peclet-re} at constant level. Over 100 meshes with T3D mesh generator~\cite{t3d} were generated for this plot, the relation is not monotoneous, since different mesh densities yield different triangularizations.}
+ \caption{Difference between the cumulative volumetric flux across  the top Dirichlet boundary for the domains with $r_{min}$ offset 2.0~cm and 1.0~cm, and with $r_{min}$ offset 2.0~cm and 0.2~cm.}
  \label{mesh-evals2}
 \end{figure}
 
@@ -492,7 +499,7 @@ The objective function is defined in the following paragraph.
 
 Let $\bar{I}(\vec{p},t)$ be the cumulative infiltration obtained from solving the mathematical model~\eqref{richaxi} bounded by the initial and boundary conditions  defined in section~\ref{bccond} for a certain vector of SHP parameters $\vec{p}$ considered as
 \begin{lineq}\bar{I}(\vec{p},t) = \frac{\int\limits_0^t \int\limits_{\Gamma_1}-K \frac{\partial H}{\partial \vec{n}}(t)  \dd \Gamma_1 \dd t}{\int\limits_{\Gamma_1} \dd \Gamma_1}.\end{lineq}
-Let $I(t)$ be the cumulative infiltration given by \eqref{vyhlaz} with parameters given in section~\ref{krivka}.  
+Let $I(t)$ be the cumulative infiltration given by \eqref{vyhlaz} with parameters given in section~\ref{site}.  
 Then the objective function was defined for three different criteria in order to avoid ill-posed objective function definition.
 
  Both $\bar{I}(\vec{p},t)$ and $I(t)$ are continuous functions. Note please, that this is not a standard configuration. The objective functions were then defined as follows:
@@ -516,6 +523,8 @@ where $T_{end}$ is the final simulation time [$T$], which is indeed the root mea
 
 
 \end{enumerate}
+
+\mich{The first objective function~\eqref{objektiva1} refers to overall mismatch between the experimental and model data. The second objective function~\eqref{objektiva2} refers to a local mismatch, which  often appeared  in the early simulation time. Slight local mismatch in the initial simulation has typically low impact on~\eqref{objektiva1}, but points to a significantly different SHP set -- a local extreme. The third objective function~\eqref{objektiva3} points to saturated hydraulic conductivity. Again slight mismatch in the final derivative has low impact on the first objective function~\eqref{objektiva1}, but points to a significantly different saturated hydraulic conductivity.}
 
 We conducted multi-objective optimization. However, it is apparent that minimizing the objective function~\eqref{objektiva1} also minimizes the objective functions~\eqref{objektiva2} and \eqref{objektiva3}, \mich{and so we have introduced here a multiobjective definition with  non-competing objective functions. 
 
@@ -687,7 +696,43 @@ The calibration algorithm is described as follows:
 
 
 
+\mich{
+\subsection{Mathematical model of the synthetic infiltration experiment}
 
+The purpose of this benchmark example was to demonstrate, whether this class of problem -- identification of SHP parameters from cumulative flux measured at Dirichlet boundary -- can be affected by multimodality.
+
+
+ For simplicity only a one-dimensional infiltration problem was considered here. The governing equation~\eqref{richaxi} can be now formulated for one-dimensional problem as follows
+ \begin{lineq}
+ \frac{\dd \theta}{\dd h}\frac{\partial h}{\partial t} = \frac{\partial K(h) \frac{\partial  H}{\partial z}}{\partial z}.
+ \end{lineq}
+
+ 
+ 
+ 
+ 
+ Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
+ \begin{lineq}
+ \begin{split}
+ h(z,t) &= 0\, cm, \quad \forall (z,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
+  h(z,t) &= 0\, cm, \quad \forall (z,t) \in \Gamma_{top} \times  t \in [0, T_{end}) \\ 
+  H(z,t_0) &= 0\, cm , \quad \forall z \in \Omega,
+  \end{split}
+\end{lineq}
+ where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{e-1}~hrs. Two distinguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}.
+ 
+
+ 
+  The computational domain $\Omega$ was uniformly discretized with $\Delta x$=0.5~cm, the initial time step was $\Delta t$=\num{e-7}~hrs, and the error criterion from~\eqref{picard} for solving the nonlinear system~\eqref{matice} was   $\varepsilon$=\num{e-3}~cm.
+ 
+ The reference solutions both for sand and gravel media were obtained from  cumulative flux over the top Dirichlet boundary $\Gamma_{top}$.
+ 
+For the given reference solutions the inverse modeling algorithm described in section~\ref{optima} was employed for searching the original SHP parameters in broad ranges given in table~\ref{rozsahy}. 
+In order to avoid effects of numerical treatment of the Richards equation, the numerical solver had exactly the same configuration as the one used for the reference solution.
+
+
+
+}
 
 
  
@@ -701,29 +746,9 @@ This section begins with  a simple synthetic problem with known exact solution, 
 \subsection{Synthetic problem}
  \label{benchmarks}
  
-The purpose of this benchmark example was to demonstrate, whether this class of problem -- identification of SHP parameters from cumulative flux measured at Dirichlet boundary -- can be affected by multimodality.
-
-
- For simplicity only a one-dimensional Richards equation problem was considered here.  Dirichlet boundary conditions were presumed for both boundaries. The model setup state as follows. Computational domain was $\Omega=(0,100\,\mathrm{cm})$, and the boundary and initial conditions stated as follows
- \begin{lineq}
- \begin{split}
- h(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{bot} \times  t \in [0, T_{end}) \\ 
-  h(x,t) &= 0\, cm, \quad \forall (x,t) \in \Gamma_{top} \times  t \in [0, T_{end}) \\ 
-  H(x,t_0) &= 0\, cm , \quad \forall x \in \Omega,
-  \end{split}
-\end{lineq}
- where $\Gamma_{bot}=0.0$ cm, $\Gamma_{top}=100.0$ cm, and $T_{end}=$\num{e-1}~hrs. Two distinguished soil types were considered here -- clay loam and sand, the parameters were obtained from~\citep{retc}.
  
-
  
-  The computational domain $\Omega$ was uniformly discretized with $\Delta x$=0.5~cm, the initial time step was $\Delta t$=\num{e-7}~hrs, and the error criterion from~\eqref{picard} for solving the nonlinear system~\eqref{matice} was   $\varepsilon$=\num{e-3}~cm.
- 
- The reference solutions both for sand and gravel media were obtained from  cumulative flux over the top Dirichlet boundary $\Gamma_{top}$.
- 
-For the given reference solutions the inverse modeling algorithm described in section~\ref{optima} was employed for searching the original SHP parameters in broad ranges given in table~\ref{rozsahy}. 
-In order to avoid effects of numerical treatment of the Richards equation, the numerical solver had exactly the same configuration as the one used for the reference solution. 
- 
-
+Results of the synthetic problem are given in table~\ref{tab-benchres}. For these two different soil types involved  the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem. \mich{ The results of this synthetic problem supports the methodology given in section~\ref{methodo}.}
 
 
 
@@ -748,7 +773,7 @@ In order to avoid effects of numerical treatment of the Richards equation, the n
 \end{tabular}
 \end{table*}
 
-Results of the synthetic problem are given in table~\ref{tab-benchres}. For these two different soil types involved  the inverse modeling algorithm has found several local optima, and the low value of an objective function doesn't necessarily  point to the correct solution. Thus the problem is multi-modal. Several distinct SHP parameter sets can lead to acceptable solutions. However, the most distinct SHP parameter is the saturated water content $\theta_s$. It turns out that an expert knowledge is required here, to select an acceptable solution of this inverse problem.  
+
 
 
 
@@ -866,14 +891,14 @@ For the local extreme 6, the refined numerical treatment $r_f=1$
 
  
 
-\mich{For the local extremes 7 and 8, the refined numerical treatment $r_f=1$  significantly shifted with the objective function~\eqref{objektiva1}, and new parameter search was enforced. The response plots of the objective function are depicted in figures~\ref{objfnc7} and \ref{objfnc8}. The plots for the $r_f$=0 and $r_f$=1 with parametric set obtained at $r_f=0$ level is depicted with dashed lines. Following the methodology the new parameter search was conducted with 
+\mich{For the local extremes 7 and 8, the refined numerical treatment $r_f=1$  significantly shifted with the objective function~\eqref{objektiva1}, and a new parameter search was enforced. The original $r_f=0$ and the updated $r_f=1$ solution is depicted on figure~\ref{rf1examples}. The response plots of the objective function are depicted in figures~\ref{objfnc7} and \ref{objfnc8}.  The plots for the $r_f$=0 and $r_f$=1 with parametric set obtained at $r_f=0$ level is depicted with dashed lines. Following the methodology the new parameter search was conducted with 
 Newton's method with box-constraints~\citep{byrd1995}, where the initial parameter estimate was obtained from the solution at previous $r_f$ level given in table~\ref{shp-vysledky}, and the parameters were searched within parametric subregions given in table~\ref{rozsahy2}. 
 The gradient algorithm converged fast and identified the updated solutions within less than 50 iterations. The new updated solutions are in a close vicinity to the previous $r_f$ level solutions.
 The response plots for the updated refinement levels $r_f$=1,2 created with these  updated solutions are depicted in figures  \ref{objfnc7} and \ref{objfnc8} with continuous lines. 
 
-For all evaluated extremes the response plots for $r_f$=1 and 2 have its minima nearby, and so it can be concluded the extremes identified at $r_f$=1, were confirmed at refinement level $r_f=2$. However, with the increasing refinement level, the topology of the objective function becomes more complicated -- non-smooth with more or less significant oscillations. This effect becomes dominant on response plot depicted in figure~\ref{objfnc8} -- top left. This behavior originates from automatic time step selection, where the time step length is governed by both the truncation error and the nonlinear solver convergence rate. For low values of Picard criterion the solver becomes very sensitive on parameter updates. While  changing the parametric values the solver requires slightly different temporal discretization, which in turn affects the objective function value. It turns out that for a refined nonlinear solver settings the straight forward application of a gradient solver could become troublesome.  For the initial refinement level all response plots are smooth, and so the identified local extremes are free of these oscillatory attributes.
+For all evaluated extremes the response plots for $r_f$=1 and 2 have its minima nearby, and so it can be concluded the extremes identified at $r_f$=1, were confirmed at refinement level $r_f=2$. However, with the increasing refinement level, the topology of the objective function becomes more complicated -- non-smooth with more or less significant oscillations. This effect becomes dominant on response plot depicted in figure~\ref{objfnc8} -- top left. This behavior originates from automatic time step selection, where the time step length is governed by both the truncation error and the nonlinear solver convergence rate. For low values of Picard criterion the solver becomes very sensitive on parameter updates. While  changing the parametric values the solver requires slightly different temporal discretization, which in turn affects the objective function value. It turns out that for a refined nonlinear solver settings the straight forward application of a gradient solver can be troublesome.  For the initial refinement level $r_f=0$ all response plots are smooth, and so the identified local extremes are not affected by this oscillatory topology.
 
-The final results of this parameter identification are summarized in table~\ref{shp-vysledky-final}
+The final results of this parameter identification are summarized in table~\ref{shp-vysledky-final}.
 }
 
 
@@ -1017,13 +1042,17 @@ extreme & $\theta_s$ [-]&$\alpha$ [cm$^{-1}$]&n [-]& $K_s$ [cm.hrs$^{-1}$]  & $S
 \label{retc-final}
 \end{figure}
 
+\mich{
+\subsection{Remarks on convergence behavior of the nonlinear operator}
+With the proposed methodology we have successfully mapped broad parametric space with more than 40.000 calls of the Richards equation solver DRUtES~\citep{drutes} at different refinement levels. In contrast to  results published by~\cite{beven2003-uncertain}, our computations were successful for all 100\% of the Richards equation calls. }  
+
 
 \subsection{Limitations and realism of results}
 
 
 Local optima 7 resulted in the most realistic set for the podzolic top O+Ah soil layer, because of the most realistic value of $\theta_s$, which is slightly higher than for the E horizon (table \ref{tab_SHP}). Table \ref{shp-vysledky-final} shows a wide range of $\theta_s$ values, which can have huge implications for the water storage of the soil. The saturated hydraulic conductivity $K_s$ is similar across identified optima (table \ref{shp-vysledky-final}) and slightly lower than the lower horizon E (table \ref{tab_SHP}). A physical explanation for the lower estimate can be that the O+Ah top layer can swell and air can be entrapped during infiltration and therefore, the volume of the effective pores can be decreased. This can be indicated by the lower values of $\theta_s$. The identified $K_s$ will be lower than the $K_s$ fitted with the 1D Swartzendruber equation, because we are modeling 2D axisymmetric flow. 
 
-The identified values for $\alpha$ are also similar in range across the optima (table \ref{shp-vysledky-final}). $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. Figure \ref{retc-final} shows that $\alpha$ barely impacts the shape of the retention curve in the modeled pressure head range, whereas $\theta_s$ and also $n$ impact the retention curve significantly. 
+The identified values for $\alpha$ are also similar in range across the optima (table \ref{shp-vysledky-final}). $\alpha$ is related to the inverse of the air entry value, which in terms of suction is greater than the initial condition. Figure \ref{retc-final} -- left shows that $\alpha$ barely impacts the shape of the retention curve in the modeled pressure head range, whereas $\theta_s$ and also $n$ impact the retention curve significantly. \mich{The unsaturated hydraulic conductivity depicted in figure~\ref{retc-final} -- right exhibit significant variance across the identified parametric sets.}
 
 In the evaluation of the realism of the optimization we consider the treatment of the initial condition and the representativeness of the input curve as the greatest limitation. This however, does not delimit the applicability of the proposed calibration methodology. 
 
@@ -1032,7 +1061,7 @@ In the evaluation of the realism of the optimization we consider the treatment o
 \section{Conclusions}
 \bigskip
 
-We presented an automated calibration procedure that is able to identify optima from a relatively wide range of input parameters without convergence issues of the nonlinear operator. To solve the Richards equation we employed our open-source solver DRUtES~\citep{drutes}. We also showed numerical considerations in the domain set-up of a challenging problem. We show that starting with the semi-explicit scheme can identify regions of interest. However, the identified SHP can change dramatically with an improved numerical set-up, so that several stages of refinement are required until SHP estimates can be confirmed. We also acknowledge that for this calibration to work, the optimization algorithm needs to be able to identify multiple optima. 
+We presented an automated calibration procedure that is able to identify optima from a relatively wide range of input parameters without convergence issues of the nonlinear operator.  To solve the Richards equation we employed our open-source solver DRUtES~\citep{drutes}. We also showed numerical considerations in the domain set-up of a challenging problem. We show that starting with the semi-explicit scheme can identify regions of interest. \mich{However, the identified SHP can change  with an improved numerical set-up, so that several stages of refinement are required until SHP estimates can be confirmed.} We also acknowledge that for this calibration to work, the optimization algorithm needs to be able to identify multiple optima. 
 
 We applied the methodology to synthetic and real transient SR infiltration data. Our synthetic infiltration problems show that identification of soils with unimodal grain size distribution can result in multiple distinct optima with good fitting properties. Although some optima show good fits, the parameters are not necessarily physical/reasonable in the eyes of the expert. For both, the synthetic and real problems, expert knowledge on the saturated water content can aid the identification of the most reasonable optimum. 
 
