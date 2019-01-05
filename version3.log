@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.10.22)  4 JAN 2019 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.10.22)  6 JAN 2019 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1941,45 +1941,39 @@ LaTeX Font Info:    Try loading font information for OT1+txtt on input line 82.
 File: ot1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 124.
+(Font)              scaled to size 7.59998pt on input line 126.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 5.69998pt on input line 124.
+(Font)              scaled to size 5.69998pt on input line 126.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 168.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 170.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 168.
- [3]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 213.
-
-[4]
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 170.
+ [3] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 260--260
 []|\OT1/txr/m/n/8 GP ex-per-i-ment
  []
 
-<valec-exp.pdf, id=255, 397.485pt x 614.295pt>
+<valec-exp.pdf, id=259, 397.485pt x 614.295pt>
 File: valec-exp.pdf Graphic file (type pdf)
  <use valec-exp.pdf>
 Package pdftex.def Info: valec-exp.pdf used on input line 279.
 (pdftex.def)             Requested size: 138.07863pt x 213.39566pt.
- [5 <./valec-exp.pdf>] [6] <valcovazk.pdf, id=296, 397.485pt x 614.295pt>
+ [5 <./valec-exp.pdf>] <valcovazk.pdf, id=288, 397.485pt x 614.295pt>
 File: valcovazk.pdf Graphic file (type pdf)
-
-<use valcovazk.pdf>
+ <use valcovazk.pdf>
 Package pdftex.def Info: valcovazk.pdf used on input line 329.
 (pdftex.def)             Requested size: 138.07863pt x 213.39566pt.
- <schemabc.pdf, id=299, 397.485pt x 614.295pt>
-File: schemabc.pdf Graphic file (type pdf)
 
-<use schemabc.pdf>
+[6] <schemabc.pdf, id=301, 397.485pt x 614.295pt>
+File: schemabc.pdf Graphic file (type pdf)
+ <use schemabc.pdf>
 Package pdftex.def Info: schemabc.pdf used on input line 360.
 (pdftex.def)             Requested size: 147.28549pt x 227.62204pt.
  [7 <./valcovazk.pdf> <./schemabc.pdf>] [8]
@@ -1988,7 +1982,7 @@ File: infilsit.pdf Graphic file (type pdf)
  <use infilsit.pdf>
 Package pdftex.def Info: infilsit.pdf used on input line 410.
 (pdftex.def)             Requested size: 221.17258pt x 312.9803pt.
- [9 <./infilsit.pdf>] <data/mesh-evals/site-eval.pdf, id=350, 397.485pt x 614.2
+ [9 <./infilsit.pdf>] <data/mesh-evals/site-eval.pdf, id=351, 397.485pt x 614.2
 95pt>
 File: data/mesh-evals/site-eval.pdf Graphic file (type pdf)
 
@@ -2010,7 +2004,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./data/mesh-evals/meshdiff-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/mesh-evals/meshdiff-eps-converted-to.pdf, id=351, 505.89pt x 722.7pt>
+<data/mesh-evals/meshdiff-eps-converted-to.pdf, id=352, 505.89pt x 722.7pt>
 File: data/mesh-evals/meshdiff-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/mesh-evals/meshdiff-eps-converted-to.pdf>
@@ -2020,12 +2014,12 @@ input line 438.
  [10 <./data/mesh-evals/site-eval.pdf>] [11 <./data/mesh-evals/meshdiff-eps-con
 verted-to.pdf>]
 Package epstopdf Info: Source file: <data/mesh-dens/denses.eps>
-(epstopdf)                    date: 2019-01-02 15:37:38
-(epstopdf)                    size: 24651 bytes
+(epstopdf)                    date: 2019-01-05 23:12:35
+(epstopdf)                    size: 24586 bytes
 (epstopdf)             Output file: <data/mesh-dens/denses-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2019-01-02 15:45:11
-(epstopdf)                    size: 6345 bytes
+(epstopdf)                    date: 2019-01-05 23:14:47
+(epstopdf)                    size: 6638 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/mesh-dens/denses-eps-
 converted-to.pdf data/mesh-dens/denses.eps>
 (epstopdf)             \includegraphics on input line 476.
@@ -2042,12 +2036,12 @@ Package pdftex.def Info: data/mesh-dens/denses-eps-converted-to.pdf used on inp
 ut line 476.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <data/mesh-evals2/mesh-diff.eps>
-(epstopdf)                    date: 2018-12-30 21:15:33
-(epstopdf)                    size: 25775 bytes
+(epstopdf)                    date: 2019-01-05 23:17:06
+(epstopdf)                    size: 25795 bytes
 (epstopdf)             Output file: <data/mesh-evals2/mesh-diff-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2019-01-02 17:35:35
-(epstopdf)                    size: 7824 bytes
+(epstopdf)                    date: 2019-01-05 23:17:50
+(epstopdf)                    size: 7862 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/mesh-evals2/mesh-diff
 -eps-converted-to.pdf data/mesh-evals2/mesh-diff.eps>
 (epstopdf)             \includegraphics on input line 485.
@@ -2066,29 +2060,29 @@ n input line 485.
  [12 <./data/mesh-dens/denses-eps-converted-to.pdf> <./data/mesh-evals2/mesh-di
 ff-eps-converted-to.pdf>]
 [13] [14] [15] [16]
-<flowchart/Flow_chart_cb_new.png, id=553, 761.84625pt x 1119.18124pt>
+<flowchart/Flow_chart_cb_new.png, id=555, 761.84625pt x 1119.18124pt>
 File: flowchart/Flow_chart_cb_new.png Graphic file (type png)
 
 <use flowchart/Flow_chart_cb_new.png>
-Package pdftex.def Info: flowchart/Flow_chart_cb_new.png used on input line 677
+Package pdftex.def Info: flowchart/Flow_chart_cb_new.png used on input line 673
 .
 (pdftex.def)             Requested size: 341.43306pt x 501.57764pt.
- [17] [18 <./flowchart/Flow_chart_cb_new.png>] [19]
-Overfull \hbox (44.66496pt too wide) in paragraph at lines 732--733
+ [17] [18 <./flowchart/Flow_chart_cb_new.png>]
+Overfull \hbox (44.66496pt too wide) in paragraph at lines 728--729
 []\OT1/txr/m/n/10 At the end of this cal-i-bra-tion pro-cess we typ-i-cally fin
 -ish with a set of so-lu-tions $\OT1/txr/bx/n/10 p[]$\OT1/txr/m/n/10 , where $\
 OML/txmi/m/it/10 i[] \OMS/txsy/m/n/10 2 f\OT1/txr/m/n/10 1\OML/txmi/m/it/10 ; :
 ::; []\OMS/txsy/m/n/10 g$\OT1/txr/m/n/10 .
  []
 
-[20]
+[19] [20]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 790.
+               Default added (so using `tbp') on input line 786.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 872.
+               Default added (so using `tbp') on input line 868.
 
 Package epstopdf Info: Source file: <images/badfit/2.eps>
 (epstopdf)                    date: 2018-04-17 22:47:41
@@ -2098,14 +2092,14 @@ Package epstopdf Info: Source file: <images/badfit/2.eps>
 (epstopdf)                    size: 7995 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/2-eps-conver
 ted-to.pdf images/badfit/2.eps>
-(epstopdf)             \includegraphics on input line 900.
+(epstopdf)             \includegraphics on input line 896.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/2-eps-converted-to.pdf, id=620, 505.89pt x 722.7pt>
+<images/badfit/2-eps-converted-to.pdf, id=619, 505.89pt x 722.7pt>
 File: images/badfit/2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/2-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/2-eps-converted-to.pdf used on input lin
-e 900.
+e 896.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/hezky/1.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2115,20 +2109,20 @@ Package epstopdf Info: Source file: <images/hezky/1.eps>
 (epstopdf)                    size: 8222 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/hezky/1-eps-convert
 ed-to.pdf images/hezky/1.eps>
-(epstopdf)             \includegraphics on input line 902.
+(epstopdf)             \includegraphics on input line 898.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/hezky/1-eps-converted-to.pdf, id=621, 505.89pt x 722.7pt>
+<images/hezky/1-eps-converted-to.pdf, id=620, 505.89pt x 722.7pt>
 File: images/hezky/1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/hezky/1-eps-converted-to.pdf>
 Package pdftex.def Info: images/hezky/1-eps-converted-to.pdf used on input line
- 902.
+ 898.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 908.
+               Default added (so using `tbp') on input line 904.
 
 [21] [22 <./images/badfit/2-eps-converted-to.pdf> <./images/hezky/1-eps-convert
 ed-to.pdf>]
@@ -2141,19 +2135,19 @@ to.pdf>
 (epstopdf)                    size: 8427 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/revize/alpha-
 6-eps-converted-to.pdf data/objvals/revize/alpha-6.eps>
-(epstopdf)             \includegraphics on input line 944.
+(epstopdf)             \includegraphics on input line 940.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals/revize/alpha-6-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<data/objvals/revize/alpha-6-eps-converted-to.pdf, id=658, 505.89pt x 722.7pt>
+<data/objvals/revize/alpha-6-eps-converted-to.pdf, id=661, 505.89pt x 722.7pt>
 File: data/objvals/revize/alpha-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/revize/alpha-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/revize/alpha-6-eps-converted-to.pdf used 
-on input line 944.
+on input line 940.
 (pdftex.def)             Requested size: 99.58603pt x 142.26378pt.
 Package epstopdf Info: Source file: <data/objvals/revize/n-6.eps>
 (epstopdf)                    date: 2019-01-02 20:56:37
@@ -2164,18 +2158,18 @@ df>
 (epstopdf)                    size: 8632 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/revize/n-6-ep
 s-converted-to.pdf data/objvals/revize/n-6.eps>
-(epstopdf)             \includegraphics on input line 946.
+(epstopdf)             \includegraphics on input line 942.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals/revize/n-6-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals/revize/n-6-eps-converted-to.pdf, id=659, 505.89pt x 722.7pt>
+<data/objvals/revize/n-6-eps-converted-to.pdf, id=662, 505.89pt x 722.7pt>
 File: data/objvals/revize/n-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/revize/n-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/revize/n-6-eps-converted-to.pdf used on i
-nput line 946.
+nput line 942.
 (pdftex.def)             Requested size: 99.58603pt x 142.26378pt.
 Package epstopdf Info: Source file: <data/objvals/revize/ths-6.eps>
 (epstopdf)                    date: 2019-01-02 20:56:24
@@ -2186,18 +2180,18 @@ Package epstopdf Info: Source file: <data/objvals/revize/ths-6.eps>
 (epstopdf)                    size: 8463 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/revize/ths-6-
 eps-converted-to.pdf data/objvals/revize/ths-6.eps>
-(epstopdf)             \includegraphics on input line 949.
+(epstopdf)             \includegraphics on input line 945.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals/revize/ths-6-eps-converted-to.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals/revize/ths-6-eps-converted-to.pdf, id=660, 505.89pt x 722.7pt>
+<data/objvals/revize/ths-6-eps-converted-to.pdf, id=663, 505.89pt x 722.7pt>
 File: data/objvals/revize/ths-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/revize/ths-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/revize/ths-6-eps-converted-to.pdf used on
- input line 949.
+ input line 945.
 (pdftex.def)             Requested size: 99.58603pt x 142.26378pt.
 Package epstopdf Info: Source file: <data/objvals/revize/Ks-6.eps>
 (epstopdf)                    date: 2019-01-02 20:58:17
@@ -2208,18 +2202,18 @@ pdf>
 (epstopdf)                    size: 8819 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/revize/Ks-6-e
 ps-converted-to.pdf data/objvals/revize/Ks-6.eps>
-(epstopdf)             \includegraphics on input line 951.
+(epstopdf)             \includegraphics on input line 947.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals/revize/Ks-6-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals/revize/Ks-6-eps-converted-to.pdf, id=661, 505.89pt x 722.7pt>
+<data/objvals/revize/Ks-6-eps-converted-to.pdf, id=664, 505.89pt x 722.7pt>
 File: data/objvals/revize/Ks-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/revize/Ks-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/revize/Ks-6-eps-converted-to.pdf used on 
-input line 951.
+input line 947.
 (pdftex.def)             Requested size: 99.58603pt x 142.26378pt.
 Package epstopdf Info: Source file: <data/objvals/revize/Ss-6.eps>
 (epstopdf)                    date: 2019-01-02 20:59:02
@@ -2230,18 +2224,18 @@ pdf>
 (epstopdf)                    size: 7993 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals/revize/Ss-6-e
 ps-converted-to.pdf data/objvals/revize/Ss-6.eps>
-(epstopdf)             \includegraphics on input line 953.
+(epstopdf)             \includegraphics on input line 949.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals/revize/Ss-6-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals/revize/Ss-6-eps-converted-to.pdf, id=662, 505.89pt x 722.7pt>
+<data/objvals/revize/Ss-6-eps-converted-to.pdf, id=665, 505.89pt x 722.7pt>
 File: data/objvals/revize/Ss-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals/revize/Ss-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals/revize/Ss-6-eps-converted-to.pdf used on 
-input line 953.
+input line 949.
 (pdftex.def)             Requested size: 99.58603pt x 142.26378pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/alpha-5.eps>
 (epstopdf)                    date: 2018-12-30 18:03:16
@@ -2252,7 +2246,7 @@ ed-to.pdf>
 (epstopdf)                    size: 10058 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/alp
 ha-5-eps-converted-to.pdf data/objvals2nd/revize/alpha-5.eps>
-(epstopdf)             \includegraphics on input line 963.
+(epstopdf)             \includegraphics on input line 959.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2260,13 +2254,13 @@ pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/alpha-5-eps-converted-t
 o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
 ed
 
-<data/objvals2nd/revize/alpha-5-eps-converted-to.pdf, id=665, 505.89pt x 722.7p
+<data/objvals2nd/revize/alpha-5-eps-converted-to.pdf, id=668, 505.89pt x 722.7p
 t>
 File: data/objvals2nd/revize/alpha-5-eps-converted-to.pdf Graphic file (type pd
 f)
  <use data/objvals2nd/revize/alpha-5-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/alpha-5-eps-converted-to.pdf us
-ed on input line 963.
+ed on input line 959.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/n-5.eps>
 (epstopdf)                    date: 2019-01-02 20:51:32
@@ -2277,21 +2271,21 @@ o.pdf>
 (epstopdf)                    size: 10342 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/n-5
 -eps-converted-to.pdf data/objvals2nd/revize/n-5.eps>
-(epstopdf)             \includegraphics on input line 965.
+(epstopdf)             \includegraphics on input line 961.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/n-5-eps-converted-to.pd
 f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals2nd/revize/n-5-eps-converted-to.pdf, id=667, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/n-5-eps-converted-to.pdf, id=670, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/n-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/n-5-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/n-5-eps-converted-to.pdf used o
-n input line 965.
+n input line 961.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 
-Overfull \hbox (4.1762pt too wide) in paragraph at lines 962--966
+Overfull \hbox (4.1762pt too wide) in paragraph at lines 958--962
 [][] [] 
  []
 
@@ -2304,7 +2298,7 @@ Package epstopdf Info: Source file: <data/objvals2nd/revize/ths-5.eps>
 (epstopdf)                    size: 10450 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/ths
 -5-eps-converted-to.pdf data/objvals2nd/revize/ths-5.eps>
-(epstopdf)             \includegraphics on input line 968.
+(epstopdf)             \includegraphics on input line 964.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2312,12 +2306,12 @@ pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/ths-5-eps-converted-to.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
 
-<data/objvals2nd/revize/ths-5-eps-converted-to.pdf, id=669, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/ths-5-eps-converted-to.pdf, id=672, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/ths-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/ths-5-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/ths-5-eps-converted-to.pdf used
- on input line 968.
+ on input line 964.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/Ks-5.eps>
 (epstopdf)                    date: 2018-12-27 19:09:04
@@ -2328,22 +2322,22 @@ to.pdf>
 (epstopdf)                    size: 10704 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/Ks-
 5-eps-converted-to.pdf data/objvals2nd/revize/Ks-5.eps>
-(epstopdf)             \includegraphics on input line 970.
+(epstopdf)             \includegraphics on input line 966.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/Ks-5-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<data/objvals2nd/revize/Ks-5-eps-converted-to.pdf, id=671, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/Ks-5-eps-converted-to.pdf, id=674, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/Ks-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/Ks-5-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/Ks-5-eps-converted-to.pdf used 
-on input line 970.
+on input line 966.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 
-Overfull \hbox (4.1762pt too wide) in paragraph at lines 967--971
+Overfull \hbox (4.1762pt too wide) in paragraph at lines 963--967
 [][] [] 
  []
 
@@ -2356,19 +2350,19 @@ to.pdf>
 (epstopdf)                    size: 9005 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/Ss-
 5-eps-converted-to.pdf data/objvals2nd/revize/Ss-5.eps>
-(epstopdf)             \includegraphics on input line 975.
+(epstopdf)             \includegraphics on input line 971.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/Ss-5-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<data/objvals2nd/revize/Ss-5-eps-converted-to.pdf, id=673, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/Ss-5-eps-converted-to.pdf, id=676, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/Ss-5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/Ss-5-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/Ss-5-eps-converted-to.pdf used 
-on input line 975.
+on input line 971.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/alpha-6.eps>
 (epstopdf)                    date: 2018-12-30 18:01:57
@@ -2379,7 +2373,7 @@ ed-to.pdf>
 (epstopdf)                    size: 10275 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/alp
 ha-6-eps-converted-to.pdf data/objvals2nd/revize/alpha-6.eps>
-(epstopdf)             \includegraphics on input line 985.
+(epstopdf)             \includegraphics on input line 981.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2387,13 +2381,13 @@ pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/alpha-6-eps-converted-t
 o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
 ed
 
-<data/objvals2nd/revize/alpha-6-eps-converted-to.pdf, id=676, 505.89pt x 722.7p
+<data/objvals2nd/revize/alpha-6-eps-converted-to.pdf, id=679, 505.89pt x 722.7p
 t>
 File: data/objvals2nd/revize/alpha-6-eps-converted-to.pdf Graphic file (type pd
 f)
  <use data/objvals2nd/revize/alpha-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/alpha-6-eps-converted-to.pdf us
-ed on input line 985.
+ed on input line 981.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/n-6.eps>
 (epstopdf)                    date: 2018-12-27 22:42:27
@@ -2404,21 +2398,21 @@ o.pdf>
 (epstopdf)                    size: 9927 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/n-6
 -eps-converted-to.pdf data/objvals2nd/revize/n-6.eps>
-(epstopdf)             \includegraphics on input line 987.
+(epstopdf)             \includegraphics on input line 983.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/n-6-eps-converted-to.pd
 f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/objvals2nd/revize/n-6-eps-converted-to.pdf, id=678, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/n-6-eps-converted-to.pdf, id=681, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/n-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/n-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/n-6-eps-converted-to.pdf used o
-n input line 987.
+n input line 983.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 
-Overfull \hbox (4.1762pt too wide) in paragraph at lines 984--988
+Overfull \hbox (4.1762pt too wide) in paragraph at lines 980--984
 [][] [] 
  []
 
@@ -2431,7 +2425,7 @@ Package epstopdf Info: Source file: <data/objvals2nd/revize/ths-6.eps>
 (epstopdf)                    size: 10221 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/ths
 -6-eps-converted-to.pdf data/objvals2nd/revize/ths-6.eps>
-(epstopdf)             \includegraphics on input line 990.
+(epstopdf)             \includegraphics on input line 986.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2439,12 +2433,12 @@ pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/ths-6-eps-converted-to.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
 
-<data/objvals2nd/revize/ths-6-eps-converted-to.pdf, id=680, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/ths-6-eps-converted-to.pdf, id=683, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/ths-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/ths-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/ths-6-eps-converted-to.pdf used
- on input line 990.
+ on input line 986.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <data/objvals2nd/revize/Ks-6.eps>
 (epstopdf)                    date: 2018-12-27 23:12:49
@@ -2455,22 +2449,22 @@ to.pdf>
 (epstopdf)                    size: 10641 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/Ks-
 6-eps-converted-to.pdf data/objvals2nd/revize/Ks-6.eps>
-(epstopdf)             \includegraphics on input line 992.
+(epstopdf)             \includegraphics on input line 988.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/Ks-6-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<data/objvals2nd/revize/Ks-6-eps-converted-to.pdf, id=682, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/Ks-6-eps-converted-to.pdf, id=685, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/Ks-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/Ks-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/Ks-6-eps-converted-to.pdf used 
-on input line 992.
+on input line 988.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 
-Overfull \hbox (4.1762pt too wide) in paragraph at lines 989--993
+Overfull \hbox (4.1762pt too wide) in paragraph at lines 985--989
 [][] [] 
  []
 
@@ -2483,19 +2477,19 @@ to.pdf>
 (epstopdf)                    size: 8737 bytes
 (epstopdf)             Command: <repstopdf --outfile=data/objvals2nd/revize/Ss-
 6-eps-converted-to.pdf data/objvals2nd/revize/Ss-6.eps>
-(epstopdf)             \includegraphics on input line 997.
+(epstopdf)             \includegraphics on input line 993.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./data/objvals2nd/revize/Ss-6-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<data/objvals2nd/revize/Ss-6-eps-converted-to.pdf, id=684, 505.89pt x 722.7pt>
+<data/objvals2nd/revize/Ss-6-eps-converted-to.pdf, id=687, 505.89pt x 722.7pt>
 File: data/objvals2nd/revize/Ss-6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use data/objvals2nd/revize/Ss-6-eps-converted-to.pdf>
 Package pdftex.def Info: data/objvals2nd/revize/Ss-6-eps-converted-to.pdf used 
-on input line 997.
+on input line 993.
 (pdftex.def)             Requested size: 113.8093pt x 227.62204pt.
 Package epstopdf Info: Source file: <images/fitrf1/7.eps>
 (epstopdf)                    date: 2018-04-23 18:07:57
@@ -2505,15 +2499,15 @@ Package epstopdf Info: Source file: <images/fitrf1/7.eps>
 (epstopdf)                    size: 8096 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/7-eps-conver
 ted-to.pdf images/fitrf1/7.eps>
-(epstopdf)             \includegraphics on input line 1027.
+(epstopdf)             \includegraphics on input line 1023.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/7-eps-converted-to.pdf, id=687, 505.89pt x 722.7pt>
+<images/fitrf1/7-eps-converted-to.pdf, id=690, 505.89pt x 722.7pt>
 File: images/fitrf1/7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/7-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/7-eps-converted-to.pdf used on input lin
-e 1027.
+e 1023.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/fitrf1/7-new.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2523,15 +2517,15 @@ Package epstopdf Info: Source file: <images/fitrf1/7-new.eps>
 (epstopdf)                    size: 8156 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/7-new-eps-co
 nverted-to.pdf images/fitrf1/7-new.eps>
-(epstopdf)             \includegraphics on input line 1029.
+(epstopdf)             \includegraphics on input line 1025.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/7-new-eps-converted-to.pdf, id=688, 505.89pt x 722.7pt>
+<images/fitrf1/7-new-eps-converted-to.pdf, id=691, 505.89pt x 722.7pt>
 File: images/fitrf1/7-new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/7-new-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/7-new-eps-converted-to.pdf used on input
- line 1029.
+ line 1025.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/retc.eps>
 (epstopdf)                    date: 2019-01-03 21:10:12
@@ -2541,18 +2535,18 @@ Package epstopdf Info: Source file: <images/retc.eps>
 (epstopdf)                    size: 8441 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/retc-eps-converted-
 to.pdf images/retc.eps>
-(epstopdf)             \includegraphics on input line 1073.
+(epstopdf)             \includegraphics on input line 1069.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./images/retc-eps-converted-to.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/retc-eps-converted-to.pdf, id=690, 505.89pt x 722.7pt>
+<images/retc-eps-converted-to.pdf, id=693, 505.89pt x 722.7pt>
 File: images/retc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/retc-eps-converted-to.pdf>
 Package pdftex.def Info: images/retc-eps-converted-to.pdf used on input line 10
-73.
+69.
 (pdftex.def)             Requested size: 119.5017pt x 170.71652pt.
 Package epstopdf Info: Source file: <images/Ks.eps>
 (epstopdf)                    date: 2019-01-02 23:26:16
@@ -2562,26 +2556,26 @@ Package epstopdf Info: Source file: <images/Ks.eps>
 (epstopdf)                    size: 7534 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Ks-eps-converted-to
 .pdf images/Ks.eps>
-(epstopdf)             \includegraphics on input line 1075.
+(epstopdf)             \includegraphics on input line 1071.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./images/Ks-eps-converted-to.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<images/Ks-eps-converted-to.pdf, id=691, 505.89pt x 722.7pt>
+<images/Ks-eps-converted-to.pdf, id=694, 505.89pt x 722.7pt>
 File: images/Ks-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Ks-eps-converted-to.pdf>
-Package pdftex.def Info: images/Ks-eps-converted-to.pdf used on input line 1075
+Package pdftex.def Info: images/Ks-eps-converted-to.pdf used on input line 1071
 .
 (pdftex.def)             Requested size: 119.5017pt x 170.71652pt.
- [23] [24 <./data/objvals2nd/revize/alpha-5-eps-converted-to.pdf> <./data/objva
-ls2nd/revize/n-5-eps-converted-to.pdf> <./data/objvals2nd/revize/ths-5-eps-conv
-erted-to.pdf> <./data/objvals2nd/revize/Ks-5-eps-converted-to.pdf> <./data/objv
-als2nd/revize/Ss-5-eps-converted-to.pdf> <./data/objvals/revize/alpha-6-eps-con
-verted-to.pdf> <./data/objvals/revize/n-6-eps-converted-to.pdf> <./data/objvals
-/revize/ths-6-eps-converted-to.pdf> <./data/objvals/revize/Ks-6-eps-converted-t
-o.pdf> <./data/objvals/revize/Ss-6-eps-converted-to.pdf>] [25 <./data/objvals2n
+ [23 <./data/objvals/revize/alpha-6-eps-converted-to.pdf> <./data/objvals/reviz
+e/n-6-eps-converted-to.pdf> <./data/objvals/revize/ths-6-eps-converted-to.pdf> 
+<./data/objvals/revize/Ks-6-eps-converted-to.pdf> <./data/objvals/revize/Ss-6-e
+ps-converted-to.pdf>] [24 <./data/objvals2nd/revize/alpha-5-eps-converted-to.pd
+f> <./data/objvals2nd/revize/n-5-eps-converted-to.pdf> <./data/objvals2nd/reviz
+e/ths-5-eps-converted-to.pdf> <./data/objvals2nd/revize/Ks-5-eps-converted-to.p
+df> <./data/objvals2nd/revize/Ss-5-eps-converted-to.pdf>] [25 <./data/objvals2n
 d/revize/alpha-6-eps-converted-to.pdf> <./data/objvals2nd/revize/n-6-eps-conver
 ted-to.pdf> <./data/objvals2nd/revize/ths-6-eps-converted-to.pdf> <./data/objva
 ls2nd/revize/Ks-6-eps-converted-to.pdf> <./data/objvals2nd/revize/Ss-6-eps-conv
@@ -2590,31 +2584,31 @@ ps-converted-to.pdf>] [26 <./images/retc-eps-converted-to.pdf> <./images/Ks-eps
 -converted-to.pdf>] (./version3.bbl
 [27] [28] [29])
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 1134.
+(Font)              scaled to size 8.54997pt on input line 1130.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1147.
+(hyperref)                removing `math shift' on input line 1143.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1147.
+(hyperref)                removing `subscript' on input line 1143.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1147.
+(hyperref)                removing `math shift' on input line 1143.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1147.
+(hyperref)                removing `math shift' on input line 1143.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1147.
+(hyperref)                removing `subscript' on input line 1143.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1147.
+(hyperref)                removing `math shift' on input line 1143.
 
 Package epstopdf Info: Source file: <images/badfit/1.eps>
 (epstopdf)                    date: 2018-04-17 22:47:41
@@ -2624,14 +2618,14 @@ Package epstopdf Info: Source file: <images/badfit/1.eps>
 (epstopdf)                    size: 8073 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/1-eps-conver
 ted-to.pdf images/badfit/1.eps>
-(epstopdf)             \includegraphics on input line 1151.
+(epstopdf)             \includegraphics on input line 1147.
 Package epstopdf Info: Output file is already uptodate.
-<images/badfit/1-eps-converted-to.pdf, id=924, 505.89pt x 722.7pt>
+<images/badfit/1-eps-converted-to.pdf, id=922, 505.89pt x 722.7pt>
 File: images/badfit/1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/1-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/1-eps-converted-to.pdf used on input lin
-e 1151.
+e 1147.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/badfit/2.eps>
 (epstopdf)                    date: 2018-04-17 22:47:41
@@ -2641,13 +2635,13 @@ Package epstopdf Info: Source file: <images/badfit/2.eps>
 (epstopdf)                    size: 7995 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/2-eps-conver
 ted-to.pdf images/badfit/2.eps>
-(epstopdf)             \includegraphics on input line 1153.
+(epstopdf)             \includegraphics on input line 1149.
 Package epstopdf Info: Output file is already uptodate.
 File: images/badfit/2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/2-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/2-eps-converted-to.pdf used on input lin
-e 1153.
+e 1149.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/badfit/3.eps>
 (epstopdf)                    date: 2018-04-17 22:47:41
@@ -2657,15 +2651,15 @@ Package epstopdf Info: Source file: <images/badfit/3.eps>
 (epstopdf)                    size: 8142 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/3-eps-conver
 ted-to.pdf images/badfit/3.eps>
-(epstopdf)             \includegraphics on input line 1161.
+(epstopdf)             \includegraphics on input line 1157.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/3-eps-converted-to.pdf, id=925, 505.89pt x 722.7pt>
+<images/badfit/3-eps-converted-to.pdf, id=923, 505.89pt x 722.7pt>
 File: images/badfit/3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/3-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/3-eps-converted-to.pdf used on input lin
-e 1161.
+e 1157.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/badfit/4.eps>
 (epstopdf)                    date: 2018-04-17 22:47:41
@@ -2675,15 +2669,15 @@ Package epstopdf Info: Source file: <images/badfit/4.eps>
 (epstopdf)                    size: 8110 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/4-eps-conver
 ted-to.pdf images/badfit/4.eps>
-(epstopdf)             \includegraphics on input line 1163.
+(epstopdf)             \includegraphics on input line 1159.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/4-eps-converted-to.pdf, id=926, 505.89pt x 722.7pt>
+<images/badfit/4-eps-converted-to.pdf, id=924, 505.89pt x 722.7pt>
 File: images/badfit/4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/4-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/4-eps-converted-to.pdf used on input lin
-e 1163.
+e 1159.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/badfit/5.eps>
 (epstopdf)                    date: 2018-04-23 17:42:01
@@ -2693,15 +2687,15 @@ Package epstopdf Info: Source file: <images/badfit/5.eps>
 (epstopdf)                    size: 8078 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/badfit/5-eps-conver
 ted-to.pdf images/badfit/5.eps>
-(epstopdf)             \includegraphics on input line 1171.
+(epstopdf)             \includegraphics on input line 1167.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/badfit/5-eps-converted-to.pdf, id=927, 505.89pt x 722.7pt>
+<images/badfit/5-eps-converted-to.pdf, id=925, 505.89pt x 722.7pt>
 File: images/badfit/5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/badfit/5-eps-converted-to.pdf>
 Package pdftex.def Info: images/badfit/5-eps-converted-to.pdf used on input lin
-e 1171.
+e 1167.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/goodfit/6.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2711,15 +2705,15 @@ Package epstopdf Info: Source file: <images/goodfit/6.eps>
 (epstopdf)                    size: 8162 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/goodfit/6-eps-conve
 rted-to.pdf images/goodfit/6.eps>
-(epstopdf)             \includegraphics on input line 1173.
+(epstopdf)             \includegraphics on input line 1169.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/6-eps-converted-to.pdf, id=928, 505.89pt x 722.7pt>
+<images/goodfit/6-eps-converted-to.pdf, id=926, 505.89pt x 722.7pt>
 File: images/goodfit/6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/6-eps-converted-to.pdf>
 Package pdftex.def Info: images/goodfit/6-eps-converted-to.pdf used on input li
-ne 1173.
+ne 1169.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/goodfit/7.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2729,15 +2723,15 @@ Package epstopdf Info: Source file: <images/goodfit/7.eps>
 (epstopdf)                    size: 8156 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/goodfit/7-eps-conve
 rted-to.pdf images/goodfit/7.eps>
-(epstopdf)             \includegraphics on input line 1180.
+(epstopdf)             \includegraphics on input line 1176.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/7-eps-converted-to.pdf, id=929, 505.89pt x 722.7pt>
+<images/goodfit/7-eps-converted-to.pdf, id=927, 505.89pt x 722.7pt>
 File: images/goodfit/7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/7-eps-converted-to.pdf>
 Package pdftex.def Info: images/goodfit/7-eps-converted-to.pdf used on input li
-ne 1180.
+ne 1176.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/goodfit/8.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2747,28 +2741,28 @@ Package epstopdf Info: Source file: <images/goodfit/8.eps>
 (epstopdf)                    size: 8156 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/goodfit/8-eps-conve
 rted-to.pdf images/goodfit/8.eps>
-(epstopdf)             \includegraphics on input line 1182.
+(epstopdf)             \includegraphics on input line 1178.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/goodfit/8-eps-converted-to.pdf, id=930, 505.89pt x 722.7pt>
+<images/goodfit/8-eps-converted-to.pdf, id=928, 505.89pt x 722.7pt>
 File: images/goodfit/8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/goodfit/8-eps-converted-to.pdf>
 Package pdftex.def Info: images/goodfit/8-eps-converted-to.pdf used on input li
-ne 1182.
+ne 1178.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1275.
+(hyperref)                removing `math shift' on input line 1271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1275.
+(hyperref)                removing `subscript' on input line 1271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1275.
+(hyperref)                removing `math shift' on input line 1271.
 
 Package epstopdf Info: Source file: <images/fitrf1/7.eps>
 (epstopdf)                    date: 2018-04-23 18:07:57
@@ -2778,12 +2772,12 @@ Package epstopdf Info: Source file: <images/fitrf1/7.eps>
 (epstopdf)                    size: 8096 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/7-eps-conver
 ted-to.pdf images/fitrf1/7.eps>
-(epstopdf)             \includegraphics on input line 1281.
+(epstopdf)             \includegraphics on input line 1277.
 Package epstopdf Info: Output file is already uptodate.
 File: images/fitrf1/7-eps-converted-to.pdf Graphic file (type pdf)
 <use images/fitrf1/7-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/7-eps-converted-to.pdf used on input lin
-e 1281.
+e 1277.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/fitrf1/7-new.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2793,13 +2787,13 @@ Package epstopdf Info: Source file: <images/fitrf1/7-new.eps>
 (epstopdf)                    size: 8156 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/7-new-eps-co
 nverted-to.pdf images/fitrf1/7-new.eps>
-(epstopdf)             \includegraphics on input line 1283.
+(epstopdf)             \includegraphics on input line 1279.
 Package epstopdf Info: Output file is already uptodate.
 File: images/fitrf1/7-new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/7-new-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/7-new-eps-converted-to.pdf used on input
- line 1283.
+ line 1279.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/fitrf1/8.eps>
 (epstopdf)                    date: 2018-04-23 18:02:43
@@ -2809,15 +2803,15 @@ Package epstopdf Info: Source file: <images/fitrf1/8.eps>
 (epstopdf)                    size: 8069 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/8-eps-conver
 ted-to.pdf images/fitrf1/8.eps>
-(epstopdf)             \includegraphics on input line 1290.
+(epstopdf)             \includegraphics on input line 1286.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/8-eps-converted-to.pdf, id=933, 505.89pt x 722.7pt>
+<images/fitrf1/8-eps-converted-to.pdf, id=931, 505.89pt x 722.7pt>
 File: images/fitrf1/8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/8-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/8-eps-converted-to.pdf used on input lin
-e 1290.
+e 1286.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
 Package epstopdf Info: Source file: <images/fitrf1/8-new.eps>
 (epstopdf)                    date: 2016-04-15 20:15:13
@@ -2827,40 +2821,40 @@ Package epstopdf Info: Source file: <images/fitrf1/8-new.eps>
 (epstopdf)                    size: 8156 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/fitrf1/8-new-eps-co
 nverted-to.pdf images/fitrf1/8-new.eps>
-(epstopdf)             \includegraphics on input line 1292.
+(epstopdf)             \includegraphics on input line 1288.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/fitrf1/8-new-eps-converted-to.pdf, id=934, 505.89pt x 722.7pt>
+<images/fitrf1/8-new-eps-converted-to.pdf, id=932, 505.89pt x 722.7pt>
 File: images/fitrf1/8-new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/fitrf1/8-new-eps-converted-to.pdf>
 Package pdftex.def Info: images/fitrf1/8-new-eps-converted-to.pdf used on input
- line 1292.
+ line 1288.
 (pdftex.def)             Requested size: 139.41736pt x 199.16928pt.
- [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1349.
- [31 <./images/badfit/1-eps-converted-to.pdf> <./images/badfit/3-eps-converted-
-to.pdf> <./images/badfit/4-eps-converted-to.pdf> <./images/badfit/5-eps-convert
-ed-to.pdf> <./images/goodfit/6-eps-converted-to.pdf> <./images/goodfit/7-eps-co
-nverted-to.pdf> <./images/goodfit/8-eps-converted-to.pdf>] [32 <./images/fitrf1
-/8-eps-converted-to.pdf> <./images/fitrf1/8-new-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1349.
+ [30 <./images/badfit/1-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1345.
+ [31 <./images/badfit/3-eps-converted-to.pdf> <./images/badfit/4-eps-converted-
+to.pdf> <./images/badfit/5-eps-converted-to.pdf> <./images/goodfit/6-eps-conver
+ted-to.pdf> <./images/goodfit/7-eps-converted-to.pdf> <./images/goodfit/8-eps-c
+onverted-to.pdf>] [32 <./images/fitrf1/8-eps-converted-to.pdf> <./images/fitrf1
+/8-new-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1345.
  (./version3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1349.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1345.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1345.
 
 Package rerunfilecheck Info: File `version3.out' has not changed.
-(rerunfilecheck)             Checksum: C30E00872C5555BB37C1C1EE9BEE6DF8;2170.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1349.
+(rerunfilecheck)             Checksum: 41C75AF3F5E40C7B5DD50C169C4CDAC7;2165.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1345.
  ) 
 Here is how much of TeX's memory you used:
  36401 strings out of 493013
- 758319 string characters out of 6135681
- 699171 words of memory out of 5000000
+ 758309 string characters out of 6135681
+ 699161 words of memory out of 5000000
  39195 multiletter control sequences out of 15000+600000
  67223 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,121p,10414b,1097s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,121p,10414b,999s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-
@@ -2874,10 +2868,10 @@ hare/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive
 fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on version3.pdf (32 pages, 1104560 bytes).
+Output written on version3.pdf (32 pages, 1104709 bytes).
 PDF statistics:
- 1090 PDF objects out of 1200 (max. 8388607)
- 929 compressed objects within 10 object streams
+ 1088 PDF objects out of 1200 (max. 8388607)
+ 927 compressed objects within 10 object streams
  186 named destinations out of 1000 (max. 500000)
  484 words of extra memory for PDF output out of 10000 (max. 10000000)
 
