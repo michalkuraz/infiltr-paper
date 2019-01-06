@@ -124,7 +124,7 @@ set output "alpha-5.eps"
 
 
 # f(x) = 43301.1685333345*(x-0.0002)**2 - 328.182481513453*(x-0.0002) + 0.656148123558243
-plot "../../objvals/results-0-0/alpha-4-par.val" smooth unique w l lw 3 dt 2 linecolor rgb "red"  title "r_f=0, 1^{st} iter." ,  "../../objvals/results-1-1/alpha-5-par.val"  smooth unique w l lw 3  dt 2 linecolor rgb "blue" title "r_f=1, 1^{st} iter." , "+" u 1:(NaN) title " " w dots linecolor rgb "white",  "alpha-1-par.val" smooth unique w l lw 3   linecolor rgb "red"  title   "r_f=1, 2^{nd} iter." , "rf2/alpha1" smooth unique w l   lw 3   linecolor rgb "blue"  title "r_f=2, 2^{nd} iter.", "alpha-0.ext" pt 1 ps 5  lc rgb '#008800'  lw 5 notitle , "alpha-1.ext" pt 2 ps 5  lc rgb '#880080' lw 5 notitle 
+plot "../../objvals/results-0-0/alpha-4-par.val" smooth unique w l lw 3 dt 2 linecolor rgb "red"  title "r_f=0, 1^{st} iter." ,  "../../objvals/results-1-1/alpha-5-par.val"  smooth unique w l lw 3  dt 2 linecolor rgb "blue" title "r_f=1, 1^{st} iter." , "+" u 1:(NaN) title " " w dots linecolor rgb "white",  "alpha-1-par.val" smooth unique w l lw 3   linecolor rgb "red"  title   "r_f=1, 2^{nd} iter." , "rf2/alpha1" smooth unique w l   lw 3   linecolor rgb "blue"  title "r_f=2, 2^{nd} iter.", "alpha-0.ext" pt 1 ps 5  lc rgb '#008800'  lw 2 notitle , "alpha-1.ext" pt 2 ps 5  lc rgb '#880080' lw 2 notitle 
 #----------------------------------------------------------------------------------
 
 

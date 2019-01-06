@@ -32,7 +32,7 @@ set grid
 set terminal postscript enhanced colour "Helvetica" 26 lw 3
 # set terminal latex
 set output "Ks-6.eps"
-plot "Ks-1-par.val" smooth unique w l lw 3 title "r_f=0" , "rf1/Ks-1-par.val" smooth unique w l lw 3 title "r_f=1"
+plot  "rf1/Ks-1-par.val" smooth unique w l lw 3 title "r_f=1", "Ks-1-par.val" smooth unique w l lw 3 title "r_f=0" 
 #----------------------------------------------------------------------------------
 
 

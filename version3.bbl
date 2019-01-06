@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{56}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -377,12 +377,6 @@ Z.~Vitingerova.
 \newblock \emph{Evolutionary Algorithms for Multi-Objective Parameter
   Estimation}.
 \newblock PhD thesis, CTU in Prague, Fac. of Civil Eng., 2010.
-
-\bibitem[Weise et~al.(2009)]{Weise:2009}
-T.~Weise, M.~Zapf, R.~Chiong, and A.~J. Nebro.
-\newblock \emph{Nature-Inspired Algorithms for Optimisation}, volume SCI 193,
-  chapter Why Is Optimization Difficult?, pages 1--50.
-\newblock Springer-Verlag Berlin Heidelberg, 2009.
 
 \bibitem[Xu et~al.(2012)Xu, Lewis, Liu, Albertson, and Kiely]{XU201234}
 X.~Xu, C.~Lewis, W.~Liu, J.~Albertson, and G.~Kiely.
