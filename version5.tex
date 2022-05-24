@@ -12,6 +12,9 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
+\usepackage{physics}
+
+
 \usepackage{colortbl}
 
 \usepackage{enumitem}
@@ -65,11 +68,11 @@
     }
 
 
-\newcommand{\dd}{\mathrm{d}}
+% \newcommand{\dd}{\mathrm{d}}
 \renewcommand{\vec}{\mathbf}
  \newcommand{\subscript}[2]{$#1 _ #2$}
  
- \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+%  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
  \newcommand{\Lb}{\pazocal{L}}
  
@@ -214,7 +217,7 @@ Section~\ref{bccond} discusses issues in creating the domain scheme and selectin
 \item[$\theta_s$] -- saturated water content [-]
 \item[$K_s$] -- saturated hydraulic conductivity [L.T$^{-1}$]
 \end{description}
-All these soil hydraulic properties are very well-known parameters, for details see~\citep{vangenuchten}.
+All these soil hydraulic properties are very well-known parameters, for details see~\citep{vangenuchten}. Please note that the residual water content $\theta_r$ [-] was excluded from our study following the recommendation by \cite{mous1993}, where he states that with unknown saturated water content $\theta_s$ the residual water content $\theta_r$ should be excluded from the identification to avoid non-uniqueness.
 
 
 
@@ -312,17 +315,33 @@ The experimental setup of the SR experiment was as follows. A steel ring 30~cm i
 
 The field infiltration experiment is characterized by variably saturated conditions. The flux in porous media under variably saturated conditions can be expressed by the Darcy-Buckingham law~\citep{buckingham} \begin{lineq}\label{darcybuck}\vec{q} = -\mathbf{K}(\theta) \nabla H,\end{lineq} where $\vec{q}$ is the volumetric flux [L.T$^{-1}$], $H$ is the total hydraulic head [$L$] defined as $H=h+z$, where $h$ is the pressure head [$L$], $z$ is the potential head [$L$], $\theta$ is the water content [-], and $\mathbf{K}(\theta)$ is the unsaturated hydraulic conductivity  [L.T$^{-1}$]; in general it is a  second order tensor. The relation $\theta(h)$ is referred to as the retention curve~\citep{vangenuchten}.
 
-The geometry of the flow is inherently three-dimensional, but the domain dimension can be reduced by considering the axisymmetric geometry. The law of mass conservation  for incompressible flow in cylindric coordinates is expressed as ~\citep{bear1979}.
+Substituting the Darcy-Buckingham law \eqref{darcybuck} into the law of mass conservation we obtain the well known \cite{richards} equation which states in divergence form as
 \begin{lineq}
-\label{conti}
--\frac{\partial V}{\partial t} = \frac{\partial q_r}{\partial r} + \frac{q_r}{r} + \frac{\partial q_{\alpha}}{\partial \alpha} + \frac{\partial q_z}{\partial z} ,
+C(h) \pdv{h}{t} = \div  K(h) \grad H - S,
 \end{lineq}
-where $V$ is the volume function [-],  $r$ is the radial coordinate, $\alpha$ is the angular coordinate,  $z$ is the vertical coordinate, and $q_{r, \alpha, z}$ is the  volume flux [L.T$^{-1}$]. The ring infiltration experiment is characterized by rotational symmetric flow, so the angular derivative vanishes. Then the governing equation for  variably saturated and rotational symmetric flow is obtained by substituting the flux in \eqref{conti} by the Darcy-Buckingham law~\eqref{darcybuck}. The variably saturated axisymmetric flow in isotropic media is governed by
+where $C(h)$ is the retention water capacity [L$^{-1}$] defined as $C(h) = \dv{\theta(h)}{h}$, and $S$ is the root water uptake [T${-1}$], which, obviously, wasn't taken into consideration here, so further it will be excluded from the governing equations. For cartesian coordinates the Richards equation can further be formulated as
+\begin{lineq}
+\label{richcart}
+C(h)  \pdv{h}{t} = \pdv{K(h) \pdv{h}{x}}{x} +  \pdv{K(h) \pdv{h}{y}}{y} + \pdv{K(h) \pdv{H}{z}}{z} .
+\end{lineq}
+Since the flow pattern during our SR experiment is analogical to a flow pattern of infiltration well (in a horizontaly homogeneous medium it is rotationally symmetric flow), we could easily reduce the spatial dimension by employing cylindric coordinates. It is a very standardized approach used for well-flow systems, see eg. \citep{harr-1962}. The  Richards equation can be for rotationally symmetric flow in cylindric coordinates formulated as
 \begin{lineq}
 \label{richaxi}
-\left(\frac{\dd \theta}{\dd h} + S_s\frac{\theta(h)}{\theta_s} \right) \frac{\partial h}{\partial t}  =  \frac{\partial K(h) \frac{\partial H}{\partial z}}{\partial z} + \frac{\partial K(h) \frac{\partial H}{\partial r}}{\partial r} + c(\vec{x})\frac{\partial H}{\partial r},
+C(h) \pdv{h}{t}  =   \pdv{K(h) \pdv{H}{z}}{z} + \pdv{K(h) \pdv{h}{r}}{r} + \underbrace{\frac{1}{r}K(h)\pdv{ h}{r}}_{\text{\parbox{1.5cm}{\centering convection \\[-10pt] term}}} .
 \end{lineq}
-where $S_s$ is the specific storage [L$^{-1}$] (this parameter is often neglected), $\theta_s$ is the saturated water content [-],  $c(\vec{x})$ is the coefficient of the convection for $r$ coordinate [T$^{-1}$], which is explained below, and the vector $\vec{x}$ is a vector of the spatial coordinates $\vec{x}=\left( \begin{smallmatrix} r \\ z \end{smallmatrix} \right)$.
+
+
+% The geometry of the flow is inherently three-dimensional, but the domain dimension can be reduced by considering the axisymmetric geometry. The law of mass conservation  for incompressible flow in cylindric coordinates is expressed as ~\citep{bear1979}.
+% \begin{lineq}
+% \label{conti}
+% -\frac{\partial V}{\partial t} = \frac{\partial q_r}{\partial r} + \frac{q_r}{r} + \frac{\partial q_{\alpha}}{\partial \alpha} + \frac{\partial q_z}{\partial z} ,
+% \end{lineq}
+% where $V$ is the volume function [-],  $r$ is the radial coordinate, $\alpha$ is the angular coordinate,  $z$ is the vertical coordinate, and $q_{r, \alpha, z}$ is the  volume flux [L.T$^{-1}$]. The ring infiltration experiment is characterized by rotational symmetric flow, so the angular derivative vanishes. Then the governing equation for  variably saturated and rotational symmetric flow is obtained by substituting the flux in \eqref{conti} by the Darcy-Buckingham law~\eqref{darcybuck}. The variably saturated axisymmetric flow in isotropic media is governed by
+% \begin{lineq}
+% \label{richaxi}
+% \left(\frac{\dd \theta}{\dd h} + S_s\frac{\theta(h)}{\theta_s} \right) \frac{\partial h}{\partial t}  =  \frac{\partial K(h) \frac{\partial H}{\partial z}}{\partial z} + \frac{\partial K(h) \frac{\partial H}{\partial r}}{\partial r} + c(\vec{x})\frac{\partial H}{\partial r},
+% \end{lineq}
+% where $S_s$ is the specific storage [L$^{-1}$] (this parameter is often neglected), $\theta_s$ is the saturated water content [-],  $c(\vec{x})$ is the coefficient of the convection for $r$ coordinate [T$^{-1}$], which is explained below, and the vector $\vec{x}$ is a vector of the spatial coordinates $\vec{x}=\left( \begin{smallmatrix} r \\ z \end{smallmatrix} \right)$.
 
  \begin{figure}
 \centering
@@ -331,16 +350,13 @@ where $S_s$ is the specific storage [L$^{-1}$] (this parameter is often neglecte
  \caption{Scheme of the flow domain and the streamlines of infiltration experiment. }
  \label{valecproudy}
 \end{figure}
+Note please that the term $\frac{1}{r}K(h)\pdv{ h}{r}$ is a first order derivative term, and so the governing equation \eqref{richaxi} falls to a cathegory of convection-diffusion equations, with a convection coefficient given by $-\frac{1}{r}K(h)$, which is a significant alteration of the original diffusion only equation \eqref{richcart}. Several computational limitations for this coefficient apply here and will be discussed further in this contribution.
 
-If we consider the model of the infiltration experiment depicted in figure~\ref{valecproudy} with the entire flow domain $\Omega=\Omega_{inner} \cup \Omega_{outer}$, where $\Omega_{outer}$ is the flow domain outside the infiltration ring and $\Omega_{inner}$ is the flow domain within the infiltration ring, exactly as depicted in figure~\ref{valec}. It is then apparent that the streamlines inside subdomain $\Omega_{inner}$ are parallel, but the streamlines outside the infiltration ring (inside $\Omega_{outer}$) are only axisymmetric. The convection coefficient $c(\vec{x})$ is then defined as follows
-\begin{lineq}
-\label{convect}
-c(\vec{x}) = \begin{cases}
-	     0 , \quad &\forall \vec{x} \in \Omega_{inner} \\
-	     \frac{1}{r}K(h) , \quad &\forall \vec{x} \in \Omega_{outer}.
-	    \end{cases}
-\end{lineq}
-Note that we should avoid using the coordinates, where $r=0$.
+Also note please that when considering the computational domain $\Omega$ to be scattered into $\Omega_{inner}$ and $\Omega_{outer}$ as depicted on figure~\ref{valecproudy} 
+the following assumption about the convection term could be constructed. Refering to the domain scheme given on figure~\ref{valecbc},  the only inflow boundary is $\Gamma_1$ -- the interior part of our infiltration ring. The flux over the domain boundary is typically aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, then the impermeable infiltration ring walls are aligned with the inflow directions, and so within the domain $\Omega_{inner}$ the flow is one-dimensionaly vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
+
+
+
 
 
 \subsection{Domain setup}%[michal]
