@@ -158,7 +158,7 @@ The Richards equation~\citep{richards} describes flow in variably saturated poro
 
 
  
-The identification of SHP from transient infiltration experiments has been a subject of numerous publications in past decades \citep{simunek-infiltr2shp, infiltr2shp, simunek2-infiltr2shp, XU201234, BAGARELLO201770,  hess-Younes-2017}.  \cite{simunek-infiltr2shp} reported a close correspondence between the SHP obtained from the inverse modeling of dynamic transient infiltration experiments with those obtained from steady-state laboratory experiments, where the uniqueness of the inverse model was preserved by considering the dynamically changing pressure head, water content and even tracer concentration.
+The identification of SHP from transient infiltration experiments has been a subject of numerous publications in past decades \citep{simunek-infiltr2shp, infiltr2shp, simunek2-infiltr2shp, XU201234, BAGARELLO201770,  hess-Younes-2017}.  \cite{simunek-infiltr2shp} reported a close correspondence between the SHP obtained from the inverse modeling of dynamic transient infiltration experiments with those obtained from steady-state laboratory experiments, where the uniqueness of the inverse model was preserved by considering the dynamically changing pressure head, water content and even tracer concentration. %\cite{iden-2021} concluded that Richards equation can be safely used to identify SHPs from evaporation laboratory experiments.
 
 The non-uniqueness of the REVG inverse model is already a very well-known issue, and has been described by a number of publications over the last decades~\citep{kool1985, mous1993, ihlwang2003, beven2003-uncertain,Kowalsky04,Nakhaei, Kamali,pena17}.
 \cite{mous1993} defined criteria for model identifiability based on the sensitivity matrix rank, however numerical computation of the sensitivity matrix, which is defined by the derivatives of the objective function, often involves difficulties in managing truncation and round-off errors.
@@ -319,12 +319,14 @@ Substituting the Darcy-Buckingham law \eqref{darcybuck} into the law of mass con
 \begin{lineq}
 C(h) \pdv{h}{t} = \div  K(h) \grad H - S,
 \end{lineq}
-where $C(h)$ is the retention water capacity [L$^{-1}$] defined as $C(h) = \dv{\theta(h)}{h}$, and $S$ is the root water uptake [T${-1}$], which, obviously, wasn't taken into consideration here, so further it will be excluded from the governing equations. For cartesian coordinates the Richards equation can further be formulated as
+where $C(h)$ is the retention water capacity [L$^{-1}$] defined as $C(h) = \dv{\theta(h)}{h}$, and $S$ is the root water uptake [T$^{-1}$], which, obviously, wasn't taken into consideration here, so further it will be excluded from the governing equations. For cartesian coordinates the Richards equation can further be formulated as
 \begin{lineq}
 \label{richcart}
 C(h)  \pdv{h}{t} = \pdv{K(h) \pdv{h}{x}}{x} +  \pdv{K(h) \pdv{h}{y}}{y} + \pdv{K(h) \pdv{H}{z}}{z} .
 \end{lineq}
-Since the flow pattern during our SR experiment is analogical to a flow pattern of infiltration well (in a horizontaly homogeneous medium it is rotationally symmetric flow), we could easily reduce the spatial dimension by employing cylindric coordinates. It is a very standardized approach used for well-flow systems, see eg. \citep{harr-1962}. The  Richards equation can be for rotationally symmetric flow in cylindric coordinates formulated as
+Since the flow pattern during our SR experiment is analogous to the flow pattern originating from infiltration well (in a horizontaly homogeneous medium it is rotationally symmetric flow), we could easily reduce the spatial dimension by employing cylindric coordinates -- $z$ for the horizontal dimension and $r$ for the radial dimension (angular dimension is not employed here due rotationally symmetric flow pattern). It is a standardized approach used for well-flow systems, see eg. \citep{harr-1962}. 
+
+For rotationally symmetric flow, the Richards equation can be formulated in cylindric cooardinates as
 \begin{lineq}
 \label{richaxi}
 C(h) \pdv{h}{t}  =   \pdv{K(h) \pdv{H}{z}}{z} + \pdv{K(h) \pdv{h}{r}}{r} + \underbrace{\frac{1}{r}K(h)\pdv{ h}{r}}_{\text{\parbox{1.5cm}{\centering convection \\[-10pt] term}}} .
@@ -350,10 +352,10 @@ C(h) \pdv{h}{t}  =   \pdv{K(h) \pdv{H}{z}}{z} + \pdv{K(h) \pdv{h}{r}}{r} + \unde
  \caption{Scheme of the flow domain and the streamlines of infiltration experiment. }
  \label{valecproudy}
 \end{figure}
-Note please that the term $\frac{1}{r}K(h)\pdv{ h}{r}$ is a first order derivative term, and so the governing equation \eqref{richaxi} falls to a cathegory of convection-diffusion equations, with a convection coefficient given by $-\frac{1}{r}K(h)$, which is a significant alteration of the original diffusion only equation \eqref{richcart}. Several computational limitations for this coefficient apply here and will be discussed further in this contribution.
+Note please that the term $\frac{1}{r}K(h)\pdv{ h}{r}$ is a first order derivative term, and so the governing equation \eqref{richaxi} falls into the cathegory of convection-diffusion equations, with a convection coefficient given by $-\frac{1}{r}K(h)$, which is a significant alteration of the original diffusion only equation \eqref{richcart}. Several computational limitations for this coefficient apply here and will be discussed further in this contribution.
 
-Also note please that when considering the computational domain $\Omega$ to be scattered into $\Omega_{inner}$ and $\Omega_{outer}$ as depicted on figure~\ref{valecproudy} 
-the following assumption about the convection term could be constructed. Refering to the domain scheme given on figure~\ref{valecbc},  the only inflow boundary is $\Gamma_1$ -- the interior part of our infiltration ring. The flux over the domain boundary is typically aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, then the impermeable infiltration ring walls are aligned with the inflow directions, and so within the domain $\Omega_{inner}$ the flow is one-dimensionaly vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
+Also note please that when considering the computational domain $\Omega$ to be scattered into $\Omega_{inner}$ and $\Omega_{outer}$ as depicted in figure~\ref{valecproudy} 
+the following assumption about the convection term could be constructed. Refering to the domain scheme given in figure~\ref{valecbc},  the only inflow boundary is $\Gamma_1$ -- the interior part of our infiltration ring. The flux over the domain boundary is typically aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, then the impermeable infiltration ring walls are aligned with the inflow directions, and so within the domain $\Omega_{inner}$ the flow is one-dimensionaly vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
 
 
 
@@ -401,7 +403,10 @@ It is apparent that the wetting front originating from our infiltration experime
 \end{lineq}
 is in a conflict with the initial condition (since the outer normal vector $\vec{n} = \left(\begin{smallmatrix} &0 \\ -&1 \end{smallmatrix} \right)$), and produces extra computational costs. The computed fluxes produced at the bottom boundary in the beginning of the simulation with such a boundary setup, originates from the initial and boundary condition mismatch, and has no physical meaning.
 
-Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary at the impermeable layer or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. {The minimum depth} of the groundwater table was estimated at -280~cm below the surface, {see the explanation given in section~\ref{site},} and  we assume that the water table remains constant during the experiment. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valec}.{ \linelabel{line:dbc} The potential implication of this assumption is that the groundwater aquifer adsorbs the entire infiltrated amount without affecting its volume. In theory, this assumption is non-physical. However, for a short  experiment, such as the evaluated infiltration experiment, when the infiltrating wetting front within the simulation time even doesn't reach a vicinity of the groundwater aquifer, and  with the consideration, that the infiltrated amount is  negligible in comparison to the   aquifer volume, this assumption becomes acceptable.}
+
+Physically correct boundary conditions for the bottom boundary is either the Neumann no-flow boundary at the impermeable layer or Dirichlet boundary both at the groundwater table. We chose a constant Dirichlet boundary condition. {The minimum depth} of the groundwater table was estimated at -280~cm below the surface, {see the explanation given in section~\ref{site},} and  we assume that the water table remains constant during the experiment. With the duration of the SR infiltration experiment, and the volume of water added to the soil, the groundwater table is not affected. With this particular setup the domain became extremely narrow and deep, see figure~\ref{valec}. \linelabel{line:dbc}. 
+
+
 
 
 
@@ -461,18 +466,22 @@ In order to avoid computational difficulties during the automatic calibration pr
 \subsubsection{Stability restrictions of convection dominant problems}
 \label{restrconvect}
 
-The equation \eqref{convect} refers to coefficient  of the first order derivative term in~\eqref{richaxi}, and so the well known stability restrictions for the numerical solutions of the convection-diffusion problems appear here~\citep{zienkiewicz1976}.
+The Richards equation formulated for cylindric coordinates~\eqref{richaxi} falls into the cathegory of convection-diffusion equations, and so the well known stability restrictions for numerical solutions of these problems appear~\citep{zienkiewicz1976}.
 The Peclet number representing the numerical stability of convection-diffusion problems is defined as~\citep{knobloch2008} 
 \begin{lineq}
 \label{peclet-std}
-Pe = \frac{c \Delta x}{2 D},
+Pe = \frac{||\vec{v}|| \Delta x}{2 D},
 \end{lineq}
-where $c$ is the convection coefficient defined in~\eqref{convect}, $\Delta x$ is the discretization step, and $D$ is the diffusion (for isotropic setup). Based on the definitions given above, equation~\eqref{peclet-std} can be formulated as
+where $\vec{v}$ is the convection coefficient, $\Delta x$ is the discretization step, and $D$ is the diffusion (for isotropic setup). Based on the definitions given above, the convection term $v_r$ (with a respect to $r$ axis) and the diffusion term $D$ is considered here as
+\begin{lineq}
+v_r = -\frac{1}{r}K(h), \quad D = K(h),
+\end{lineq}
+and so the equation~\eqref{peclet-std} can be further formulated as
 \begin{lineq}
 \label{peclet-re}
 Pe =  \frac{\frac{1}{r}K(h) \Delta x}{2K(h)} = \frac{\Delta x}{2r}.
 \end{lineq}
-Since our mesh is triangular, $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of axisymmetry is such that the Peclet number is sufficiently low. If we want to make our computation free of the well
+Since our mesh is triangular, $\Delta x$ can be roughly assumed to be the greatest triangle altitude (since we assume some mesh quality properties). Then a sufficient distance from the axis of axisymmetry is such that the Peclet number is sufficiently low. It also turns out that we should avoid domain setups where $r=0$. If we want to make our computation free of the well
   known spurious oscillations~\citep{zienkiewicz1976, roos-layers}, 
 a sufficiently low Peclet number $Pe\le 1$ is required. Therefore, the distance from the axis of axisymmetry is given by the domain discretization step at 
 the left hand side boundary. The selected discretization step at the left hand side boundary was assumed as $\Delta x=2$~cm. The domain was therefore 
