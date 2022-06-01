@@ -324,9 +324,9 @@ where $C(h)$ is the retention water capacity [L$^{-1}$] defined as $C(h) = \dv{\
 \label{richcart}
 C(h)  \pdv{h}{t} = \pdv{K(h) \pdv{h}{x}}{x} +  \pdv{K(h) \pdv{h}{y}}{y} + \pdv{K(h) \pdv{H}{z}}{z} .
 \end{lineq}
-Since the flow pattern during our SR experiment is analogous to the flow pattern originating from infiltration well (in a horizontaly homogeneous medium it is rotationally symmetric flow), we could easily reduce the spatial dimension by employing cylindric coordinates -- $z$ for the horizontal dimension and $r$ for the radial dimension (angular dimension is not employed here due rotationally symmetric flow pattern). It is a standardized approach used for well-flow systems, see eg. \citep{harr-1962}. 
+Since the flow pattern during our SR experiment is analogous to the flow pattern originating from infiltration well (in a horizontaly homogeneous medium it is rotationally symmetric flow), we could easily reduce the spatial dimension by employing cylindrical coordinates -- $z$ for the horizontal dimension and $r$ for the radial dimension (angular dimension is not employed here due rotationally symmetric flow pattern). It is a standardized approach used for well-flow systems, see eg. \citep{harr-1962}. 
 
-For rotationally symmetric flow, the Richards equation can be formulated in cylindric cooardinates as
+For rotationally symmetric flow, the Richards equation can be formulated in cylindrical cooardinates as
 \begin{lineq}
 \label{richaxi}
 C(h) \pdv{h}{t}  =   \pdv{K(h) \pdv{H}{z}}{z} + \pdv{K(h) \pdv{h}{r}}{r} + \underbrace{\frac{1}{r}K(h)\pdv{ h}{r}}_{\text{\parbox{1.5cm}{\centering convection \\[-10pt] term}}} .
@@ -466,7 +466,7 @@ In order to avoid computational difficulties during the automatic calibration pr
 \subsubsection{Stability restrictions of convection dominant problems}
 \label{restrconvect}
 
-The Richards equation formulated for cylindric coordinates~\eqref{richaxi} falls into the cathegory of convection-diffusion equations, and so the well known stability restrictions for numerical solutions of these problems appear~\citep{zienkiewicz1976}.
+The Richards equation formulated for cylindrical coordinates~\eqref{richaxi} falls into the cathegory of convection-diffusion equations, and so the well known stability restrictions for numerical solutions of these problems appear~\citep{zienkiewicz1976}.
 The Peclet number representing the numerical stability of convection-diffusion problems is defined as~\citep{knobloch2008} 
 \begin{lineq}
 \label{peclet-std}
