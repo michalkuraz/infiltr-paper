@@ -217,7 +217,7 @@ Section~\ref{bccond} discusses issues in creating the domain scheme and selectin
 \item[$\theta_s$] -- saturated water content [-]
 \item[$K_s$] -- saturated hydraulic conductivity [L.T$^{-1}$]
 \end{description}
-All these soil hydraulic properties are very well-known parameters, for details see~\citep{vangenuchten}. Please note that the residual water content $\theta_r$ [-] was excluded from our study following the recommendation by \cite{mous1993}, where he states that with unknown saturated water content $\theta_s$ the residual water content $\theta_r$ should be excluded from the identification to avoid non-uniqueness.
+All these soil hydraulic properties are very well-known parameters, for details see~\citep{vangenuchten}. Please note that the residual water content $\theta_r$ [-] was excluded from our study following the recommendation by \cite{mous1993}, where he states that with unknown saturated water content $\theta_s$ the residual water content $\theta_r$ should be excluded from the identification to avoid non-uniqueness. It will be considered here $\theta_r=0$.
 
 
 
@@ -355,7 +355,11 @@ C(h) \pdv{h}{t}  =   \pdv{K(h) \pdv{H}{z}}{z} + \pdv{K(h) \pdv{h}{r}}{r} + \unde
 Note please that the term $\frac{1}{r}K(h)\pdv{ h}{r}$ is a first order derivative term, and so the governing equation \eqref{richaxi} falls into the cathegory of convection-diffusion equations, with a convection coefficient given by $-\frac{1}{r}K(h)$, which is a significant alteration of the original diffusion only equation \eqref{richcart}. Several computational limitations for this coefficient apply here and will be discussed further in this contribution.
 
 Also note please that when considering the computational domain $\Omega$ to be scattered into $\Omega_{inner}$ and $\Omega_{outer}$ as depicted in figure~\ref{valecproudy} 
-the following assumption about the convection term could be constructed. Refering to the domain scheme given in figure~\ref{valecbc},  the only inflow boundary is $\Gamma_1$ -- the interior part of our infiltration ring. The flux over the domain boundary is typically aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, then the impermeable infiltration ring walls are aligned with the inflow directions, and so within the domain $\Omega_{inner}$ the flow is one-dimensionaly vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
+the following assumption about the convection term could be constructed. Refering to the domain scheme given in figure~\ref{valecbc},  the only inflow boundary is $\Gamma_1$ -- the interior part of our infiltration ring.
+
+The flux over the domain boundary is typically assumed to be aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, we can assume that the impermeable infiltration ring walls are aligned with the inflow directions, and so with this assumption within the domain $\Omega_{inner}$ the flow is one-dimensionally vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
+
+% The flux over the domain boundary is typically aligned with the normal boundary vector. Since the impermeable walls of our infiltration ring are perpendicular to our inflow boundary $\Gamma_1$, then the impermeable infiltration ring walls are aligned with the inflow directions, and so within the domain $\Omega_{inner}$ the flow is one-dimensionaly vertical and the derivative $\pdv{h}{r}$ vanishes. Then it turns out that the convection term from the equation \eqref{richaxi} is active only within $\Omega_{outer}$.
 
 
 
